@@ -1,0 +1,79 @@
+\doxysection{D\+:/tzh21/\+Projects/2023summer/plantform\+\_\+xgboost/src/widget.cpp 文件参考}
+\hypertarget{widget_8cpp}{}\label{widget_8cpp}\index{D:/tzh21/Projects/2023summer/plantform\_xgboost/src/widget.cpp@{D:/tzh21/Projects/2023summer/plantform\_xgboost/src/widget.cpp}}
+{\ttfamily \#include "{}widget.\+h"{}}\newline
+{\ttfamily \#include "{}ui\+\_\+widget.\+h"{}}\newline
+{\ttfamily \#include "{}window\+\_\+barchart.\+h"{}}\newline
+{\ttfamily \#include "{}window\+\_\+scatter.\+h"{}}\newline
+{\ttfamily \#include "{}window\+\_\+covariance.\+h"{}}\newline
+{\ttfamily \#include "{}window\+\_\+pca.\+h"{}}\newline
+{\ttfamily \#include "{}window\+\_\+cluster.\+h"{}}\newline
+{\ttfamily \#include "{}window\+\_\+ml.\+h"{}}\newline
+{\ttfamily \#include "{}include/needed\+\_\+algo/kmeans.\+hpp"{}}\newline
+{\ttfamily \#include "{}include/needed\+\_\+algo/dbscan.\+hpp"{}}\newline
+{\ttfamily \#include $<$QFile$>$}\newline
+{\ttfamily \#include $<$QText\+Stream$>$}\newline
+{\ttfamily \#include $<$QDebug$>$}\newline
+{\ttfamily \#include $<$Eigen/\+Dense$>$}\newline
+{\ttfamily \#include $<$QDialog$>$}\newline
+{\ttfamily \#include $<$QLabel$>$}\newline
+{\ttfamily \#include $<$QLine\+Edit$>$}\newline
+{\ttfamily \#include $<$QVBox\+Layout$>$}\newline
+{\ttfamily \#include $<$QMessage\+Box$>$}\newline
+{\ttfamily \#include $<$QFile\+Dialog$>$}\newline
+{\ttfamily \#include $<$QTable\+Widget$>$}\newline
+{\ttfamily \#include $<$QTable\+View$>$}\newline
+{\ttfamily \#include $<$QRandom\+Generator$>$}\newline
+\doxysubsubsection*{变量}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ QColor $>$ \mbox{\hyperlink{widget_8cpp_aa9a60c1da1bc8d3c2589348f28f3766f}{colors\+\_\+set}}
+\item 
+std\+::map$<$ \mbox{\hyperlink{widget_8h_a356625608f963163dfb34e48917f5958}{Cluster\+\_\+method}}, QString $>$ \mbox{\hyperlink{widget_8cpp_a686fada52491ce19683e69d526306078}{map\+\_\+method\+\_\+string}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{变量说明}
+\Hypertarget{widget_8cpp_aa9a60c1da1bc8d3c2589348f28f3766f}\label{widget_8cpp_aa9a60c1da1bc8d3c2589348f28f3766f} 
+\index{widget.cpp@{widget.cpp}!colors\_set@{colors\_set}}
+\index{colors\_set@{colors\_set}!widget.cpp@{widget.cpp}}
+\doxysubsubsection{\texorpdfstring{colors\_set}{colors\_set}}
+{\footnotesize\ttfamily std\+::vector$<$QColor$>$ colors\+\_\+set}
+
+{\bfseries 初始值\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \ QColor(255,\ 0,\ 0),\ \ \ \ \ }
+\DoxyCodeLine{\ \ \ QColor(0,\ 255,\ 0),\ \ \ \ \ }
+\DoxyCodeLine{\ \ \ QColor(0,\ 0,\ 255),\ \ \ \ \ }
+\DoxyCodeLine{\ \ \ QColor(255,\ 255,\ 0),\ \ \ }
+\DoxyCodeLine{\ \ \ QColor(255,\ 0,\ 255),\ \ \ }
+\DoxyCodeLine{\ \ \ QColor(0,\ 255,\ 255),\ \ \ }
+\DoxyCodeLine{\ \ \ QColor(128,\ 0,\ 0),\ \ \ \ \ }
+\DoxyCodeLine{\ \ \ QColor(0,\ 128,\ 0),\ \ \ \ \ }
+\DoxyCodeLine{\ \ \ QColor(0,\ 0,\ 128),\ \ \ \ \ }
+\DoxyCodeLine{\ \ \ QColor(128,\ 128,\ 0)}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+在文件 \mbox{\hyperlink{widget_8cpp_source}{widget.\+cpp}} 第 \mbox{\hyperlink{widget_8cpp_source_l00028}{28}} 行定义.
+
+\Hypertarget{widget_8cpp_a686fada52491ce19683e69d526306078}\label{widget_8cpp_a686fada52491ce19683e69d526306078} 
+\index{widget.cpp@{widget.cpp}!map\_method\_string@{map\_method\_string}}
+\index{map\_method\_string@{map\_method\_string}!widget.cpp@{widget.cpp}}
+\doxysubsubsection{\texorpdfstring{map\_method\_string}{map\_method\_string}}
+{\footnotesize\ttfamily std\+::map$<$\mbox{\hyperlink{widget_8h_a356625608f963163dfb34e48917f5958}{Cluster\+\_\+method}}, QString$>$ map\+\_\+method\+\_\+string}
+
+{\bfseries 初始值\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \ \ \{\mbox{\hyperlink{widget_8h_a356625608f963163dfb34e48917f5958ac3667c322252cb4024831eb39e924670}{Cluster\_method::kmeans}},\ \textcolor{stringliteral}{"{}K-\/means\_cluster"{}}\},}
+\DoxyCodeLine{\ \ \ \ \{\mbox{\hyperlink{widget_8h_a356625608f963163dfb34e48917f5958abf0ef28c5df781bd2124fae79d8fa3e1}{Cluster\_method::dbscan}},\ \textcolor{stringliteral}{"{}dbscan\_cluster"{}}\}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+在文件 \mbox{\hyperlink{widget_8cpp_source}{widget.\+cpp}} 第 \mbox{\hyperlink{widget_8cpp_source_l00041}{41}} 行定义.
+

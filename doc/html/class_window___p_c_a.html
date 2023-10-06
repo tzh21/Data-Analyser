@@ -1,0 +1,589 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>医疗数据分析平台: Window_PCA类 参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">医疗数据分析平台
+   </div>
+   <div id="projectbrief">大作业</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="#pub-attribs">Public 属性</a> &#124;
+<a href="#pri-methods">Private 成员函数</a> &#124;
+<a href="#pri-attribs">Private 属性</a> &#124;
+<a href="class_window___p_c_a-members.html">所有成员列表</a>  </div>
+  <div class="headertitle"><div class="title">Window_PCA类 参考</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="window__pca_8h_source.html">window_pca.h</a>&gt;</code></p>
+
+<p>继承自 QMainWindow .</p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:a3dac543e9f3f78163277718fec3bb506" id="r_a3dac543e9f3f78163277718fec3bb506"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_window___p_c_a.html#a3dac543e9f3f78163277718fec3bb506">Window_PCA</a> (<a class="el" href="class_widget.html">Widget</a> *_table_widget, std::vector&lt; std::vector&lt; float &gt; &gt; &amp;&amp;_variants, std::vector&lt; int &gt; &amp;&amp;_diagnosis, QWidget *parent=nullptr)</td></tr>
+<tr class="memdesc:a3dac543e9f3f78163277718fec3bb506"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="class_window___p_c_a.html#a3dac543e9f3f78163277718fec3bb506" title="Construct a new Window_PCA::Window_PCA object">Window_PCA::Window_PCA</a> object  <br /></td></tr>
+<tr class="separator:a3dac543e9f3f78163277718fec3bb506"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
+Public 属性</h2></td></tr>
+<tr class="memitem:ae294314475d573f2197e219e9f4b81ea" id="r_ae294314475d573f2197e219e9f4b81ea"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::vector&lt; QVector3D &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_window___p_c_a.html#ae294314475d573f2197e219e9f4b81ea">bm_groups</a></td></tr>
+<tr class="separator:ae294314475d573f2197e219e9f4b81ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a125434d6f3399af6f214798a008de72b" id="r_a125434d6f3399af6f214798a008de72b"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::vector&lt; QVector3D &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_window___p_c_a.html#a125434d6f3399af6f214798a008de72b">cluster_groups</a></td></tr>
+<tr class="separator:a125434d6f3399af6f214798a008de72b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Private 成员函数</h2></td></tr>
+<tr class="memitem:a8378c33d4b544b1fd7776b6c2078eab8" id="r_a8378c33d4b544b1fd7776b6c2078eab8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_window___p_c_a.html#a8378c33d4b544b1fd7776b6c2078eab8">on_radio_kmeans_toggled</a> (bool checked)</td></tr>
+<tr class="memdesc:a8378c33d4b544b1fd7776b6c2078eab8"><td class="mdescLeft">&#160;</td><td class="mdescRight">显示K-means聚类算法的分组。  <br /></td></tr>
+<tr class="separator:a8378c33d4b544b1fd7776b6c2078eab8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a287e39106953da4019c679bca1bd2f07" id="r_a287e39106953da4019c679bca1bd2f07"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_window___p_c_a.html#a287e39106953da4019c679bca1bd2f07">on_radio_dbscan_toggled</a> (bool checked)</td></tr>
+<tr class="memdesc:a287e39106953da4019c679bca1bd2f07"><td class="mdescLeft">&#160;</td><td class="mdescRight">显示dbscan聚类算法的分组。  <br /></td></tr>
+<tr class="separator:a287e39106953da4019c679bca1bd2f07"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6a60f62932757004bed7b1963e7a7f8d" id="r_a6a60f62932757004bed7b1963e7a7f8d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_window___p_c_a.html#a6a60f62932757004bed7b1963e7a7f8d">on_button_2dcluster_clicked</a> ()</td></tr>
+<tr class="memdesc:a6a60f62932757004bed7b1963e7a7f8d"><td class="mdescLeft">&#160;</td><td class="mdescRight">2D降维按钮的槽函数。包含聚类。  <br /></td></tr>
+<tr class="separator:a6a60f62932757004bed7b1963e7a7f8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a64536050ac56ffeea812c9f851cdc3fc" id="r_a64536050ac56ffeea812c9f851cdc3fc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_window___p_c_a.html#a64536050ac56ffeea812c9f851cdc3fc">on_button_3dcluster_clicked</a> ()</td></tr>
+<tr class="memdesc:a64536050ac56ffeea812c9f851cdc3fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">3D降维按钮的槽函数。包含聚类。  <br /></td></tr>
+<tr class="separator:a64536050ac56ffeea812c9f851cdc3fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a55bf1b40451ca5c474d34947d8da2f37" id="r_a55bf1b40451ca5c474d34947d8da2f37"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_window___p_c_a.html#a55bf1b40451ca5c474d34947d8da2f37">on_button_2d_clicked</a> ()</td></tr>
+<tr class="memdesc:a55bf1b40451ca5c474d34947d8da2f37"><td class="mdescLeft">&#160;</td><td class="mdescRight">2D降维按钮的槽函数。仅标记BM。  <br /></td></tr>
+<tr class="separator:a55bf1b40451ca5c474d34947d8da2f37"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7647ddc5858c6f850e133c1272ee5f13" id="r_a7647ddc5858c6f850e133c1272ee5f13"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_window___p_c_a.html#a7647ddc5858c6f850e133c1272ee5f13">on_button_3d_clicked</a> ()</td></tr>
+<tr class="memdesc:a7647ddc5858c6f850e133c1272ee5f13"><td class="mdescLeft">&#160;</td><td class="mdescRight">3D降维按钮的槽函数。仅标记BM。  <br /></td></tr>
+<tr class="separator:a7647ddc5858c6f850e133c1272ee5f13"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private 属性</h2></td></tr>
+<tr class="memitem:a8ae6567e83ea568f21730a4a07af943f" id="r_a8ae6567e83ea568f21730a4a07af943f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_widget.html">Widget</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_window___p_c_a.html#a8ae6567e83ea568f21730a4a07af943f">table_widget</a></td></tr>
+<tr class="separator:a8ae6567e83ea568f21730a4a07af943f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad63cdc5e12188b55608eb9f8360edd25" id="r_ad63cdc5e12188b55608eb9f8360edd25"><td class="memItemLeft" align="right" valign="top"><a class="el" href="widget_8h.html#a356625608f963163dfb34e48917f5958">Cluster_method</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_window___p_c_a.html#ad63cdc5e12188b55608eb9f8360edd25">cluster_method</a> = <a class="el" href="widget_8h.html#a356625608f963163dfb34e48917f5958ac3667c322252cb4024831eb39e924670">Cluster_method::kmeans</a></td></tr>
+<tr class="separator:ad63cdc5e12188b55608eb9f8360edd25"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7b7fc738c9214fccb48504899c387de0" id="r_a7b7fc738c9214fccb48504899c387de0"><td class="memItemLeft" align="right" valign="top">const std::vector&lt; std::vector&lt; float &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_window___p_c_a.html#a7b7fc738c9214fccb48504899c387de0">variants</a></td></tr>
+<tr class="separator:a7b7fc738c9214fccb48504899c387de0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0ada9397ea525820f9cde305c973b6df" id="r_a0ada9397ea525820f9cde305c973b6df"><td class="memItemLeft" align="right" valign="top">const std::vector&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_window___p_c_a.html#a0ada9397ea525820f9cde305c973b6df">diagnosis</a></td></tr>
+<tr class="separator:a0ada9397ea525820f9cde305c973b6df"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5761f8d1f46651796f87a3794b8c6832" id="r_a5761f8d1f46651796f87a3794b8c6832"><td class="memItemLeft" align="right" valign="top">QPushButton *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_window___p_c_a.html#a5761f8d1f46651796f87a3794b8c6832">button_2d</a></td></tr>
+<tr class="separator:a5761f8d1f46651796f87a3794b8c6832"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a65c472d96b14d6261b3bdc2229625e62" id="r_a65c472d96b14d6261b3bdc2229625e62"><td class="memItemLeft" align="right" valign="top">QPushButton *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_window___p_c_a.html#a65c472d96b14d6261b3bdc2229625e62">button_3d</a></td></tr>
+<tr class="separator:a65c472d96b14d6261b3bdc2229625e62"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2df4a0cab8b0173d40a83cdc49fc38ed" id="r_a2df4a0cab8b0173d40a83cdc49fc38ed"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_window___p_c_a.html#a2df4a0cab8b0173d40a83cdc49fc38ed">selected_group</a> = 0</td></tr>
+<tr class="separator:a2df4a0cab8b0173d40a83cdc49fc38ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock">
+<p class="definition">在文件 <a class="el" href="window__pca_8h_source.html">window_pca.h</a> 第 <a class="el" href="window__pca_8h_source.html#l00049">49</a> 行定义.</p>
+</div><h2 class="groupheader">构造及析构函数说明</h2>
+<a id="a3dac543e9f3f78163277718fec3bb506" name="a3dac543e9f3f78163277718fec3bb506"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3dac543e9f3f78163277718fec3bb506">&#9670;&#160;</a></span>Window_PCA()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Window_PCA::Window_PCA </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_widget.html">Widget</a> *&#160;</td>
+          <td class="paramname"><em>_table_widget</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; std::vector&lt; float &gt; &gt; &amp;&amp;&#160;</td>
+          <td class="paramname"><em>_variants</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; int &gt; &amp;&amp;&#160;</td>
+          <td class="paramname"><em>_diagnosis</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QWidget *&#160;</td>
+          <td class="paramname"><em>parent</em> = <code>nullptr</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Construct a new <a class="el" href="class_window___p_c_a.html#a3dac543e9f3f78163277718fec3bb506" title="Construct a new Window_PCA::Window_PCA object">Window_PCA::Window_PCA</a> object </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_table_widget</td><td>表格的指针。因为需要获取聚类的标签。 </td></tr>
+    <tr><td class="paramname">_variants</td><td>变量的数据。 </td></tr>
+    <tr><td class="paramname">_diagnosis</td><td>每个样本的诊断结果。 </td></tr>
+    <tr><td class="paramname">parent</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">在文件 <a class="el" href="window__pca_8cpp_source.html">window_pca.cpp</a> 第 <a class="el" href="window__pca_8cpp_source.html#l00254">254</a> 行定义.</p>
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="a55bf1b40451ca5c474d34947d8da2f37" name="a55bf1b40451ca5c474d34947d8da2f37"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a55bf1b40451ca5c474d34947d8da2f37">&#9670;&#160;</a></span>on_button_2d_clicked()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Window_PCA::on_button_2d_clicked </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>2D降维按钮的槽函数。仅标记BM。 </p>
+
+<p class="definition">在文件 <a class="el" href="window__pca_8cpp_source.html">window_pca.cpp</a> 第 <a class="el" href="window__pca_8cpp_source.html#l00315">315</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a6a60f62932757004bed7b1963e7a7f8d" name="a6a60f62932757004bed7b1963e7a7f8d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6a60f62932757004bed7b1963e7a7f8d">&#9670;&#160;</a></span>on_button_2dcluster_clicked()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Window_PCA::on_button_2dcluster_clicked </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>2D降维按钮的槽函数。包含聚类。 </p>
+
+<p class="definition">在文件 <a class="el" href="window__pca_8cpp_source.html">window_pca.cpp</a> 第 <a class="el" href="window__pca_8cpp_source.html#l00421">421</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a7647ddc5858c6f850e133c1272ee5f13" name="a7647ddc5858c6f850e133c1272ee5f13"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7647ddc5858c6f850e133c1272ee5f13">&#9670;&#160;</a></span>on_button_3d_clicked()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Window_PCA::on_button_3d_clicked </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>3D降维按钮的槽函数。仅标记BM。 </p>
+
+<p class="definition">在文件 <a class="el" href="window__pca_8cpp_source.html">window_pca.cpp</a> 第 <a class="el" href="window__pca_8cpp_source.html#l00352">352</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a64536050ac56ffeea812c9f851cdc3fc" name="a64536050ac56ffeea812c9f851cdc3fc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a64536050ac56ffeea812c9f851cdc3fc">&#9670;&#160;</a></span>on_button_3dcluster_clicked()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Window_PCA::on_button_3dcluster_clicked </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>3D降维按钮的槽函数。包含聚类。 </p>
+
+<p class="definition">在文件 <a class="el" href="window__pca_8cpp_source.html">window_pca.cpp</a> 第 <a class="el" href="window__pca_8cpp_source.html#l00459">459</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a287e39106953da4019c679bca1bd2f07" name="a287e39106953da4019c679bca1bd2f07"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a287e39106953da4019c679bca1bd2f07">&#9670;&#160;</a></span>on_radio_dbscan_toggled()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Window_PCA::on_radio_dbscan_toggled </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>checked</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>显示dbscan聚类算法的分组。 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">checked</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">在文件 <a class="el" href="window__pca_8cpp_source.html">window_pca.cpp</a> 第 <a class="el" href="window__pca_8cpp_source.html#l00342">342</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a8378c33d4b544b1fd7776b6c2078eab8" name="a8378c33d4b544b1fd7776b6c2078eab8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8378c33d4b544b1fd7776b6c2078eab8">&#9670;&#160;</a></span>on_radio_kmeans_toggled()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Window_PCA::on_radio_kmeans_toggled </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>checked</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>显示K-means聚类算法的分组。 </p>
+
+<p class="definition">在文件 <a class="el" href="window__pca_8cpp_source.html">window_pca.cpp</a> 第 <a class="el" href="window__pca_8cpp_source.html#l00331">331</a> 行定义.</p>
+
+</div>
+</div>
+<h2 class="groupheader">类成员变量说明</h2>
+<a id="ae294314475d573f2197e219e9f4b81ea" name="ae294314475d573f2197e219e9f4b81ea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae294314475d573f2197e219e9f4b81ea">&#9670;&#160;</a></span>bm_groups</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;std::vector&lt;QVector3D&gt; &gt; Window_PCA::bm_groups</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="window__pca_8h_source.html">window_pca.h</a> 第 <a class="el" href="window__pca_8h_source.html#l00058">58</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a5761f8d1f46651796f87a3794b8c6832" name="a5761f8d1f46651796f87a3794b8c6832"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5761f8d1f46651796f87a3794b8c6832">&#9670;&#160;</a></span>button_2d</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QPushButton* Window_PCA::button_2d</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="window__pca_8h_source.html">window_pca.h</a> 第 <a class="el" href="window__pca_8h_source.html#l00072">72</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a65c472d96b14d6261b3bdc2229625e62" name="a65c472d96b14d6261b3bdc2229625e62"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a65c472d96b14d6261b3bdc2229625e62">&#9670;&#160;</a></span>button_3d</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QPushButton* Window_PCA::button_3d</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="window__pca_8h_source.html">window_pca.h</a> 第 <a class="el" href="window__pca_8h_source.html#l00073">73</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a125434d6f3399af6f214798a008de72b" name="a125434d6f3399af6f214798a008de72b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a125434d6f3399af6f214798a008de72b">&#9670;&#160;</a></span>cluster_groups</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;std::vector&lt;QVector3D&gt; &gt; Window_PCA::cluster_groups</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="window__pca_8h_source.html">window_pca.h</a> 第 <a class="el" href="window__pca_8h_source.html#l00059">59</a> 行定义.</p>
+
+</div>
+</div>
+<a id="ad63cdc5e12188b55608eb9f8360edd25" name="ad63cdc5e12188b55608eb9f8360edd25"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad63cdc5e12188b55608eb9f8360edd25">&#9670;&#160;</a></span>cluster_method</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="widget_8h.html#a356625608f963163dfb34e48917f5958">Cluster_method</a> Window_PCA::cluster_method = <a class="el" href="widget_8h.html#a356625608f963163dfb34e48917f5958ac3667c322252cb4024831eb39e924670">Cluster_method::kmeans</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="window__pca_8h_source.html">window_pca.h</a> 第 <a class="el" href="window__pca_8h_source.html#l00067">67</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a0ada9397ea525820f9cde305c973b6df" name="a0ada9397ea525820f9cde305c973b6df"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0ada9397ea525820f9cde305c973b6df">&#9670;&#160;</a></span>diagnosis</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::vector&lt;int&gt; Window_PCA::diagnosis</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="window__pca_8h_source.html">window_pca.h</a> 第 <a class="el" href="window__pca_8h_source.html#l00070">70</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a2df4a0cab8b0173d40a83cdc49fc38ed" name="a2df4a0cab8b0173d40a83cdc49fc38ed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2df4a0cab8b0173d40a83cdc49fc38ed">&#9670;&#160;</a></span>selected_group</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Window_PCA::selected_group = 0</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="window__pca_8h_source.html">window_pca.h</a> 第 <a class="el" href="window__pca_8h_source.html#l00075">75</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a8ae6567e83ea568f21730a4a07af943f" name="a8ae6567e83ea568f21730a4a07af943f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8ae6567e83ea568f21730a4a07af943f">&#9670;&#160;</a></span>table_widget</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_widget.html">Widget</a>* Window_PCA::table_widget</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="window__pca_8h_source.html">window_pca.h</a> 第 <a class="el" href="window__pca_8h_source.html#l00065">65</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a7b7fc738c9214fccb48504899c387de0" name="a7b7fc738c9214fccb48504899c387de0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7b7fc738c9214fccb48504899c387de0">&#9670;&#160;</a></span>variants</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::vector&lt;std::vector&lt;float&gt; &gt; Window_PCA::variants</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="window__pca_8h_source.html">window_pca.h</a> 第 <a class="el" href="window__pca_8h_source.html#l00069">69</a> 行定义.</p>
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li>D:/tzh21/Projects/2023summer/plantform_xgboost/src/<a class="el" href="window__pca_8h_source.html">window_pca.h</a></li>
+<li>D:/tzh21/Projects/2023summer/plantform_xgboost/src/<a class="el" href="window__pca_8cpp_source.html">window_pca.cpp</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+</small></address>
+</body>
+</html>

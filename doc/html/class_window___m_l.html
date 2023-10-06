@@ -1,0 +1,745 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>医疗数据分析平台: Window_ML类 参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">医疗数据分析平台
+   </div>
+   <div id="projectbrief">大作业</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="#pri-methods">Private 成员函数</a> &#124;
+<a href="#pri-attribs">Private 属性</a> &#124;
+<a href="class_window___m_l-members.html">所有成员列表</a>  </div>
+  <div class="headertitle"><div class="title">Window_ML类 参考</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="window__ml_8h_source.html">window_ml.h</a>&gt;</code></p>
+
+<p>继承自 QMainWindow .</p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:aa289d98fca93f0c86ab257e1970576a4" id="r_aa289d98fca93f0c86ab257e1970576a4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_window___m_l.html#aa289d98fca93f0c86ab257e1970576a4">Window_ML</a> (std::vector&lt; int &gt; &amp;&amp;_diagnosis, std::vector&lt; std::string &gt; &amp;&amp;_feature_names, std::vector&lt; std::vector&lt; float &gt; &gt; &amp;&amp;_samples, QWidget *parent=nullptr)</td></tr>
+<tr class="memdesc:aa289d98fca93f0c86ab257e1970576a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="class_window___m_l.html#aa289d98fca93f0c86ab257e1970576a4" title="Construct a new Window_ML::Window_ML object">Window_ML::Window_ML</a> object  <br /></td></tr>
+<tr class="separator:aa289d98fca93f0c86ab257e1970576a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Private 成员函数</h2></td></tr>
+<tr class="memitem:a78c9bec62b8a4ca30fcc92d9902d1be5" id="r_a78c9bec62b8a4ca30fcc92d9902d1be5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_window___m_l.html#a78c9bec62b8a4ca30fcc92d9902d1be5">on_button_ratio_clicked</a> ()</td></tr>
+<tr class="memdesc:a78c9bec62b8a4ca30fcc92d9902d1be5"><td class="mdescLeft">&#160;</td><td class="mdescRight">划分训练集和测试集的按钮的槽函数。根据比例划分训练集和测试集，并绘制表格。  <br /></td></tr>
+<tr class="separator:a78c9bec62b8a4ca30fcc92d9902d1be5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae063b6ac1f57e17afbcf57ddcc7a09ca" id="r_ae063b6ac1f57e17afbcf57ddcc7a09ca"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_window___m_l.html#ae063b6ac1f57e17afbcf57ddcc7a09ca">on_button_train_clicked</a> ()</td></tr>
+<tr class="memdesc:ae063b6ac1f57e17afbcf57ddcc7a09ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">训练按钮的槽函数。根据训练集进行训练，并预测已划分的数据集。  <br /></td></tr>
+<tr class="separator:ae063b6ac1f57e17afbcf57ddcc7a09ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6bb1d443c4e165a44a5ad004df7606a0" id="r_a6bb1d443c4e165a44a5ad004df7606a0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_window___m_l.html#a6bb1d443c4e165a44a5ad004df7606a0">on_button_test_result_clicked</a> ()</td></tr>
+<tr class="memdesc:a6bb1d443c4e165a44a5ad004df7606a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">测试结果按钮的槽函数。绘制测试结果的混淆矩阵。  <br /></td></tr>
+<tr class="separator:a6bb1d443c4e165a44a5ad004df7606a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab69911dc8106588eff2c952c81f2fced" id="r_ab69911dc8106588eff2c952c81f2fced"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_window___m_l.html#ab69911dc8106588eff2c952c81f2fced">on_button_feature_clicked</a> ()</td></tr>
+<tr class="memdesc:ab69911dc8106588eff2c952c81f2fced"><td class="mdescLeft">&#160;</td><td class="mdescRight">特征贡献度按钮的槽函数。绘制特征贡献度的条形图。  <br /></td></tr>
+<tr class="separator:ab69911dc8106588eff2c952c81f2fced"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private 属性</h2></td></tr>
+<tr class="memitem:aeb7363b0f66173c9294954784c7b30b6" id="r_aeb7363b0f66173c9294954784c7b30b6"><td class="memItemLeft" align="right" valign="top">const std::vector&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_window___m_l.html#aeb7363b0f66173c9294954784c7b30b6">diagnosis</a></td></tr>
+<tr class="separator:aeb7363b0f66173c9294954784c7b30b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4e02c0c2338bcf68749819626c0e7fb6" id="r_a4e02c0c2338bcf68749819626c0e7fb6"><td class="memItemLeft" align="right" valign="top">const std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_window___m_l.html#a4e02c0c2338bcf68749819626c0e7fb6">feature_names</a></td></tr>
+<tr class="separator:a4e02c0c2338bcf68749819626c0e7fb6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:addb3e6f65981ef3a419033b918b1c151" id="r_addb3e6f65981ef3a419033b918b1c151"><td class="memItemLeft" align="right" valign="top">const std::vector&lt; std::vector&lt; float &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_window___m_l.html#addb3e6f65981ef3a419033b918b1c151">samples</a></td></tr>
+<tr class="separator:addb3e6f65981ef3a419033b918b1c151"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8359c5d92b4f050dc6ab4fe5f8fab4df" id="r_a8359c5d92b4f050dc6ab4fe5f8fab4df"><td class="memItemLeft" align="right" valign="top">std::vector&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_window___m_l.html#a8359c5d92b4f050dc6ab4fe5f8fab4df">idx_train</a></td></tr>
+<tr class="separator:a8359c5d92b4f050dc6ab4fe5f8fab4df"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8f58a40c7e7eb967bb9559539f0ffb5e" id="r_a8f58a40c7e7eb967bb9559539f0ffb5e"><td class="memItemLeft" align="right" valign="top">std::vector&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_window___m_l.html#a8f58a40c7e7eb967bb9559539f0ffb5e">idx_test</a></td></tr>
+<tr class="separator:a8f58a40c7e7eb967bb9559539f0ffb5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a947b8bbd40412265beef1becfcf12622" id="r_a947b8bbd40412265beef1becfcf12622"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::pair&lt; std::string, float &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_window___m_l.html#a947b8bbd40412265beef1becfcf12622">feature_importance</a></td></tr>
+<tr class="separator:a947b8bbd40412265beef1becfcf12622"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae19ed4e3b34e4eec241595d5572bcbdd" id="r_ae19ed4e3b34e4eec241595d5572bcbdd"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_window___m_l.html#ae19ed4e3b34e4eec241595d5572bcbdd">cnt_true_positive</a> = 0</td></tr>
+<tr class="separator:ae19ed4e3b34e4eec241595d5572bcbdd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac24869fc1f705a018cc18e1d8f3f130f" id="r_ac24869fc1f705a018cc18e1d8f3f130f"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_window___m_l.html#ac24869fc1f705a018cc18e1d8f3f130f">cnt_true_negative</a> = 0</td></tr>
+<tr class="separator:ac24869fc1f705a018cc18e1d8f3f130f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad0e892b62bfc22cfcfad5335c870ead0" id="r_ad0e892b62bfc22cfcfad5335c870ead0"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_window___m_l.html#ad0e892b62bfc22cfcfad5335c870ead0">cnt_false_positive</a> = 0</td></tr>
+<tr class="separator:ad0e892b62bfc22cfcfad5335c870ead0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6fce1762f9fbdca7bba514e1610ffecd" id="r_a6fce1762f9fbdca7bba514e1610ffecd"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_window___m_l.html#a6fce1762f9fbdca7bba514e1610ffecd">cnt_false_negative</a> = 0</td></tr>
+<tr class="separator:a6fce1762f9fbdca7bba514e1610ffecd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2f9e045c953ed92f9c57dcda8594bba9" id="r_a2f9e045c953ed92f9c57dcda8594bba9"><td class="memItemLeft" align="right" valign="top">QComboBox *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_window___m_l.html#a2f9e045c953ed92f9c57dcda8594bba9">comb_ratio</a></td></tr>
+<tr class="separator:a2f9e045c953ed92f9c57dcda8594bba9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af88ec413767807f3e02981feee8a2b7e" id="r_af88ec413767807f3e02981feee8a2b7e"><td class="memItemLeft" align="right" valign="top">QLineEdit *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_window___m_l.html#af88ec413767807f3e02981feee8a2b7e">edit_max_depth</a></td></tr>
+<tr class="separator:af88ec413767807f3e02981feee8a2b7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac163c26fc181f6e028b3b23bde6e15d1" id="r_ac163c26fc181f6e028b3b23bde6e15d1"><td class="memItemLeft" align="right" valign="top">QLineEdit *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_window___m_l.html#ac163c26fc181f6e028b3b23bde6e15d1">edit_iter</a></td></tr>
+<tr class="separator:ac163c26fc181f6e028b3b23bde6e15d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0a3f97daccbb8d3c5283c9305f486159" id="r_a0a3f97daccbb8d3c5283c9305f486159"><td class="memItemLeft" align="right" valign="top">QLineEdit *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_window___m_l.html#a0a3f97daccbb8d3c5283c9305f486159">edit_f1score</a></td></tr>
+<tr class="separator:a0a3f97daccbb8d3c5283c9305f486159"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae97b148b807da2a5e729795f779dc8b9" id="r_ae97b148b807da2a5e729795f779dc8b9"><td class="memItemLeft" align="right" valign="top">QLineEdit *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_window___m_l.html#ae97b148b807da2a5e729795f779dc8b9">edit_auc</a></td></tr>
+<tr class="separator:ae97b148b807da2a5e729795f779dc8b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5b34ec9fe96b8ec0246f5885706ea524" id="r_a5b34ec9fe96b8ec0246f5885706ea524"><td class="memItemLeft" align="right" valign="top">QTableWidget *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_window___m_l.html#a5b34ec9fe96b8ec0246f5885706ea524">table_train</a></td></tr>
+<tr class="separator:a5b34ec9fe96b8ec0246f5885706ea524"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6f25dcf86b8c3fe4c1c5b3c7ffa9ab92" id="r_a6f25dcf86b8c3fe4c1c5b3c7ffa9ab92"><td class="memItemLeft" align="right" valign="top">QTableWidget *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_window___m_l.html#a6f25dcf86b8c3fe4c1c5b3c7ffa9ab92">table_test</a></td></tr>
+<tr class="separator:a6f25dcf86b8c3fe4c1c5b3c7ffa9ab92"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock">
+<p class="definition">在文件 <a class="el" href="window__ml_8h_source.html">window_ml.h</a> 第 <a class="el" href="window__ml_8h_source.html#l00009">9</a> 行定义.</p>
+</div><h2 class="groupheader">构造及析构函数说明</h2>
+<a id="aa289d98fca93f0c86ab257e1970576a4" name="aa289d98fca93f0c86ab257e1970576a4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa289d98fca93f0c86ab257e1970576a4">&#9670;&#160;</a></span>Window_ML()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Window_ML::Window_ML </td>
+          <td>(</td>
+          <td class="paramtype">std::vector&lt; int &gt; &amp;&amp;&#160;</td>
+          <td class="paramname"><em>_diagnosis</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; std::string &gt; &amp;&amp;&#160;</td>
+          <td class="paramname"><em>_feature_names</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; std::vector&lt; float &gt; &gt; &amp;&amp;&#160;</td>
+          <td class="paramname"><em>_samples</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QWidget *&#160;</td>
+          <td class="paramname"><em>parent</em> = <code>nullptr</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Construct a new <a class="el" href="class_window___m_l.html#aa289d98fca93f0c86ab257e1970576a4" title="Construct a new Window_ML::Window_ML object">Window_ML::Window_ML</a> object </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_diagnosis</td><td>样本的症状列表。0为良性，1为恶性。用于训练标签。 </td></tr>
+    <tr><td class="paramname">_feature_names</td><td>样本的特征名称列表。 </td></tr>
+    <tr><td class="paramname">_samples</td><td>样本的特征值列表。 </td></tr>
+    <tr><td class="paramname">parent</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">在文件 <a class="el" href="window__ml_8cpp_source.html">window_ml.cpp</a> 第 <a class="el" href="window__ml_8cpp_source.html#l00035">35</a> 行定义.</p>
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="ab69911dc8106588eff2c952c81f2fced" name="ab69911dc8106588eff2c952c81f2fced"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab69911dc8106588eff2c952c81f2fced">&#9670;&#160;</a></span>on_button_feature_clicked()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Window_ML::on_button_feature_clicked </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>特征贡献度按钮的槽函数。绘制特征贡献度的条形图。 </p>
+
+<p class="definition">在文件 <a class="el" href="window__ml_8cpp_source.html">window_ml.cpp</a> 第 <a class="el" href="window__ml_8cpp_source.html#l00454">454</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a78c9bec62b8a4ca30fcc92d9902d1be5" name="a78c9bec62b8a4ca30fcc92d9902d1be5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a78c9bec62b8a4ca30fcc92d9902d1be5">&#9670;&#160;</a></span>on_button_ratio_clicked()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Window_ML::on_button_ratio_clicked </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>划分训练集和测试集的按钮的槽函数。根据比例划分训练集和测试集，并绘制表格。 </p>
+
+<p class="definition">在文件 <a class="el" href="window__ml_8cpp_source.html">window_ml.cpp</a> 第 <a class="el" href="window__ml_8cpp_source.html#l00148">148</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a6bb1d443c4e165a44a5ad004df7606a0" name="a6bb1d443c4e165a44a5ad004df7606a0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6bb1d443c4e165a44a5ad004df7606a0">&#9670;&#160;</a></span>on_button_test_result_clicked()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Window_ML::on_button_test_result_clicked </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>测试结果按钮的槽函数。绘制测试结果的混淆矩阵。 </p>
+
+<p class="definition">在文件 <a class="el" href="window__ml_8cpp_source.html">window_ml.cpp</a> 第 <a class="el" href="window__ml_8cpp_source.html#l00422">422</a> 行定义.</p>
+
+</div>
+</div>
+<a id="ae063b6ac1f57e17afbcf57ddcc7a09ca" name="ae063b6ac1f57e17afbcf57ddcc7a09ca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae063b6ac1f57e17afbcf57ddcc7a09ca">&#9670;&#160;</a></span>on_button_train_clicked()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Window_ML::on_button_train_clicked </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>训练按钮的槽函数。根据训练集进行训练，并预测已划分的数据集。 </p>
+
+<p class="definition">在文件 <a class="el" href="window__ml_8cpp_source.html">window_ml.cpp</a> 第 <a class="el" href="window__ml_8cpp_source.html#l00206">206</a> 行定义.</p>
+
+</div>
+</div>
+<h2 class="groupheader">类成员变量说明</h2>
+<a id="a6fce1762f9fbdca7bba514e1610ffecd" name="a6fce1762f9fbdca7bba514e1610ffecd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6fce1762f9fbdca7bba514e1610ffecd">&#9670;&#160;</a></span>cnt_false_negative</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float Window_ML::cnt_false_negative = 0</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="window__ml_8h_source.html">window_ml.h</a> 第 <a class="el" href="window__ml_8h_source.html#l00033">33</a> 行定义.</p>
+
+</div>
+</div>
+<a id="ad0e892b62bfc22cfcfad5335c870ead0" name="ad0e892b62bfc22cfcfad5335c870ead0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad0e892b62bfc22cfcfad5335c870ead0">&#9670;&#160;</a></span>cnt_false_positive</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float Window_ML::cnt_false_positive = 0</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="window__ml_8h_source.html">window_ml.h</a> 第 <a class="el" href="window__ml_8h_source.html#l00032">32</a> 行定义.</p>
+
+</div>
+</div>
+<a id="ac24869fc1f705a018cc18e1d8f3f130f" name="ac24869fc1f705a018cc18e1d8f3f130f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac24869fc1f705a018cc18e1d8f3f130f">&#9670;&#160;</a></span>cnt_true_negative</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float Window_ML::cnt_true_negative = 0</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="window__ml_8h_source.html">window_ml.h</a> 第 <a class="el" href="window__ml_8h_source.html#l00031">31</a> 行定义.</p>
+
+</div>
+</div>
+<a id="ae19ed4e3b34e4eec241595d5572bcbdd" name="ae19ed4e3b34e4eec241595d5572bcbdd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae19ed4e3b34e4eec241595d5572bcbdd">&#9670;&#160;</a></span>cnt_true_positive</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float Window_ML::cnt_true_positive = 0</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="window__ml_8h_source.html">window_ml.h</a> 第 <a class="el" href="window__ml_8h_source.html#l00030">30</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a2f9e045c953ed92f9c57dcda8594bba9" name="a2f9e045c953ed92f9c57dcda8594bba9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2f9e045c953ed92f9c57dcda8594bba9">&#9670;&#160;</a></span>comb_ratio</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QComboBox* Window_ML::comb_ratio</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="window__ml_8h_source.html">window_ml.h</a> 第 <a class="el" href="window__ml_8h_source.html#l00035">35</a> 行定义.</p>
+
+</div>
+</div>
+<a id="aeb7363b0f66173c9294954784c7b30b6" name="aeb7363b0f66173c9294954784c7b30b6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeb7363b0f66173c9294954784c7b30b6">&#9670;&#160;</a></span>diagnosis</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::vector&lt;int&gt; Window_ML::diagnosis</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="window__ml_8h_source.html">window_ml.h</a> 第 <a class="el" href="window__ml_8h_source.html#l00022">22</a> 行定义.</p>
+
+</div>
+</div>
+<a id="ae97b148b807da2a5e729795f779dc8b9" name="ae97b148b807da2a5e729795f779dc8b9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae97b148b807da2a5e729795f779dc8b9">&#9670;&#160;</a></span>edit_auc</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QLineEdit* Window_ML::edit_auc</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="window__ml_8h_source.html">window_ml.h</a> 第 <a class="el" href="window__ml_8h_source.html#l00040">40</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a0a3f97daccbb8d3c5283c9305f486159" name="a0a3f97daccbb8d3c5283c9305f486159"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0a3f97daccbb8d3c5283c9305f486159">&#9670;&#160;</a></span>edit_f1score</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QLineEdit* Window_ML::edit_f1score</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="window__ml_8h_source.html">window_ml.h</a> 第 <a class="el" href="window__ml_8h_source.html#l00039">39</a> 行定义.</p>
+
+</div>
+</div>
+<a id="ac163c26fc181f6e028b3b23bde6e15d1" name="ac163c26fc181f6e028b3b23bde6e15d1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac163c26fc181f6e028b3b23bde6e15d1">&#9670;&#160;</a></span>edit_iter</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QLineEdit* Window_ML::edit_iter</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="window__ml_8h_source.html">window_ml.h</a> 第 <a class="el" href="window__ml_8h_source.html#l00038">38</a> 行定义.</p>
+
+</div>
+</div>
+<a id="af88ec413767807f3e02981feee8a2b7e" name="af88ec413767807f3e02981feee8a2b7e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af88ec413767807f3e02981feee8a2b7e">&#9670;&#160;</a></span>edit_max_depth</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QLineEdit* Window_ML::edit_max_depth</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="window__ml_8h_source.html">window_ml.h</a> 第 <a class="el" href="window__ml_8h_source.html#l00037">37</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a947b8bbd40412265beef1becfcf12622" name="a947b8bbd40412265beef1becfcf12622"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a947b8bbd40412265beef1becfcf12622">&#9670;&#160;</a></span>feature_importance</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;std::pair&lt;std::string, float&gt; &gt; Window_ML::feature_importance</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="window__ml_8h_source.html">window_ml.h</a> 第 <a class="el" href="window__ml_8h_source.html#l00028">28</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a4e02c0c2338bcf68749819626c0e7fb6" name="a4e02c0c2338bcf68749819626c0e7fb6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4e02c0c2338bcf68749819626c0e7fb6">&#9670;&#160;</a></span>feature_names</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::vector&lt;std::string&gt; Window_ML::feature_names</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="window__ml_8h_source.html">window_ml.h</a> 第 <a class="el" href="window__ml_8h_source.html#l00023">23</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a8f58a40c7e7eb967bb9559539f0ffb5e" name="a8f58a40c7e7eb967bb9559539f0ffb5e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8f58a40c7e7eb967bb9559539f0ffb5e">&#9670;&#160;</a></span>idx_test</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;int&gt; Window_ML::idx_test</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="window__ml_8h_source.html">window_ml.h</a> 第 <a class="el" href="window__ml_8h_source.html#l00027">27</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a8359c5d92b4f050dc6ab4fe5f8fab4df" name="a8359c5d92b4f050dc6ab4fe5f8fab4df"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8359c5d92b4f050dc6ab4fe5f8fab4df">&#9670;&#160;</a></span>idx_train</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;int&gt; Window_ML::idx_train</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="window__ml_8h_source.html">window_ml.h</a> 第 <a class="el" href="window__ml_8h_source.html#l00026">26</a> 行定义.</p>
+
+</div>
+</div>
+<a id="addb3e6f65981ef3a419033b918b1c151" name="addb3e6f65981ef3a419033b918b1c151"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#addb3e6f65981ef3a419033b918b1c151">&#9670;&#160;</a></span>samples</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::vector&lt;std::vector&lt;float&gt; &gt; Window_ML::samples</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="window__ml_8h_source.html">window_ml.h</a> 第 <a class="el" href="window__ml_8h_source.html#l00024">24</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a6f25dcf86b8c3fe4c1c5b3c7ffa9ab92" name="a6f25dcf86b8c3fe4c1c5b3c7ffa9ab92"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6f25dcf86b8c3fe4c1c5b3c7ffa9ab92">&#9670;&#160;</a></span>table_test</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QTableWidget* Window_ML::table_test</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="window__ml_8h_source.html">window_ml.h</a> 第 <a class="el" href="window__ml_8h_source.html#l00043">43</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a5b34ec9fe96b8ec0246f5885706ea524" name="a5b34ec9fe96b8ec0246f5885706ea524"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5b34ec9fe96b8ec0246f5885706ea524">&#9670;&#160;</a></span>table_train</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QTableWidget* Window_ML::table_train</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="window__ml_8h_source.html">window_ml.h</a> 第 <a class="el" href="window__ml_8h_source.html#l00042">42</a> 行定义.</p>
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li>D:/tzh21/Projects/2023summer/plantform_xgboost/src/<a class="el" href="window__ml_8h_source.html">window_ml.h</a></li>
+<li>D:/tzh21/Projects/2023summer/plantform_xgboost/src/<a class="el" href="window__ml_8cpp_source.html">window_ml.cpp</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+</small></address>
+</body>
+</html>

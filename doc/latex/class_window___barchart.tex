@@ -1,0 +1,156 @@
+\doxysection{Window\+\_\+\+Barchart类 参考}
+\hypertarget{class_window___barchart}{}\label{class_window___barchart}\index{Window\_Barchart@{Window\_Barchart}}
+
+
+{\ttfamily \#include $<$window\+\_\+barchart.\+h$>$}
+
+
+
+继承自 QMain\+Window .
+
+\doxysubsubsection*{Public 成员函数}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_window___barchart_a0242dc7db78ffd5d566e5f1a4b7b7300}{Window\+\_\+\+Barchart}} (bool is\+\_\+discrete, const QList$<$ float $>$ \&data, \mbox{\hyperlink{class_widget}{Widget}} \texorpdfstring{$\ast$}{*}parent=nullptr)
+\begin{DoxyCompactList}\small\item\em Construct a new \doxylink{class_window___barchart_a0242dc7db78ffd5d566e5f1a4b7b7300}{Window\+\_\+\+Barchart\+::\+Window\+\_\+\+Barchart} object \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private 成员函数}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_window___barchart_a8fe21640f82e8eab5ee96d41b32cb47a}{on\+\_\+check\+\_\+bar}} (int state)
+\begin{DoxyCompactList}\small\item\em 选择显示直方图。 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_window___barchart_a8050a5737ef4f54e83acd1666b45a0b3}{on\+\_\+check\+\_\+line}} (int state)
+\begin{DoxyCompactList}\small\item\em 选择显示折线图。 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private 属性}
+\begin{DoxyCompactItemize}
+\item 
+QChart \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_window___barchart_aaafa66cb7296d73d52b0d00d4d7293bb}{chart}} \{new QChart\}
+\item 
+QChart\+View \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_window___barchart_a290195599df6a7402e39dafdc092bb08}{chart\+View}} \{new QChart\+View(\mbox{\hyperlink{class_window___barchart_aaafa66cb7296d73d52b0d00d4d7293bb}{chart}})\}
+\item 
+QBar\+Series \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_window___barchart_af8b80c887c3493518424a069ca522b62}{bar\+Series}} \{new QBar\+Series()\}
+\item 
+QSpline\+Series \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_window___barchart_a140a45b48ca88b137703fc2a55745d81}{line\+Series}} \{new QSpline\+Series()\}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{详细描述}
+
+
+在文件 \mbox{\hyperlink{window__barchart_8h_source}{window\+\_\+barchart.\+h}} 第 \mbox{\hyperlink{window__barchart_8h_source_l00012}{12}} 行定义.
+
+
+
+\doxysubsection{构造及析构函数说明}
+\Hypertarget{class_window___barchart_a0242dc7db78ffd5d566e5f1a4b7b7300}\label{class_window___barchart_a0242dc7db78ffd5d566e5f1a4b7b7300} 
+\index{Window\_Barchart@{Window\_Barchart}!Window\_Barchart@{Window\_Barchart}}
+\index{Window\_Barchart@{Window\_Barchart}!Window\_Barchart@{Window\_Barchart}}
+\doxysubsubsection{\texorpdfstring{Window\_Barchart()}{Window\_Barchart()}}
+{\footnotesize\ttfamily Window\+\_\+\+Barchart\+::\+Window\+\_\+\+Barchart (\begin{DoxyParamCaption}\item[{bool}]{is\+\_\+discrete,  }\item[{const QList$<$ float $>$ \&}]{column\+Data,  }\item[{\mbox{\hyperlink{class_widget}{Widget}} \texorpdfstring{$\ast$}{*}}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Construct a new \doxylink{class_window___barchart_a0242dc7db78ffd5d566e5f1a4b7b7300}{Window\+\_\+\+Barchart\+::\+Window\+\_\+\+Barchart} object 
+
+
+\begin{DoxyParams}{参数}
+{\em is\+\_\+discrete} & 选取列的数值是否离散。若离散则采取不同的直方图分组策略，且不绘制正态分布密度曲线。 \\
+\hline
+{\em column\+Data} & 列的数据。 \\
+\hline
+{\em parent} & \\
+\hline
+\end{DoxyParams}
+
+
+在文件 \mbox{\hyperlink{window__barchart_8cpp_source}{window\+\_\+barchart.\+cpp}} 第 \mbox{\hyperlink{window__barchart_8cpp_source_l00016}{16}} 行定义.
+
+
+
+\doxysubsection{成员函数说明}
+\Hypertarget{class_window___barchart_a8fe21640f82e8eab5ee96d41b32cb47a}\label{class_window___barchart_a8fe21640f82e8eab5ee96d41b32cb47a} 
+\index{Window\_Barchart@{Window\_Barchart}!on\_check\_bar@{on\_check\_bar}}
+\index{on\_check\_bar@{on\_check\_bar}!Window\_Barchart@{Window\_Barchart}}
+\doxysubsubsection{\texorpdfstring{on\_check\_bar()}{on\_check\_bar()}}
+{\footnotesize\ttfamily void Window\+\_\+\+Barchart\+::on\+\_\+check\+\_\+bar (\begin{DoxyParamCaption}\item[{int}]{state }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+选择显示直方图。 
+
+
+\begin{DoxyParams}{参数}
+{\em state} & 为\+Qt\+::\+Checked时显示，否则不显示。 \\
+\hline
+\end{DoxyParams}
+
+
+在文件 \mbox{\hyperlink{window__barchart_8cpp_source}{window\+\_\+barchart.\+cpp}} 第 \mbox{\hyperlink{window__barchart_8cpp_source_l00177}{177}} 行定义.
+
+\Hypertarget{class_window___barchart_a8050a5737ef4f54e83acd1666b45a0b3}\label{class_window___barchart_a8050a5737ef4f54e83acd1666b45a0b3} 
+\index{Window\_Barchart@{Window\_Barchart}!on\_check\_line@{on\_check\_line}}
+\index{on\_check\_line@{on\_check\_line}!Window\_Barchart@{Window\_Barchart}}
+\doxysubsubsection{\texorpdfstring{on\_check\_line()}{on\_check\_line()}}
+{\footnotesize\ttfamily void Window\+\_\+\+Barchart\+::on\+\_\+check\+\_\+line (\begin{DoxyParamCaption}\item[{int}]{state }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+选择显示折线图。 
+
+
+\begin{DoxyParams}{参数}
+{\em state} & 为\+Qt\+::\+Checked时显示，否则不显示。 \\
+\hline
+\end{DoxyParams}
+
+
+在文件 \mbox{\hyperlink{window__barchart_8cpp_source}{window\+\_\+barchart.\+cpp}} 第 \mbox{\hyperlink{window__barchart_8cpp_source_l00191}{191}} 行定义.
+
+
+
+\doxysubsection{类成员变量说明}
+\Hypertarget{class_window___barchart_af8b80c887c3493518424a069ca522b62}\label{class_window___barchart_af8b80c887c3493518424a069ca522b62} 
+\index{Window\_Barchart@{Window\_Barchart}!barSeries@{barSeries}}
+\index{barSeries@{barSeries}!Window\_Barchart@{Window\_Barchart}}
+\doxysubsubsection{\texorpdfstring{barSeries}{barSeries}}
+{\footnotesize\ttfamily QBar\+Series\texorpdfstring{$\ast$}{*} Window\+\_\+\+Barchart\+::bar\+Series \{new QBar\+Series()\}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+在文件 \mbox{\hyperlink{window__barchart_8h_source}{window\+\_\+barchart.\+h}} 第 \mbox{\hyperlink{window__barchart_8h_source_l00026}{26}} 行定义.
+
+\Hypertarget{class_window___barchart_aaafa66cb7296d73d52b0d00d4d7293bb}\label{class_window___barchart_aaafa66cb7296d73d52b0d00d4d7293bb} 
+\index{Window\_Barchart@{Window\_Barchart}!chart@{chart}}
+\index{chart@{chart}!Window\_Barchart@{Window\_Barchart}}
+\doxysubsubsection{\texorpdfstring{chart}{chart}}
+{\footnotesize\ttfamily QChart\texorpdfstring{$\ast$}{*} Window\+\_\+\+Barchart\+::chart \{new QChart\}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+在文件 \mbox{\hyperlink{window__barchart_8h_source}{window\+\_\+barchart.\+h}} 第 \mbox{\hyperlink{window__barchart_8h_source_l00023}{23}} 行定义.
+
+\Hypertarget{class_window___barchart_a290195599df6a7402e39dafdc092bb08}\label{class_window___barchart_a290195599df6a7402e39dafdc092bb08} 
+\index{Window\_Barchart@{Window\_Barchart}!chartView@{chartView}}
+\index{chartView@{chartView}!Window\_Barchart@{Window\_Barchart}}
+\doxysubsubsection{\texorpdfstring{chartView}{chartView}}
+{\footnotesize\ttfamily QChart\+View\texorpdfstring{$\ast$}{*} Window\+\_\+\+Barchart\+::chart\+View \{new QChart\+View(\mbox{\hyperlink{class_window___barchart_aaafa66cb7296d73d52b0d00d4d7293bb}{chart}})\}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+在文件 \mbox{\hyperlink{window__barchart_8h_source}{window\+\_\+barchart.\+h}} 第 \mbox{\hyperlink{window__barchart_8h_source_l00024}{24}} 行定义.
+
+\Hypertarget{class_window___barchart_a140a45b48ca88b137703fc2a55745d81}\label{class_window___barchart_a140a45b48ca88b137703fc2a55745d81} 
+\index{Window\_Barchart@{Window\_Barchart}!lineSeries@{lineSeries}}
+\index{lineSeries@{lineSeries}!Window\_Barchart@{Window\_Barchart}}
+\doxysubsubsection{\texorpdfstring{lineSeries}{lineSeries}}
+{\footnotesize\ttfamily QSpline\+Series\texorpdfstring{$\ast$}{*} Window\+\_\+\+Barchart\+::line\+Series \{new QSpline\+Series()\}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+在文件 \mbox{\hyperlink{window__barchart_8h_source}{window\+\_\+barchart.\+h}} 第 \mbox{\hyperlink{window__barchart_8h_source_l00028}{28}} 行定义.
+
+
+
+该类的文档由以下文件生成\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/tzh21/\+Projects/2023summer/plantform\+\_\+xgboost/src/\mbox{\hyperlink{window__barchart_8h}{window\+\_\+barchart.\+h}}\item 
+D\+:/tzh21/\+Projects/2023summer/plantform\+\_\+xgboost/src/\mbox{\hyperlink{window__barchart_8cpp}{window\+\_\+barchart.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,611 @@
+\doxysection{widget.\+cpp}
+\hypertarget{widget_8cpp_source}{}\label{widget_8cpp_source}\index{D:/tzh21/Projects/2023summer/plantform\_xgboost/src/widget.cpp@{D:/tzh21/Projects/2023summer/plantform\_xgboost/src/widget.cpp}}
+\mbox{\hyperlink{widget_8cpp}{浏览该文件的文档.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{widget_8h}{widget.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00002}00002\ \textcolor{preprocessor}{\#include\ "{}ui\_widget.h"{}}}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00003}00003\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{window__barchart_8h}{window\_barchart.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00004}00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{window__scatter_8h}{window\_scatter.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00005}00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{window__covariance_8h}{window\_covariance.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00006}00006\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{window__pca_8h}{window\_pca.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00007}00007\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{window__cluster_8h}{window\_cluster.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00008}00008\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{window__ml_8h}{window\_ml.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00009}00009\ \textcolor{preprocessor}{\#include\ "{}include/needed\_algo/kmeans.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00010}00010\ \textcolor{preprocessor}{\#include\ "{}include/needed\_algo/dbscan.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00012}00012\ \textcolor{preprocessor}{\#include\ <QFile>}}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00013}00013\ \textcolor{preprocessor}{\#include\ <QTextStream>}}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00014}00014\ \textcolor{preprocessor}{\#include\ <QDebug>}}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00015}00015\ \textcolor{preprocessor}{\#include\ <Eigen/Dense>}}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00016}00016\ \textcolor{preprocessor}{\#include\ <QDialog>}}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00017}00017\ }
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00018}00018\ \textcolor{preprocessor}{\#include\ <QLabel>}}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00019}00019\ \textcolor{preprocessor}{\#include\ <QLineEdit>}}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00020}00020\ \textcolor{preprocessor}{\#include\ <QVBoxLayout>}}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00021}00021\ \textcolor{preprocessor}{\#include\ <QMessageBox>}}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00022}00022\ \textcolor{preprocessor}{\#include\ <QFileDialog>}}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00023}00023\ \textcolor{preprocessor}{\#include\ <QTableWidget>}}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00024}00024\ \textcolor{preprocessor}{\#include\ <QTableView>}}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00025}00025\ \textcolor{preprocessor}{\#include\ <QMessageBox>}}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00026}00026\ \textcolor{preprocessor}{\#include\ <QRandomGenerator>}}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00027}00027\ }
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00028}\mbox{\hyperlink{widget_8cpp_aa9a60c1da1bc8d3c2589348f28f3766f}{00028}}\ std::vector<QColor>\ \mbox{\hyperlink{widget_8cpp_aa9a60c1da1bc8d3c2589348f28f3766f}{colors\_set}}\{}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00029}00029\ \ \ \ QColor(255,\ 0,\ 0),\ \ \ \ \ \textcolor{comment}{//\ 红色}}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00030}00030\ \ \ \ QColor(0,\ 255,\ 0),\ \ \ \ \ \textcolor{comment}{//\ 绿色}}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00031}00031\ \ \ \ QColor(0,\ 0,\ 255),\ \ \ \ \ \textcolor{comment}{//\ 蓝色}}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00032}00032\ \ \ \ QColor(255,\ 255,\ 0),\ \ \ \textcolor{comment}{//\ 黄色}}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00033}00033\ \ \ \ QColor(255,\ 0,\ 255),\ \ \ \textcolor{comment}{//\ 品红色}}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00034}00034\ \ \ \ QColor(0,\ 255,\ 255),\ \ \ \textcolor{comment}{//\ 青色}}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00035}00035\ \ \ \ QColor(128,\ 0,\ 0),\ \ \ \ \ \textcolor{comment}{//\ 深红色}}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00036}00036\ \ \ \ QColor(0,\ 128,\ 0),\ \ \ \ \ \textcolor{comment}{//\ 深绿色}}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00037}00037\ \ \ \ QColor(0,\ 0,\ 128),\ \ \ \ \ \textcolor{comment}{//\ 深蓝色}}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00038}00038\ \ \ \ QColor(128,\ 128,\ 0)}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00039}00039\ \};}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00040}00040\ }
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00041}\mbox{\hyperlink{widget_8cpp_a686fada52491ce19683e69d526306078}{00041}}\ std::map<Cluster\_method,\ QString>\ \mbox{\hyperlink{widget_8cpp_a686fada52491ce19683e69d526306078}{map\_method\_string}}\{}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00042}00042\ \ \ \ \ \{\mbox{\hyperlink{widget_8h_a356625608f963163dfb34e48917f5958ac3667c322252cb4024831eb39e924670}{Cluster\_method::kmeans}},\ \textcolor{stringliteral}{"{}K-\/means\_cluster"{}}\},}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00043}00043\ \ \ \ \ \{\mbox{\hyperlink{widget_8h_a356625608f963163dfb34e48917f5958abf0ef28c5df781bd2124fae79d8fa3e1}{Cluster\_method::dbscan}},\ \textcolor{stringliteral}{"{}dbscan\_cluster"{}}\}}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00044}00044\ \};}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00046}\mbox{\hyperlink{class_widget_ace1aa23652eb4425355a81760b39fd37}{00046}}\ \mbox{\hyperlink{class_widget_ace1aa23652eb4425355a81760b39fd37}{Widget::Widget}}(QWidget\ *parent)}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00047}00047\ \ \ \ \ :\ QWidget(parent)}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00048}00048\ \ \ \ \ ,\ ui(new\ \mbox{\hyperlink{namespace_ui}{Ui}}::\mbox{\hyperlink{class_widget}{Widget}})}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00049}00049\ \{}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00050}00050\ \ \ \ \ \mbox{\hyperlink{class_widget_a19c48cc897c43aa2e995fce9f7fb2418}{ui}}-\/>setupUi(\textcolor{keyword}{this});}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00051}00051\ \textcolor{comment}{//\ \ \ \ resize(Utils::window\_size);}}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00052}00052\ \ \ \ \ resize(800,\ 600);}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00053}00053\ }
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00054}00054\ \textcolor{comment}{//\ \ \ \ 导入数据，显示表格}}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00055}00055\ \ \ \ \ \mbox{\hyperlink{class_widget_a19c48cc897c43aa2e995fce9f7fb2418}{ui}}-\/>tableView-\/>setModel(\mbox{\hyperlink{class_widget_a4a69d6402e3c67623d1d081fcea2db20}{model}});}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00056}00056\ }
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00057}00057\ \textcolor{comment}{//\ \ \ \ 打开文件}}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00058}00058\ \ \ \ \ \mbox{\hyperlink{class_widget_af36723a57336dfa23465f25dfdf3746a}{open\_table}}();}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00059}00059\ \}}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00060}00060\ }
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00061}\mbox{\hyperlink{class_widget_aa24f66bcbaaec6d458b0980e8c8eae65}{00061}}\ \mbox{\hyperlink{class_widget_aa24f66bcbaaec6d458b0980e8c8eae65}{Widget::\string~Widget}}()}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00062}00062\ \{}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00063}00063\ \ \ \ \ \textcolor{keyword}{delete}\ \mbox{\hyperlink{class_widget_a19c48cc897c43aa2e995fce9f7fb2418}{ui}};}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00064}00064\ \}}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00065}00065\ }
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00070}\mbox{\hyperlink{class_widget_af36723a57336dfa23465f25dfdf3746a}{00070}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_widget_af36723a57336dfa23465f25dfdf3746a}{Widget::open\_table}}()\{}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00071}00071\ \ \ \ \ QFile\ file(\mbox{\hyperlink{class_widget_a1448ad241c2be52415644d585feffcd5}{path\_table}});}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00072}00072\ \ \ \ \ \textcolor{keywordflow}{if}\ (file.open(QIODevice::ReadOnly\ |\ QIODevice::Text))\{}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00073}00073\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_widget_a4a69d6402e3c67623d1d081fcea2db20}{model}}-\/>clear();}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00074}00074\ }
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00075}00075\ \ \ \ \ \ \ \ \ QTextStream\ in(\&file);}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00076}00076\ }
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00077}00077\ \ \ \ \ \ \ \ \ QString\ headerLine\ =\ in.readLine();}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00078}00078\ \ \ \ \ \ \ \ \ QStringList\ headerFields\ =\ headerLine.split(\textcolor{stringliteral}{"{},"{}});}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00079}00079\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_widget_a4a69d6402e3c67623d1d081fcea2db20}{model}}-\/>setHorizontalHeaderLabels(headerFields);}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00080}00080\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (int64\_t\ i\ =\ 0;\ i\ <\ headerFields.size();\ i\ ++)\ \{}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00081}00081\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (headerFields[i]\ ==\ \textcolor{stringliteral}{"{}diagnosis"{}})\ \{}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00082}00082\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_widget_a118b08ddf72fdf070f6857b139a112c7}{col\_diagnosis\_at}}\ =\ i;}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00083}00083\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00084}00084\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00085}00085\ }
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00086}00086\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ row\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00087}00087\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (!in.atEnd())\ \{}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00088}00088\ \ \ \ \ \ \ \ \ \ \ \ \ QString\ line\ =\ in.readLine();}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00089}00089\ \ \ \ \ \ \ \ \ \ \ \ \ QStringList\ fields\ =\ line.split(\textcolor{stringliteral}{"{},"{}});}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00090}00090\ }
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00091}00091\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ col\ =\ 0;\ col\ <\ fields.size();\ col++)\{}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00092}00092\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ QString\&\ val\ =\ fields[col];}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00093}00093\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ benign\ 良性\ 0}}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00094}00094\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ malignant\ 恶性\ 1}}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00095}00095\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (val\ ==\ \textcolor{stringliteral}{"{}B"{}})\{}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00096}00096\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ val\ =\ \textcolor{stringliteral}{"{}0"{}};}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00097}00097\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00098}00098\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (val\ ==\ \textcolor{stringliteral}{"{}M"{}})\{}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00099}00099\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ val\ =\ \textcolor{stringliteral}{"{}1"{}};}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00100}00100\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00101}00101\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ QStandardItem\ *item\ =\ \textcolor{keyword}{new}\ QStandardItem(fields[col]);}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00102}00102\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_widget_a4a69d6402e3c67623d1d081fcea2db20}{model}}-\/>setItem(row,\ col,\ item);}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00103}00103\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00104}00104\ }
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00105}00105\ \ \ \ \ \ \ \ \ \ \ \ \ row++;}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00106}00106\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00107}00107\ }
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00108}00108\ \ \ \ \ \ \ \ \ file.close();}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00109}00109\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00110}00110\ \ \ \ \ \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00111}00111\ \ \ \ \ \ \ \ \ qDebug()\ <<\ \textcolor{stringliteral}{"{}fail\ to\ open"{}};}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00112}00112\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00113}00113\ \}}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00114}00114\ }
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00120}\mbox{\hyperlink{class_widget_a12ef4995ed462832aea1172399c135ec}{00120}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_widget_a12ef4995ed462832aea1172399c135ec}{Widget::delete\_obj}}(QObject\ *obj)\{}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00121}00121\ \ \ \ \ obj-\/>deleteLater();}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00122}00122\ \ \ \ \ obj\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00123}00123\ \}}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00124}00124\ }
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00131}\mbox{\hyperlink{class_widget_a06f7809a8562ed150864974714221016}{00131}}\ std::vector<std::vector<float>>\ \mbox{\hyperlink{class_widget_a06f7809a8562ed150864974714221016}{Widget::samples\_selected}}(\textcolor{keywordtype}{size\_t}\ least\_cols)\{}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00132}00132\ \ \ \ \ \textcolor{comment}{//\ 获取选中的列}}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00133}00133\ \ \ \ \ QModelIndexList\ selectedColumns\ =\ \mbox{\hyperlink{class_widget_a19c48cc897c43aa2e995fce9f7fb2418}{ui}}-\/>tableView-\/>selectionModel()-\/>selectedColumns();}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00134}00134\ }
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00135}00135\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ cnt\_cols\ =\ selectedColumns.size();}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00136}00136\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ cnt\_rows\ =\ \mbox{\hyperlink{class_widget_a4a69d6402e3c67623d1d081fcea2db20}{model}}-\/>rowCount();}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00137}00137\ }
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00138}00138\ \ \ \ \ \textcolor{keywordflow}{if}\ (cnt\_cols\ <\ least\_cols)\{}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00139}00139\ \ \ \ \ \ \ \ \ QMessageBox::critical(\textcolor{keyword}{this},\ \textcolor{stringliteral}{"{}Error"{}},\ \textcolor{stringliteral}{"{}Please\ select\ at\ least"{}}\ +\ QString::number(least\_cols)\ +\ \textcolor{stringliteral}{"{}column."{}});}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00140}00140\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \{\};}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00141}00141\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00142}00142\ }
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00143}00143\ \ \ \ \ std::vector<std::vector<float>>\ samples;}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00144}00144\ }
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00145}00145\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ row\ =\ 0;\ row\ <\ cnt\_rows;\ row\ ++)\{}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00146}00146\ \ \ \ \ \ \ \ \ std::vector<float>\ variants;}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00147}00147\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ j\ =\ 0;\ j\ <\ cnt\_cols;\ j\ ++)\{}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00148}00148\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_widget_a4a69d6402e3c67623d1d081fcea2db20}{model}}-\/>horizontalHeaderItem(selectedColumns[j].column())-\/>text()\ ==\ \textcolor{stringliteral}{"{}id"{}})\{}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00149}00149\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ QMessageBox::critical(\textcolor{keyword}{this},\ \textcolor{stringliteral}{"{}Error"{}},\ \textcolor{stringliteral}{"{}Please\ do\ not\ select\ id\ column."{}});}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00150}00150\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \{\};}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00151}00151\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00152}00152\ \ \ \ \ \ \ \ \ \ \ \ \ QModelIndex\ index\ =\ \mbox{\hyperlink{class_widget_a4a69d6402e3c67623d1d081fcea2db20}{model}}-\/>index(row,\ selectedColumns[j].column());}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00153}00153\ \ \ \ \ \ \ \ \ \ \ \ \ variants.push\_back(\mbox{\hyperlink{class_widget_a4a69d6402e3c67623d1d081fcea2db20}{model}}-\/>data(index).toFloat());}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00154}00154\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00155}00155\ \ \ \ \ \ \ \ \ samples.push\_back(std::move(variants));}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00156}00156\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00157}00157\ }
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00158}00158\ \ \ \ \ \textcolor{keywordflow}{return}\ samples;}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00159}00159\ \}}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00160}00160\ }
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00167}\mbox{\hyperlink{class_widget_a0f9dfce23985306dfa248ace3b936688}{00167}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_widget_a0f9dfce23985306dfa248ace3b936688}{Widget::add\_cluster}}(\mbox{\hyperlink{widget_8h_a356625608f963163dfb34e48917f5958}{Cluster\_method}}\ method,\ std::vector<int>\ labels)\{}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00168}00168\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ cnt\_total\_cols\ =\ \mbox{\hyperlink{class_widget_a4a69d6402e3c67623d1d081fcea2db20}{model}}-\/>columnCount();}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00169}00169\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ col\_cluster\ =\ cnt\_total\_cols;}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00170}00170\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ cnt\_total\_rows\ =\ \mbox{\hyperlink{class_widget_a4a69d6402e3c67623d1d081fcea2db20}{model}}-\/>rowCount();}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00171}00171\ \ \ \ \ \textcolor{comment}{//\ \ \ \ 寻找}}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00172}00172\ \ \ \ \ \textcolor{keywordtype}{bool}\ exist\_cluster\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00173}00173\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ col\ =\ cnt\_total\_cols\ -\/\ 1;\ col\ >=\ 0;\ col\ -\/-\/)\{}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00174}00174\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_widget_a4a69d6402e3c67623d1d081fcea2db20}{model}}-\/>horizontalHeaderItem(col)-\/>text()\ ==\ \mbox{\hyperlink{widget_8cpp_a686fada52491ce19683e69d526306078}{map\_method\_string}}[method])\{}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00175}00175\ \ \ \ \ \ \ \ \ \ \ \ \ exist\_cluster\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00176}00176\ \ \ \ \ \ \ \ \ \ \ \ \ col\_cluster\ =\ col;}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00177}00177\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00178}00178\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00179}00179\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00180}00180\ \ \ \ \ \textcolor{comment}{//\ \ \ \ 找不到则创建}}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00181}00181\ \ \ \ \ \textcolor{keywordflow}{if}\ (!exist\_cluster)\{}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00182}00182\ \ \ \ \ \ \ \ \ col\_cluster\ =\ cnt\_total\_cols;}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00183}00183\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ newHeaderItem\ =\ \textcolor{keyword}{new}\ QStandardItem(\mbox{\hyperlink{widget_8cpp_a686fada52491ce19683e69d526306078}{map\_method\_string}}[method]);}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00184}00184\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_widget_a4a69d6402e3c67623d1d081fcea2db20}{model}}-\/>setHorizontalHeaderItem(col\_cluster,\ newHeaderItem);}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00185}00185\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ row\ =\ 0;\ row\ <\ cnt\_total\_rows;\ row\ ++)\{}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00186}00186\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ item\ =\ \textcolor{keyword}{new}\ QStandardItem(\textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00187}00187\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_widget_a4a69d6402e3c67623d1d081fcea2db20}{model}}-\/>setItem(row,\ col\_cluster,\ item);}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00188}00188\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00189}00189\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00190}00190\ }
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00191}00191\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ row\ =\ 0;\ row\ <\ cnt\_total\_rows;\ row\ ++)\{}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00192}00192\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_widget_a4a69d6402e3c67623d1d081fcea2db20}{model}}-\/>item(row,\ col\_cluster)-\/>setText(QString::number(labels[row]));}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00193}00193\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00194}00194\ \}}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00195}00195\ }
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00201}\mbox{\hyperlink{class_widget_adccd7176b1162abe0100288be829c83e}{00201}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_widget_adccd7176b1162abe0100288be829c83e}{Widget::coloring\_method}}(\mbox{\hyperlink{widget_8h_a356625608f963163dfb34e48917f5958}{Cluster\_method}}\ method)\{}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00202}00202\ \ \ \ \ \textcolor{keyword}{auto}\ label\ =\ \mbox{\hyperlink{class_widget_a35db1b06bb59082b1712189a97544e8d}{get\_labels\_of}}(method);}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00203}00203\ \ \ \ \ \textcolor{keywordtype}{int}\ cnt\_groups\ =\ \mbox{\hyperlink{class_widget_a2ebd1f9f315552296c44b63914af2009}{map\_cluster\_groups}}[method];}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00204}00204\ \ \ \ \ \textcolor{keywordflow}{if}\ (cnt\_groups\ ==\ 0)\{}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00205}00205\ \ \ \ \ \ \ \ \ QMessageBox::critical(\textcolor{keyword}{this},\ \textcolor{stringliteral}{"{}Error"{}},\ \textcolor{stringliteral}{"{}Cluster\ data\ not\ found."{}});}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00206}00206\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00207}00207\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00208}00208\ }
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00209}00209\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ cnt\_total\_rows\ =\ \mbox{\hyperlink{class_widget_a4a69d6402e3c67623d1d081fcea2db20}{model}}-\/>rowCount();}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00210}00210\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ cnt\_total\_cols\ =\ \mbox{\hyperlink{class_widget_a4a69d6402e3c67623d1d081fcea2db20}{model}}-\/>columnCount();}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00211}00211\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ col\_cluster\ =\ \mbox{\hyperlink{class_widget_a429075e5b4a5f6de7015e59f1ff39490}{map\_cluster\_col}}[method];}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00212}00212\ }
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00213}00213\ \ \ \ \ \textcolor{comment}{//\ \ \ \ 取颜色}}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00214}00214\ \ \ \ \ std::vector<QColor>\ colors;}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00215}00215\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ cnt\_groups;\ i\ ++)\{}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00216}00216\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ r\ =\ QRandomGenerator::global()-\/>bounded(240);}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00217}00217\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ g\ =\ QRandomGenerator::global()-\/>bounded(240);}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00218}00218\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ b\ =\ QRandomGenerator::global()-\/>bounded(240);}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00219}00219\ \ \ \ \ \ \ \ \ colors.push\_back(QColor(r,\ g,\ b));}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00220}00220\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00221}00221\ }
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00222}00222\ \ \ \ \ \textcolor{comment}{//\ \ \ \ 着色}}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00223}00223\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ row\ =\ 0;\ row\ <\ cnt\_total\_rows;\ row\ ++)\{}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00224}00224\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ index\ =\ \mbox{\hyperlink{class_widget_a4a69d6402e3c67623d1d081fcea2db20}{model}}-\/>index(row,\ col\_cluster);}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00225}00225\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ label\ =\ \mbox{\hyperlink{class_widget_a4a69d6402e3c67623d1d081fcea2db20}{model}}-\/>data(index).toInt();}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00226}00226\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ col\ =\ 0;\ col\ <\ cnt\_total\_cols;\ col\ ++)\{}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00227}00227\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (label\ ==\ -\/1)\{}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00228}00228\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_widget_a4a69d6402e3c67623d1d081fcea2db20}{model}}-\/>item(row,\ col)-\/>setBackground(QBrush(Qt::white));}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00229}00229\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00230}00230\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00231}00231\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_widget_a4a69d6402e3c67623d1d081fcea2db20}{model}}-\/>item(row,\ col)-\/>setBackground(QBrush(colors[label]));}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00232}00232\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00233}00233\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00234}00234\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00235}00235\ \}}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00236}00236\ }
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00243}\mbox{\hyperlink{class_widget_a35db1b06bb59082b1712189a97544e8d}{00243}}\ std::vector<int>\ \mbox{\hyperlink{class_widget_a35db1b06bb59082b1712189a97544e8d}{Widget::get\_labels\_of}}(\mbox{\hyperlink{widget_8h_a356625608f963163dfb34e48917f5958}{Cluster\_method}}\ method)\{}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00244}00244\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ cnt\_total\_rows\ =\ \mbox{\hyperlink{class_widget_a4a69d6402e3c67623d1d081fcea2db20}{model}}-\/>rowCount();}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00245}00245\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ cnt\_total\_cols\ =\ \mbox{\hyperlink{class_widget_a4a69d6402e3c67623d1d081fcea2db20}{model}}-\/>columnCount();}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00246}00246\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ col\_cluster\ =\ cnt\_total\_cols;}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00247}00247\ \ \ \ \ \textcolor{keywordtype}{bool}\ exist\_cluster\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00248}00248\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ col\ =\ cnt\_total\_cols\ -\/\ 1;\ col\ >=\ 0;\ col\ -\/-\/)\{}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00249}00249\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_widget_a4a69d6402e3c67623d1d081fcea2db20}{model}}-\/>horizontalHeaderItem(col)-\/>text()\ ==\ \mbox{\hyperlink{widget_8cpp_a686fada52491ce19683e69d526306078}{map\_method\_string}}[method])\{}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00250}00250\ \ \ \ \ \ \ \ \ \ \ \ \ col\_cluster\ =\ col;}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00251}00251\ \ \ \ \ \ \ \ \ \ \ \ \ exist\_cluster\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00252}00252\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00253}00253\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00254}00254\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00255}00255\ \ \ \ \ \textcolor{keywordflow}{if}\ (!exist\_cluster)\{}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00256}00256\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_widget_a429075e5b4a5f6de7015e59f1ff39490}{map\_cluster\_col}}[method]\ =\ -\/1;}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00257}00257\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_widget_a2ebd1f9f315552296c44b63914af2009}{map\_cluster\_groups}}[method]\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00258}00258\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \{\};}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00259}00259\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00260}00260\ \ \ \ \ \mbox{\hyperlink{class_widget_a429075e5b4a5f6de7015e59f1ff39490}{map\_cluster\_col}}[method]\ =\ col\_cluster;}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00261}00261\ }
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00262}00262\ \textcolor{comment}{//\ \ \ \ 获取每个样本的分组}}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00263}00263\ \textcolor{comment}{//\ \ \ \ 记录组的总数}}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00264}00264\ \ \ \ \ \textcolor{keywordtype}{int}\ max\_label\ =\ -\/1;}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00265}00265\ \ \ \ \ std::vector<int>\ labels;}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00266}00266\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ row\ =\ 0;\ row\ <\ cnt\_total\_rows;\ row\ ++)\{}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00267}00267\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ index\ =\ \mbox{\hyperlink{class_widget_a4a69d6402e3c67623d1d081fcea2db20}{model}}-\/>index(row,\ col\_cluster);}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00268}00268\ \ \ \ \ \ \ \ \ labels.push\_back(\mbox{\hyperlink{class_widget_a4a69d6402e3c67623d1d081fcea2db20}{model}}-\/>data(index).toInt());}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00269}00269\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (labels.back()\ >\ max\_label)\{}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00270}00270\ \ \ \ \ \ \ \ \ \ \ \ \ max\_label\ =\ labels.back();}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00271}00271\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00272}00272\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00273}00273\ \ \ \ \ \mbox{\hyperlink{class_widget_a2ebd1f9f315552296c44b63914af2009}{map\_cluster\_groups}}[method]\ =\ max\_label\ +\ 1;}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00274}00274\ \textcolor{comment}{//\ \ \ \ if\ (map\_cluster\_groups[method]\ ==\ 0)\{}}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00275}00275\ \textcolor{comment}{//\ \ \ \ \ \ \ \ QMessageBox::critical(this,\ "{}Error"{},\ "{}没有找到该聚类分组数据。"{});}}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00276}00276\ \textcolor{comment}{//\ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00277}00277\ }
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00278}00278\ \ \ \ \ \textcolor{keywordflow}{return}\ labels;}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00279}00279\ \}}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00280}00280\ }
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00285}\mbox{\hyperlink{class_widget_a2c531f78d201811f34766945dfda2f86}{00285}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_widget_a2c531f78d201811f34766945dfda2f86}{Widget::on\_button\_variance\_clicked}}()}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00286}00286\ \{}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00287}00287\ \ \ \ \ \textcolor{keywordtype}{int}\ selectedColumnCount\ =\ \mbox{\hyperlink{class_widget_a19c48cc897c43aa2e995fce9f7fb2418}{ui}}-\/>tableView}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00288}00288\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ -\/>selectionModel()}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00289}00289\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ -\/>selectedColumns().count();}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00290}00290\ }
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00291}00291\ \ \ \ \ \textcolor{keywordflow}{if}\ (selectedColumnCount\ !=\ 1)\ \{}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00292}00292\ \ \ \ \ \ \ \ \ QMessageBox::critical(\textcolor{keyword}{this},\ \textcolor{stringliteral}{"{}Error"{}},\ \textcolor{stringliteral}{"{}Please\ select\ only\ 1\ column."{}});}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00293}00293\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00294}00294\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00295}00295\ }
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00296}00296\ \ \ \ \ \textcolor{keywordtype}{int}\ selectedColumn\ =\ \mbox{\hyperlink{class_widget_a19c48cc897c43aa2e995fce9f7fb2418}{ui}}-\/>tableView-\/>currentIndex().column();}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00297}00297\ }
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00298}00298\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_widget_a4a69d6402e3c67623d1d081fcea2db20}{model}}-\/>horizontalHeaderItem(selectedColumn)-\/>text()\ ==\ \textcolor{stringliteral}{"{}id"{}})\{}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00299}00299\ \ \ \ \ \ \ \ \ QMessageBox::critical(\textcolor{keyword}{this},\ \textcolor{stringliteral}{"{}Error"{}},\ \textcolor{stringliteral}{"{}Please\ do\ not\ select\ id\ column."{}});}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00300}00300\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00301}00301\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00302}00302\ }
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00303}00303\ \ \ \ \ \textcolor{keywordflow}{if}\ (selectedColumn\ >=\ 0)\{}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00304}00304\ \ \ \ \ \ \ \ \ Eigen::VectorXd\ columnData(\mbox{\hyperlink{class_widget_a4a69d6402e3c67623d1d081fcea2db20}{model}}-\/>rowCount());}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00305}00305\ }
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00306}00306\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ row\ =\ 0;\ row\ <\ \mbox{\hyperlink{class_widget_a4a69d6402e3c67623d1d081fcea2db20}{model}}-\/>rowCount();\ row++)\{}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00307}00307\ \ \ \ \ \ \ \ \ \ \ \ \ QModelIndex\ index\ =\ \mbox{\hyperlink{class_widget_a4a69d6402e3c67623d1d081fcea2db20}{model}}-\/>index(row,\ selectedColumn);}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00308}00308\ \ \ \ \ \ \ \ \ \ \ \ \ QVariant\ data\ =\ \mbox{\hyperlink{class_widget_a4a69d6402e3c67623d1d081fcea2db20}{model}}-\/>data(index);}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00309}00309\ \ \ \ \ \ \ \ \ \ \ \ \ columnData[row]\ =\ data.toDouble();}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00310}00310\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00311}00311\ }
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00312}00312\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ mean\ =\ columnData.mean();}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00313}00313\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ variance\ =\ (columnData.array()\ -\/\ mean).array().square().mean();}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00314}00314\ }
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00315}00315\ \ \ \ \ \ \ \ \ QDialog\ window(\textcolor{keyword}{this});}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00316}00316\ \textcolor{comment}{//\ \ \ \ \ \ \ \ window.setAttribute(Qt::WA\_DeleteOnClose);}}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00317}00317\ \ \ \ \ \ \ \ \ QVBoxLayout\ layout(\&window);}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00318}00318\ \ \ \ \ \ \ \ \ window.setLayout(\&layout);}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00319}00319\ \ \ \ \ \ \ \ \ QLabel\ label\_mean(\textcolor{stringliteral}{"{}均值"{}},\ \&window);}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00320}00320\ \ \ \ \ \ \ \ \ layout.addWidget(\&label\_mean);}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00321}00321\ \ \ \ \ \ \ \ \ QLineEdit\ edit\_mean(QString::number(mean),\ \&window);}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00322}00322\ \ \ \ \ \ \ \ \ layout.addWidget(\&edit\_mean);}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00323}00323\ \ \ \ \ \ \ \ \ QLabel\ label\_variance(\textcolor{stringliteral}{"{}方差"{}},\ \&window);}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00324}00324\ \ \ \ \ \ \ \ \ layout.addWidget(\&label\_variance);}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00325}00325\ \ \ \ \ \ \ \ \ QLineEdit\ edit\_variance(QString::number(variance),\ \&window);}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00326}00326\ \ \ \ \ \ \ \ \ layout.addWidget(\&edit\_variance);}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00327}00327\ \ \ \ \ \ \ \ \ window.exec();}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00328}00328\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00329}00329\ \}}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00330}00330\ }
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00335}\mbox{\hyperlink{class_widget_ad5788360f0920e8885ff2eed4af39348}{00335}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_widget_ad5788360f0920e8885ff2eed4af39348}{Widget::on\_button\_barchart\_clicked}}()}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00336}00336\ \{}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00337}00337\ \textcolor{comment}{//\ \ \ \ 检查选中列数}}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00338}00338\ }
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00339}00339\ \ \ \ \ \textcolor{keyword}{auto}\ selectedColumns\ =\ \mbox{\hyperlink{class_widget_a19c48cc897c43aa2e995fce9f7fb2418}{ui}}-\/>tableView-\/>selectionModel()-\/>selectedColumns();}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00340}00340\ }
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00341}00341\ \ \ \ \ \textcolor{keywordflow}{if}\ (selectedColumns.size()\ !=\ 1)\ \{}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00342}00342\ \ \ \ \ \ \ \ \ QMessageBox::critical(\textcolor{keyword}{this},\ \textcolor{stringliteral}{"{}Error"{}},\ \textcolor{stringliteral}{"{}Please\ select\ only\ 1\ column."{}});}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00343}00343\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00344}00344\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00345}00345\ }
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00346}00346\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_widget_a4a69d6402e3c67623d1d081fcea2db20}{model}}-\/>horizontalHeaderItem(selectedColumns[0].column())-\/>text()\ ==\ \textcolor{stringliteral}{"{}id"{}})\{}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00347}00347\ \ \ \ \ \ \ \ \ QMessageBox::critical(\textcolor{keyword}{this},\ \textcolor{stringliteral}{"{}Error"{}},\ \textcolor{stringliteral}{"{}Please\ do\ not\ select\ id\ column."{}});}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00348}00348\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00349}00349\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00350}00350\ }
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00351}00351\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ cnt\_total\_rows\ =\ \mbox{\hyperlink{class_widget_a4a69d6402e3c67623d1d081fcea2db20}{model}}-\/>rowCount();}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00352}00352\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ col\_selected\ =\ selectedColumns[0].column();}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00353}00353\ \ \ \ \ QList<float>\ columnData;}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00354}00354\ \ \ \ \ \textcolor{keywordtype}{bool}\ is\_discrete\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00355}00355\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_widget_a4a69d6402e3c67623d1d081fcea2db20}{model}}-\/>horizontalHeaderItem(col\_selected)-\/>text()\ ==\ \textcolor{stringliteral}{"{}diagnosis"{}})\{}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00356}00356\ \ \ \ \ \ \ \ \ is\_discrete\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00357}00357\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00358}00358\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ row\ =\ 0;\ row\ <\ cnt\_total\_rows;\ row\ ++)\{}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00359}00359\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ index\ =\ \mbox{\hyperlink{class_widget_a4a69d6402e3c67623d1d081fcea2db20}{model}}-\/>index(row,\ col\_selected);}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00360}00360\ \ \ \ \ \ \ \ \ columnData.append(\mbox{\hyperlink{class_widget_a4a69d6402e3c67623d1d081fcea2db20}{model}}-\/>data(index).toFloat());}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00361}00361\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00362}00362\ }
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00363}00363\ \ \ \ \ \textcolor{comment}{//\ \ \ \ 打开新窗口}}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00364}00364\ \ \ \ \ \textcolor{keyword}{auto}\ window\_bar\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_window___barchart}{Window\_Barchart}}(is\_discrete,\ columnData,\ \textcolor{keyword}{this});}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00365}00365\ \ \ \ \ window\_bar-\/>show();}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00366}00366\ \}}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00367}00367\ }
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00372}\mbox{\hyperlink{class_widget_a050a9ecf00142eba547da98587bc144b}{00372}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_widget_a050a9ecf00142eba547da98587bc144b}{Widget::on\_button\_scatter\_clicked}}()}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00373}00373\ \{}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00374}00374\ \ \ \ \ \textcolor{comment}{//\ 获取选中的单元格模型}}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00375}00375\ \ \ \ \ QItemSelectionModel\ *selectionModel\ =\ \mbox{\hyperlink{class_widget_a19c48cc897c43aa2e995fce9f7fb2418}{ui}}-\/>tableView-\/>selectionModel();}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00376}00376\ }
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00377}00377\ \ \ \ \ \textcolor{comment}{//\ 获取选中的列}}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00378}00378\ \ \ \ \ QModelIndexList\ selectedColumns\ =\ selectionModel-\/>selectedColumns();}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00379}00379\ }
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00380}00380\ \ \ \ \ \textcolor{comment}{//\ 检查是否选中了两列}}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00381}00381\ \ \ \ \ \textcolor{keywordflow}{if}\ (selectedColumns.count()\ !=\ 2)\ \{}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00382}00382\ \ \ \ \ \ \ \ \ QMessageBox::critical(\textcolor{keyword}{this},\ \textcolor{stringliteral}{"{}Error"{}},\ \textcolor{stringliteral}{"{}Please\ select\ only\ 2\ columns."{}});}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00383}00383\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00384}00384\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00385}00385\ }
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00386}00386\ \ \ \ \ \textcolor{comment}{//\ 创建两个vector<float>来存储选中列的数据}}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00387}00387\ \ \ \ \ std::vector<float>\ dataX;}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00388}00388\ \ \ \ \ std::vector<float>\ dataY;}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00389}00389\ }
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00390}00390\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ colX\ =\ selectedColumns[0].column();}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00391}00391\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ colY\ =\ selectedColumns[1].column();}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00392}00392\ }
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00393}00393\ \ \ \ \ \textcolor{keywordflow}{if}\ (colX\ ==\ colY)\ \{}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00394}00394\ \ \ \ \ \ \ \ \ QMessageBox::critical(\textcolor{keyword}{this},\ \textcolor{stringliteral}{"{}Error"{}},\ \textcolor{stringliteral}{"{}Please\ select\ 2\ different\ columns."{}});}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00395}00395\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00396}00396\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00397}00397\ }
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00398}00398\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_widget_a4a69d6402e3c67623d1d081fcea2db20}{model}}-\/>horizontalHeaderItem(colX)-\/>text()\ ==\ \textcolor{stringliteral}{"{}id"{}}\ ||}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00399}00399\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_widget_a4a69d6402e3c67623d1d081fcea2db20}{model}}-\/>horizontalHeaderItem(colY)-\/>text()\ ==\ \textcolor{stringliteral}{"{}id"{}})\ \{}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00400}00400\ \ \ \ \ \ \ \ \ QMessageBox::critical(\textcolor{keyword}{this},\ \textcolor{stringliteral}{"{}Error"{}},\ \textcolor{stringliteral}{"{}Please\ do\ not\ select\ id\ column."{}});}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00401}00401\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00402}00402\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00403}00403\ }
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00404}00404\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_widget_a4a69d6402e3c67623d1d081fcea2db20}{model}}-\/>horizontalHeaderItem(colX)-\/>text()\ ==\ \textcolor{stringliteral}{"{}diagnosis"{}}\ ||}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00405}00405\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_widget_a4a69d6402e3c67623d1d081fcea2db20}{model}}-\/>horizontalHeaderItem(colY)-\/>text()\ ==\ \textcolor{stringliteral}{"{}diagnosis"{}})\ \{}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00406}00406\ \ \ \ \ \ \ \ \ QMessageBox::critical(\textcolor{keyword}{this},\ \textcolor{stringliteral}{"{}Error"{}},\ \textcolor{stringliteral}{"{}Please\ do\ not\ select\ diagnosis\ column."{}});}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00407}00407\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00408}00408\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00409}00409\ }
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00410}00410\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ header\ =\ \mbox{\hyperlink{class_widget_a19c48cc897c43aa2e995fce9f7fb2418}{ui}}-\/>tableView-\/>horizontalHeader();}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00411}00411\ \ \ \ \ \textcolor{keyword}{const}\ QString\ headerX\ =\ header-\/>model()-\/>headerData(colX,\ Qt::Horizontal).toString();}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00412}00412\ \ \ \ \ \textcolor{keyword}{const}\ QString\ headerY\ =\ header-\/>model()-\/>headerData(colY,\ Qt::Horizontal).toString();}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00413}00413\ }
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00414}00414\ \ \ \ \ \textcolor{keyword}{auto}\ get\_data\ =\ [\&](\textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ col)\{}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00415}00415\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ row\ =\ 0;\ row\ <\ \mbox{\hyperlink{class_widget_a4a69d6402e3c67623d1d081fcea2db20}{model}}-\/>rowCount();\ row++)\{}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00416}00416\ \ \ \ \ \ \ \ \ \ \ \ \ QModelIndex\ index\ =\ \mbox{\hyperlink{class_widget_a4a69d6402e3c67623d1d081fcea2db20}{model}}-\/>index(row,\ col);}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00417}00417\ \ \ \ \ \ \ \ \ \ \ \ \ QVariant\ data\ =\ \mbox{\hyperlink{class_widget_a4a69d6402e3c67623d1d081fcea2db20}{model}}-\/>data(index);}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00418}00418\ }
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00419}00419\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ conversionOk;}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00420}00420\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ value\ =\ data.toFloat(\&conversionOk);}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00421}00421\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (conversionOk)\ \{}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00422}00422\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (index.column()\ ==\ colX)\ \{}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00423}00423\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ dataX.push\_back(value);}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00424}00424\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (index.column()\ ==\ colY)\ \{}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00425}00425\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ dataY.push\_back(value);}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00426}00426\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00427}00427\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00428}00428\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00429}00429\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00430}00430\ }
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00431}00431\ \ \ \ \ get\_data(colX);}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00432}00432\ \ \ \ \ get\_data(colY);}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00433}00433\ }
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00434}00434\ \textcolor{comment}{//\ \ \ \ 打开新窗口}}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00435}00435\ \ \ \ \ \textcolor{keyword}{auto}\ window\_scatter\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_window___scatter}{Window\_Scatter}}(dataX,\ dataY,\ headerX,\ headerY,\ \textcolor{keyword}{this});}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00436}00436\ \ \ \ \ window\_scatter-\/>show();}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00437}00437\ \}}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00438}00438\ }
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00443}\mbox{\hyperlink{class_widget_a7192e77f90918530f3c50f2eae7b925d}{00443}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_widget_a7192e77f90918530f3c50f2eae7b925d}{Widget::on\_button\_open\_clicked}}()}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00444}00444\ \{}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00445}00445\ \ \ \ \ QString\ new\_path\ =\ QFileDialog::getOpenFileName(\textcolor{keyword}{this},\ \textcolor{stringliteral}{"{}Open\ CSV\ File"{}},\ \textcolor{stringliteral}{"{}"{}},\ \textcolor{stringliteral}{"{}CSV\ Files\ (*.csv)"{}});}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00446}00446\ \textcolor{comment}{//\ \ \ \ qDebug()\ <<\ new\_path;}}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00447}00447\ }
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00448}00448\ \ \ \ \ \textcolor{keywordflow}{if}\ (!new\_path.isEmpty()\ \&\&\ new\_path.endsWith(\textcolor{stringliteral}{"{}.csv"{}},\ Qt::CaseInsensitive))\ \{}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00449}00449\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_widget_a1448ad241c2be52415644d585feffcd5}{path\_table}}\ =\ new\_path;}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00450}00450\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_widget_af36723a57336dfa23465f25dfdf3746a}{open\_table}}();}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00451}00451\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00452}00452\ \ \ \ \ \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00453}00453\ \ \ \ \ \ \ \ \ QMessageBox::critical(\textcolor{keyword}{this},\ \textcolor{stringliteral}{"{}Error"{}},\ \textcolor{stringliteral}{"{}Fail\ to\ open\ CSV\ file."{}});}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00454}00454\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00455}00455\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00456}00456\ \}}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00457}00457\ }
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00462}\mbox{\hyperlink{class_widget_a80a6e1d3a07304c9bfa9fc1cc60fcc7b}{00462}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_widget_a80a6e1d3a07304c9bfa9fc1cc60fcc7b}{Widget::on\_button\_covariance\_clicked}}()}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00463}00463\ \{}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00464}00464\ \ \ \ \ \textcolor{comment}{//\ 获取选中的单元格模型}}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00465}00465\ \ \ \ \ QItemSelectionModel\ *selectionModel\ =\ \mbox{\hyperlink{class_widget_a19c48cc897c43aa2e995fce9f7fb2418}{ui}}-\/>tableView-\/>selectionModel();}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00466}00466\ }
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00467}00467\ \ \ \ \ \textcolor{comment}{//\ 获取选中的列}}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00468}00468\ \ \ \ \ QModelIndexList\ selectedColumns\ =\ selectionModel-\/>selectedColumns();}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00469}00469\ }
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00470}00470\ \ \ \ \ \textcolor{keywordflow}{if}\ (selectedColumns.count()\ <\ 2)\ \{}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00471}00471\ \ \ \ \ \ \ \ \ QMessageBox::critical(\textcolor{keyword}{this},\ \textcolor{stringliteral}{"{}Error"{}},\ \textcolor{stringliteral}{"{}Please\ select\ at\ least\ 2\ columns."{}});}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00472}00472\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00473}00473\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00474}00474\ }
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00475}00475\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ cnt\_col\ =\ selectedColumns.count();}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00476}00476\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ cnt\_row\ =\ \mbox{\hyperlink{class_widget_a4a69d6402e3c67623d1d081fcea2db20}{model}}-\/>rowCount();}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00477}00477\ }
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00478}00478\ \ \ \ \ QStringList\ headers\_selected;}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00479}00479\ \ \ \ \ \textcolor{comment}{//\ 获取选中列的表头项并添加到header\_selected}}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00480}00480\ \ \ \ \ \textcolor{keywordflow}{for}\ (QModelIndex\ index\ :\ selectedColumns)\ \{}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00481}00481\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ col\ =\ index.column();}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00482}00482\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_widget_a4a69d6402e3c67623d1d081fcea2db20}{model}}-\/>horizontalHeaderItem(col)-\/>text()\ ==\ \textcolor{stringliteral}{"{}id"{}})\{}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00483}00483\ \ \ \ \ \ \ \ \ \ \ \ \ QMessageBox::critical(\textcolor{keyword}{this},\ \textcolor{stringliteral}{"{}Error"{}},\ \textcolor{stringliteral}{"{}Please\ do\ not\ select\ id\ column."{}});}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00484}00484\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00485}00485\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00486}00486\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ headerItem\ =\ \mbox{\hyperlink{class_widget_a4a69d6402e3c67623d1d081fcea2db20}{model}}-\/>horizontalHeaderItem(col);}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00487}00487\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (headerItem)\ \{}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00488}00488\ \ \ \ \ \ \ \ \ \ \ \ \ headers\_selected.append(headerItem-\/>text());}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00489}00489\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00490}00490\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00491}00491\ }
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00492}00492\ \ \ \ \ std::vector<std::vector<float>>\ cells(cnt\_col,\ std::vector<float>(cnt\_row));}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00493}00493\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ cnt\_col;\ i\ ++)\{}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00494}00494\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ row\ =\ 0;\ row\ <\ cnt\_row;\ row\ ++)\{}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00495}00495\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ col\ =\ selectedColumns[i].column();}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00496}00496\ \ \ \ \ \ \ \ \ \ \ \ \ QModelIndex\ index\ =\ \mbox{\hyperlink{class_widget_a4a69d6402e3c67623d1d081fcea2db20}{model}}-\/>index(row,\ col);}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00497}00497\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (i\ <\ cells.size()\ \&\&\ row\ <\ cells[0].size())\ \{}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00498}00498\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cells[i][row]\ =\ \mbox{\hyperlink{class_widget_a4a69d6402e3c67623d1d081fcea2db20}{model}}-\/>data(index).toFloat();}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00499}00499\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00500}00500\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00501}00501\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ QMessageBox::critical(\textcolor{keyword}{this},\ \textcolor{stringliteral}{"{}Error"{}},\ \textcolor{stringliteral}{"{}index\ out\ of\ range"{}});}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00502}00502\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00503}00503\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00504}00504\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00505}00505\ }
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00506}00506\ \ \ \ \ \textcolor{keyword}{auto}\ window\_covar\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_window___covariance}{Window\_Covariance}}(cells,\ headers\_selected,\ \textcolor{keyword}{this});}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00507}00507\ \ \ \ \ window\_covar-\/>show();}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00508}00508\ \textcolor{comment}{//\ \ \ \ connect(window\_covar,\ \&QObject::destroyed,\ this,\ \&Widget::delete\_obj);}}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00509}00509\ \}}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00510}00510\ }
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00515}\mbox{\hyperlink{class_widget_afbd56ee92fa599d19ff6da0ceebdd8a5}{00515}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_widget_afbd56ee92fa599d19ff6da0ceebdd8a5}{Widget::on\_button\_pca\_clicked}}()}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00516}00516\ \{}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00517}00517\ \ \ \ \ \textcolor{comment}{//\ 获取选中的单元格模型}}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00518}00518\ \ \ \ \ QItemSelectionModel\ *selectionModel\ =\ \mbox{\hyperlink{class_widget_a19c48cc897c43aa2e995fce9f7fb2418}{ui}}-\/>tableView-\/>selectionModel();}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00519}00519\ }
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00520}00520\ \ \ \ \ \textcolor{comment}{//\ 获取选中的列}}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00521}00521\ \ \ \ \ QModelIndexList\ selectedColumns\ =\ selectionModel-\/>selectedColumns();}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00522}00522\ }
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00523}00523\ \ \ \ \ \textcolor{keywordflow}{if}\ (selectedColumns.count()\ <\ 2)\ \{}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00524}00524\ \ \ \ \ \ \ \ \ QMessageBox::critical(\textcolor{keyword}{this},\ \textcolor{stringliteral}{"{}Error"{}},\ \textcolor{stringliteral}{"{}Please\ select\ at\ least\ 2\ columns."{}});}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00525}00525\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00526}00526\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00527}00527\ }
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00528}00528\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ cnt\_col\ =\ selectedColumns.count();}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00529}00529\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ cnt\_row\ =\ \mbox{\hyperlink{class_widget_a4a69d6402e3c67623d1d081fcea2db20}{model}}-\/>rowCount();}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00530}00530\ }
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00531}00531\ \ \ \ \ std::vector<std::vector<float>>\ samples;}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00532}00532\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ row\ =\ 0;\ row\ <\ cnt\_row;\ row\ ++)\{}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00533}00533\ \ \ \ \ \ \ \ \ std::vector<float>\ variants;}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00534}00534\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ cnt\_col;\ i\ ++)\{}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00535}00535\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ col\ =\ selectedColumns[i].column();}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00536}00536\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_widget_a4a69d6402e3c67623d1d081fcea2db20}{model}}-\/>horizontalHeaderItem(col)-\/>text()\ ==\ \textcolor{stringliteral}{"{}id"{}})\{}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00537}00537\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ QMessageBox::critical(\textcolor{keyword}{this},\ \textcolor{stringliteral}{"{}Error"{}},\ \textcolor{stringliteral}{"{}Please\ do\ not\ select\ id\ column."{}});}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00538}00538\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00539}00539\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00540}00540\ \ \ \ \ \ \ \ \ \ \ \ \ QModelIndex\ index\ =\ \mbox{\hyperlink{class_widget_a4a69d6402e3c67623d1d081fcea2db20}{model}}-\/>index(row,\ col);}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00541}00541\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ cells[row][i]\ =\ model-\/>data(index).toFloat();}}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00542}00542\ \ \ \ \ \ \ \ \ \ \ \ \ variants.push\_back(\mbox{\hyperlink{class_widget_a4a69d6402e3c67623d1d081fcea2db20}{model}}-\/>data(index).toFloat());}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00543}00543\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00544}00544\ \ \ \ \ \ \ \ \ samples.push\_back(std::move(variants));}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00545}00545\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00546}00546\ }
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00547}00547\ \textcolor{comment}{//\ \ \ \ BM信息}}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00548}00548\ \ \ \ \ std::vector<int>\ diagnosis;}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00549}00549\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ row\ =\ 0;\ row\ <\ cnt\_row;\ row\ ++)\ \{}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00550}00550\ \ \ \ \ \ \ \ \ QModelIndex\ index\ =\ \mbox{\hyperlink{class_widget_a4a69d6402e3c67623d1d081fcea2db20}{model}}-\/>index(row,\ \mbox{\hyperlink{class_widget_a118b08ddf72fdf070f6857b139a112c7}{col\_diagnosis\_at}});}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00551}00551\ \ \ \ \ \ \ \ \ diagnosis.push\_back(\mbox{\hyperlink{class_widget_a4a69d6402e3c67623d1d081fcea2db20}{model}}-\/>data(index).toInt());}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00552}00552\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00553}00553\ }
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00554}00554\ \ \ \ \ \textcolor{keyword}{auto}\ widget\_pca\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_window___p_c_a}{Window\_PCA}}(\textcolor{keyword}{this},\ std::move(samples),\ std::move(diagnosis),\ \textcolor{keyword}{this});}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00555}00555\ \ \ \ \ widget\_pca-\/>show();}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00556}00556\ \textcolor{comment}{//\ \ \ \ connect(widget\_pca,\ \&QObject::destroyed,\ this,\ \&Widget::delete\_obj);}}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00557}00557\ \}}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00558}00558\ }
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00563}\mbox{\hyperlink{class_widget_a679c430dfa837f1257dfb0606c3c9e3d}{00563}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_widget_a679c430dfa837f1257dfb0606c3c9e3d}{Widget::on\_button\_cluster\_clicked}}()}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00564}00564\ \{}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00565}00565\ \ \ \ \ \textcolor{keyword}{auto}\ window\_choice\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_window___cluster}{Window\_Cluster}}(\textcolor{keyword}{this},\ \textcolor{keyword}{this});}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00566}00566\ \ \ \ \ window\_choice-\/>show();}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00567}00567\ \}}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00568}00568\ }
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00573}\mbox{\hyperlink{class_widget_abf7082b40cf5b1f99633f58967c6e5b9}{00573}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_widget_abf7082b40cf5b1f99633f58967c6e5b9}{Widget::on\_cluster\_kmeans\_clicked}}()\{}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00574}00574\ \ \ \ \ \textcolor{keyword}{auto}\ samples\ =\ \mbox{\hyperlink{class_widget_a06f7809a8562ed150864974714221016}{samples\_selected}}(1);}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00575}00575\ \ \ \ \ \textcolor{keywordflow}{if}\ (samples.empty())\{}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00576}00576\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00577}00577\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00578}00578\ }
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00579}00579\ \ \ \ \ Eigen::MatrixXf\ centers;}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00580}00580\ \ \ \ \ std::vector<int>\ labels;}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00581}00581\ \ \ \ \ std::tie(centers,\ labels)\ =\ clusterKMeans(samples,\ \mbox{\hyperlink{class_widget_a2ebd1f9f315552296c44b63914af2009}{map\_cluster\_groups}}[\mbox{\hyperlink{widget_8h_a356625608f963163dfb34e48917f5958ac3667c322252cb4024831eb39e924670}{Cluster\_method::kmeans}}],\ \mbox{\hyperlink{class_widget_afddf6566c63e5f0ed03c09c8264ba9a3}{kmeans\_maxiter}});}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00582}00582\ }
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00583}00583\ \ \ \ \ \mbox{\hyperlink{class_widget_a0f9dfce23985306dfa248ace3b936688}{add\_cluster}}(\mbox{\hyperlink{widget_8h_a356625608f963163dfb34e48917f5958ac3667c322252cb4024831eb39e924670}{Cluster\_method::kmeans}},\ labels);}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00584}00584\ \}}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00585}00585\ }
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00590}\mbox{\hyperlink{class_widget_a3ea881e6748857ff7334948124559056}{00590}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_widget_a3ea881e6748857ff7334948124559056}{Widget::on\_button\_coloring\_clicked}}()}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00591}00591\ \{}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00592}00592\ \ \ \ \ \textcolor{keyword}{auto}\ window\_coloring\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_window___coloring}{Window\_Coloring}}(\textcolor{keyword}{this});}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00593}00593\ \ \ \ \ window\_coloring-\/>show();}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00594}00594\ \textcolor{comment}{//\ \ \ \ connect(window\_coloring,\ \&QObject::destroyed,\ this,\ \&Widget::delete\_obj);}}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00595}00595\ \}}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00596}00596\ }
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00601}\mbox{\hyperlink{class_widget_aaad1609dbf1cfeb2e672c99dffc63eae}{00601}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_widget_aaad1609dbf1cfeb2e672c99dffc63eae}{Widget::on\_coloring\_kmeans\_clicked}}()\{}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00602}00602\ \ \ \ \ \mbox{\hyperlink{class_widget_adccd7176b1162abe0100288be829c83e}{coloring\_method}}(\mbox{\hyperlink{widget_8h_a356625608f963163dfb34e48917f5958ac3667c322252cb4024831eb39e924670}{Cluster\_method::kmeans}});}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00603}00603\ \}}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00604}00604\ }
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00609}\mbox{\hyperlink{class_widget_a0e0ecaeeb61136b7822776e0640fe946}{00609}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_widget_a0e0ecaeeb61136b7822776e0640fe946}{Widget::on\_decoloring\_clicked}}()\{}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00610}00610\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ cnt\_total\_rows\ =\ \mbox{\hyperlink{class_widget_a4a69d6402e3c67623d1d081fcea2db20}{model}}-\/>rowCount();}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00611}00611\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ cnt\_total\_cols\ =\ \mbox{\hyperlink{class_widget_a4a69d6402e3c67623d1d081fcea2db20}{model}}-\/>columnCount();}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00612}00612\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ row\ =\ 0;\ row\ <\ cnt\_total\_rows;\ row\ ++)\{}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00613}00613\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ col\ =\ 0;\ col\ <\ cnt\_total\_cols;\ col\ ++)\{}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00614}00614\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_widget_a4a69d6402e3c67623d1d081fcea2db20}{model}}-\/>item(row,\ col)-\/>setBackground(QBrush(Qt::white));}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00615}00615\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00616}00616\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00617}00617\ \}}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00618}00618\ }
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00623}\mbox{\hyperlink{class_widget_aee13ceb4f5b6cadd201eeeb1f0a65fec}{00623}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_widget_aee13ceb4f5b6cadd201eeeb1f0a65fec}{Widget::on\_cluster\_dbscan\_clicked}}()\{}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00624}00624\ \ \ \ \ \textcolor{keyword}{auto}\ samples\ =\ \mbox{\hyperlink{class_widget_a06f7809a8562ed150864974714221016}{samples\_selected}}(1);}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00625}00625\ }
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00626}00626\ \ \ \ \ qDebug()\ <<\ \mbox{\hyperlink{class_widget_a77dccd10043bc122ceca8a30af6cb0dc}{dbscan\_epsilon}}\ <<\ \mbox{\hyperlink{class_widget_a468bae8249dcd4b034fe1a02110bf608}{dbscan\_minPts}};}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00627}00627\ \ \ \ \ \textcolor{keyword}{auto}\ labels\ =\ \mbox{\hyperlink{widget_8h_a356625608f963163dfb34e48917f5958abf0ef28c5df781bd2124fae79d8fa3e1}{dbscan}}(samples,\ \mbox{\hyperlink{class_widget_a77dccd10043bc122ceca8a30af6cb0dc}{dbscan\_epsilon}},\ \mbox{\hyperlink{class_widget_a468bae8249dcd4b034fe1a02110bf608}{dbscan\_minPts}});}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00628}00628\ }
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00629}00629\ \ \ \ \ \mbox{\hyperlink{class_widget_a0f9dfce23985306dfa248ace3b936688}{add\_cluster}}(\mbox{\hyperlink{widget_8h_a356625608f963163dfb34e48917f5958abf0ef28c5df781bd2124fae79d8fa3e1}{Cluster\_method::dbscan}},\ labels);}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00630}00630\ \}}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00631}00631\ }
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00636}\mbox{\hyperlink{class_widget_a4561b893d56cfd4afaab4e64739f36e3}{00636}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_widget_a4561b893d56cfd4afaab4e64739f36e3}{Widget::on\_coloring\_dbscan\_clicked}}()\{}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00637}00637\ \ \ \ \ \mbox{\hyperlink{class_widget_adccd7176b1162abe0100288be829c83e}{coloring\_method}}(\mbox{\hyperlink{widget_8h_a356625608f963163dfb34e48917f5958abf0ef28c5df781bd2124fae79d8fa3e1}{Cluster\_method::dbscan}});}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00638}00638\ \}}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00639}00639\ }
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00644}\mbox{\hyperlink{class_widget_aec936a4af2ba680b68fc0277eb96a1ab}{00644}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_widget_aec936a4af2ba680b68fc0277eb96a1ab}{Widget::on\_button\_ml\_clicked}}()}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00645}00645\ \{}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00646}00646\ \ \ \ \ \textcolor{comment}{//\ 获取症状数据}}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00647}00647\ \ \ \ \ std::vector<int>\ diagnosis;}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00648}00648\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ col\_diagnosis\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00649}00649\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ col\ =\ 0;\ col\ <\ \mbox{\hyperlink{class_widget_a4a69d6402e3c67623d1d081fcea2db20}{model}}-\/>columnCount();\ col\ ++)\{}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00650}00650\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_widget_a4a69d6402e3c67623d1d081fcea2db20}{model}}-\/>horizontalHeaderItem(col)-\/>text()\ ==\ \textcolor{stringliteral}{"{}diagnosis"{}})\{}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00651}00651\ \ \ \ \ \ \ \ \ \ \ \ \ col\_diagnosis\ =\ col;}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00652}00652\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00653}00653\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00654}00654\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00655}00655\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ row\ =\ 0;\ row\ <\ \mbox{\hyperlink{class_widget_a4a69d6402e3c67623d1d081fcea2db20}{model}}-\/>rowCount();\ row\ ++)\{}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00656}00656\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ index\ =\ \mbox{\hyperlink{class_widget_a4a69d6402e3c67623d1d081fcea2db20}{model}}-\/>index(row,\ col\_diagnosis);}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00657}00657\ \ \ \ \ \ \ \ \ diagnosis.push\_back(\mbox{\hyperlink{class_widget_a4a69d6402e3c67623d1d081fcea2db20}{model}}-\/>data(index).toInt());}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00658}00658\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00659}00659\ }
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00660}00660\ \ \ \ \ \textcolor{comment}{//\ 获取特征数据}}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00661}00661\ \ \ \ \ std::vector<std::vector<float>>\ samples;}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00662}00662\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ row\ =\ 0;\ row\ <\ \mbox{\hyperlink{class_widget_a4a69d6402e3c67623d1d081fcea2db20}{model}}-\/>rowCount();\ row\ ++)\{}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00663}00663\ \ \ \ \ \ \ \ \ std::vector<float>\ variants;}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00664}00664\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ col\ =\ 0;\ col\ <\ \mbox{\hyperlink{class_widget_a4a69d6402e3c67623d1d081fcea2db20}{model}}-\/>columnCount();\ col\ ++)\{}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00665}00665\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (col\ ==\ col\_diagnosis)\{}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00666}00666\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00667}00667\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00668}00668\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_widget_a4a69d6402e3c67623d1d081fcea2db20}{model}}-\/>horizontalHeaderItem(col)-\/>text()\ ==\ \textcolor{stringliteral}{"{}id"{}})\{}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00669}00669\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00670}00670\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00671}00671\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ index\ =\ \mbox{\hyperlink{class_widget_a4a69d6402e3c67623d1d081fcea2db20}{model}}-\/>index(row,\ col);}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00672}00672\ \ \ \ \ \ \ \ \ \ \ \ \ variants.push\_back(\mbox{\hyperlink{class_widget_a4a69d6402e3c67623d1d081fcea2db20}{model}}-\/>data(index).toFloat());}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00673}00673\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00674}00674\ \ \ \ \ \ \ \ \ samples.push\_back(std::move(variants));}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00675}00675\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00676}00676\ }
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00677}00677\ \ \ \ \ \textcolor{comment}{//\ 获取特征名称}}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00678}00678\ \ \ \ \ std::vector<std::string>\ feature\_names;}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00679}00679\ \ \ \ \ \textcolor{comment}{//\ std::vector<QString>\ feature\_names;}}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00680}00680\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ col\ =\ 0;\ col\ <\ \mbox{\hyperlink{class_widget_a4a69d6402e3c67623d1d081fcea2db20}{model}}-\/>columnCount();\ col\ ++)\{}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00681}00681\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_widget_a4a69d6402e3c67623d1d081fcea2db20}{model}}-\/>horizontalHeaderItem(col)-\/>text()\ ==\ \textcolor{stringliteral}{"{}id"{}})\{}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00682}00682\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00683}00683\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00684}00684\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_widget_a4a69d6402e3c67623d1d081fcea2db20}{model}}-\/>horizontalHeaderItem(col)-\/>text()\ ==\ \textcolor{stringliteral}{"{}diagnosis"{}})\{}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00685}00685\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00686}00686\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00687}00687\ \ \ \ \ \ \ \ \ feature\_names.push\_back(\mbox{\hyperlink{class_widget_a4a69d6402e3c67623d1d081fcea2db20}{model}}-\/>horizontalHeaderItem(col)-\/>text().toStdString());}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00688}00688\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00689}00689\ }
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00690}00690\ \ \ \ \ \textcolor{keyword}{auto}\ window\_ml\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_window___m_l}{Window\_ML}}(std::move(diagnosis),\ std::move(feature\_names),\ std::move(samples));}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00691}00691\ \ \ \ \ window\_ml-\/>show();}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00692}00692\ \}}
+\DoxyCodeLine{\Hypertarget{widget_8cpp_source_l00693}00693\ }
+
+\end{DoxyCode}

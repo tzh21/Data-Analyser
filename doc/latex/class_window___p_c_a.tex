@@ -1,0 +1,280 @@
+\doxysection{Window\+\_\+\+PCA类 参考}
+\hypertarget{class_window___p_c_a}{}\label{class_window___p_c_a}\index{Window\_PCA@{Window\_PCA}}
+
+
+{\ttfamily \#include $<$window\+\_\+pca.\+h$>$}
+
+
+
+继承自 QMain\+Window .
+
+\doxysubsubsection*{Public 成员函数}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_window___p_c_a_a3dac543e9f3f78163277718fec3bb506}{Window\+\_\+\+PCA}} (\mbox{\hyperlink{class_widget}{Widget}} \texorpdfstring{$\ast$}{*}\+\_\+table\+\_\+widget, std\+::vector$<$ std\+::vector$<$ float $>$ $>$ \&\&\+\_\+variants, std\+::vector$<$ int $>$ \&\&\+\_\+diagnosis, QWidget \texorpdfstring{$\ast$}{*}parent=nullptr)
+\begin{DoxyCompactList}\small\item\em Construct a new \doxylink{class_window___p_c_a_a3dac543e9f3f78163277718fec3bb506}{Window\+\_\+\+PCA\+::\+Window\+\_\+\+PCA} object \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public 属性}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ std\+::vector$<$ QVector3D $>$ $>$ \mbox{\hyperlink{class_window___p_c_a_ae294314475d573f2197e219e9f4b81ea}{bm\+\_\+groups}}
+\item 
+std\+::vector$<$ std\+::vector$<$ QVector3D $>$ $>$ \mbox{\hyperlink{class_window___p_c_a_a125434d6f3399af6f214798a008de72b}{cluster\+\_\+groups}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private 成员函数}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_window___p_c_a_a8378c33d4b544b1fd7776b6c2078eab8}{on\+\_\+radio\+\_\+kmeans\+\_\+toggled}} (bool checked)
+\begin{DoxyCompactList}\small\item\em 显示\+K-\/means聚类算法的分组。 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_window___p_c_a_a287e39106953da4019c679bca1bd2f07}{on\+\_\+radio\+\_\+dbscan\+\_\+toggled}} (bool checked)
+\begin{DoxyCompactList}\small\item\em 显示dbscan聚类算法的分组。 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_window___p_c_a_a6a60f62932757004bed7b1963e7a7f8d}{on\+\_\+button\+\_\+2dcluster\+\_\+clicked}} ()
+\begin{DoxyCompactList}\small\item\em 2D降维按钮的槽函数。包含聚类。 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_window___p_c_a_a64536050ac56ffeea812c9f851cdc3fc}{on\+\_\+button\+\_\+3dcluster\+\_\+clicked}} ()
+\begin{DoxyCompactList}\small\item\em 3D降维按钮的槽函数。包含聚类。 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_window___p_c_a_a55bf1b40451ca5c474d34947d8da2f37}{on\+\_\+button\+\_\+2d\+\_\+clicked}} ()
+\begin{DoxyCompactList}\small\item\em 2D降维按钮的槽函数。仅标记\+BM。 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_window___p_c_a_a7647ddc5858c6f850e133c1272ee5f13}{on\+\_\+button\+\_\+3d\+\_\+clicked}} ()
+\begin{DoxyCompactList}\small\item\em 3D降维按钮的槽函数。仅标记\+BM。 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private 属性}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_widget}{Widget}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_window___p_c_a_a8ae6567e83ea568f21730a4a07af943f}{table\+\_\+widget}}
+\item 
+\mbox{\hyperlink{widget_8h_a356625608f963163dfb34e48917f5958}{Cluster\+\_\+method}} \mbox{\hyperlink{class_window___p_c_a_ad63cdc5e12188b55608eb9f8360edd25}{cluster\+\_\+method}} = \mbox{\hyperlink{widget_8h_a356625608f963163dfb34e48917f5958ac3667c322252cb4024831eb39e924670}{Cluster\+\_\+method\+::kmeans}}
+\item 
+const std\+::vector$<$ std\+::vector$<$ float $>$ $>$ \mbox{\hyperlink{class_window___p_c_a_a7b7fc738c9214fccb48504899c387de0}{variants}}
+\item 
+const std\+::vector$<$ int $>$ \mbox{\hyperlink{class_window___p_c_a_a0ada9397ea525820f9cde305c973b6df}{diagnosis}}
+\item 
+QPush\+Button \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_window___p_c_a_a5761f8d1f46651796f87a3794b8c6832}{button\+\_\+2d}}
+\item 
+QPush\+Button \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_window___p_c_a_a65c472d96b14d6261b3bdc2229625e62}{button\+\_\+3d}}
+\item 
+int \mbox{\hyperlink{class_window___p_c_a_a2df4a0cab8b0173d40a83cdc49fc38ed}{selected\+\_\+group}} = 0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{详细描述}
+
+
+在文件 \mbox{\hyperlink{window__pca_8h_source}{window\+\_\+pca.\+h}} 第 \mbox{\hyperlink{window__pca_8h_source_l00049}{49}} 行定义.
+
+
+
+\doxysubsection{构造及析构函数说明}
+\Hypertarget{class_window___p_c_a_a3dac543e9f3f78163277718fec3bb506}\label{class_window___p_c_a_a3dac543e9f3f78163277718fec3bb506} 
+\index{Window\_PCA@{Window\_PCA}!Window\_PCA@{Window\_PCA}}
+\index{Window\_PCA@{Window\_PCA}!Window\_PCA@{Window\_PCA}}
+\doxysubsubsection{\texorpdfstring{Window\_PCA()}{Window\_PCA()}}
+{\footnotesize\ttfamily Window\+\_\+\+PCA\+::\+Window\+\_\+\+PCA (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_widget}{Widget}} \texorpdfstring{$\ast$}{*}}]{\+\_\+table\+\_\+widget,  }\item[{std\+::vector$<$ std\+::vector$<$ float $>$ $>$ \&\&}]{\+\_\+variants,  }\item[{std\+::vector$<$ int $>$ \&\&}]{\+\_\+diagnosis,  }\item[{QWidget \texorpdfstring{$\ast$}{*}}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+
+
+
+Construct a new \doxylink{class_window___p_c_a_a3dac543e9f3f78163277718fec3bb506}{Window\+\_\+\+PCA\+::\+Window\+\_\+\+PCA} object 
+
+
+\begin{DoxyParams}{参数}
+{\em \+\_\+table\+\_\+widget} & 表格的指针。因为需要获取聚类的标签。 \\
+\hline
+{\em \+\_\+variants} & 变量的数据。 \\
+\hline
+{\em \+\_\+diagnosis} & 每个样本的诊断结果。 \\
+\hline
+{\em parent} & \\
+\hline
+\end{DoxyParams}
+
+
+在文件 \mbox{\hyperlink{window__pca_8cpp_source}{window\+\_\+pca.\+cpp}} 第 \mbox{\hyperlink{window__pca_8cpp_source_l00254}{254}} 行定义.
+
+
+
+\doxysubsection{成员函数说明}
+\Hypertarget{class_window___p_c_a_a55bf1b40451ca5c474d34947d8da2f37}\label{class_window___p_c_a_a55bf1b40451ca5c474d34947d8da2f37} 
+\index{Window\_PCA@{Window\_PCA}!on\_button\_2d\_clicked@{on\_button\_2d\_clicked}}
+\index{on\_button\_2d\_clicked@{on\_button\_2d\_clicked}!Window\_PCA@{Window\_PCA}}
+\doxysubsubsection{\texorpdfstring{on\_button\_2d\_clicked()}{on\_button\_2d\_clicked()}}
+{\footnotesize\ttfamily void Window\+\_\+\+PCA\+::on\+\_\+button\+\_\+2d\+\_\+clicked (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+2D降维按钮的槽函数。仅标记\+BM。 
+
+
+
+在文件 \mbox{\hyperlink{window__pca_8cpp_source}{window\+\_\+pca.\+cpp}} 第 \mbox{\hyperlink{window__pca_8cpp_source_l00315}{315}} 行定义.
+
+\Hypertarget{class_window___p_c_a_a6a60f62932757004bed7b1963e7a7f8d}\label{class_window___p_c_a_a6a60f62932757004bed7b1963e7a7f8d} 
+\index{Window\_PCA@{Window\_PCA}!on\_button\_2dcluster\_clicked@{on\_button\_2dcluster\_clicked}}
+\index{on\_button\_2dcluster\_clicked@{on\_button\_2dcluster\_clicked}!Window\_PCA@{Window\_PCA}}
+\doxysubsubsection{\texorpdfstring{on\_button\_2dcluster\_clicked()}{on\_button\_2dcluster\_clicked()}}
+{\footnotesize\ttfamily void Window\+\_\+\+PCA\+::on\+\_\+button\+\_\+2dcluster\+\_\+clicked (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+2D降维按钮的槽函数。包含聚类。 
+
+
+
+在文件 \mbox{\hyperlink{window__pca_8cpp_source}{window\+\_\+pca.\+cpp}} 第 \mbox{\hyperlink{window__pca_8cpp_source_l00421}{421}} 行定义.
+
+\Hypertarget{class_window___p_c_a_a7647ddc5858c6f850e133c1272ee5f13}\label{class_window___p_c_a_a7647ddc5858c6f850e133c1272ee5f13} 
+\index{Window\_PCA@{Window\_PCA}!on\_button\_3d\_clicked@{on\_button\_3d\_clicked}}
+\index{on\_button\_3d\_clicked@{on\_button\_3d\_clicked}!Window\_PCA@{Window\_PCA}}
+\doxysubsubsection{\texorpdfstring{on\_button\_3d\_clicked()}{on\_button\_3d\_clicked()}}
+{\footnotesize\ttfamily void Window\+\_\+\+PCA\+::on\+\_\+button\+\_\+3d\+\_\+clicked (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+3D降维按钮的槽函数。仅标记\+BM。 
+
+
+
+在文件 \mbox{\hyperlink{window__pca_8cpp_source}{window\+\_\+pca.\+cpp}} 第 \mbox{\hyperlink{window__pca_8cpp_source_l00352}{352}} 行定义.
+
+\Hypertarget{class_window___p_c_a_a64536050ac56ffeea812c9f851cdc3fc}\label{class_window___p_c_a_a64536050ac56ffeea812c9f851cdc3fc} 
+\index{Window\_PCA@{Window\_PCA}!on\_button\_3dcluster\_clicked@{on\_button\_3dcluster\_clicked}}
+\index{on\_button\_3dcluster\_clicked@{on\_button\_3dcluster\_clicked}!Window\_PCA@{Window\_PCA}}
+\doxysubsubsection{\texorpdfstring{on\_button\_3dcluster\_clicked()}{on\_button\_3dcluster\_clicked()}}
+{\footnotesize\ttfamily void Window\+\_\+\+PCA\+::on\+\_\+button\+\_\+3dcluster\+\_\+clicked (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+3D降维按钮的槽函数。包含聚类。 
+
+
+
+在文件 \mbox{\hyperlink{window__pca_8cpp_source}{window\+\_\+pca.\+cpp}} 第 \mbox{\hyperlink{window__pca_8cpp_source_l00459}{459}} 行定义.
+
+\Hypertarget{class_window___p_c_a_a287e39106953da4019c679bca1bd2f07}\label{class_window___p_c_a_a287e39106953da4019c679bca1bd2f07} 
+\index{Window\_PCA@{Window\_PCA}!on\_radio\_dbscan\_toggled@{on\_radio\_dbscan\_toggled}}
+\index{on\_radio\_dbscan\_toggled@{on\_radio\_dbscan\_toggled}!Window\_PCA@{Window\_PCA}}
+\doxysubsubsection{\texorpdfstring{on\_radio\_dbscan\_toggled()}{on\_radio\_dbscan\_toggled()}}
+{\footnotesize\ttfamily void Window\+\_\+\+PCA\+::on\+\_\+radio\+\_\+dbscan\+\_\+toggled (\begin{DoxyParamCaption}\item[{bool}]{checked }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+显示dbscan聚类算法的分组。 
+
+
+\begin{DoxyParams}{参数}
+{\em checked} & \\
+\hline
+\end{DoxyParams}
+
+
+在文件 \mbox{\hyperlink{window__pca_8cpp_source}{window\+\_\+pca.\+cpp}} 第 \mbox{\hyperlink{window__pca_8cpp_source_l00342}{342}} 行定义.
+
+\Hypertarget{class_window___p_c_a_a8378c33d4b544b1fd7776b6c2078eab8}\label{class_window___p_c_a_a8378c33d4b544b1fd7776b6c2078eab8} 
+\index{Window\_PCA@{Window\_PCA}!on\_radio\_kmeans\_toggled@{on\_radio\_kmeans\_toggled}}
+\index{on\_radio\_kmeans\_toggled@{on\_radio\_kmeans\_toggled}!Window\_PCA@{Window\_PCA}}
+\doxysubsubsection{\texorpdfstring{on\_radio\_kmeans\_toggled()}{on\_radio\_kmeans\_toggled()}}
+{\footnotesize\ttfamily void Window\+\_\+\+PCA\+::on\+\_\+radio\+\_\+kmeans\+\_\+toggled (\begin{DoxyParamCaption}\item[{bool}]{checked }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+显示\+K-\/means聚类算法的分组。 
+
+
+
+在文件 \mbox{\hyperlink{window__pca_8cpp_source}{window\+\_\+pca.\+cpp}} 第 \mbox{\hyperlink{window__pca_8cpp_source_l00331}{331}} 行定义.
+
+
+
+\doxysubsection{类成员变量说明}
+\Hypertarget{class_window___p_c_a_ae294314475d573f2197e219e9f4b81ea}\label{class_window___p_c_a_ae294314475d573f2197e219e9f4b81ea} 
+\index{Window\_PCA@{Window\_PCA}!bm\_groups@{bm\_groups}}
+\index{bm\_groups@{bm\_groups}!Window\_PCA@{Window\_PCA}}
+\doxysubsubsection{\texorpdfstring{bm\_groups}{bm\_groups}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::vector$<$QVector3D$>$ $>$ Window\+\_\+\+PCA\+::bm\+\_\+groups}
+
+
+
+在文件 \mbox{\hyperlink{window__pca_8h_source}{window\+\_\+pca.\+h}} 第 \mbox{\hyperlink{window__pca_8h_source_l00058}{58}} 行定义.
+
+\Hypertarget{class_window___p_c_a_a5761f8d1f46651796f87a3794b8c6832}\label{class_window___p_c_a_a5761f8d1f46651796f87a3794b8c6832} 
+\index{Window\_PCA@{Window\_PCA}!button\_2d@{button\_2d}}
+\index{button\_2d@{button\_2d}!Window\_PCA@{Window\_PCA}}
+\doxysubsubsection{\texorpdfstring{button\_2d}{button\_2d}}
+{\footnotesize\ttfamily QPush\+Button\texorpdfstring{$\ast$}{*} Window\+\_\+\+PCA\+::button\+\_\+2d\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+在文件 \mbox{\hyperlink{window__pca_8h_source}{window\+\_\+pca.\+h}} 第 \mbox{\hyperlink{window__pca_8h_source_l00072}{72}} 行定义.
+
+\Hypertarget{class_window___p_c_a_a65c472d96b14d6261b3bdc2229625e62}\label{class_window___p_c_a_a65c472d96b14d6261b3bdc2229625e62} 
+\index{Window\_PCA@{Window\_PCA}!button\_3d@{button\_3d}}
+\index{button\_3d@{button\_3d}!Window\_PCA@{Window\_PCA}}
+\doxysubsubsection{\texorpdfstring{button\_3d}{button\_3d}}
+{\footnotesize\ttfamily QPush\+Button\texorpdfstring{$\ast$}{*} Window\+\_\+\+PCA\+::button\+\_\+3d\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+在文件 \mbox{\hyperlink{window__pca_8h_source}{window\+\_\+pca.\+h}} 第 \mbox{\hyperlink{window__pca_8h_source_l00073}{73}} 行定义.
+
+\Hypertarget{class_window___p_c_a_a125434d6f3399af6f214798a008de72b}\label{class_window___p_c_a_a125434d6f3399af6f214798a008de72b} 
+\index{Window\_PCA@{Window\_PCA}!cluster\_groups@{cluster\_groups}}
+\index{cluster\_groups@{cluster\_groups}!Window\_PCA@{Window\_PCA}}
+\doxysubsubsection{\texorpdfstring{cluster\_groups}{cluster\_groups}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::vector$<$QVector3D$>$ $>$ Window\+\_\+\+PCA\+::cluster\+\_\+groups}
+
+
+
+在文件 \mbox{\hyperlink{window__pca_8h_source}{window\+\_\+pca.\+h}} 第 \mbox{\hyperlink{window__pca_8h_source_l00059}{59}} 行定义.
+
+\Hypertarget{class_window___p_c_a_ad63cdc5e12188b55608eb9f8360edd25}\label{class_window___p_c_a_ad63cdc5e12188b55608eb9f8360edd25} 
+\index{Window\_PCA@{Window\_PCA}!cluster\_method@{cluster\_method}}
+\index{cluster\_method@{cluster\_method}!Window\_PCA@{Window\_PCA}}
+\doxysubsubsection{\texorpdfstring{cluster\_method}{cluster\_method}}
+{\footnotesize\ttfamily \mbox{\hyperlink{widget_8h_a356625608f963163dfb34e48917f5958}{Cluster\+\_\+method}} Window\+\_\+\+PCA\+::cluster\+\_\+method = \mbox{\hyperlink{widget_8h_a356625608f963163dfb34e48917f5958ac3667c322252cb4024831eb39e924670}{Cluster\+\_\+method\+::kmeans}}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+在文件 \mbox{\hyperlink{window__pca_8h_source}{window\+\_\+pca.\+h}} 第 \mbox{\hyperlink{window__pca_8h_source_l00067}{67}} 行定义.
+
+\Hypertarget{class_window___p_c_a_a0ada9397ea525820f9cde305c973b6df}\label{class_window___p_c_a_a0ada9397ea525820f9cde305c973b6df} 
+\index{Window\_PCA@{Window\_PCA}!diagnosis@{diagnosis}}
+\index{diagnosis@{diagnosis}!Window\_PCA@{Window\_PCA}}
+\doxysubsubsection{\texorpdfstring{diagnosis}{diagnosis}}
+{\footnotesize\ttfamily const std\+::vector$<$int$>$ Window\+\_\+\+PCA\+::diagnosis\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+在文件 \mbox{\hyperlink{window__pca_8h_source}{window\+\_\+pca.\+h}} 第 \mbox{\hyperlink{window__pca_8h_source_l00070}{70}} 行定义.
+
+\Hypertarget{class_window___p_c_a_a2df4a0cab8b0173d40a83cdc49fc38ed}\label{class_window___p_c_a_a2df4a0cab8b0173d40a83cdc49fc38ed} 
+\index{Window\_PCA@{Window\_PCA}!selected\_group@{selected\_group}}
+\index{selected\_group@{selected\_group}!Window\_PCA@{Window\_PCA}}
+\doxysubsubsection{\texorpdfstring{selected\_group}{selected\_group}}
+{\footnotesize\ttfamily int Window\+\_\+\+PCA\+::selected\+\_\+group = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+在文件 \mbox{\hyperlink{window__pca_8h_source}{window\+\_\+pca.\+h}} 第 \mbox{\hyperlink{window__pca_8h_source_l00075}{75}} 行定义.
+
+\Hypertarget{class_window___p_c_a_a8ae6567e83ea568f21730a4a07af943f}\label{class_window___p_c_a_a8ae6567e83ea568f21730a4a07af943f} 
+\index{Window\_PCA@{Window\_PCA}!table\_widget@{table\_widget}}
+\index{table\_widget@{table\_widget}!Window\_PCA@{Window\_PCA}}
+\doxysubsubsection{\texorpdfstring{table\_widget}{table\_widget}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_widget}{Widget}}\texorpdfstring{$\ast$}{*} Window\+\_\+\+PCA\+::table\+\_\+widget\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+在文件 \mbox{\hyperlink{window__pca_8h_source}{window\+\_\+pca.\+h}} 第 \mbox{\hyperlink{window__pca_8h_source_l00065}{65}} 行定义.
+
+\Hypertarget{class_window___p_c_a_a7b7fc738c9214fccb48504899c387de0}\label{class_window___p_c_a_a7b7fc738c9214fccb48504899c387de0} 
+\index{Window\_PCA@{Window\_PCA}!variants@{variants}}
+\index{variants@{variants}!Window\_PCA@{Window\_PCA}}
+\doxysubsubsection{\texorpdfstring{variants}{variants}}
+{\footnotesize\ttfamily const std\+::vector$<$std\+::vector$<$float$>$ $>$ Window\+\_\+\+PCA\+::variants\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+在文件 \mbox{\hyperlink{window__pca_8h_source}{window\+\_\+pca.\+h}} 第 \mbox{\hyperlink{window__pca_8h_source_l00069}{69}} 行定义.
+
+
+
+该类的文档由以下文件生成\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/tzh21/\+Projects/2023summer/plantform\+\_\+xgboost/src/\mbox{\hyperlink{window__pca_8h}{window\+\_\+pca.\+h}}\item 
+D\+:/tzh21/\+Projects/2023summer/plantform\+\_\+xgboost/src/\mbox{\hyperlink{window__pca_8cpp}{window\+\_\+pca.\+cpp}}\end{DoxyCompactItemize}

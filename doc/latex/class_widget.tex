@@ -1,0 +1,556 @@
+\doxysection{Widget类 参考}
+\hypertarget{class_widget}{}\label{class_widget}\index{Widget@{Widget}}
+
+
+{\ttfamily \#include $<$widget.\+h$>$}
+
+
+
+继承自 QWidget .
+
+\doxysubsubsection*{Public 成员函数}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_widget_ace1aa23652eb4425355a81760b39fd37}{Widget}} (QWidget \texorpdfstring{$\ast$}{*}parent=nullptr)
+\item 
+\mbox{\hyperlink{class_widget_aa24f66bcbaaec6d458b0980e8c8eae65}{\texorpdfstring{$\sim$}{\string~}\+Widget}} ()
+\item 
+std\+::vector$<$ int $>$ \mbox{\hyperlink{class_widget_a35db1b06bb59082b1712189a97544e8d}{get\+\_\+labels\+\_\+of}} (\mbox{\hyperlink{widget_8h_a356625608f963163dfb34e48917f5958}{Cluster\+\_\+method}} method=\mbox{\hyperlink{widget_8h_a356625608f963163dfb34e48917f5958ac3667c322252cb4024831eb39e924670}{Cluster\+\_\+method\+::kmeans}})
+\begin{DoxyCompactList}\small\item\em 获取某个聚类方法的分组，并且统计该方法的分组总数。如果没有找到聚类方法的分组，返回空vector，将分组所在的列设置为-\/1，将分组总数设置为0， \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_widget_a0e0ecaeeb61136b7822776e0640fe946}{on\+\_\+decoloring\+\_\+clicked}} ()
+\begin{DoxyCompactList}\small\item\em 取消表格着色。 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_widget_abf7082b40cf5b1f99633f58967c6e5b9}{on\+\_\+cluster\+\_\+kmeans\+\_\+clicked}} ()
+\begin{DoxyCompactList}\small\item\em K-\/means聚类按钮的槽函数。 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_widget_aaad1609dbf1cfeb2e672c99dffc63eae}{on\+\_\+coloring\+\_\+kmeans\+\_\+clicked}} ()
+\begin{DoxyCompactList}\small\item\em 根据kmeans分组结果进行着色。 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_widget_aee13ceb4f5b6cadd201eeeb1f0a65fec}{on\+\_\+cluster\+\_\+dbscan\+\_\+clicked}} ()
+\begin{DoxyCompactList}\small\item\em dbscan聚类按钮的槽函数。 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_widget_a4561b893d56cfd4afaab4e64739f36e3}{on\+\_\+coloring\+\_\+dbscan\+\_\+clicked}} ()
+\begin{DoxyCompactList}\small\item\em 根据dbscan分组结果进行着色。 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public 属性}
+\begin{DoxyCompactItemize}
+\item 
+std\+::map$<$ \mbox{\hyperlink{widget_8h_a356625608f963163dfb34e48917f5958}{Cluster\+\_\+method}}, int $>$ \mbox{\hyperlink{class_widget_a2ebd1f9f315552296c44b63914af2009}{map\+\_\+cluster\+\_\+groups}}
+\item 
+std\+::map$<$ \mbox{\hyperlink{widget_8h_a356625608f963163dfb34e48917f5958}{Cluster\+\_\+method}}, int $>$ \mbox{\hyperlink{class_widget_a429075e5b4a5f6de7015e59f1ff39490}{map\+\_\+cluster\+\_\+col}}
+\item 
+int \mbox{\hyperlink{class_widget_afddf6566c63e5f0ed03c09c8264ba9a3}{kmeans\+\_\+maxiter}} = 100
+\item 
+float \mbox{\hyperlink{class_widget_a77dccd10043bc122ceca8a30af6cb0dc}{dbscan\+\_\+epsilon}} = 15
+\item 
+int \mbox{\hyperlink{class_widget_a468bae8249dcd4b034fe1a02110bf608}{dbscan\+\_\+min\+Pts}} = 3
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private 槽}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_widget_a2c531f78d201811f34766945dfda2f86}{on\+\_\+button\+\_\+variance\+\_\+clicked}} ()
+\begin{DoxyCompactList}\small\item\em 方差和均值按钮的槽函数。 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_widget_ad5788360f0920e8885ff2eed4af39348}{on\+\_\+button\+\_\+barchart\+\_\+clicked}} ()
+\begin{DoxyCompactList}\small\item\em 直方图和正态分布密度曲线按钮的槽函数。 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_widget_a050a9ecf00142eba547da98587bc144b}{on\+\_\+button\+\_\+scatter\+\_\+clicked}} ()
+\begin{DoxyCompactList}\small\item\em 散点图按钮的槽函数。 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_widget_a7192e77f90918530f3c50f2eae7b925d}{on\+\_\+button\+\_\+open\+\_\+clicked}} ()
+\begin{DoxyCompactList}\small\item\em 打开文件按钮的槽函数。 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_widget_a80a6e1d3a07304c9bfa9fc1cc60fcc7b}{on\+\_\+button\+\_\+covariance\+\_\+clicked}} ()
+\begin{DoxyCompactList}\small\item\em 协方差和相关系数矩阵按钮的槽函数。 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_widget_afbd56ee92fa599d19ff6da0ceebdd8a5}{on\+\_\+button\+\_\+pca\+\_\+clicked}} ()
+\begin{DoxyCompactList}\small\item\em PCA按钮的槽函数。 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_widget_a679c430dfa837f1257dfb0606c3c9e3d}{on\+\_\+button\+\_\+cluster\+\_\+clicked}} ()
+\begin{DoxyCompactList}\small\item\em 聚类按钮的槽函数。 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_widget_a3ea881e6748857ff7334948124559056}{on\+\_\+button\+\_\+coloring\+\_\+clicked}} ()
+\begin{DoxyCompactList}\small\item\em 着色按钮的槽函数。 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_widget_aec936a4af2ba680b68fc0277eb96a1ab}{on\+\_\+button\+\_\+ml\+\_\+clicked}} ()
+\begin{DoxyCompactList}\small\item\em 机器学习按钮的槽函数。 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private 成员函数}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_widget_af36723a57336dfa23465f25dfdf3746a}{open\+\_\+table}} ()
+\begin{DoxyCompactList}\small\item\em 根据path\+\_\+table打开csv文件，将数据显示在表格中。 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_widget_a12ef4995ed462832aea1172399c135ec}{delete\+\_\+obj}} (QObject \texorpdfstring{$\ast$}{*}obj)
+\begin{DoxyCompactList}\small\item\em 删除obj对象，并将指针置为nullptr。 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_widget_a0f9dfce23985306dfa248ace3b936688}{add\+\_\+cluster}} (\mbox{\hyperlink{widget_8h_a356625608f963163dfb34e48917f5958}{Cluster\+\_\+method}} method, std\+::vector$<$ int $>$ labels)
+\begin{DoxyCompactList}\small\item\em 在表格的method对应列中添加labels作为聚类分组。 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_widget_adccd7176b1162abe0100288be829c83e}{coloring\+\_\+method}} (\mbox{\hyperlink{widget_8h_a356625608f963163dfb34e48917f5958}{Cluster\+\_\+method}} method)
+\begin{DoxyCompactList}\small\item\em 根据聚类方法对表格进行着色。 \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::vector$<$ float $>$ $>$ \mbox{\hyperlink{class_widget_a06f7809a8562ed150864974714221016}{samples\+\_\+selected}} (size\+\_\+t least\+\_\+cols=1)
+\begin{DoxyCompactList}\small\item\em 获取选中的列的数据。不允许选中id列，否则会弹出错误提示框。 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private 属性}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{class_widget_a118b08ddf72fdf070f6857b139a112c7}{col\+\_\+diagnosis\+\_\+at}} = 1
+\item 
+Ui\+::\+Widget \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_widget_a19c48cc897c43aa2e995fce9f7fb2418}{ui}}
+\item 
+QString \mbox{\hyperlink{class_widget_a1448ad241c2be52415644d585feffcd5}{path\+\_\+table}} = "{}\+:/resource/breast-\/cancer.\+csv"{}
+\item 
+QStandard\+Item\+Model \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_widget_a4a69d6402e3c67623d1d081fcea2db20}{model}} \{new QStandard\+Item\+Model(this)\}
+\item 
+QChart \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_widget_ab87650695264788abcb78f5bdf060c32}{chart}} \{new QChart\}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{详细描述}
+
+
+在文件 \mbox{\hyperlink{widget_8h_source}{widget.\+h}} 第 \mbox{\hyperlink{widget_8h_source_l00019}{19}} 行定义.
+
+
+
+\doxysubsection{构造及析构函数说明}
+\Hypertarget{class_widget_ace1aa23652eb4425355a81760b39fd37}\label{class_widget_ace1aa23652eb4425355a81760b39fd37} 
+\index{Widget@{Widget}!Widget@{Widget}}
+\index{Widget@{Widget}!Widget@{Widget}}
+\doxysubsubsection{\texorpdfstring{Widget()}{Widget()}}
+{\footnotesize\ttfamily Widget\+::\+Widget (\begin{DoxyParamCaption}\item[{QWidget \texorpdfstring{$\ast$}{*}}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+
+
+
+在文件 \mbox{\hyperlink{widget_8cpp_source}{widget.\+cpp}} 第 \mbox{\hyperlink{widget_8cpp_source_l00046}{46}} 行定义.
+
+\Hypertarget{class_widget_aa24f66bcbaaec6d458b0980e8c8eae65}\label{class_widget_aa24f66bcbaaec6d458b0980e8c8eae65} 
+\index{Widget@{Widget}!````~Widget@{\texorpdfstring{$\sim$}{\string~}Widget}}
+\index{````~Widget@{\texorpdfstring{$\sim$}{\string~}Widget}!Widget@{Widget}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Widget()}{\string~Widget()}}
+{\footnotesize\ttfamily Widget\+::\texorpdfstring{$\sim$}{\string~}\+Widget (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+在文件 \mbox{\hyperlink{widget_8cpp_source}{widget.\+cpp}} 第 \mbox{\hyperlink{widget_8cpp_source_l00061}{61}} 行定义.
+
+
+
+\doxysubsection{成员函数说明}
+\Hypertarget{class_widget_a0f9dfce23985306dfa248ace3b936688}\label{class_widget_a0f9dfce23985306dfa248ace3b936688} 
+\index{Widget@{Widget}!add\_cluster@{add\_cluster}}
+\index{add\_cluster@{add\_cluster}!Widget@{Widget}}
+\doxysubsubsection{\texorpdfstring{add\_cluster()}{add\_cluster()}}
+{\footnotesize\ttfamily void Widget\+::add\+\_\+cluster (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{widget_8h_a356625608f963163dfb34e48917f5958}{Cluster\+\_\+method}}}]{method,  }\item[{std\+::vector$<$ int $>$}]{labels }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+在表格的method对应列中添加labels作为聚类分组。 
+
+
+\begin{DoxyParams}{参数}
+{\em method} & 聚类方法 \\
+\hline
+{\em labels} & 该聚类方法的分组 \\
+\hline
+\end{DoxyParams}
+
+
+在文件 \mbox{\hyperlink{widget_8cpp_source}{widget.\+cpp}} 第 \mbox{\hyperlink{widget_8cpp_source_l00167}{167}} 行定义.
+
+\Hypertarget{class_widget_adccd7176b1162abe0100288be829c83e}\label{class_widget_adccd7176b1162abe0100288be829c83e} 
+\index{Widget@{Widget}!coloring\_method@{coloring\_method}}
+\index{coloring\_method@{coloring\_method}!Widget@{Widget}}
+\doxysubsubsection{\texorpdfstring{coloring\_method()}{coloring\_method()}}
+{\footnotesize\ttfamily void Widget\+::coloring\+\_\+method (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{widget_8h_a356625608f963163dfb34e48917f5958}{Cluster\+\_\+method}}}]{method }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+根据聚类方法对表格进行着色。 
+
+
+\begin{DoxyParams}{参数}
+{\em method} & 聚类方法 \\
+\hline
+\end{DoxyParams}
+
+
+在文件 \mbox{\hyperlink{widget_8cpp_source}{widget.\+cpp}} 第 \mbox{\hyperlink{widget_8cpp_source_l00201}{201}} 行定义.
+
+\Hypertarget{class_widget_a12ef4995ed462832aea1172399c135ec}\label{class_widget_a12ef4995ed462832aea1172399c135ec} 
+\index{Widget@{Widget}!delete\_obj@{delete\_obj}}
+\index{delete\_obj@{delete\_obj}!Widget@{Widget}}
+\doxysubsubsection{\texorpdfstring{delete\_obj()}{delete\_obj()}}
+{\footnotesize\ttfamily void Widget\+::delete\+\_\+obj (\begin{DoxyParamCaption}\item[{QObject \texorpdfstring{$\ast$}{*}}]{obj }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+删除obj对象，并将指针置为nullptr。 
+
+
+\begin{DoxyParams}{参数}
+{\em obj} & \\
+\hline
+\end{DoxyParams}
+
+
+在文件 \mbox{\hyperlink{widget_8cpp_source}{widget.\+cpp}} 第 \mbox{\hyperlink{widget_8cpp_source_l00120}{120}} 行定义.
+
+\Hypertarget{class_widget_a35db1b06bb59082b1712189a97544e8d}\label{class_widget_a35db1b06bb59082b1712189a97544e8d} 
+\index{Widget@{Widget}!get\_labels\_of@{get\_labels\_of}}
+\index{get\_labels\_of@{get\_labels\_of}!Widget@{Widget}}
+\doxysubsubsection{\texorpdfstring{get\_labels\_of()}{get\_labels\_of()}}
+{\footnotesize\ttfamily std\+::vector$<$ int $>$ Widget\+::get\+\_\+labels\+\_\+of (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{widget_8h_a356625608f963163dfb34e48917f5958}{Cluster\+\_\+method}}}]{method = {\ttfamily \mbox{\hyperlink{widget_8h_a356625608f963163dfb34e48917f5958ac3667c322252cb4024831eb39e924670}{Cluster\+\_\+method\+::kmeans}}} }\end{DoxyParamCaption})}
+
+
+
+获取某个聚类方法的分组，并且统计该方法的分组总数。如果没有找到聚类方法的分组，返回空vector，将分组所在的列设置为-\/1，将分组总数设置为0， 
+
+
+\begin{DoxyParams}{参数}
+{\em method} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{返回}
+std\+::vector$<$int$>$ 
+\end{DoxyReturn}
+
+
+在文件 \mbox{\hyperlink{widget_8cpp_source}{widget.\+cpp}} 第 \mbox{\hyperlink{widget_8cpp_source_l00243}{243}} 行定义.
+
+\Hypertarget{class_widget_ad5788360f0920e8885ff2eed4af39348}\label{class_widget_ad5788360f0920e8885ff2eed4af39348} 
+\index{Widget@{Widget}!on\_button\_barchart\_clicked@{on\_button\_barchart\_clicked}}
+\index{on\_button\_barchart\_clicked@{on\_button\_barchart\_clicked}!Widget@{Widget}}
+\doxysubsubsection{\texorpdfstring{on\_button\_barchart\_clicked}{on\_button\_barchart\_clicked}}
+{\footnotesize\ttfamily void Widget\+::on\+\_\+button\+\_\+barchart\+\_\+clicked (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+直方图和正态分布密度曲线按钮的槽函数。 
+
+
+
+在文件 \mbox{\hyperlink{widget_8cpp_source}{widget.\+cpp}} 第 \mbox{\hyperlink{widget_8cpp_source_l00335}{335}} 行定义.
+
+\Hypertarget{class_widget_a679c430dfa837f1257dfb0606c3c9e3d}\label{class_widget_a679c430dfa837f1257dfb0606c3c9e3d} 
+\index{Widget@{Widget}!on\_button\_cluster\_clicked@{on\_button\_cluster\_clicked}}
+\index{on\_button\_cluster\_clicked@{on\_button\_cluster\_clicked}!Widget@{Widget}}
+\doxysubsubsection{\texorpdfstring{on\_button\_cluster\_clicked}{on\_button\_cluster\_clicked}}
+{\footnotesize\ttfamily void Widget\+::on\+\_\+button\+\_\+cluster\+\_\+clicked (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+聚类按钮的槽函数。 
+
+
+
+在文件 \mbox{\hyperlink{widget_8cpp_source}{widget.\+cpp}} 第 \mbox{\hyperlink{widget_8cpp_source_l00563}{563}} 行定义.
+
+\Hypertarget{class_widget_a3ea881e6748857ff7334948124559056}\label{class_widget_a3ea881e6748857ff7334948124559056} 
+\index{Widget@{Widget}!on\_button\_coloring\_clicked@{on\_button\_coloring\_clicked}}
+\index{on\_button\_coloring\_clicked@{on\_button\_coloring\_clicked}!Widget@{Widget}}
+\doxysubsubsection{\texorpdfstring{on\_button\_coloring\_clicked}{on\_button\_coloring\_clicked}}
+{\footnotesize\ttfamily void Widget\+::on\+\_\+button\+\_\+coloring\+\_\+clicked (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+着色按钮的槽函数。 
+
+
+
+在文件 \mbox{\hyperlink{widget_8cpp_source}{widget.\+cpp}} 第 \mbox{\hyperlink{widget_8cpp_source_l00590}{590}} 行定义.
+
+\Hypertarget{class_widget_a80a6e1d3a07304c9bfa9fc1cc60fcc7b}\label{class_widget_a80a6e1d3a07304c9bfa9fc1cc60fcc7b} 
+\index{Widget@{Widget}!on\_button\_covariance\_clicked@{on\_button\_covariance\_clicked}}
+\index{on\_button\_covariance\_clicked@{on\_button\_covariance\_clicked}!Widget@{Widget}}
+\doxysubsubsection{\texorpdfstring{on\_button\_covariance\_clicked}{on\_button\_covariance\_clicked}}
+{\footnotesize\ttfamily void Widget\+::on\+\_\+button\+\_\+covariance\+\_\+clicked (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+协方差和相关系数矩阵按钮的槽函数。 
+
+
+
+在文件 \mbox{\hyperlink{widget_8cpp_source}{widget.\+cpp}} 第 \mbox{\hyperlink{widget_8cpp_source_l00462}{462}} 行定义.
+
+\Hypertarget{class_widget_aec936a4af2ba680b68fc0277eb96a1ab}\label{class_widget_aec936a4af2ba680b68fc0277eb96a1ab} 
+\index{Widget@{Widget}!on\_button\_ml\_clicked@{on\_button\_ml\_clicked}}
+\index{on\_button\_ml\_clicked@{on\_button\_ml\_clicked}!Widget@{Widget}}
+\doxysubsubsection{\texorpdfstring{on\_button\_ml\_clicked}{on\_button\_ml\_clicked}}
+{\footnotesize\ttfamily void Widget\+::on\+\_\+button\+\_\+ml\+\_\+clicked (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+机器学习按钮的槽函数。 
+
+
+
+在文件 \mbox{\hyperlink{widget_8cpp_source}{widget.\+cpp}} 第 \mbox{\hyperlink{widget_8cpp_source_l00644}{644}} 行定义.
+
+\Hypertarget{class_widget_a7192e77f90918530f3c50f2eae7b925d}\label{class_widget_a7192e77f90918530f3c50f2eae7b925d} 
+\index{Widget@{Widget}!on\_button\_open\_clicked@{on\_button\_open\_clicked}}
+\index{on\_button\_open\_clicked@{on\_button\_open\_clicked}!Widget@{Widget}}
+\doxysubsubsection{\texorpdfstring{on\_button\_open\_clicked}{on\_button\_open\_clicked}}
+{\footnotesize\ttfamily void Widget\+::on\+\_\+button\+\_\+open\+\_\+clicked (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+打开文件按钮的槽函数。 
+
+
+
+在文件 \mbox{\hyperlink{widget_8cpp_source}{widget.\+cpp}} 第 \mbox{\hyperlink{widget_8cpp_source_l00443}{443}} 行定义.
+
+\Hypertarget{class_widget_afbd56ee92fa599d19ff6da0ceebdd8a5}\label{class_widget_afbd56ee92fa599d19ff6da0ceebdd8a5} 
+\index{Widget@{Widget}!on\_button\_pca\_clicked@{on\_button\_pca\_clicked}}
+\index{on\_button\_pca\_clicked@{on\_button\_pca\_clicked}!Widget@{Widget}}
+\doxysubsubsection{\texorpdfstring{on\_button\_pca\_clicked}{on\_button\_pca\_clicked}}
+{\footnotesize\ttfamily void Widget\+::on\+\_\+button\+\_\+pca\+\_\+clicked (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+PCA按钮的槽函数。 
+
+
+
+在文件 \mbox{\hyperlink{widget_8cpp_source}{widget.\+cpp}} 第 \mbox{\hyperlink{widget_8cpp_source_l00515}{515}} 行定义.
+
+\Hypertarget{class_widget_a050a9ecf00142eba547da98587bc144b}\label{class_widget_a050a9ecf00142eba547da98587bc144b} 
+\index{Widget@{Widget}!on\_button\_scatter\_clicked@{on\_button\_scatter\_clicked}}
+\index{on\_button\_scatter\_clicked@{on\_button\_scatter\_clicked}!Widget@{Widget}}
+\doxysubsubsection{\texorpdfstring{on\_button\_scatter\_clicked}{on\_button\_scatter\_clicked}}
+{\footnotesize\ttfamily void Widget\+::on\+\_\+button\+\_\+scatter\+\_\+clicked (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+散点图按钮的槽函数。 
+
+
+
+在文件 \mbox{\hyperlink{widget_8cpp_source}{widget.\+cpp}} 第 \mbox{\hyperlink{widget_8cpp_source_l00372}{372}} 行定义.
+
+\Hypertarget{class_widget_a2c531f78d201811f34766945dfda2f86}\label{class_widget_a2c531f78d201811f34766945dfda2f86} 
+\index{Widget@{Widget}!on\_button\_variance\_clicked@{on\_button\_variance\_clicked}}
+\index{on\_button\_variance\_clicked@{on\_button\_variance\_clicked}!Widget@{Widget}}
+\doxysubsubsection{\texorpdfstring{on\_button\_variance\_clicked}{on\_button\_variance\_clicked}}
+{\footnotesize\ttfamily void Widget\+::on\+\_\+button\+\_\+variance\+\_\+clicked (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+方差和均值按钮的槽函数。 
+
+
+
+在文件 \mbox{\hyperlink{widget_8cpp_source}{widget.\+cpp}} 第 \mbox{\hyperlink{widget_8cpp_source_l00285}{285}} 行定义.
+
+\Hypertarget{class_widget_aee13ceb4f5b6cadd201eeeb1f0a65fec}\label{class_widget_aee13ceb4f5b6cadd201eeeb1f0a65fec} 
+\index{Widget@{Widget}!on\_cluster\_dbscan\_clicked@{on\_cluster\_dbscan\_clicked}}
+\index{on\_cluster\_dbscan\_clicked@{on\_cluster\_dbscan\_clicked}!Widget@{Widget}}
+\doxysubsubsection{\texorpdfstring{on\_cluster\_dbscan\_clicked()}{on\_cluster\_dbscan\_clicked()}}
+{\footnotesize\ttfamily void Widget\+::on\+\_\+cluster\+\_\+dbscan\+\_\+clicked (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+dbscan聚类按钮的槽函数。 
+
+
+
+在文件 \mbox{\hyperlink{widget_8cpp_source}{widget.\+cpp}} 第 \mbox{\hyperlink{widget_8cpp_source_l00623}{623}} 行定义.
+
+\Hypertarget{class_widget_abf7082b40cf5b1f99633f58967c6e5b9}\label{class_widget_abf7082b40cf5b1f99633f58967c6e5b9} 
+\index{Widget@{Widget}!on\_cluster\_kmeans\_clicked@{on\_cluster\_kmeans\_clicked}}
+\index{on\_cluster\_kmeans\_clicked@{on\_cluster\_kmeans\_clicked}!Widget@{Widget}}
+\doxysubsubsection{\texorpdfstring{on\_cluster\_kmeans\_clicked()}{on\_cluster\_kmeans\_clicked()}}
+{\footnotesize\ttfamily void Widget\+::on\+\_\+cluster\+\_\+kmeans\+\_\+clicked (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+K-\/means聚类按钮的槽函数。 
+
+
+
+在文件 \mbox{\hyperlink{widget_8cpp_source}{widget.\+cpp}} 第 \mbox{\hyperlink{widget_8cpp_source_l00573}{573}} 行定义.
+
+\Hypertarget{class_widget_a4561b893d56cfd4afaab4e64739f36e3}\label{class_widget_a4561b893d56cfd4afaab4e64739f36e3} 
+\index{Widget@{Widget}!on\_coloring\_dbscan\_clicked@{on\_coloring\_dbscan\_clicked}}
+\index{on\_coloring\_dbscan\_clicked@{on\_coloring\_dbscan\_clicked}!Widget@{Widget}}
+\doxysubsubsection{\texorpdfstring{on\_coloring\_dbscan\_clicked()}{on\_coloring\_dbscan\_clicked()}}
+{\footnotesize\ttfamily void Widget\+::on\+\_\+coloring\+\_\+dbscan\+\_\+clicked (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+根据dbscan分组结果进行着色。 
+
+
+
+在文件 \mbox{\hyperlink{widget_8cpp_source}{widget.\+cpp}} 第 \mbox{\hyperlink{widget_8cpp_source_l00636}{636}} 行定义.
+
+\Hypertarget{class_widget_aaad1609dbf1cfeb2e672c99dffc63eae}\label{class_widget_aaad1609dbf1cfeb2e672c99dffc63eae} 
+\index{Widget@{Widget}!on\_coloring\_kmeans\_clicked@{on\_coloring\_kmeans\_clicked}}
+\index{on\_coloring\_kmeans\_clicked@{on\_coloring\_kmeans\_clicked}!Widget@{Widget}}
+\doxysubsubsection{\texorpdfstring{on\_coloring\_kmeans\_clicked()}{on\_coloring\_kmeans\_clicked()}}
+{\footnotesize\ttfamily void Widget\+::on\+\_\+coloring\+\_\+kmeans\+\_\+clicked (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+根据kmeans分组结果进行着色。 
+
+
+
+在文件 \mbox{\hyperlink{widget_8cpp_source}{widget.\+cpp}} 第 \mbox{\hyperlink{widget_8cpp_source_l00601}{601}} 行定义.
+
+\Hypertarget{class_widget_a0e0ecaeeb61136b7822776e0640fe946}\label{class_widget_a0e0ecaeeb61136b7822776e0640fe946} 
+\index{Widget@{Widget}!on\_decoloring\_clicked@{on\_decoloring\_clicked}}
+\index{on\_decoloring\_clicked@{on\_decoloring\_clicked}!Widget@{Widget}}
+\doxysubsubsection{\texorpdfstring{on\_decoloring\_clicked()}{on\_decoloring\_clicked()}}
+{\footnotesize\ttfamily void Widget\+::on\+\_\+decoloring\+\_\+clicked (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+取消表格着色。 
+
+
+
+在文件 \mbox{\hyperlink{widget_8cpp_source}{widget.\+cpp}} 第 \mbox{\hyperlink{widget_8cpp_source_l00609}{609}} 行定义.
+
+\Hypertarget{class_widget_af36723a57336dfa23465f25dfdf3746a}\label{class_widget_af36723a57336dfa23465f25dfdf3746a} 
+\index{Widget@{Widget}!open\_table@{open\_table}}
+\index{open\_table@{open\_table}!Widget@{Widget}}
+\doxysubsubsection{\texorpdfstring{open\_table()}{open\_table()}}
+{\footnotesize\ttfamily void Widget\+::open\+\_\+table (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+根据path\+\_\+table打开csv文件，将数据显示在表格中。 
+
+
+
+在文件 \mbox{\hyperlink{widget_8cpp_source}{widget.\+cpp}} 第 \mbox{\hyperlink{widget_8cpp_source_l00070}{70}} 行定义.
+
+\Hypertarget{class_widget_a06f7809a8562ed150864974714221016}\label{class_widget_a06f7809a8562ed150864974714221016} 
+\index{Widget@{Widget}!samples\_selected@{samples\_selected}}
+\index{samples\_selected@{samples\_selected}!Widget@{Widget}}
+\doxysubsubsection{\texorpdfstring{samples\_selected()}{samples\_selected()}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::vector$<$ float $>$ $>$ Widget\+::samples\+\_\+selected (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{least\+\_\+cols = {\ttfamily 1} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+获取选中的列的数据。不允许选中id列，否则会弹出错误提示框。 
+
+
+\begin{DoxyParams}{参数}
+{\em least\+\_\+cols} & 最少需要选中的列数。 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{返回}
+std\+::vector$<$std\+::vector$<$float$>$$>$ 
+\end{DoxyReturn}
+
+
+在文件 \mbox{\hyperlink{widget_8cpp_source}{widget.\+cpp}} 第 \mbox{\hyperlink{widget_8cpp_source_l00131}{131}} 行定义.
+
+
+
+\doxysubsection{类成员变量说明}
+\Hypertarget{class_widget_ab87650695264788abcb78f5bdf060c32}\label{class_widget_ab87650695264788abcb78f5bdf060c32} 
+\index{Widget@{Widget}!chart@{chart}}
+\index{chart@{chart}!Widget@{Widget}}
+\doxysubsubsection{\texorpdfstring{chart}{chart}}
+{\footnotesize\ttfamily QChart\texorpdfstring{$\ast$}{*} Widget\+::chart \{new QChart\}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+在文件 \mbox{\hyperlink{widget_8h_source}{widget.\+h}} 第 \mbox{\hyperlink{widget_8h_source_l00088}{88}} 行定义.
+
+\Hypertarget{class_widget_a118b08ddf72fdf070f6857b139a112c7}\label{class_widget_a118b08ddf72fdf070f6857b139a112c7} 
+\index{Widget@{Widget}!col\_diagnosis\_at@{col\_diagnosis\_at}}
+\index{col\_diagnosis\_at@{col\_diagnosis\_at}!Widget@{Widget}}
+\doxysubsubsection{\texorpdfstring{col\_diagnosis\_at}{col\_diagnosis\_at}}
+{\footnotesize\ttfamily int Widget\+::col\+\_\+diagnosis\+\_\+at = 1\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+在文件 \mbox{\hyperlink{widget_8h_source}{widget.\+h}} 第 \mbox{\hyperlink{widget_8h_source_l00074}{74}} 行定义.
+
+\Hypertarget{class_widget_a77dccd10043bc122ceca8a30af6cb0dc}\label{class_widget_a77dccd10043bc122ceca8a30af6cb0dc} 
+\index{Widget@{Widget}!dbscan\_epsilon@{dbscan\_epsilon}}
+\index{dbscan\_epsilon@{dbscan\_epsilon}!Widget@{Widget}}
+\doxysubsubsection{\texorpdfstring{dbscan\_epsilon}{dbscan\_epsilon}}
+{\footnotesize\ttfamily float Widget\+::dbscan\+\_\+epsilon = 15}
+
+
+
+在文件 \mbox{\hyperlink{widget_8h_source}{widget.\+h}} 第 \mbox{\hyperlink{widget_8h_source_l00038}{38}} 行定义.
+
+\Hypertarget{class_widget_a468bae8249dcd4b034fe1a02110bf608}\label{class_widget_a468bae8249dcd4b034fe1a02110bf608} 
+\index{Widget@{Widget}!dbscan\_minPts@{dbscan\_minPts}}
+\index{dbscan\_minPts@{dbscan\_minPts}!Widget@{Widget}}
+\doxysubsubsection{\texorpdfstring{dbscan\_minPts}{dbscan\_minPts}}
+{\footnotesize\ttfamily int Widget\+::dbscan\+\_\+min\+Pts = 3}
+
+
+
+在文件 \mbox{\hyperlink{widget_8h_source}{widget.\+h}} 第 \mbox{\hyperlink{widget_8h_source_l00039}{39}} 行定义.
+
+\Hypertarget{class_widget_afddf6566c63e5f0ed03c09c8264ba9a3}\label{class_widget_afddf6566c63e5f0ed03c09c8264ba9a3} 
+\index{Widget@{Widget}!kmeans\_maxiter@{kmeans\_maxiter}}
+\index{kmeans\_maxiter@{kmeans\_maxiter}!Widget@{Widget}}
+\doxysubsubsection{\texorpdfstring{kmeans\_maxiter}{kmeans\_maxiter}}
+{\footnotesize\ttfamily int Widget\+::kmeans\+\_\+maxiter = 100}
+
+
+
+在文件 \mbox{\hyperlink{widget_8h_source}{widget.\+h}} 第 \mbox{\hyperlink{widget_8h_source_l00036}{36}} 行定义.
+
+\Hypertarget{class_widget_a429075e5b4a5f6de7015e59f1ff39490}\label{class_widget_a429075e5b4a5f6de7015e59f1ff39490} 
+\index{Widget@{Widget}!map\_cluster\_col@{map\_cluster\_col}}
+\index{map\_cluster\_col@{map\_cluster\_col}!Widget@{Widget}}
+\doxysubsubsection{\texorpdfstring{map\_cluster\_col}{map\_cluster\_col}}
+{\footnotesize\ttfamily std\+::map$<$\mbox{\hyperlink{widget_8h_a356625608f963163dfb34e48917f5958}{Cluster\+\_\+method}}, int$>$ Widget\+::map\+\_\+cluster\+\_\+col}
+
+{\bfseries 初始值\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{\{\mbox{\hyperlink{widget_8h_a356625608f963163dfb34e48917f5958ac3667c322252cb4024831eb39e924670}{Cluster\_method::kmeans}},\ 10\},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\mbox{\hyperlink{widget_8h_a356625608f963163dfb34e48917f5958abf0ef28c5df781bd2124fae79d8fa3e1}{Cluster\_method::dbscan}},\ 11\}\}}
+
+\end{DoxyCode}
+
+
+在文件 \mbox{\hyperlink{widget_8h_source}{widget.\+h}} 第 \mbox{\hyperlink{widget_8h_source_l00032}{32}} 行定义.
+
+\Hypertarget{class_widget_a2ebd1f9f315552296c44b63914af2009}\label{class_widget_a2ebd1f9f315552296c44b63914af2009} 
+\index{Widget@{Widget}!map\_cluster\_groups@{map\_cluster\_groups}}
+\index{map\_cluster\_groups@{map\_cluster\_groups}!Widget@{Widget}}
+\doxysubsubsection{\texorpdfstring{map\_cluster\_groups}{map\_cluster\_groups}}
+{\footnotesize\ttfamily std\+::map$<$\mbox{\hyperlink{widget_8h_a356625608f963163dfb34e48917f5958}{Cluster\+\_\+method}}, int$>$ Widget\+::map\+\_\+cluster\+\_\+groups}
+
+{\bfseries 初始值\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{\{\mbox{\hyperlink{widget_8h_a356625608f963163dfb34e48917f5958ac3667c322252cb4024831eb39e924670}{Cluster\_method::kmeans}},\ 4\},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\mbox{\hyperlink{widget_8h_a356625608f963163dfb34e48917f5958abf0ef28c5df781bd2124fae79d8fa3e1}{Cluster\_method::dbscan}},\ 8\}\}}
+
+\end{DoxyCode}
+
+
+在文件 \mbox{\hyperlink{widget_8h_source}{widget.\+h}} 第 \mbox{\hyperlink{widget_8h_source_l00028}{28}} 行定义.
+
+\Hypertarget{class_widget_a4a69d6402e3c67623d1d081fcea2db20}\label{class_widget_a4a69d6402e3c67623d1d081fcea2db20} 
+\index{Widget@{Widget}!model@{model}}
+\index{model@{model}!Widget@{Widget}}
+\doxysubsubsection{\texorpdfstring{model}{model}}
+{\footnotesize\ttfamily QStandard\+Item\+Model\texorpdfstring{$\ast$}{*} Widget\+::model \{new QStandard\+Item\+Model(this)\}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+在文件 \mbox{\hyperlink{widget_8h_source}{widget.\+h}} 第 \mbox{\hyperlink{widget_8h_source_l00082}{82}} 行定义.
+
+\Hypertarget{class_widget_a1448ad241c2be52415644d585feffcd5}\label{class_widget_a1448ad241c2be52415644d585feffcd5} 
+\index{Widget@{Widget}!path\_table@{path\_table}}
+\index{path\_table@{path\_table}!Widget@{Widget}}
+\doxysubsubsection{\texorpdfstring{path\_table}{path\_table}}
+{\footnotesize\ttfamily QString Widget\+::path\+\_\+table = "{}\+:/resource/breast-\/cancer.\+csv"{}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+在文件 \mbox{\hyperlink{widget_8h_source}{widget.\+h}} 第 \mbox{\hyperlink{widget_8h_source_l00079}{79}} 行定义.
+
+\Hypertarget{class_widget_a19c48cc897c43aa2e995fce9f7fb2418}\label{class_widget_a19c48cc897c43aa2e995fce9f7fb2418} 
+\index{Widget@{Widget}!ui@{ui}}
+\index{ui@{ui}!Widget@{Widget}}
+\doxysubsubsection{\texorpdfstring{ui}{ui}}
+{\footnotesize\ttfamily Ui\+::\+Widget\texorpdfstring{$\ast$}{*} Widget\+::ui\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+在文件 \mbox{\hyperlink{widget_8h_source}{widget.\+h}} 第 \mbox{\hyperlink{widget_8h_source_l00076}{76}} 行定义.
+
+
+
+该类的文档由以下文件生成\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/tzh21/\+Projects/2023summer/plantform\+\_\+xgboost/src/\mbox{\hyperlink{widget_8h}{widget.\+h}}\item 
+D\+:/tzh21/\+Projects/2023summer/plantform\+\_\+xgboost/src/\mbox{\hyperlink{widget_8cpp}{widget.\+cpp}}\end{DoxyCompactItemize}

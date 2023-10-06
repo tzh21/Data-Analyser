@@ -1,0 +1,184 @@
+\doxysection{Window\+\_\+\+PCA2\+D类 参考}
+\hypertarget{class_window___p_c_a2_d}{}\label{class_window___p_c_a2_d}\index{Window\_PCA2D@{Window\_PCA2D}}
+
+
+{\ttfamily \#include $<$window\+\_\+pca.\+h$>$}
+
+
+
+继承自 QWidget .
+
+\doxysubsubsection*{Public 成员函数}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_window___p_c_a2_d_abc19628cd24d37651fb57b8932064609}{Window\+\_\+\+PCA2D}} (const std\+::vector$<$ std\+::vector$<$ float $>$ $>$ \&variants, const std\+::vector$<$ int $>$ \&labels, const size\+\_\+t cnt\+\_\+groups, QWidget \texorpdfstring{$\ast$}{*}parent=nullptr)
+\begin{DoxyCompactList}\small\item\em Construct a new \doxylink{class_window___p_c_a2_d_abc19628cd24d37651fb57b8932064609}{Window\+\_\+\+PCA2\+D\+::\+Window\+\_\+\+PCA2D} object \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private 成员函数}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_window___p_c_a2_d_a5fcd5958db4983ef81313a4a34dafdc4}{on\+\_\+group\+\_\+hovered}} (int index)
+\begin{DoxyCompactList}\small\item\em 2D图中在点上悬停时，显示组别。 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_window___p_c_a2_d_a6ed803d8652e15f5e3b109882b3245bb}{on\+Point\+Hovered}} (const QPointF \&point, bool state)
+\begin{DoxyCompactList}\small\item\em 2D图中在点上悬停时，显示列序号和坐标。 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private 属性}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{class_window___p_c_a2_d_a4f42996bfdf9dd27852f950a19f2c2d6}{dim\+\_\+reduced}} = 2
+\item 
+QLine\+Edit \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_window___p_c_a2_d_a8ab19b95f435e2a776bf245b1537a165}{edit\+\_\+group}}
+\item 
+QLine\+Edit \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_window___p_c_a2_d_a3bc8770d4b1d7f75c1504d44730ac507}{edit\+\_\+col}}
+\item 
+QLine\+Edit \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_window___p_c_a2_d_a574f906bf7817b3969b3893d47e20eec}{edit\+\_\+1st}}
+\item 
+QLine\+Edit \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_window___p_c_a2_d_a6540aa598ddc60b183cb43e2d0720431}{edit\+\_\+2nd}}
+\item 
+std\+::map$<$ std\+::string, int $>$ \mbox{\hyperlink{class_window___p_c_a2_d_a0553313baa2034241acd5f4ed77c32c9}{map\+\_\+xy\+\_\+col}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{详细描述}
+
+
+在文件 \mbox{\hyperlink{window__pca_8h_source}{window\+\_\+pca.\+h}} 第 \mbox{\hyperlink{window__pca_8h_source_l00019}{19}} 行定义.
+
+
+
+\doxysubsection{构造及析构函数说明}
+\Hypertarget{class_window___p_c_a2_d_abc19628cd24d37651fb57b8932064609}\label{class_window___p_c_a2_d_abc19628cd24d37651fb57b8932064609} 
+\index{Window\_PCA2D@{Window\_PCA2D}!Window\_PCA2D@{Window\_PCA2D}}
+\index{Window\_PCA2D@{Window\_PCA2D}!Window\_PCA2D@{Window\_PCA2D}}
+\doxysubsubsection{\texorpdfstring{Window\_PCA2D()}{Window\_PCA2D()}}
+{\footnotesize\ttfamily Window\+\_\+\+PCA2\+D\+::\+Window\+\_\+\+PCA2D (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::vector$<$ float $>$ $>$ \&}]{variants,  }\item[{const std\+::vector$<$ int $>$ \&}]{labels,  }\item[{const size\+\_\+t}]{cnt\+\_\+groups,  }\item[{QWidget \texorpdfstring{$\ast$}{*}}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Construct a new \doxylink{class_window___p_c_a2_d_abc19628cd24d37651fb57b8932064609}{Window\+\_\+\+PCA2\+D\+::\+Window\+\_\+\+PCA2D} object 
+
+
+\begin{DoxyParams}{参数}
+{\em variants} & 变量的数据。 \\
+\hline
+{\em labels} & 每个样本的组别。 \\
+\hline
+{\em cnt\+\_\+groups} & 组别的总数。 \\
+\hline
+{\em parent} & \\
+\hline
+\end{DoxyParams}
+
+
+在文件 \mbox{\hyperlink{window__pca_8cpp_source}{window\+\_\+pca.\+cpp}} 第 \mbox{\hyperlink{window__pca_8cpp_source_l00025}{25}} 行定义.
+
+
+
+\doxysubsection{成员函数说明}
+\Hypertarget{class_window___p_c_a2_d_a5fcd5958db4983ef81313a4a34dafdc4}\label{class_window___p_c_a2_d_a5fcd5958db4983ef81313a4a34dafdc4} 
+\index{Window\_PCA2D@{Window\_PCA2D}!on\_group\_hovered@{on\_group\_hovered}}
+\index{on\_group\_hovered@{on\_group\_hovered}!Window\_PCA2D@{Window\_PCA2D}}
+\doxysubsubsection{\texorpdfstring{on\_group\_hovered()}{on\_group\_hovered()}}
+{\footnotesize\ttfamily void Window\+\_\+\+PCA2\+D\+::on\+\_\+group\+\_\+hovered (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+2D图中在点上悬停时，显示组别。 
+
+
+\begin{DoxyParams}{参数}
+{\em index} & \\
+\hline
+\end{DoxyParams}
+
+
+在文件 \mbox{\hyperlink{window__pca_8cpp_source}{window\+\_\+pca.\+cpp}} 第 \mbox{\hyperlink{window__pca_8cpp_source_l00541}{541}} 行定义.
+
+\Hypertarget{class_window___p_c_a2_d_a6ed803d8652e15f5e3b109882b3245bb}\label{class_window___p_c_a2_d_a6ed803d8652e15f5e3b109882b3245bb} 
+\index{Window\_PCA2D@{Window\_PCA2D}!onPointHovered@{onPointHovered}}
+\index{onPointHovered@{onPointHovered}!Window\_PCA2D@{Window\_PCA2D}}
+\doxysubsubsection{\texorpdfstring{onPointHovered()}{onPointHovered()}}
+{\footnotesize\ttfamily void Window\+\_\+\+PCA2\+D\+::on\+Point\+Hovered (\begin{DoxyParamCaption}\item[{const QPointF \&}]{point,  }\item[{bool}]{state }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+2D图中在点上悬停时，显示列序号和坐标。 
+
+
+\begin{DoxyParams}{参数}
+{\em point} & \\
+\hline
+{\em state} & \\
+\hline
+\end{DoxyParams}
+
+
+在文件 \mbox{\hyperlink{window__pca_8cpp_source}{window\+\_\+pca.\+cpp}} 第 \mbox{\hyperlink{window__pca_8cpp_source_l00551}{551}} 行定义.
+
+
+
+\doxysubsection{类成员变量说明}
+\Hypertarget{class_window___p_c_a2_d_a4f42996bfdf9dd27852f950a19f2c2d6}\label{class_window___p_c_a2_d_a4f42996bfdf9dd27852f950a19f2c2d6} 
+\index{Window\_PCA2D@{Window\_PCA2D}!dim\_reduced@{dim\_reduced}}
+\index{dim\_reduced@{dim\_reduced}!Window\_PCA2D@{Window\_PCA2D}}
+\doxysubsubsection{\texorpdfstring{dim\_reduced}{dim\_reduced}}
+{\footnotesize\ttfamily int Window\+\_\+\+PCA2\+D\+::dim\+\_\+reduced = 2\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+在文件 \mbox{\hyperlink{window__pca_8h_source}{window\+\_\+pca.\+h}} 第 \mbox{\hyperlink{window__pca_8h_source_l00033}{33}} 行定义.
+
+\Hypertarget{class_window___p_c_a2_d_a574f906bf7817b3969b3893d47e20eec}\label{class_window___p_c_a2_d_a574f906bf7817b3969b3893d47e20eec} 
+\index{Window\_PCA2D@{Window\_PCA2D}!edit\_1st@{edit\_1st}}
+\index{edit\_1st@{edit\_1st}!Window\_PCA2D@{Window\_PCA2D}}
+\doxysubsubsection{\texorpdfstring{edit\_1st}{edit\_1st}}
+{\footnotesize\ttfamily QLine\+Edit\texorpdfstring{$\ast$}{*} Window\+\_\+\+PCA2\+D\+::edit\+\_\+1st\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+在文件 \mbox{\hyperlink{window__pca_8h_source}{window\+\_\+pca.\+h}} 第 \mbox{\hyperlink{window__pca_8h_source_l00037}{37}} 行定义.
+
+\Hypertarget{class_window___p_c_a2_d_a6540aa598ddc60b183cb43e2d0720431}\label{class_window___p_c_a2_d_a6540aa598ddc60b183cb43e2d0720431} 
+\index{Window\_PCA2D@{Window\_PCA2D}!edit\_2nd@{edit\_2nd}}
+\index{edit\_2nd@{edit\_2nd}!Window\_PCA2D@{Window\_PCA2D}}
+\doxysubsubsection{\texorpdfstring{edit\_2nd}{edit\_2nd}}
+{\footnotesize\ttfamily QLine\+Edit\texorpdfstring{$\ast$}{*} Window\+\_\+\+PCA2\+D\+::edit\+\_\+2nd\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+在文件 \mbox{\hyperlink{window__pca_8h_source}{window\+\_\+pca.\+h}} 第 \mbox{\hyperlink{window__pca_8h_source_l00038}{38}} 行定义.
+
+\Hypertarget{class_window___p_c_a2_d_a3bc8770d4b1d7f75c1504d44730ac507}\label{class_window___p_c_a2_d_a3bc8770d4b1d7f75c1504d44730ac507} 
+\index{Window\_PCA2D@{Window\_PCA2D}!edit\_col@{edit\_col}}
+\index{edit\_col@{edit\_col}!Window\_PCA2D@{Window\_PCA2D}}
+\doxysubsubsection{\texorpdfstring{edit\_col}{edit\_col}}
+{\footnotesize\ttfamily QLine\+Edit\texorpdfstring{$\ast$}{*} Window\+\_\+\+PCA2\+D\+::edit\+\_\+col\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+在文件 \mbox{\hyperlink{window__pca_8h_source}{window\+\_\+pca.\+h}} 第 \mbox{\hyperlink{window__pca_8h_source_l00036}{36}} 行定义.
+
+\Hypertarget{class_window___p_c_a2_d_a8ab19b95f435e2a776bf245b1537a165}\label{class_window___p_c_a2_d_a8ab19b95f435e2a776bf245b1537a165} 
+\index{Window\_PCA2D@{Window\_PCA2D}!edit\_group@{edit\_group}}
+\index{edit\_group@{edit\_group}!Window\_PCA2D@{Window\_PCA2D}}
+\doxysubsubsection{\texorpdfstring{edit\_group}{edit\_group}}
+{\footnotesize\ttfamily QLine\+Edit\texorpdfstring{$\ast$}{*} Window\+\_\+\+PCA2\+D\+::edit\+\_\+group\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+在文件 \mbox{\hyperlink{window__pca_8h_source}{window\+\_\+pca.\+h}} 第 \mbox{\hyperlink{window__pca_8h_source_l00035}{35}} 行定义.
+
+\Hypertarget{class_window___p_c_a2_d_a0553313baa2034241acd5f4ed77c32c9}\label{class_window___p_c_a2_d_a0553313baa2034241acd5f4ed77c32c9} 
+\index{Window\_PCA2D@{Window\_PCA2D}!map\_xy\_col@{map\_xy\_col}}
+\index{map\_xy\_col@{map\_xy\_col}!Window\_PCA2D@{Window\_PCA2D}}
+\doxysubsubsection{\texorpdfstring{map\_xy\_col}{map\_xy\_col}}
+{\footnotesize\ttfamily std\+::map$<$std\+::string, int$>$ Window\+\_\+\+PCA2\+D\+::map\+\_\+xy\+\_\+col\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+在文件 \mbox{\hyperlink{window__pca_8h_source}{window\+\_\+pca.\+h}} 第 \mbox{\hyperlink{window__pca_8h_source_l00040}{40}} 行定义.
+
+
+
+该类的文档由以下文件生成\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/tzh21/\+Projects/2023summer/plantform\+\_\+xgboost/src/\mbox{\hyperlink{window__pca_8h}{window\+\_\+pca.\+h}}\item 
+D\+:/tzh21/\+Projects/2023summer/plantform\+\_\+xgboost/src/\mbox{\hyperlink{window__pca_8cpp}{window\+\_\+pca.\+cpp}}\end{DoxyCompactItemize}

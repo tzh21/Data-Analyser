@@ -1,0 +1,1028 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>医疗数据分析平台: Widget类 参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">医疗数据分析平台
+   </div>
+   <div id="projectbrief">大作业</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="#pub-attribs">Public 属性</a> &#124;
+<a href="#pri-slots">Private 槽</a> &#124;
+<a href="#pri-methods">Private 成员函数</a> &#124;
+<a href="#pri-attribs">Private 属性</a> &#124;
+<a href="class_widget-members.html">所有成员列表</a>  </div>
+  <div class="headertitle"><div class="title">Widget类 参考</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="widget_8h_source.html">widget.h</a>&gt;</code></p>
+
+<p>继承自 QWidget .</p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:ace1aa23652eb4425355a81760b39fd37" id="r_ace1aa23652eb4425355a81760b39fd37"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_widget.html#ace1aa23652eb4425355a81760b39fd37">Widget</a> (QWidget *parent=nullptr)</td></tr>
+<tr class="separator:ace1aa23652eb4425355a81760b39fd37"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa24f66bcbaaec6d458b0980e8c8eae65" id="r_aa24f66bcbaaec6d458b0980e8c8eae65"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_widget.html#aa24f66bcbaaec6d458b0980e8c8eae65">~Widget</a> ()</td></tr>
+<tr class="separator:aa24f66bcbaaec6d458b0980e8c8eae65"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a35db1b06bb59082b1712189a97544e8d" id="r_a35db1b06bb59082b1712189a97544e8d"><td class="memItemLeft" align="right" valign="top">std::vector&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_widget.html#a35db1b06bb59082b1712189a97544e8d">get_labels_of</a> (<a class="el" href="widget_8h.html#a356625608f963163dfb34e48917f5958">Cluster_method</a> method=<a class="el" href="widget_8h.html#a356625608f963163dfb34e48917f5958ac3667c322252cb4024831eb39e924670">Cluster_method::kmeans</a>)</td></tr>
+<tr class="memdesc:a35db1b06bb59082b1712189a97544e8d"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取某个聚类方法的分组，并且统计该方法的分组总数。如果没有找到聚类方法的分组，返回空vector，将分组所在的列设置为-1，将分组总数设置为0，  <br /></td></tr>
+<tr class="separator:a35db1b06bb59082b1712189a97544e8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0e0ecaeeb61136b7822776e0640fe946" id="r_a0e0ecaeeb61136b7822776e0640fe946"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_widget.html#a0e0ecaeeb61136b7822776e0640fe946">on_decoloring_clicked</a> ()</td></tr>
+<tr class="memdesc:a0e0ecaeeb61136b7822776e0640fe946"><td class="mdescLeft">&#160;</td><td class="mdescRight">取消表格着色。  <br /></td></tr>
+<tr class="separator:a0e0ecaeeb61136b7822776e0640fe946"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abf7082b40cf5b1f99633f58967c6e5b9" id="r_abf7082b40cf5b1f99633f58967c6e5b9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_widget.html#abf7082b40cf5b1f99633f58967c6e5b9">on_cluster_kmeans_clicked</a> ()</td></tr>
+<tr class="memdesc:abf7082b40cf5b1f99633f58967c6e5b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">K-means聚类按钮的槽函数。  <br /></td></tr>
+<tr class="separator:abf7082b40cf5b1f99633f58967c6e5b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaad1609dbf1cfeb2e672c99dffc63eae" id="r_aaad1609dbf1cfeb2e672c99dffc63eae"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_widget.html#aaad1609dbf1cfeb2e672c99dffc63eae">on_coloring_kmeans_clicked</a> ()</td></tr>
+<tr class="memdesc:aaad1609dbf1cfeb2e672c99dffc63eae"><td class="mdescLeft">&#160;</td><td class="mdescRight">根据kmeans分组结果进行着色。  <br /></td></tr>
+<tr class="separator:aaad1609dbf1cfeb2e672c99dffc63eae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aee13ceb4f5b6cadd201eeeb1f0a65fec" id="r_aee13ceb4f5b6cadd201eeeb1f0a65fec"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_widget.html#aee13ceb4f5b6cadd201eeeb1f0a65fec">on_cluster_dbscan_clicked</a> ()</td></tr>
+<tr class="memdesc:aee13ceb4f5b6cadd201eeeb1f0a65fec"><td class="mdescLeft">&#160;</td><td class="mdescRight">dbscan聚类按钮的槽函数。  <br /></td></tr>
+<tr class="separator:aee13ceb4f5b6cadd201eeeb1f0a65fec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4561b893d56cfd4afaab4e64739f36e3" id="r_a4561b893d56cfd4afaab4e64739f36e3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_widget.html#a4561b893d56cfd4afaab4e64739f36e3">on_coloring_dbscan_clicked</a> ()</td></tr>
+<tr class="memdesc:a4561b893d56cfd4afaab4e64739f36e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">根据dbscan分组结果进行着色。  <br /></td></tr>
+<tr class="separator:a4561b893d56cfd4afaab4e64739f36e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
+Public 属性</h2></td></tr>
+<tr class="memitem:a2ebd1f9f315552296c44b63914af2009" id="r_a2ebd1f9f315552296c44b63914af2009"><td class="memItemLeft" align="right" valign="top">std::map&lt; <a class="el" href="widget_8h.html#a356625608f963163dfb34e48917f5958">Cluster_method</a>, int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_widget.html#a2ebd1f9f315552296c44b63914af2009">map_cluster_groups</a></td></tr>
+<tr class="separator:a2ebd1f9f315552296c44b63914af2009"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a429075e5b4a5f6de7015e59f1ff39490" id="r_a429075e5b4a5f6de7015e59f1ff39490"><td class="memItemLeft" align="right" valign="top">std::map&lt; <a class="el" href="widget_8h.html#a356625608f963163dfb34e48917f5958">Cluster_method</a>, int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_widget.html#a429075e5b4a5f6de7015e59f1ff39490">map_cluster_col</a></td></tr>
+<tr class="separator:a429075e5b4a5f6de7015e59f1ff39490"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afddf6566c63e5f0ed03c09c8264ba9a3" id="r_afddf6566c63e5f0ed03c09c8264ba9a3"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_widget.html#afddf6566c63e5f0ed03c09c8264ba9a3">kmeans_maxiter</a> = 100</td></tr>
+<tr class="separator:afddf6566c63e5f0ed03c09c8264ba9a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a77dccd10043bc122ceca8a30af6cb0dc" id="r_a77dccd10043bc122ceca8a30af6cb0dc"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_widget.html#a77dccd10043bc122ceca8a30af6cb0dc">dbscan_epsilon</a> = 15</td></tr>
+<tr class="separator:a77dccd10043bc122ceca8a30af6cb0dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a468bae8249dcd4b034fe1a02110bf608" id="r_a468bae8249dcd4b034fe1a02110bf608"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_widget.html#a468bae8249dcd4b034fe1a02110bf608">dbscan_minPts</a> = 3</td></tr>
+<tr class="separator:a468bae8249dcd4b034fe1a02110bf608"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-slots" name="pri-slots"></a>
+Private 槽</h2></td></tr>
+<tr class="memitem:a2c531f78d201811f34766945dfda2f86" id="r_a2c531f78d201811f34766945dfda2f86"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_widget.html#a2c531f78d201811f34766945dfda2f86">on_button_variance_clicked</a> ()</td></tr>
+<tr class="memdesc:a2c531f78d201811f34766945dfda2f86"><td class="mdescLeft">&#160;</td><td class="mdescRight">方差和均值按钮的槽函数。  <br /></td></tr>
+<tr class="separator:a2c531f78d201811f34766945dfda2f86"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad5788360f0920e8885ff2eed4af39348" id="r_ad5788360f0920e8885ff2eed4af39348"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_widget.html#ad5788360f0920e8885ff2eed4af39348">on_button_barchart_clicked</a> ()</td></tr>
+<tr class="memdesc:ad5788360f0920e8885ff2eed4af39348"><td class="mdescLeft">&#160;</td><td class="mdescRight">直方图和正态分布密度曲线按钮的槽函数。  <br /></td></tr>
+<tr class="separator:ad5788360f0920e8885ff2eed4af39348"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a050a9ecf00142eba547da98587bc144b" id="r_a050a9ecf00142eba547da98587bc144b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_widget.html#a050a9ecf00142eba547da98587bc144b">on_button_scatter_clicked</a> ()</td></tr>
+<tr class="memdesc:a050a9ecf00142eba547da98587bc144b"><td class="mdescLeft">&#160;</td><td class="mdescRight">散点图按钮的槽函数。  <br /></td></tr>
+<tr class="separator:a050a9ecf00142eba547da98587bc144b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7192e77f90918530f3c50f2eae7b925d" id="r_a7192e77f90918530f3c50f2eae7b925d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_widget.html#a7192e77f90918530f3c50f2eae7b925d">on_button_open_clicked</a> ()</td></tr>
+<tr class="memdesc:a7192e77f90918530f3c50f2eae7b925d"><td class="mdescLeft">&#160;</td><td class="mdescRight">打开文件按钮的槽函数。  <br /></td></tr>
+<tr class="separator:a7192e77f90918530f3c50f2eae7b925d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a80a6e1d3a07304c9bfa9fc1cc60fcc7b" id="r_a80a6e1d3a07304c9bfa9fc1cc60fcc7b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_widget.html#a80a6e1d3a07304c9bfa9fc1cc60fcc7b">on_button_covariance_clicked</a> ()</td></tr>
+<tr class="memdesc:a80a6e1d3a07304c9bfa9fc1cc60fcc7b"><td class="mdescLeft">&#160;</td><td class="mdescRight">协方差和相关系数矩阵按钮的槽函数。  <br /></td></tr>
+<tr class="separator:a80a6e1d3a07304c9bfa9fc1cc60fcc7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afbd56ee92fa599d19ff6da0ceebdd8a5" id="r_afbd56ee92fa599d19ff6da0ceebdd8a5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_widget.html#afbd56ee92fa599d19ff6da0ceebdd8a5">on_button_pca_clicked</a> ()</td></tr>
+<tr class="memdesc:afbd56ee92fa599d19ff6da0ceebdd8a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">PCA按钮的槽函数。  <br /></td></tr>
+<tr class="separator:afbd56ee92fa599d19ff6da0ceebdd8a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a679c430dfa837f1257dfb0606c3c9e3d" id="r_a679c430dfa837f1257dfb0606c3c9e3d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_widget.html#a679c430dfa837f1257dfb0606c3c9e3d">on_button_cluster_clicked</a> ()</td></tr>
+<tr class="memdesc:a679c430dfa837f1257dfb0606c3c9e3d"><td class="mdescLeft">&#160;</td><td class="mdescRight">聚类按钮的槽函数。  <br /></td></tr>
+<tr class="separator:a679c430dfa837f1257dfb0606c3c9e3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3ea881e6748857ff7334948124559056" id="r_a3ea881e6748857ff7334948124559056"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_widget.html#a3ea881e6748857ff7334948124559056">on_button_coloring_clicked</a> ()</td></tr>
+<tr class="memdesc:a3ea881e6748857ff7334948124559056"><td class="mdescLeft">&#160;</td><td class="mdescRight">着色按钮的槽函数。  <br /></td></tr>
+<tr class="separator:a3ea881e6748857ff7334948124559056"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aec936a4af2ba680b68fc0277eb96a1ab" id="r_aec936a4af2ba680b68fc0277eb96a1ab"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_widget.html#aec936a4af2ba680b68fc0277eb96a1ab">on_button_ml_clicked</a> ()</td></tr>
+<tr class="memdesc:aec936a4af2ba680b68fc0277eb96a1ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">机器学习按钮的槽函数。  <br /></td></tr>
+<tr class="separator:aec936a4af2ba680b68fc0277eb96a1ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Private 成员函数</h2></td></tr>
+<tr class="memitem:af36723a57336dfa23465f25dfdf3746a" id="r_af36723a57336dfa23465f25dfdf3746a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_widget.html#af36723a57336dfa23465f25dfdf3746a">open_table</a> ()</td></tr>
+<tr class="memdesc:af36723a57336dfa23465f25dfdf3746a"><td class="mdescLeft">&#160;</td><td class="mdescRight">根据path_table打开csv文件，将数据显示在表格中。  <br /></td></tr>
+<tr class="separator:af36723a57336dfa23465f25dfdf3746a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a12ef4995ed462832aea1172399c135ec" id="r_a12ef4995ed462832aea1172399c135ec"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_widget.html#a12ef4995ed462832aea1172399c135ec">delete_obj</a> (QObject *obj)</td></tr>
+<tr class="memdesc:a12ef4995ed462832aea1172399c135ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">删除obj对象，并将指针置为nullptr。  <br /></td></tr>
+<tr class="separator:a12ef4995ed462832aea1172399c135ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0f9dfce23985306dfa248ace3b936688" id="r_a0f9dfce23985306dfa248ace3b936688"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_widget.html#a0f9dfce23985306dfa248ace3b936688">add_cluster</a> (<a class="el" href="widget_8h.html#a356625608f963163dfb34e48917f5958">Cluster_method</a> method, std::vector&lt; int &gt; labels)</td></tr>
+<tr class="memdesc:a0f9dfce23985306dfa248ace3b936688"><td class="mdescLeft">&#160;</td><td class="mdescRight">在表格的method对应列中添加labels作为聚类分组。  <br /></td></tr>
+<tr class="separator:a0f9dfce23985306dfa248ace3b936688"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adccd7176b1162abe0100288be829c83e" id="r_adccd7176b1162abe0100288be829c83e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_widget.html#adccd7176b1162abe0100288be829c83e">coloring_method</a> (<a class="el" href="widget_8h.html#a356625608f963163dfb34e48917f5958">Cluster_method</a> method)</td></tr>
+<tr class="memdesc:adccd7176b1162abe0100288be829c83e"><td class="mdescLeft">&#160;</td><td class="mdescRight">根据聚类方法对表格进行着色。  <br /></td></tr>
+<tr class="separator:adccd7176b1162abe0100288be829c83e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a06f7809a8562ed150864974714221016" id="r_a06f7809a8562ed150864974714221016"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::vector&lt; float &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_widget.html#a06f7809a8562ed150864974714221016">samples_selected</a> (size_t least_cols=1)</td></tr>
+<tr class="memdesc:a06f7809a8562ed150864974714221016"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取选中的列的数据。不允许选中id列，否则会弹出错误提示框。  <br /></td></tr>
+<tr class="separator:a06f7809a8562ed150864974714221016"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private 属性</h2></td></tr>
+<tr class="memitem:a118b08ddf72fdf070f6857b139a112c7" id="r_a118b08ddf72fdf070f6857b139a112c7"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_widget.html#a118b08ddf72fdf070f6857b139a112c7">col_diagnosis_at</a> = 1</td></tr>
+<tr class="separator:a118b08ddf72fdf070f6857b139a112c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a19c48cc897c43aa2e995fce9f7fb2418" id="r_a19c48cc897c43aa2e995fce9f7fb2418"><td class="memItemLeft" align="right" valign="top">Ui::Widget *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_widget.html#a19c48cc897c43aa2e995fce9f7fb2418">ui</a></td></tr>
+<tr class="separator:a19c48cc897c43aa2e995fce9f7fb2418"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1448ad241c2be52415644d585feffcd5" id="r_a1448ad241c2be52415644d585feffcd5"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_widget.html#a1448ad241c2be52415644d585feffcd5">path_table</a> = &quot;:/resource/breast-cancer.csv&quot;</td></tr>
+<tr class="separator:a1448ad241c2be52415644d585feffcd5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4a69d6402e3c67623d1d081fcea2db20" id="r_a4a69d6402e3c67623d1d081fcea2db20"><td class="memItemLeft" align="right" valign="top">QStandardItemModel *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_widget.html#a4a69d6402e3c67623d1d081fcea2db20">model</a> {new QStandardItemModel(this)}</td></tr>
+<tr class="separator:a4a69d6402e3c67623d1d081fcea2db20"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab87650695264788abcb78f5bdf060c32" id="r_ab87650695264788abcb78f5bdf060c32"><td class="memItemLeft" align="right" valign="top">QChart *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_widget.html#ab87650695264788abcb78f5bdf060c32">chart</a> {new QChart}</td></tr>
+<tr class="separator:ab87650695264788abcb78f5bdf060c32"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock">
+<p class="definition">在文件 <a class="el" href="widget_8h_source.html">widget.h</a> 第 <a class="el" href="widget_8h_source.html#l00019">19</a> 行定义.</p>
+</div><h2 class="groupheader">构造及析构函数说明</h2>
+<a id="ace1aa23652eb4425355a81760b39fd37" name="ace1aa23652eb4425355a81760b39fd37"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ace1aa23652eb4425355a81760b39fd37">&#9670;&#160;</a></span>Widget()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Widget::Widget </td>
+          <td>(</td>
+          <td class="paramtype">QWidget *&#160;</td>
+          <td class="paramname"><em>parent</em> = <code>nullptr</code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="widget_8cpp_source.html">widget.cpp</a> 第 <a class="el" href="widget_8cpp_source.html#l00046">46</a> 行定义.</p>
+
+</div>
+</div>
+<a id="aa24f66bcbaaec6d458b0980e8c8eae65" name="aa24f66bcbaaec6d458b0980e8c8eae65"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa24f66bcbaaec6d458b0980e8c8eae65">&#9670;&#160;</a></span>~Widget()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Widget::~Widget </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="widget_8cpp_source.html">widget.cpp</a> 第 <a class="el" href="widget_8cpp_source.html#l00061">61</a> 行定义.</p>
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="a0f9dfce23985306dfa248ace3b936688" name="a0f9dfce23985306dfa248ace3b936688"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0f9dfce23985306dfa248ace3b936688">&#9670;&#160;</a></span>add_cluster()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Widget::add_cluster </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="widget_8h.html#a356625608f963163dfb34e48917f5958">Cluster_method</a>&#160;</td>
+          <td class="paramname"><em>method</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; int &gt;&#160;</td>
+          <td class="paramname"><em>labels</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>在表格的method对应列中添加labels作为聚类分组。 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">method</td><td>聚类方法 </td></tr>
+    <tr><td class="paramname">labels</td><td>该聚类方法的分组 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">在文件 <a class="el" href="widget_8cpp_source.html">widget.cpp</a> 第 <a class="el" href="widget_8cpp_source.html#l00167">167</a> 行定义.</p>
+
+</div>
+</div>
+<a id="adccd7176b1162abe0100288be829c83e" name="adccd7176b1162abe0100288be829c83e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adccd7176b1162abe0100288be829c83e">&#9670;&#160;</a></span>coloring_method()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Widget::coloring_method </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="widget_8h.html#a356625608f963163dfb34e48917f5958">Cluster_method</a>&#160;</td>
+          <td class="paramname"><em>method</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>根据聚类方法对表格进行着色。 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">method</td><td>聚类方法 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">在文件 <a class="el" href="widget_8cpp_source.html">widget.cpp</a> 第 <a class="el" href="widget_8cpp_source.html#l00201">201</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a12ef4995ed462832aea1172399c135ec" name="a12ef4995ed462832aea1172399c135ec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a12ef4995ed462832aea1172399c135ec">&#9670;&#160;</a></span>delete_obj()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Widget::delete_obj </td>
+          <td>(</td>
+          <td class="paramtype">QObject *&#160;</td>
+          <td class="paramname"><em>obj</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>删除obj对象，并将指针置为nullptr。 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">在文件 <a class="el" href="widget_8cpp_source.html">widget.cpp</a> 第 <a class="el" href="widget_8cpp_source.html#l00120">120</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a35db1b06bb59082b1712189a97544e8d" name="a35db1b06bb59082b1712189a97544e8d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a35db1b06bb59082b1712189a97544e8d">&#9670;&#160;</a></span>get_labels_of()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; int &gt; Widget::get_labels_of </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="widget_8h.html#a356625608f963163dfb34e48917f5958">Cluster_method</a>&#160;</td>
+          <td class="paramname"><em>method</em> = <code><a class="el" href="widget_8h.html#a356625608f963163dfb34e48917f5958ac3667c322252cb4024831eb39e924670">Cluster_method::kmeans</a></code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>获取某个聚类方法的分组，并且统计该方法的分组总数。如果没有找到聚类方法的分组，返回空vector，将分组所在的列设置为-1，将分组总数设置为0， </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">method</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>std::vector&lt;int&gt; </dd></dl>
+
+<p class="definition">在文件 <a class="el" href="widget_8cpp_source.html">widget.cpp</a> 第 <a class="el" href="widget_8cpp_source.html#l00243">243</a> 行定义.</p>
+
+</div>
+</div>
+<a id="ad5788360f0920e8885ff2eed4af39348" name="ad5788360f0920e8885ff2eed4af39348"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad5788360f0920e8885ff2eed4af39348">&#9670;&#160;</a></span>on_button_barchart_clicked</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Widget::on_button_barchart_clicked </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>直方图和正态分布密度曲线按钮的槽函数。 </p>
+
+<p class="definition">在文件 <a class="el" href="widget_8cpp_source.html">widget.cpp</a> 第 <a class="el" href="widget_8cpp_source.html#l00335">335</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a679c430dfa837f1257dfb0606c3c9e3d" name="a679c430dfa837f1257dfb0606c3c9e3d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a679c430dfa837f1257dfb0606c3c9e3d">&#9670;&#160;</a></span>on_button_cluster_clicked</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Widget::on_button_cluster_clicked </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>聚类按钮的槽函数。 </p>
+
+<p class="definition">在文件 <a class="el" href="widget_8cpp_source.html">widget.cpp</a> 第 <a class="el" href="widget_8cpp_source.html#l00563">563</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a3ea881e6748857ff7334948124559056" name="a3ea881e6748857ff7334948124559056"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3ea881e6748857ff7334948124559056">&#9670;&#160;</a></span>on_button_coloring_clicked</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Widget::on_button_coloring_clicked </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>着色按钮的槽函数。 </p>
+
+<p class="definition">在文件 <a class="el" href="widget_8cpp_source.html">widget.cpp</a> 第 <a class="el" href="widget_8cpp_source.html#l00590">590</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a80a6e1d3a07304c9bfa9fc1cc60fcc7b" name="a80a6e1d3a07304c9bfa9fc1cc60fcc7b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a80a6e1d3a07304c9bfa9fc1cc60fcc7b">&#9670;&#160;</a></span>on_button_covariance_clicked</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Widget::on_button_covariance_clicked </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>协方差和相关系数矩阵按钮的槽函数。 </p>
+
+<p class="definition">在文件 <a class="el" href="widget_8cpp_source.html">widget.cpp</a> 第 <a class="el" href="widget_8cpp_source.html#l00462">462</a> 行定义.</p>
+
+</div>
+</div>
+<a id="aec936a4af2ba680b68fc0277eb96a1ab" name="aec936a4af2ba680b68fc0277eb96a1ab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aec936a4af2ba680b68fc0277eb96a1ab">&#9670;&#160;</a></span>on_button_ml_clicked</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Widget::on_button_ml_clicked </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>机器学习按钮的槽函数。 </p>
+
+<p class="definition">在文件 <a class="el" href="widget_8cpp_source.html">widget.cpp</a> 第 <a class="el" href="widget_8cpp_source.html#l00644">644</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a7192e77f90918530f3c50f2eae7b925d" name="a7192e77f90918530f3c50f2eae7b925d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7192e77f90918530f3c50f2eae7b925d">&#9670;&#160;</a></span>on_button_open_clicked</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Widget::on_button_open_clicked </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>打开文件按钮的槽函数。 </p>
+
+<p class="definition">在文件 <a class="el" href="widget_8cpp_source.html">widget.cpp</a> 第 <a class="el" href="widget_8cpp_source.html#l00443">443</a> 行定义.</p>
+
+</div>
+</div>
+<a id="afbd56ee92fa599d19ff6da0ceebdd8a5" name="afbd56ee92fa599d19ff6da0ceebdd8a5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afbd56ee92fa599d19ff6da0ceebdd8a5">&#9670;&#160;</a></span>on_button_pca_clicked</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Widget::on_button_pca_clicked </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>PCA按钮的槽函数。 </p>
+
+<p class="definition">在文件 <a class="el" href="widget_8cpp_source.html">widget.cpp</a> 第 <a class="el" href="widget_8cpp_source.html#l00515">515</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a050a9ecf00142eba547da98587bc144b" name="a050a9ecf00142eba547da98587bc144b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a050a9ecf00142eba547da98587bc144b">&#9670;&#160;</a></span>on_button_scatter_clicked</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Widget::on_button_scatter_clicked </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>散点图按钮的槽函数。 </p>
+
+<p class="definition">在文件 <a class="el" href="widget_8cpp_source.html">widget.cpp</a> 第 <a class="el" href="widget_8cpp_source.html#l00372">372</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a2c531f78d201811f34766945dfda2f86" name="a2c531f78d201811f34766945dfda2f86"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2c531f78d201811f34766945dfda2f86">&#9670;&#160;</a></span>on_button_variance_clicked</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Widget::on_button_variance_clicked </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>方差和均值按钮的槽函数。 </p>
+
+<p class="definition">在文件 <a class="el" href="widget_8cpp_source.html">widget.cpp</a> 第 <a class="el" href="widget_8cpp_source.html#l00285">285</a> 行定义.</p>
+
+</div>
+</div>
+<a id="aee13ceb4f5b6cadd201eeeb1f0a65fec" name="aee13ceb4f5b6cadd201eeeb1f0a65fec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aee13ceb4f5b6cadd201eeeb1f0a65fec">&#9670;&#160;</a></span>on_cluster_dbscan_clicked()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Widget::on_cluster_dbscan_clicked </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>dbscan聚类按钮的槽函数。 </p>
+
+<p class="definition">在文件 <a class="el" href="widget_8cpp_source.html">widget.cpp</a> 第 <a class="el" href="widget_8cpp_source.html#l00623">623</a> 行定义.</p>
+
+</div>
+</div>
+<a id="abf7082b40cf5b1f99633f58967c6e5b9" name="abf7082b40cf5b1f99633f58967c6e5b9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abf7082b40cf5b1f99633f58967c6e5b9">&#9670;&#160;</a></span>on_cluster_kmeans_clicked()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Widget::on_cluster_kmeans_clicked </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>K-means聚类按钮的槽函数。 </p>
+
+<p class="definition">在文件 <a class="el" href="widget_8cpp_source.html">widget.cpp</a> 第 <a class="el" href="widget_8cpp_source.html#l00573">573</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a4561b893d56cfd4afaab4e64739f36e3" name="a4561b893d56cfd4afaab4e64739f36e3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4561b893d56cfd4afaab4e64739f36e3">&#9670;&#160;</a></span>on_coloring_dbscan_clicked()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Widget::on_coloring_dbscan_clicked </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>根据dbscan分组结果进行着色。 </p>
+
+<p class="definition">在文件 <a class="el" href="widget_8cpp_source.html">widget.cpp</a> 第 <a class="el" href="widget_8cpp_source.html#l00636">636</a> 行定义.</p>
+
+</div>
+</div>
+<a id="aaad1609dbf1cfeb2e672c99dffc63eae" name="aaad1609dbf1cfeb2e672c99dffc63eae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaad1609dbf1cfeb2e672c99dffc63eae">&#9670;&#160;</a></span>on_coloring_kmeans_clicked()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Widget::on_coloring_kmeans_clicked </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>根据kmeans分组结果进行着色。 </p>
+
+<p class="definition">在文件 <a class="el" href="widget_8cpp_source.html">widget.cpp</a> 第 <a class="el" href="widget_8cpp_source.html#l00601">601</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a0e0ecaeeb61136b7822776e0640fe946" name="a0e0ecaeeb61136b7822776e0640fe946"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0e0ecaeeb61136b7822776e0640fe946">&#9670;&#160;</a></span>on_decoloring_clicked()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Widget::on_decoloring_clicked </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>取消表格着色。 </p>
+
+<p class="definition">在文件 <a class="el" href="widget_8cpp_source.html">widget.cpp</a> 第 <a class="el" href="widget_8cpp_source.html#l00609">609</a> 行定义.</p>
+
+</div>
+</div>
+<a id="af36723a57336dfa23465f25dfdf3746a" name="af36723a57336dfa23465f25dfdf3746a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af36723a57336dfa23465f25dfdf3746a">&#9670;&#160;</a></span>open_table()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Widget::open_table </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>根据path_table打开csv文件，将数据显示在表格中。 </p>
+
+<p class="definition">在文件 <a class="el" href="widget_8cpp_source.html">widget.cpp</a> 第 <a class="el" href="widget_8cpp_source.html#l00070">70</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a06f7809a8562ed150864974714221016" name="a06f7809a8562ed150864974714221016"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a06f7809a8562ed150864974714221016">&#9670;&#160;</a></span>samples_selected()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; std::vector&lt; float &gt; &gt; Widget::samples_selected </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>least_cols</em> = <code>1</code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>获取选中的列的数据。不允许选中id列，否则会弹出错误提示框。 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">least_cols</td><td>最少需要选中的列数。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>std::vector&lt;std::vector&lt;float&gt;&gt; </dd></dl>
+
+<p class="definition">在文件 <a class="el" href="widget_8cpp_source.html">widget.cpp</a> 第 <a class="el" href="widget_8cpp_source.html#l00131">131</a> 行定义.</p>
+
+</div>
+</div>
+<h2 class="groupheader">类成员变量说明</h2>
+<a id="ab87650695264788abcb78f5bdf060c32" name="ab87650695264788abcb78f5bdf060c32"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab87650695264788abcb78f5bdf060c32">&#9670;&#160;</a></span>chart</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QChart* Widget::chart {new QChart}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="widget_8h_source.html">widget.h</a> 第 <a class="el" href="widget_8h_source.html#l00088">88</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a118b08ddf72fdf070f6857b139a112c7" name="a118b08ddf72fdf070f6857b139a112c7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a118b08ddf72fdf070f6857b139a112c7">&#9670;&#160;</a></span>col_diagnosis_at</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Widget::col_diagnosis_at = 1</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="widget_8h_source.html">widget.h</a> 第 <a class="el" href="widget_8h_source.html#l00074">74</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a77dccd10043bc122ceca8a30af6cb0dc" name="a77dccd10043bc122ceca8a30af6cb0dc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a77dccd10043bc122ceca8a30af6cb0dc">&#9670;&#160;</a></span>dbscan_epsilon</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float Widget::dbscan_epsilon = 15</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="widget_8h_source.html">widget.h</a> 第 <a class="el" href="widget_8h_source.html#l00038">38</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a468bae8249dcd4b034fe1a02110bf608" name="a468bae8249dcd4b034fe1a02110bf608"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a468bae8249dcd4b034fe1a02110bf608">&#9670;&#160;</a></span>dbscan_minPts</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Widget::dbscan_minPts = 3</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="widget_8h_source.html">widget.h</a> 第 <a class="el" href="widget_8h_source.html#l00039">39</a> 行定义.</p>
+
+</div>
+</div>
+<a id="afddf6566c63e5f0ed03c09c8264ba9a3" name="afddf6566c63e5f0ed03c09c8264ba9a3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afddf6566c63e5f0ed03c09c8264ba9a3">&#9670;&#160;</a></span>kmeans_maxiter</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Widget::kmeans_maxiter = 100</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="widget_8h_source.html">widget.h</a> 第 <a class="el" href="widget_8h_source.html#l00036">36</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a429075e5b4a5f6de7015e59f1ff39490" name="a429075e5b4a5f6de7015e59f1ff39490"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a429075e5b4a5f6de7015e59f1ff39490">&#9670;&#160;</a></span>map_cluster_col</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::map&lt;<a class="el" href="widget_8h.html#a356625608f963163dfb34e48917f5958">Cluster_method</a>, int&gt; Widget::map_cluster_col</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>初始值:</b><div class="fragment"><div class="line">{{<a class="code hl_enumvalue" href="widget_8h.html#a356625608f963163dfb34e48917f5958ac3667c322252cb4024831eb39e924670">Cluster_method::kmeans</a>, 10},</div>
+<div class="line">                                                     {<a class="code hl_enumvalue" href="widget_8h.html#a356625608f963163dfb34e48917f5958abf0ef28c5df781bd2124fae79d8fa3e1">Cluster_method::dbscan</a>, 11}}</div>
+<div class="ttc" id="awidget_8h_html_a356625608f963163dfb34e48917f5958abf0ef28c5df781bd2124fae79d8fa3e1"><div class="ttname"><a href="widget_8h.html#a356625608f963163dfb34e48917f5958abf0ef28c5df781bd2124fae79d8fa3e1">Cluster_method::dbscan</a></div><div class="ttdeci">@ dbscan</div></div>
+<div class="ttc" id="awidget_8h_html_a356625608f963163dfb34e48917f5958ac3667c322252cb4024831eb39e924670"><div class="ttname"><a href="widget_8h.html#a356625608f963163dfb34e48917f5958ac3667c322252cb4024831eb39e924670">Cluster_method::kmeans</a></div><div class="ttdeci">@ kmeans</div></div>
+</div><!-- fragment -->
+<p class="definition">在文件 <a class="el" href="widget_8h_source.html">widget.h</a> 第 <a class="el" href="widget_8h_source.html#l00032">32</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a2ebd1f9f315552296c44b63914af2009" name="a2ebd1f9f315552296c44b63914af2009"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2ebd1f9f315552296c44b63914af2009">&#9670;&#160;</a></span>map_cluster_groups</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::map&lt;<a class="el" href="widget_8h.html#a356625608f963163dfb34e48917f5958">Cluster_method</a>, int&gt; Widget::map_cluster_groups</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>初始值:</b><div class="fragment"><div class="line">{{<a class="code hl_enumvalue" href="widget_8h.html#a356625608f963163dfb34e48917f5958ac3667c322252cb4024831eb39e924670">Cluster_method::kmeans</a>, 4},</div>
+<div class="line">                                                     {<a class="code hl_enumvalue" href="widget_8h.html#a356625608f963163dfb34e48917f5958abf0ef28c5df781bd2124fae79d8fa3e1">Cluster_method::dbscan</a>, 8}}</div>
+</div><!-- fragment -->
+<p class="definition">在文件 <a class="el" href="widget_8h_source.html">widget.h</a> 第 <a class="el" href="widget_8h_source.html#l00028">28</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a4a69d6402e3c67623d1d081fcea2db20" name="a4a69d6402e3c67623d1d081fcea2db20"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4a69d6402e3c67623d1d081fcea2db20">&#9670;&#160;</a></span>model</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QStandardItemModel* Widget::model {new QStandardItemModel(this)}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="widget_8h_source.html">widget.h</a> 第 <a class="el" href="widget_8h_source.html#l00082">82</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a1448ad241c2be52415644d585feffcd5" name="a1448ad241c2be52415644d585feffcd5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1448ad241c2be52415644d585feffcd5">&#9670;&#160;</a></span>path_table</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString Widget::path_table = &quot;:/resource/breast-cancer.csv&quot;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="widget_8h_source.html">widget.h</a> 第 <a class="el" href="widget_8h_source.html#l00079">79</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a19c48cc897c43aa2e995fce9f7fb2418" name="a19c48cc897c43aa2e995fce9f7fb2418"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a19c48cc897c43aa2e995fce9f7fb2418">&#9670;&#160;</a></span>ui</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Ui::Widget* Widget::ui</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="widget_8h_source.html">widget.h</a> 第 <a class="el" href="widget_8h_source.html#l00076">76</a> 行定义.</p>
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li>D:/tzh21/Projects/2023summer/plantform_xgboost/src/<a class="el" href="widget_8h_source.html">widget.h</a></li>
+<li>D:/tzh21/Projects/2023summer/plantform_xgboost/src/<a class="el" href="widget_8cpp_source.html">widget.cpp</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+</small></address>
+</body>
+</html>

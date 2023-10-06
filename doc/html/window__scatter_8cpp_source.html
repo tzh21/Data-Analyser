@@ -1,0 +1,294 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>医疗数据分析平台: D:/tzh21/Projects/2023summer/plantform_xgboost/src/window_scatter.cpp 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">医疗数据分析平台
+   </div>
+   <div id="projectbrief">大作业</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function() { init_codefold(0); });
+/* @license-end */
+</script>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle"><div class="title">window_scatter.cpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="window__scatter_8cpp.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include &quot;<a class="code" href="window__scatter_8h.html">window_scatter.h</a>&quot;</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &quot;include/common_utils.h&quot;</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;include/needed_algo/leastsquare.hpp&gt;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;Eigen/Dense&gt;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;QScatterSeries&gt;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;QLineSeries&gt;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &lt;QValueAxis&gt;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &lt;QVBoxLayout&gt;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &lt;QPushButton&gt;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &lt;QValidator&gt;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &lt;QLabel&gt;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &lt;QToolTip&gt;</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &lt;QGroupBox&gt;</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &lt;QFormLayout&gt;</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
+<div class="foldopen" id="foldopen00027" data-start="{" data-end="}">
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="class_window___scatter.html#a41821828161454ddc401baf7d010f87a">   27</a></span><a class="code hl_function" href="class_window___scatter.html#a41821828161454ddc401baf7d010f87a">Window_Scatter::Window_Scatter</a>(<span class="keyword">const</span> std::vector&lt;float&gt;&amp; _vecX, <span class="keyword">const</span> std::vector&lt;float&gt;&amp; _vecY,</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>                               <span class="keyword">const</span> QString &amp;headerX, <span class="keyword">const</span> QString &amp;headerY,</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>                               QWidget *parent)</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    :QMainWindow(parent), vecX(_vecX), vecY(_vecY), input(cnt_input)</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>{</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    setAttribute(Qt::WA_DeleteOnClose);</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="comment">//    布局</span></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    resize(800, 600);</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <span class="keywordflow">if</span> (parent != <span class="keyword">nullptr</span>){</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        resize(parent-&gt;size());</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    }</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    <span class="keyword">auto</span> central = <span class="keyword">new</span> QWidget(<span class="keyword">this</span>);</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    setCentralWidget(central);</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    <span class="keyword">auto</span> layout_central = <span class="keyword">new</span> QVBoxLayout(central);</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    <span class="keyword">auto</span> layout_tool = <span class="keyword">new</span> QHBoxLayout;</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    layout_central-&gt;addLayout(layout_tool);</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    layout_central-&gt;addWidget(<a class="code hl_variable" href="class_window___scatter.html#acef4f9c78084f35ddd8db38d47557146">chartView</a>);</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    <span class="keyword">auto</span> group_degree = <span class="keyword">new</span> QGroupBox(<span class="stringliteral">&quot;阶数&quot;</span>);</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    layout_tool-&gt;addWidget(group_degree);</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> </div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    <span class="keyword">auto</span> group_coor = <span class="keyword">new</span> QGroupBox(<span class="stringliteral">&quot;坐标&quot;</span>);</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    layout_tool-&gt;addWidget(group_coor);</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    <span class="keyword">auto</span> layout_degree = <span class="keyword">new</span> QFormLayout(group_degree);</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    <a class="code hl_variable" href="class_window___scatter.html#a7dae9c2713f3ab558a68fa96bfc78b9b">edit_degree</a> = <span class="keyword">new</span> QLineEdit(<span class="stringliteral">&quot;3&quot;</span>);</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    <span class="keyword">auto</span> label_degree = <span class="keyword">new</span> QLabel(<span class="stringliteral">&quot;阶数&quot;</span>);</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    layout_degree-&gt;addRow(label_degree, <a class="code hl_variable" href="class_window___scatter.html#a7dae9c2713f3ab558a68fa96bfc78b9b">edit_degree</a>);</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span> </div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    <span class="keyword">auto</span> button_degree = <span class="keyword">new</span> QPushButton(<span class="stringliteral">&quot;设置阶数&quot;</span>);</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    layout_degree-&gt;addWidget(button_degree);</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span> </div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    <span class="keyword">auto</span> group_stat = <span class="keyword">new</span> QGroupBox(<span class="stringliteral">&quot;统计量&quot;</span>);</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    layout_tool-&gt;addWidget(group_stat);</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span> </div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    <span class="keyword">auto</span> layout_stat = <span class="keyword">new</span> QFormLayout(group_stat);</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span> </div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    <span class="keyword">auto</span> label_p = <span class="keyword">new</span> QLabel(<span class="stringliteral">&quot;p-value&quot;</span>);</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    <a class="code hl_variable" href="class_window___scatter.html#a9d0fa7899370197a8a5b530c5c6d67b9">edit_p</a> = <span class="keyword">new</span> QLineEdit;</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    layout_stat-&gt;addRow(label_p, <a class="code hl_variable" href="class_window___scatter.html#a9d0fa7899370197a8a5b530c5c6d67b9">edit_p</a>);</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span> </div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    <span class="keyword">auto</span> label_r = <span class="keyword">new</span> QLabel(<span class="stringliteral">&quot;R squared&quot;</span>);</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    <a class="code hl_variable" href="class_window___scatter.html#a4e8898e937c7c82f4a45e67a313835e3">edit_r</a> = <span class="keyword">new</span> QLineEdit;</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    layout_stat-&gt;addRow(label_r, <a class="code hl_variable" href="class_window___scatter.html#a4e8898e937c7c82f4a45e67a313835e3">edit_r</a>);</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span> </div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    <span class="keyword">auto</span> layout_coor = <span class="keyword">new</span> QFormLayout(group_coor);</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span> </div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    <span class="keyword">auto</span> label_x = <span class="keyword">new</span> QLabel(<span class="stringliteral">&quot;x&quot;</span>);</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    <a class="code hl_variable" href="class_window___scatter.html#a6c4d602bba48786611b6342beab10c9b">edit_x</a> = <span class="keyword">new</span> QLineEdit;</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    layout_coor-&gt;addRow(label_x, <a class="code hl_variable" href="class_window___scatter.html#a6c4d602bba48786611b6342beab10c9b">edit_x</a>);</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    <span class="keyword">auto</span> label_y = <span class="keyword">new</span> QLabel(<span class="stringliteral">&quot;y&quot;</span>);</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    <a class="code hl_variable" href="class_window___scatter.html#a517b1977ef53a232446825bde32188d6">edit_y</a> = <span class="keyword">new</span> QLineEdit;</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    layout_coor-&gt;addRow(label_y, <a class="code hl_variable" href="class_window___scatter.html#a517b1977ef53a232446825bde32188d6">edit_y</a>);</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span> </div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    connect(button_degree, &amp;QPushButton::clicked,</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>           <span class="keyword">this</span>, &amp;<a class="code hl_function" href="class_window___scatter.html#a9f91d8f5004ee25346eeb50f900f8fbf">Window_Scatter::on_button_degree_clicked</a>);</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span> </div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span><span class="comment">//    计算并绘图</span></div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span> </div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>    Eigen::VectorXf coe;</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>    <span class="keywordtype">float</span> p, R_squared;</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>    std::tie(coe, p, R_squared) = fitLeastSquareAndPR(<a class="code hl_variable" href="class_window___scatter.html#af064a573b085c61ac55f1c4f90e368f6">vecX</a>, <a class="code hl_variable" href="class_window___scatter.html#a8229b0349545c16c9a8ca016decbc370">vecY</a>, <a class="code hl_variable" href="class_window___scatter.html#abcf11965c8d92ec7d01fde1115c585ef">inDegree</a>);</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>    <a class="code hl_variable" href="class_window___scatter.html#a9d0fa7899370197a8a5b530c5c6d67b9">edit_p</a>-&gt;setText(QString::number(p));</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>    <a class="code hl_variable" href="class_window___scatter.html#a4e8898e937c7c82f4a45e67a313835e3">edit_r</a>-&gt;setText(QString::number(R_squared));</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span> </div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    <a class="code hl_variable" href="class_window___scatter.html#acef4f9c78084f35ddd8db38d47557146">chartView</a>-&gt;setRenderHint(QPainter::Antialiasing);</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span> </div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span><span class="comment">//    散点图</span></div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    <span class="keyword">auto</span> pointSeries = <span class="keyword">new</span> QScatterSeries(<span class="keyword">this</span>);</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>    pointSeries-&gt;setName(<span class="stringliteral">&quot;散点图&quot;</span>);</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>    <a class="code hl_function" href="common__utils_8cpp.html#a02a6a8c4fed5945f9c039c25cdec6e74">beautify_scatter_series</a>(pointSeries);</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span> </div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; <a class="code hl_variable" href="class_window___scatter.html#af064a573b085c61ac55f1c4f90e368f6">vecX</a>.size() &amp;&amp; i &lt; <a class="code hl_variable" href="class_window___scatter.html#a8229b0349545c16c9a8ca016decbc370">vecY</a>.size(); i++){</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>        pointSeries-&gt;append(<a class="code hl_variable" href="class_window___scatter.html#af064a573b085c61ac55f1c4f90e368f6">vecX</a>[i], <a class="code hl_variable" href="class_window___scatter.html#a8229b0349545c16c9a8ca016decbc370">vecY</a>[i]);</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>    }</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>    <a class="code hl_variable" href="class_window___scatter.html#a2662d35b4e0731535462bfdafeda0cc0">chart</a>-&gt;addSeries(pointSeries);</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span> </div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>    connect(pointSeries, &amp;QScatterSeries::hovered, <span class="keyword">this</span>, &amp;<a class="code hl_function" href="class_window___scatter.html#ac5afd6ee79310fa9d2e3b901ff7d4040">Window_Scatter::onPointHovered</a>);</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span> </div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span><span class="comment">//    曲线图</span></div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>    <a class="code hl_variable" href="class_window___scatter.html#a8e7538de57c3818ded92dd7ca28f8160">lineSeries</a> = <span class="keyword">new</span> QSplineSeries(<span class="keyword">this</span>);</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>    <a class="code hl_variable" href="class_window___scatter.html#a8e7538de57c3818ded92dd7ca28f8160">lineSeries</a>-&gt;setName(<span class="stringliteral">&quot;拟合曲线&quot;</span>);</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span> </div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>    <span class="keywordtype">float</span> min_x = *std::min_element(<a class="code hl_variable" href="class_window___scatter.html#af064a573b085c61ac55f1c4f90e368f6">vecX</a>.begin(), <a class="code hl_variable" href="class_window___scatter.html#af064a573b085c61ac55f1c4f90e368f6">vecX</a>.end());</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>    <span class="keywordtype">float</span> max_x = *std::max_element(<a class="code hl_variable" href="class_window___scatter.html#af064a573b085c61ac55f1c4f90e368f6">vecX</a>.begin(), <a class="code hl_variable" href="class_window___scatter.html#af064a573b085c61ac55f1c4f90e368f6">vecX</a>.end());</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>    <span class="keyword">const</span> <span class="keywordtype">float</span> step_len = (max_x - min_x) / (<a class="code hl_variable" href="class_window___scatter.html#ae046ded593515a50d5d271596a848bbf">cnt_input</a> - 1);</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; <a class="code hl_variable" href="class_window___scatter.html#ae046ded593515a50d5d271596a848bbf">cnt_input</a>; i++) {</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>        <a class="code hl_variable" href="class_window___scatter.html#a8c40d4339ef5e0600ce4b2a75cb0bac2">input</a>[i] = min_x + i * step_len;</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>    }</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span> </div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> idx_input = 0; idx_input &lt; <a class="code hl_variable" href="class_window___scatter.html#a8c40d4339ef5e0600ce4b2a75cb0bac2">input</a>.size(); idx_input++){</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>        <span class="keywordtype">float</span> x = <a class="code hl_variable" href="class_window___scatter.html#a8c40d4339ef5e0600ce4b2a75cb0bac2">input</a>[idx_input];</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>        <span class="keywordtype">float</span> y{0};</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; coe.size(); i++) {</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>            y += coe(i) * std::pow(x, i);</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>        }</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>        <a class="code hl_variable" href="class_window___scatter.html#a8e7538de57c3818ded92dd7ca28f8160">lineSeries</a>-&gt;append(x, y);</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>    }</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>    <a class="code hl_variable" href="class_window___scatter.html#a2662d35b4e0731535462bfdafeda0cc0">chart</a>-&gt;addSeries(<a class="code hl_variable" href="class_window___scatter.html#a8e7538de57c3818ded92dd7ca28f8160">lineSeries</a>);</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span> </div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>    <span class="keyword">auto</span> axisX = <span class="keyword">new</span> QValueAxis(<span class="keyword">this</span>);</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>    axisX-&gt;setTitleText(headerX);</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>    <a class="code hl_variable" href="class_window___scatter.html#a2662d35b4e0731535462bfdafeda0cc0">chart</a>-&gt;addAxis(axisX, Qt::AlignBottom);</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>    pointSeries-&gt;attachAxis(axisX);</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>    <a class="code hl_variable" href="class_window___scatter.html#a8e7538de57c3818ded92dd7ca28f8160">lineSeries</a>-&gt;attachAxis(axisX);</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span> </div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>    <span class="keyword">auto</span> axisY = <span class="keyword">new</span> QValueAxis(<span class="keyword">this</span>);</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>    axisY-&gt;setTitleText(headerY);</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>    <a class="code hl_variable" href="class_window___scatter.html#a2662d35b4e0731535462bfdafeda0cc0">chart</a>-&gt;addAxis(axisY, Qt::AlignLeft);</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>    pointSeries-&gt;attachAxis(axisY);</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>    <a class="code hl_variable" href="class_window___scatter.html#a8e7538de57c3818ded92dd7ca28f8160">lineSeries</a>-&gt;attachAxis(axisY);</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>}</div>
+</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span> </div>
+<div class="foldopen" id="foldopen00151" data-start="{" data-end="}">
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno"><a class="line" href="class_window___scatter.html#a9f91d8f5004ee25346eeb50f900f8fbf">  151</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_window___scatter.html#a9f91d8f5004ee25346eeb50f900f8fbf">Window_Scatter::on_button_degree_clicked</a>(){</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>    <span class="keywordtype">bool</span> valid = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>    <span class="keyword">const</span> <span class="keywordtype">int</span> backup = <a class="code hl_variable" href="class_window___scatter.html#abcf11965c8d92ec7d01fde1115c585ef">inDegree</a>;</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>    <a class="code hl_variable" href="class_window___scatter.html#abcf11965c8d92ec7d01fde1115c585ef">inDegree</a> = <a class="code hl_variable" href="class_window___scatter.html#a7dae9c2713f3ab558a68fa96bfc78b9b">edit_degree</a>-&gt;text().toInt(&amp;valid);</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span> </div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>    <span class="keywordflow">if</span> (!valid){</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>        <a class="code hl_variable" href="class_window___scatter.html#abcf11965c8d92ec7d01fde1115c585ef">inDegree</a> = backup;</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>        qDebug() &lt;&lt; <span class="stringliteral">&quot;toInt() invalid&quot;</span>;</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>    }</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span> </div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>    Eigen::VectorXf coe;</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>    <span class="keywordtype">float</span> p, R_squared;</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>    std::tie(coe, p, R_squared) = fitLeastSquareAndPR(<a class="code hl_variable" href="class_window___scatter.html#af064a573b085c61ac55f1c4f90e368f6">vecX</a>, <a class="code hl_variable" href="class_window___scatter.html#a8229b0349545c16c9a8ca016decbc370">vecY</a>, <a class="code hl_variable" href="class_window___scatter.html#abcf11965c8d92ec7d01fde1115c585ef">inDegree</a>);</div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>    <a class="code hl_variable" href="class_window___scatter.html#a9d0fa7899370197a8a5b530c5c6d67b9">edit_p</a>-&gt;setText(QString::number(p));</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>    <a class="code hl_variable" href="class_window___scatter.html#a4e8898e937c7c82f4a45e67a313835e3">edit_r</a>-&gt;setText(QString::number(R_squared));</div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span> </div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>    <a class="code hl_variable" href="class_window___scatter.html#a8e7538de57c3818ded92dd7ca28f8160">lineSeries</a>-&gt;clear();</div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span> </div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> idx_input = 0; idx_input &lt; <a class="code hl_variable" href="class_window___scatter.html#a8c40d4339ef5e0600ce4b2a75cb0bac2">input</a>.size(); idx_input++){</div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>        <span class="keywordtype">float</span> x = <a class="code hl_variable" href="class_window___scatter.html#a8c40d4339ef5e0600ce4b2a75cb0bac2">input</a>[idx_input];</div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>        <span class="keywordtype">float</span> y{0};</div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; coe.size(); i++) {</div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>            y += coe(i) * std::pow(x, i);</div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>        }</div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>        <a class="code hl_variable" href="class_window___scatter.html#a8e7538de57c3818ded92dd7ca28f8160">lineSeries</a>-&gt;append(x, y);</div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>    }</div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>}</div>
+</div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span> </div>
+<div class="foldopen" id="foldopen00186" data-start="{" data-end="}">
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno"><a class="line" href="class_window___scatter.html#ac5afd6ee79310fa9d2e3b901ff7d4040">  186</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_window___scatter.html#ac5afd6ee79310fa9d2e3b901ff7d4040">Window_Scatter::onPointHovered</a>(<span class="keyword">const</span> QPointF &amp;point, <span class="keywordtype">bool</span> state) {</div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>    <span class="keywordflow">if</span> (state) {</div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>        <span class="comment">// 鼠标悬停在点上方，显示坐标值</span></div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>        QPoint tooltipPos(point.x(), point.y() - 20);</div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span><span class="comment">//        QToolTip::showText(mapToGlobal(tooltipPos), QString(&quot;X: %1, Y: %2&quot;).arg(point.x()).arg(point.y()));</span></div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>        <a class="code hl_variable" href="class_window___scatter.html#a6c4d602bba48786611b6342beab10c9b">edit_x</a>-&gt;setText(QString::number(point.x()));</div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>        <a class="code hl_variable" href="class_window___scatter.html#a517b1977ef53a232446825bde32188d6">edit_y</a>-&gt;setText(QString::number(point.y()));</div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>    }</div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>    <span class="comment">// else {</span></div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>    <span class="comment">//     edit_x-&gt;clear();</span></div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>    <span class="comment">//     edit_y-&gt;clear();</span></div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>    <span class="comment">// }</span></div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>}</div>
+</div>
+<div class="ttc" id="aclass_window___scatter_html_a2662d35b4e0731535462bfdafeda0cc0"><div class="ttname"><a href="class_window___scatter.html#a2662d35b4e0731535462bfdafeda0cc0">Window_Scatter::chart</a></div><div class="ttdeci">QChart * chart</div><div class="ttdef"><b>Definition</b> <a href="window__scatter_8h_source.html#l00029">window_scatter.h:29</a></div></div>
+<div class="ttc" id="aclass_window___scatter_html_a41821828161454ddc401baf7d010f87a"><div class="ttname"><a href="class_window___scatter.html#a41821828161454ddc401baf7d010f87a">Window_Scatter::Window_Scatter</a></div><div class="ttdeci">Window_Scatter(const std::vector&lt; float &gt; &amp;vecX, const std::vector&lt; float &gt; &amp;vecY, const QString &amp;headerX, const QString &amp;headerY, QWidget *parent=nullptr)</div><div class="ttdoc">Construct a new Window_Scatter::Window_Scatter object</div><div class="ttdef"><b>Definition</b> <a href="window__scatter_8cpp_source.html#l00027">window_scatter.cpp:27</a></div></div>
+<div class="ttc" id="aclass_window___scatter_html_a4e8898e937c7c82f4a45e67a313835e3"><div class="ttname"><a href="class_window___scatter.html#a4e8898e937c7c82f4a45e67a313835e3">Window_Scatter::edit_r</a></div><div class="ttdeci">QLineEdit * edit_r</div><div class="ttdef"><b>Definition</b> <a href="window__scatter_8h_source.html#l00034">window_scatter.h:34</a></div></div>
+<div class="ttc" id="aclass_window___scatter_html_a517b1977ef53a232446825bde32188d6"><div class="ttname"><a href="class_window___scatter.html#a517b1977ef53a232446825bde32188d6">Window_Scatter::edit_y</a></div><div class="ttdeci">QLineEdit * edit_y</div><div class="ttdef"><b>Definition</b> <a href="window__scatter_8h_source.html#l00036">window_scatter.h:36</a></div></div>
+<div class="ttc" id="aclass_window___scatter_html_a6c4d602bba48786611b6342beab10c9b"><div class="ttname"><a href="class_window___scatter.html#a6c4d602bba48786611b6342beab10c9b">Window_Scatter::edit_x</a></div><div class="ttdeci">QLineEdit * edit_x</div><div class="ttdef"><b>Definition</b> <a href="window__scatter_8h_source.html#l00035">window_scatter.h:35</a></div></div>
+<div class="ttc" id="aclass_window___scatter_html_a7dae9c2713f3ab558a68fa96bfc78b9b"><div class="ttname"><a href="class_window___scatter.html#a7dae9c2713f3ab558a68fa96bfc78b9b">Window_Scatter::edit_degree</a></div><div class="ttdeci">QLineEdit * edit_degree</div><div class="ttdef"><b>Definition</b> <a href="window__scatter_8h_source.html#l00032">window_scatter.h:32</a></div></div>
+<div class="ttc" id="aclass_window___scatter_html_a8229b0349545c16c9a8ca016decbc370"><div class="ttname"><a href="class_window___scatter.html#a8229b0349545c16c9a8ca016decbc370">Window_Scatter::vecY</a></div><div class="ttdeci">const std::vector&lt; float &gt; vecY</div><div class="ttdef"><b>Definition</b> <a href="window__scatter_8h_source.html#l00023">window_scatter.h:23</a></div></div>
+<div class="ttc" id="aclass_window___scatter_html_a8c40d4339ef5e0600ce4b2a75cb0bac2"><div class="ttname"><a href="class_window___scatter.html#a8c40d4339ef5e0600ce4b2a75cb0bac2">Window_Scatter::input</a></div><div class="ttdeci">std::vector&lt; float &gt; input</div><div class="ttdef"><b>Definition</b> <a href="window__scatter_8h_source.html#l00025">window_scatter.h:25</a></div></div>
+<div class="ttc" id="aclass_window___scatter_html_a8e7538de57c3818ded92dd7ca28f8160"><div class="ttname"><a href="class_window___scatter.html#a8e7538de57c3818ded92dd7ca28f8160">Window_Scatter::lineSeries</a></div><div class="ttdeci">QSplineSeries * lineSeries</div><div class="ttdef"><b>Definition</b> <a href="window__scatter_8h_source.html#l00038">window_scatter.h:38</a></div></div>
+<div class="ttc" id="aclass_window___scatter_html_a9d0fa7899370197a8a5b530c5c6d67b9"><div class="ttname"><a href="class_window___scatter.html#a9d0fa7899370197a8a5b530c5c6d67b9">Window_Scatter::edit_p</a></div><div class="ttdeci">QLineEdit * edit_p</div><div class="ttdef"><b>Definition</b> <a href="window__scatter_8h_source.html#l00033">window_scatter.h:33</a></div></div>
+<div class="ttc" id="aclass_window___scatter_html_a9f91d8f5004ee25346eeb50f900f8fbf"><div class="ttname"><a href="class_window___scatter.html#a9f91d8f5004ee25346eeb50f900f8fbf">Window_Scatter::on_button_degree_clicked</a></div><div class="ttdeci">void on_button_degree_clicked()</div><div class="ttdoc">显示拟合曲线。</div><div class="ttdef"><b>Definition</b> <a href="window__scatter_8cpp_source.html#l00151">window_scatter.cpp:151</a></div></div>
+<div class="ttc" id="aclass_window___scatter_html_abcf11965c8d92ec7d01fde1115c585ef"><div class="ttname"><a href="class_window___scatter.html#abcf11965c8d92ec7d01fde1115c585ef">Window_Scatter::inDegree</a></div><div class="ttdeci">int inDegree</div><div class="ttdef"><b>Definition</b> <a href="window__scatter_8h_source.html#l00027">window_scatter.h:27</a></div></div>
+<div class="ttc" id="aclass_window___scatter_html_ac5afd6ee79310fa9d2e3b901ff7d4040"><div class="ttname"><a href="class_window___scatter.html#ac5afd6ee79310fa9d2e3b901ff7d4040">Window_Scatter::onPointHovered</a></div><div class="ttdeci">void onPointHovered(const QPointF &amp;point, bool state)</div><div class="ttdoc">鼠标悬停在点上方时显示坐标值。</div><div class="ttdef"><b>Definition</b> <a href="window__scatter_8cpp_source.html#l00186">window_scatter.cpp:186</a></div></div>
+<div class="ttc" id="aclass_window___scatter_html_acef4f9c78084f35ddd8db38d47557146"><div class="ttname"><a href="class_window___scatter.html#acef4f9c78084f35ddd8db38d47557146">Window_Scatter::chartView</a></div><div class="ttdeci">QChartView * chartView</div><div class="ttdef"><b>Definition</b> <a href="window__scatter_8h_source.html#l00030">window_scatter.h:30</a></div></div>
+<div class="ttc" id="aclass_window___scatter_html_ae046ded593515a50d5d271596a848bbf"><div class="ttname"><a href="class_window___scatter.html#ae046ded593515a50d5d271596a848bbf">Window_Scatter::cnt_input</a></div><div class="ttdeci">const size_t cnt_input</div><div class="ttdef"><b>Definition</b> <a href="window__scatter_8h_source.html#l00024">window_scatter.h:24</a></div></div>
+<div class="ttc" id="aclass_window___scatter_html_af064a573b085c61ac55f1c4f90e368f6"><div class="ttname"><a href="class_window___scatter.html#af064a573b085c61ac55f1c4f90e368f6">Window_Scatter::vecX</a></div><div class="ttdeci">const std::vector&lt; float &gt; vecX</div><div class="ttdef"><b>Definition</b> <a href="window__scatter_8h_source.html#l00022">window_scatter.h:22</a></div></div>
+<div class="ttc" id="acommon__utils_8cpp_html_a02a6a8c4fed5945f9c039c25cdec6e74"><div class="ttname"><a href="common__utils_8cpp.html#a02a6a8c4fed5945f9c039c25cdec6e74">beautify_scatter_series</a></div><div class="ttdeci">void beautify_scatter_series(QScatterSeries *scatter_series)</div><div class="ttdoc">美化散点图中的点。</div><div class="ttdef"><b>Definition</b> <a href="common__utils_8cpp_source.html#l00008">common_utils.cpp:8</a></div></div>
+<div class="ttc" id="awindow__scatter_8h_html"><div class="ttname"><a href="window__scatter_8h.html">window_scatter.h</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+</small></address>
+</body>
+</html>

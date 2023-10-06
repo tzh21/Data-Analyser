@@ -1,0 +1,153 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>医疗数据分析平台: D:/tzh21/Projects/2023summer/plantform_xgboost/src/window_scatter.h 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">医疗数据分析平台
+   </div>
+   <div id="projectbrief">大作业</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function() { init_codefold(0); });
+/* @license-end */
+</script>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle"><div class="title">window_scatter.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="window__scatter_8h.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef WINDOW_SCATTER_H</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define WINDOW_SCATTER_H</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;QMainWindow&gt;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;QChart&gt;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;QChartView&gt;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;QLineEdit&gt;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;QSplineSeries&gt;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
+<div class="foldopen" id="foldopen00010" data-start="{" data-end="};">
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="class_window___scatter.html">   10</a></span><span class="keyword">class </span><a class="code hl_class" href="class_window___scatter.html">Window_Scatter</a> : <span class="keyword">public</span> QMainWindow</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>{</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    Q_OBJECT</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="comment">//    Window_Scatter() = default;</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    <span class="keyword">explicit</span> <a class="code hl_class" href="class_window___scatter.html">Window_Scatter</a>(<span class="keyword">const</span> std::vector&lt;float&gt;&amp; <a class="code hl_variable" href="class_window___scatter.html#af064a573b085c61ac55f1c4f90e368f6">vecX</a>, <span class="keyword">const</span> std::vector&lt;float&gt;&amp; <a class="code hl_variable" href="class_window___scatter.html#a8229b0349545c16c9a8ca016decbc370">vecY</a>,</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>                            <span class="keyword">const</span> QString &amp;headerX, <span class="keyword">const</span> QString &amp;headerY,</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>                            QWidget *parent = <span class="keyword">nullptr</span>);</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>signals:</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="class_window___scatter.html#af064a573b085c61ac55f1c4f90e368f6">   22</a></span>    <span class="keyword">const</span> std::vector&lt;float&gt; <a class="code hl_variable" href="class_window___scatter.html#af064a573b085c61ac55f1c4f90e368f6">vecX</a>;</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="class_window___scatter.html#a8229b0349545c16c9a8ca016decbc370">   23</a></span>    <span class="keyword">const</span> std::vector&lt;float&gt; <a class="code hl_variable" href="class_window___scatter.html#a8229b0349545c16c9a8ca016decbc370">vecY</a>;</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="class_window___scatter.html#ae046ded593515a50d5d271596a848bbf">   24</a></span>    <span class="keyword">const</span> <span class="keywordtype">size_t</span> <a class="code hl_variable" href="class_window___scatter.html#ae046ded593515a50d5d271596a848bbf">cnt_input</a> = 10;</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="class_window___scatter.html#a8c40d4339ef5e0600ce4b2a75cb0bac2">   25</a></span>    std::vector&lt;float&gt; <a class="code hl_variable" href="class_window___scatter.html#a8c40d4339ef5e0600ce4b2a75cb0bac2">input</a>;</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="class_window___scatter.html#abcf11965c8d92ec7d01fde1115c585ef">   27</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="class_window___scatter.html#abcf11965c8d92ec7d01fde1115c585ef">inDegree</a> = 3;</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="class_window___scatter.html#a2662d35b4e0731535462bfdafeda0cc0">   29</a></span>    QChart *<a class="code hl_variable" href="class_window___scatter.html#a2662d35b4e0731535462bfdafeda0cc0">chart</a>{<span class="keyword">new</span> QChart};</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="class_window___scatter.html#acef4f9c78084f35ddd8db38d47557146">   30</a></span>    QChartView *<a class="code hl_variable" href="class_window___scatter.html#acef4f9c78084f35ddd8db38d47557146">chartView</a>{<span class="keyword">new</span> QChartView(<a class="code hl_variable" href="class_window___scatter.html#a2662d35b4e0731535462bfdafeda0cc0">chart</a>)};</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="class_window___scatter.html#a7dae9c2713f3ab558a68fa96bfc78b9b">   32</a></span>    QLineEdit *<a class="code hl_variable" href="class_window___scatter.html#a7dae9c2713f3ab558a68fa96bfc78b9b">edit_degree</a> = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="class_window___scatter.html#a9d0fa7899370197a8a5b530c5c6d67b9">   33</a></span>    QLineEdit *<a class="code hl_variable" href="class_window___scatter.html#a9d0fa7899370197a8a5b530c5c6d67b9">edit_p</a> = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="class_window___scatter.html#a4e8898e937c7c82f4a45e67a313835e3">   34</a></span>    QLineEdit *<a class="code hl_variable" href="class_window___scatter.html#a4e8898e937c7c82f4a45e67a313835e3">edit_r</a> = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="class_window___scatter.html#a6c4d602bba48786611b6342beab10c9b">   35</a></span>    QLineEdit *<a class="code hl_variable" href="class_window___scatter.html#a6c4d602bba48786611b6342beab10c9b">edit_x</a> = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="class_window___scatter.html#a517b1977ef53a232446825bde32188d6">   36</a></span>    QLineEdit *<a class="code hl_variable" href="class_window___scatter.html#a517b1977ef53a232446825bde32188d6">edit_y</a> = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="class_window___scatter.html#a8e7538de57c3818ded92dd7ca28f8160">   38</a></span>    QSplineSeries *<a class="code hl_variable" href="class_window___scatter.html#a8e7538de57c3818ded92dd7ca28f8160">lineSeries</a> = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_window___scatter.html#a9f91d8f5004ee25346eeb50f900f8fbf">on_button_degree_clicked</a>();</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_window___scatter.html#ac5afd6ee79310fa9d2e3b901ff7d4040">onPointHovered</a>(<span class="keyword">const</span> QPointF &amp;point, <span class="keywordtype">bool</span> state);</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>};</div>
+</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="preprocessor">#endif </span><span class="comment">// WINDOW_SCATTER_H</span></div>
+<div class="ttc" id="aclass_window___scatter_html"><div class="ttname"><a href="class_window___scatter.html">Window_Scatter</a></div><div class="ttdef"><b>Definition</b> <a href="window__scatter_8h_source.html#l00010">window_scatter.h:11</a></div></div>
+<div class="ttc" id="aclass_window___scatter_html_a2662d35b4e0731535462bfdafeda0cc0"><div class="ttname"><a href="class_window___scatter.html#a2662d35b4e0731535462bfdafeda0cc0">Window_Scatter::chart</a></div><div class="ttdeci">QChart * chart</div><div class="ttdef"><b>Definition</b> <a href="window__scatter_8h_source.html#l00029">window_scatter.h:29</a></div></div>
+<div class="ttc" id="aclass_window___scatter_html_a4e8898e937c7c82f4a45e67a313835e3"><div class="ttname"><a href="class_window___scatter.html#a4e8898e937c7c82f4a45e67a313835e3">Window_Scatter::edit_r</a></div><div class="ttdeci">QLineEdit * edit_r</div><div class="ttdef"><b>Definition</b> <a href="window__scatter_8h_source.html#l00034">window_scatter.h:34</a></div></div>
+<div class="ttc" id="aclass_window___scatter_html_a517b1977ef53a232446825bde32188d6"><div class="ttname"><a href="class_window___scatter.html#a517b1977ef53a232446825bde32188d6">Window_Scatter::edit_y</a></div><div class="ttdeci">QLineEdit * edit_y</div><div class="ttdef"><b>Definition</b> <a href="window__scatter_8h_source.html#l00036">window_scatter.h:36</a></div></div>
+<div class="ttc" id="aclass_window___scatter_html_a6c4d602bba48786611b6342beab10c9b"><div class="ttname"><a href="class_window___scatter.html#a6c4d602bba48786611b6342beab10c9b">Window_Scatter::edit_x</a></div><div class="ttdeci">QLineEdit * edit_x</div><div class="ttdef"><b>Definition</b> <a href="window__scatter_8h_source.html#l00035">window_scatter.h:35</a></div></div>
+<div class="ttc" id="aclass_window___scatter_html_a7dae9c2713f3ab558a68fa96bfc78b9b"><div class="ttname"><a href="class_window___scatter.html#a7dae9c2713f3ab558a68fa96bfc78b9b">Window_Scatter::edit_degree</a></div><div class="ttdeci">QLineEdit * edit_degree</div><div class="ttdef"><b>Definition</b> <a href="window__scatter_8h_source.html#l00032">window_scatter.h:32</a></div></div>
+<div class="ttc" id="aclass_window___scatter_html_a8229b0349545c16c9a8ca016decbc370"><div class="ttname"><a href="class_window___scatter.html#a8229b0349545c16c9a8ca016decbc370">Window_Scatter::vecY</a></div><div class="ttdeci">const std::vector&lt; float &gt; vecY</div><div class="ttdef"><b>Definition</b> <a href="window__scatter_8h_source.html#l00023">window_scatter.h:23</a></div></div>
+<div class="ttc" id="aclass_window___scatter_html_a8c40d4339ef5e0600ce4b2a75cb0bac2"><div class="ttname"><a href="class_window___scatter.html#a8c40d4339ef5e0600ce4b2a75cb0bac2">Window_Scatter::input</a></div><div class="ttdeci">std::vector&lt; float &gt; input</div><div class="ttdef"><b>Definition</b> <a href="window__scatter_8h_source.html#l00025">window_scatter.h:25</a></div></div>
+<div class="ttc" id="aclass_window___scatter_html_a8e7538de57c3818ded92dd7ca28f8160"><div class="ttname"><a href="class_window___scatter.html#a8e7538de57c3818ded92dd7ca28f8160">Window_Scatter::lineSeries</a></div><div class="ttdeci">QSplineSeries * lineSeries</div><div class="ttdef"><b>Definition</b> <a href="window__scatter_8h_source.html#l00038">window_scatter.h:38</a></div></div>
+<div class="ttc" id="aclass_window___scatter_html_a9d0fa7899370197a8a5b530c5c6d67b9"><div class="ttname"><a href="class_window___scatter.html#a9d0fa7899370197a8a5b530c5c6d67b9">Window_Scatter::edit_p</a></div><div class="ttdeci">QLineEdit * edit_p</div><div class="ttdef"><b>Definition</b> <a href="window__scatter_8h_source.html#l00033">window_scatter.h:33</a></div></div>
+<div class="ttc" id="aclass_window___scatter_html_a9f91d8f5004ee25346eeb50f900f8fbf"><div class="ttname"><a href="class_window___scatter.html#a9f91d8f5004ee25346eeb50f900f8fbf">Window_Scatter::on_button_degree_clicked</a></div><div class="ttdeci">void on_button_degree_clicked()</div><div class="ttdoc">显示拟合曲线。</div><div class="ttdef"><b>Definition</b> <a href="window__scatter_8cpp_source.html#l00151">window_scatter.cpp:151</a></div></div>
+<div class="ttc" id="aclass_window___scatter_html_abcf11965c8d92ec7d01fde1115c585ef"><div class="ttname"><a href="class_window___scatter.html#abcf11965c8d92ec7d01fde1115c585ef">Window_Scatter::inDegree</a></div><div class="ttdeci">int inDegree</div><div class="ttdef"><b>Definition</b> <a href="window__scatter_8h_source.html#l00027">window_scatter.h:27</a></div></div>
+<div class="ttc" id="aclass_window___scatter_html_ac5afd6ee79310fa9d2e3b901ff7d4040"><div class="ttname"><a href="class_window___scatter.html#ac5afd6ee79310fa9d2e3b901ff7d4040">Window_Scatter::onPointHovered</a></div><div class="ttdeci">void onPointHovered(const QPointF &amp;point, bool state)</div><div class="ttdoc">鼠标悬停在点上方时显示坐标值。</div><div class="ttdef"><b>Definition</b> <a href="window__scatter_8cpp_source.html#l00186">window_scatter.cpp:186</a></div></div>
+<div class="ttc" id="aclass_window___scatter_html_acef4f9c78084f35ddd8db38d47557146"><div class="ttname"><a href="class_window___scatter.html#acef4f9c78084f35ddd8db38d47557146">Window_Scatter::chartView</a></div><div class="ttdeci">QChartView * chartView</div><div class="ttdef"><b>Definition</b> <a href="window__scatter_8h_source.html#l00030">window_scatter.h:30</a></div></div>
+<div class="ttc" id="aclass_window___scatter_html_ae046ded593515a50d5d271596a848bbf"><div class="ttname"><a href="class_window___scatter.html#ae046ded593515a50d5d271596a848bbf">Window_Scatter::cnt_input</a></div><div class="ttdeci">const size_t cnt_input</div><div class="ttdef"><b>Definition</b> <a href="window__scatter_8h_source.html#l00024">window_scatter.h:24</a></div></div>
+<div class="ttc" id="aclass_window___scatter_html_af064a573b085c61ac55f1c4f90e368f6"><div class="ttname"><a href="class_window___scatter.html#af064a573b085c61ac55f1c4f90e368f6">Window_Scatter::vecX</a></div><div class="ttdeci">const std::vector&lt; float &gt; vecX</div><div class="ttdef"><b>Definition</b> <a href="window__scatter_8h_source.html#l00022">window_scatter.h:22</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+</small></address>
+</body>
+</html>

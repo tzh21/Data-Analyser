@@ -1,0 +1,481 @@
+\doxysection{window\+\_\+ml.\+cpp}
+\hypertarget{window__ml_8cpp_source}{}\label{window__ml_8cpp_source}\index{D:/tzh21/Projects/2023summer/plantform\_xgboost/src/window\_ml.cpp@{D:/tzh21/Projects/2023summer/plantform\_xgboost/src/window\_ml.cpp}}
+\mbox{\hyperlink{window__ml_8cpp}{浏览该文件的文档.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{window__ml_8h}{window\_ml.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00003}00003\ \textcolor{preprocessor}{\#include\ <QWidget>}}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00004}00004\ \textcolor{preprocessor}{\#include\ <QLayout>}}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00005}00005\ \textcolor{preprocessor}{\#include\ <QLabel>}}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00006}00006\ \textcolor{preprocessor}{\#include\ <QTableWidget>}}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00007}00007\ \textcolor{preprocessor}{\#include\ <QPushButton>}}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00008}00008\ \textcolor{preprocessor}{\#include\ <QMessageBox>}}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00009}00009\ \textcolor{preprocessor}{\#include\ <QGroupBox>}}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00010}00010\ \textcolor{preprocessor}{\#include\ <QLineEdit>}}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00011}00011\ \textcolor{preprocessor}{\#include\ <QtCharts/QHorizontalBarSeries>}}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00012}00012\ \textcolor{preprocessor}{\#include\ <QtCharts/QBarCategoryAxis>}}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00013}00013\ \textcolor{preprocessor}{\#include\ <QtCharts/QChartView>}}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00014}00014\ \textcolor{preprocessor}{\#include\ <QtCharts/QChart>}}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00015}00015\ \textcolor{preprocessor}{\#include\ <QtCharts/QValueAxis>}}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00016}00016\ \textcolor{preprocessor}{\#include\ <QtCharts/QBarSet>}}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00017}00017\ \textcolor{preprocessor}{\#include\ <xgboost/c\_api.h>}}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00019}00019\ \textcolor{comment}{//\ \#define\ safe\_xgboost(call)\ \{\ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00020}00020\ \textcolor{comment}{//\ int\ err\ =\ (call);\ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00021}00021\ \textcolor{comment}{//\ \ \ \ \ if\ (err\ !=\ 0)\ \{\ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00022}00022\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ fprintf(stderr,\ "{}\%s:\%d:\ error\ in\ \%s:\ \%s\(\backslash\)\(\backslash\)n"{},\ \_\_FILE\_\_,\ \_\_LINE\_\_,\ \#call,\ XGBGetLastError());\ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00023}00023\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ exit(1);\ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00024}00024\ \textcolor{comment}{//\ \}\ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00025}00025\ \textcolor{comment}{//\ \}QChartView>}}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00035}\mbox{\hyperlink{class_window___m_l_aa289d98fca93f0c86ab257e1970576a4}{00035}}\ \mbox{\hyperlink{class_window___m_l_aa289d98fca93f0c86ab257e1970576a4}{Window\_ML::Window\_ML}}(}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00036}00036\ \ \ \ \ std::vector<int>\ \&\&\_diagnosis,}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00037}00037\ \ \ \ \ std::vector<std::string>\ \&\&\_feature\_names,}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00038}00038\ \ \ \ \ std::vector<std::vector<float>>\ \&\&\_samples,}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00039}00039\ \ \ \ \ QWidget\ *parent):}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00040}00040\ }
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00041}00041\ \ \ \ \ QMainWindow\{parent\},}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00042}00042\ \ \ \ \ diagnosis(\_diagnosis),}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00043}00043\ \ \ \ \ feature\_names(\_feature\_names),}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00044}00044\ \ \ \ \ samples(\_samples)}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00045}00045\ \{}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00046}00046\ \ \ \ \ \textcolor{comment}{//\ 布局}}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00047}00047\ }
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00048}00048\ \ \ \ \ setWindowTitle(\textcolor{stringliteral}{"{}训练与预测"{}});}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00049}00049\ \ \ \ \ setAttribute(Qt::WA\_DeleteOnClose);}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00050}00050\ \ \ \ \ setMinimumSize(800,\ 600);}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00051}00051\ }
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00052}00052\ \ \ \ \ \textcolor{keyword}{auto}\ central\ =\ \textcolor{keyword}{new}\ QWidget(\textcolor{keyword}{this});}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00053}00053\ \ \ \ \ setCentralWidget(central);}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00054}00054\ \ \ \ \ \textcolor{keyword}{auto}\ layout\_central\ =\ \textcolor{keyword}{new}\ QHBoxLayout(central);}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00055}00055\ }
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00056}00056\ \ \ \ \ \textcolor{keyword}{auto}\ layout\_ratio\_and\_table\ =\ \textcolor{keyword}{new}\ QVBoxLayout;}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00057}00057\ \ \ \ \ layout\_central-\/>addLayout(layout\_ratio\_and\_table);}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00058}00058\ }
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00059}00059\ \ \ \ \ \textcolor{keyword}{auto}\ layout\_analysis\ =\ \textcolor{keyword}{new}\ QVBoxLayout;}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00060}00060\ \ \ \ \ layout\_central-\/>addLayout(layout\_analysis);}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00061}00061\ }
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00062}00062\ \ \ \ \ \textcolor{keyword}{auto}\ layout\_settings\ =\ \textcolor{keyword}{new}\ QHBoxLayout;}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00063}00063\ \ \ \ \ layout\_ratio\_and\_table-\/>addLayout(layout\_settings);}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00064}00064\ }
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00065}00065\ \ \ \ \ \textcolor{keyword}{auto}\ layout\_table\ =\ \textcolor{keyword}{new}\ QHBoxLayout;}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00066}00066\ \ \ \ \ layout\_ratio\_and\_table-\/>addLayout(layout\_table);}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00067}00067\ }
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00068}00068\ \ \ \ \ \textcolor{keyword}{auto}\ group\_ratio\ =\ \textcolor{keyword}{new}\ QGroupBox(\textcolor{stringliteral}{"{}测试集:训练集"{}});}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00069}00069\ \ \ \ \ layout\_settings-\/>addWidget(group\_ratio);}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00070}00070\ }
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00071}00071\ \ \ \ \ \textcolor{keyword}{auto}\ group\_max\_depth\ =\ \textcolor{keyword}{new}\ QGroupBox(\textcolor{stringliteral}{"{}最大深度"{}});}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00072}00072\ \ \ \ \ layout\_settings-\/>addWidget(group\_max\_depth);}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00073}00073\ }
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00074}00074\ \ \ \ \ \textcolor{keyword}{auto}\ group\_iter\ =\ \textcolor{keyword}{new}\ QGroupBox(\textcolor{stringliteral}{"{}迭代次数"{}});}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00075}00075\ \ \ \ \ layout\_settings-\/>addWidget(group\_iter);}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00076}00076\ }
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00077}00077\ \ \ \ \ \textcolor{keyword}{auto}\ group\_f1score\ =\ \textcolor{keyword}{new}\ QGroupBox(\textcolor{stringliteral}{"{}F1-\/score"{}});}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00078}00078\ \ \ \ \ layout\_settings-\/>addWidget(group\_f1score);}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00079}00079\ }
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00080}00080\ \ \ \ \ \textcolor{keyword}{auto}\ group\_auc\ =\ \textcolor{keyword}{new}\ QGroupBox(\textcolor{stringliteral}{"{}AUC"{}});}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00081}00081\ \ \ \ \ layout\_settings-\/>addWidget(group\_auc);}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00082}00082\ }
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00083}00083\ \ \ \ \ \textcolor{keyword}{auto}\ layout\_ratio\ =\ \textcolor{keyword}{new}\ QHBoxLayout;}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00084}00084\ \ \ \ \ group\_ratio-\/>setLayout(layout\_ratio);}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00085}00085\ }
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00086}00086\ \ \ \ \ \mbox{\hyperlink{class_window___m_l_a2f9e045c953ed92f9c57dcda8594bba9}{comb\_ratio}}\ =\ \textcolor{keyword}{new}\ QComboBox;}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00087}00087\ \ \ \ \ layout\_ratio-\/>addWidget(\mbox{\hyperlink{class_window___m_l_a2f9e045c953ed92f9c57dcda8594bba9}{comb\_ratio}});}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00088}00088\ \ \ \ \ \mbox{\hyperlink{class_window___m_l_a2f9e045c953ed92f9c57dcda8594bba9}{comb\_ratio}}-\/>addItem(\textcolor{stringliteral}{"{}0.1"{}});}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00089}00089\ \ \ \ \ \mbox{\hyperlink{class_window___m_l_a2f9e045c953ed92f9c57dcda8594bba9}{comb\_ratio}}-\/>addItem(\textcolor{stringliteral}{"{}0.2"{}});}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00090}00090\ \ \ \ \ \mbox{\hyperlink{class_window___m_l_a2f9e045c953ed92f9c57dcda8594bba9}{comb\_ratio}}-\/>addItem(\textcolor{stringliteral}{"{}0.3"{}});}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00091}00091\ \ \ \ \ \mbox{\hyperlink{class_window___m_l_a2f9e045c953ed92f9c57dcda8594bba9}{comb\_ratio}}-\/>addItem(\textcolor{stringliteral}{"{}0.5"{}});}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00092}00092\ }
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00093}00093\ \ \ \ \ \textcolor{keyword}{auto}\ button\_ratio\ =\ \textcolor{keyword}{new}\ QPushButton(\textcolor{stringliteral}{"{}确定"{}});}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00094}00094\ \ \ \ \ layout\_ratio-\/>addWidget(button\_ratio);}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00095}00095\ \ \ \ \ connect(button\_ratio,\ \&QPushButton::clicked,\ \textcolor{keyword}{this},\ \&\mbox{\hyperlink{class_window___m_l_a78c9bec62b8a4ca30fcc92d9902d1be5}{Window\_ML::on\_button\_ratio\_clicked}});}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00096}00096\ }
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00097}00097\ \ \ \ \ group\_max\_depth-\/>setLayout(\textcolor{keyword}{new}\ QHBoxLayout);}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00098}00098\ \ \ \ \ \mbox{\hyperlink{class_window___m_l_af88ec413767807f3e02981feee8a2b7e}{edit\_max\_depth}}\ =\ \textcolor{keyword}{new}\ QLineEdit;}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00099}00099\ \ \ \ \ group\_max\_depth-\/>layout()-\/>addWidget(\mbox{\hyperlink{class_window___m_l_af88ec413767807f3e02981feee8a2b7e}{edit\_max\_depth}});}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00100}00100\ \ \ \ \ \mbox{\hyperlink{class_window___m_l_af88ec413767807f3e02981feee8a2b7e}{edit\_max\_depth}}-\/>setText(\textcolor{stringliteral}{"{}3"{}});}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00101}00101\ }
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00102}00102\ \ \ \ \ group\_iter-\/>setLayout(\textcolor{keyword}{new}\ QHBoxLayout);}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00103}00103\ \ \ \ \ \mbox{\hyperlink{class_window___m_l_ac163c26fc181f6e028b3b23bde6e15d1}{edit\_iter}}\ =\ \textcolor{keyword}{new}\ QLineEdit;}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00104}00104\ \ \ \ \ group\_iter-\/>layout()-\/>addWidget(\mbox{\hyperlink{class_window___m_l_ac163c26fc181f6e028b3b23bde6e15d1}{edit\_iter}});}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00105}00105\ \ \ \ \ \mbox{\hyperlink{class_window___m_l_ac163c26fc181f6e028b3b23bde6e15d1}{edit\_iter}}-\/>setText(\textcolor{stringliteral}{"{}10"{}});}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00106}00106\ }
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00107}00107\ \ \ \ \ \mbox{\hyperlink{class_window___m_l_a0a3f97daccbb8d3c5283c9305f486159}{edit\_f1score}}\ =\ \textcolor{keyword}{new}\ QLineEdit;}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00108}00108\ \ \ \ \ group\_f1score-\/>setLayout(\textcolor{keyword}{new}\ QHBoxLayout);}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00109}00109\ \ \ \ \ group\_f1score-\/>layout()-\/>addWidget(\mbox{\hyperlink{class_window___m_l_a0a3f97daccbb8d3c5283c9305f486159}{edit\_f1score}});}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00110}00110\ }
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00111}00111\ \ \ \ \ \mbox{\hyperlink{class_window___m_l_ae97b148b807da2a5e729795f779dc8b9}{edit\_auc}}\ =\ \textcolor{keyword}{new}\ QLineEdit;}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00112}00112\ \ \ \ \ group\_auc-\/>setLayout(\textcolor{keyword}{new}\ QHBoxLayout);}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00113}00113\ \ \ \ \ group\_auc-\/>layout()-\/>addWidget(\mbox{\hyperlink{class_window___m_l_ae97b148b807da2a5e729795f779dc8b9}{edit\_auc}});}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00114}00114\ }
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00115}00115\ \ \ \ \ \textcolor{keyword}{auto}\ layout\_table\_train\ =\ \textcolor{keyword}{new}\ QVBoxLayout;}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00116}00116\ \ \ \ \ layout\_table-\/>addLayout(layout\_table\_train);}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00117}00117\ }
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00118}00118\ \ \ \ \ \textcolor{keyword}{auto}\ layout\_table\_test\ =\ \textcolor{keyword}{new}\ QVBoxLayout;}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00119}00119\ \ \ \ \ layout\_table-\/>addLayout(layout\_table\_test);}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00120}00120\ }
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00121}00121\ \ \ \ \ \textcolor{keyword}{auto}\ label\_train\ =\ \textcolor{keyword}{new}\ QLabel(\textcolor{stringliteral}{"{}训练集"{}});}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00122}00122\ \ \ \ \ layout\_table\_train-\/>addWidget(label\_train);}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00123}00123\ }
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00124}00124\ \ \ \ \ \textcolor{keyword}{auto}\ label\_test\ =\ \textcolor{keyword}{new}\ QLabel(\textcolor{stringliteral}{"{}测试集"{}});}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00125}00125\ \ \ \ \ layout\_table\_test-\/>addWidget(label\_test);}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00126}00126\ }
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00127}00127\ \ \ \ \ \mbox{\hyperlink{class_window___m_l_a5b34ec9fe96b8ec0246f5885706ea524}{table\_train}}\ =\ \textcolor{keyword}{new}\ QTableWidget;}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00128}00128\ \ \ \ \ layout\_table\_train-\/>addWidget(\mbox{\hyperlink{class_window___m_l_a5b34ec9fe96b8ec0246f5885706ea524}{table\_train}});}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00129}00129\ \ \ \ \ \mbox{\hyperlink{class_window___m_l_a6f25dcf86b8c3fe4c1c5b3c7ffa9ab92}{table\_test}}\ =\ \textcolor{keyword}{new}\ QTableWidget;}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00130}00130\ \ \ \ \ layout\_table\_test-\/>addWidget(\mbox{\hyperlink{class_window___m_l_a6f25dcf86b8c3fe4c1c5b3c7ffa9ab92}{table\_test}});}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00131}00131\ }
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00132}00132\ \ \ \ \ \textcolor{keyword}{auto}\ button\_train\ =\ \textcolor{keyword}{new}\ QPushButton(\textcolor{stringliteral}{"{}开始训练"{}});}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00133}00133\ \ \ \ \ layout\_analysis-\/>addWidget(button\_train);}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00134}00134\ \ \ \ \ connect(button\_train,\ \&QPushButton::clicked,\ \textcolor{keyword}{this},\ \&\mbox{\hyperlink{class_window___m_l_ae063b6ac1f57e17afbcf57ddcc7a09ca}{Window\_ML::on\_button\_train\_clicked}});}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00135}00135\ }
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00136}00136\ \ \ \ \ \textcolor{keyword}{auto}\ button\_test\_result\ =\ \textcolor{keyword}{new}\ QPushButton(\textcolor{stringliteral}{"{}测试结果"{}});}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00137}00137\ \ \ \ \ layout\_analysis-\/>addWidget(button\_test\_result);}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00138}00138\ \ \ \ \ connect(button\_test\_result,\ \&QPushButton::clicked,\ \textcolor{keyword}{this},\ \&\mbox{\hyperlink{class_window___m_l_a6bb1d443c4e165a44a5ad004df7606a0}{Window\_ML::on\_button\_test\_result\_clicked}});}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00139}00139\ }
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00140}00140\ \ \ \ \ \textcolor{keyword}{auto}\ button\_feature\ =\ \textcolor{keyword}{new}\ QPushButton(\textcolor{stringliteral}{"{}特征贡献度"{}});}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00141}00141\ \ \ \ \ layout\_analysis-\/>addWidget(button\_feature);}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00142}00142\ \ \ \ \ connect(button\_feature,\ \&QPushButton::clicked,\ \textcolor{keyword}{this},\ \&\mbox{\hyperlink{class_window___m_l_ab69911dc8106588eff2c952c81f2fced}{Window\_ML::on\_button\_feature\_clicked}});}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00143}00143\ \}}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00144}00144\ }
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00148}\mbox{\hyperlink{class_window___m_l_a78c9bec62b8a4ca30fcc92d9902d1be5}{00148}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_window___m_l_a78c9bec62b8a4ca30fcc92d9902d1be5}{Window\_ML::on\_button\_ratio\_clicked}}()}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00149}00149\ \{}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00150}00150\ \ \ \ \ \textcolor{comment}{//\ 获取数据集和训练集的比例}}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00151}00151\ \ \ \ \ \textcolor{keywordtype}{float}\ ratio\ =\ \mbox{\hyperlink{class_window___m_l_a2f9e045c953ed92f9c57dcda8594bba9}{comb\_ratio}}-\/>currentText().toFloat();}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00152}00152\ \ \ \ \ \textcolor{keywordtype}{int}\ cnt\_test\ =\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(\mbox{\hyperlink{class_window___m_l_aeb7363b0f66173c9294954784c7b30b6}{diagnosis}}.size()\ *\ ratio);}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00153}00153\ \ \ \ \ \textcolor{comment}{//\ 检查测试集数量是否为0}}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00154}00154\ \ \ \ \ \textcolor{keywordflow}{if}\ (cnt\_test\ <=\ 0)\{}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00155}00155\ \ \ \ \ \ \ \ \ QMessageBox::critical(\textcolor{keyword}{this},\ \textcolor{stringliteral}{"{}错误"{}},\ \textcolor{stringliteral}{"{}测试集数量为0"{}});}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00156}00156\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00157}00157\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00158}00158\ }
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00159}00159\ \ \ \ \ \textcolor{comment}{//\ 划分训练集和测试集}}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00160}00160\ \ \ \ \ std::vector<std::pair<int,\ int>>\ col\_diagnosis;}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00161}00161\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{class_window___m_l_aeb7363b0f66173c9294954784c7b30b6}{diagnosis}}.size();\ ++i)}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00162}00162\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00163}00163\ \ \ \ \ \ \ \ \ col\_diagnosis.push\_back(std::make\_pair(i,\ \mbox{\hyperlink{class_window___m_l_aeb7363b0f66173c9294954784c7b30b6}{diagnosis}}[i]));}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00164}00164\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00165}00165\ \ \ \ \ std::srand(\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\textcolor{keyword}{>}(std::time(\textcolor{keyword}{nullptr})));}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00166}00166\ \ \ \ \ std::random\_shuffle(col\_diagnosis.begin(),\ col\_diagnosis.end());}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00167}00167\ \ \ \ \ std::vector<std::pair<int,\ int>>\ train;}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00168}00168\ \ \ \ \ std::vector<std::pair<int,\ int>>\ test;}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00169}00169\ \ \ \ \ \mbox{\hyperlink{class_window___m_l_a8f58a40c7e7eb967bb9559539f0ffb5e}{idx\_test}}.clear();}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00170}00170\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ cnt\_test;\ i\ ++)\{}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00171}00171\ \ \ \ \ \ \ \ \ test.push\_back(col\_diagnosis[i]);}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00172}00172\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_window___m_l_a8f58a40c7e7eb967bb9559539f0ffb5e}{idx\_test}}.push\_back(col\_diagnosis[i].first);}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00173}00173\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00174}00174\ \ \ \ \ \mbox{\hyperlink{class_window___m_l_a8359c5d92b4f050dc6ab4fe5f8fab4df}{idx\_train}}.clear();}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00175}00175\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ cnt\_test;\ i\ <\ col\_diagnosis.size();\ i\ ++)\{}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00176}00176\ \ \ \ \ \ \ \ \ train.push\_back(col\_diagnosis[i]);}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00177}00177\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_window___m_l_a8359c5d92b4f050dc6ab4fe5f8fab4df}{idx\_train}}.push\_back(col\_diagnosis[i].first);}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00178}00178\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00179}00179\ }
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00180}00180\ \ \ \ \ \textcolor{comment}{//\ 绘制训练集表格}}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00181}00181\ \ \ \ \ \mbox{\hyperlink{class_window___m_l_a5b34ec9fe96b8ec0246f5885706ea524}{table\_train}}-\/>clear();}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00182}00182\ \ \ \ \ \mbox{\hyperlink{class_window___m_l_a5b34ec9fe96b8ec0246f5885706ea524}{table\_train}}-\/>setRowCount(train.size());}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00183}00183\ \ \ \ \ \mbox{\hyperlink{class_window___m_l_a5b34ec9fe96b8ec0246f5885706ea524}{table\_train}}-\/>setColumnCount(2);}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00184}00184\ \ \ \ \ \mbox{\hyperlink{class_window___m_l_a5b34ec9fe96b8ec0246f5885706ea524}{table\_train}}-\/>setHorizontalHeaderLabels(QStringList()\ <<\ \textcolor{stringliteral}{"{}index"{}}\ <<\ \textcolor{stringliteral}{"{}diagnosis"{}});}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00185}00185\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ row\ =\ 0;\ row\ <\ train.size();\ ++row)}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00186}00186\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00187}00187\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_window___m_l_a5b34ec9fe96b8ec0246f5885706ea524}{table\_train}}-\/>setItem(row,\ 0,\ \textcolor{keyword}{new}\ QTableWidgetItem(QString::number(train[row].first)));}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00188}00188\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_window___m_l_a5b34ec9fe96b8ec0246f5885706ea524}{table\_train}}-\/>setItem(row,\ 1,\ \textcolor{keyword}{new}\ QTableWidgetItem(QString::number(train[row].second)));}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00189}00189\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00190}00190\ \ \ \ \ \textcolor{comment}{//\ 绘制测试集表格}}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00191}00191\ \ \ \ \ \mbox{\hyperlink{class_window___m_l_a6f25dcf86b8c3fe4c1c5b3c7ffa9ab92}{table\_test}}-\/>clear();}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00192}00192\ \ \ \ \ \mbox{\hyperlink{class_window___m_l_a6f25dcf86b8c3fe4c1c5b3c7ffa9ab92}{table\_test}}-\/>setRowCount(test.size());}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00193}00193\ \ \ \ \ \mbox{\hyperlink{class_window___m_l_a6f25dcf86b8c3fe4c1c5b3c7ffa9ab92}{table\_test}}-\/>setColumnCount(3);}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00194}00194\ \ \ \ \ \mbox{\hyperlink{class_window___m_l_a6f25dcf86b8c3fe4c1c5b3c7ffa9ab92}{table\_test}}-\/>setHorizontalHeaderLabels(QStringList()\ <<\ \textcolor{stringliteral}{"{}index"{}}\ <<\ \textcolor{stringliteral}{"{}diagnosis"{}}\ <<\ \textcolor{stringliteral}{"{}predict"{}});}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00195}00195\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ row\ =\ 0;\ row\ <\ test.size();\ ++row)}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00196}00196\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00197}00197\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_window___m_l_a6f25dcf86b8c3fe4c1c5b3c7ffa9ab92}{table\_test}}-\/>setItem(row,\ 0,\ \textcolor{keyword}{new}\ QTableWidgetItem(QString::number(test[row].first)));}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00198}00198\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_window___m_l_a6f25dcf86b8c3fe4c1c5b3c7ffa9ab92}{table\_test}}-\/>setItem(row,\ 1,\ \textcolor{keyword}{new}\ QTableWidgetItem(QString::number(test[row].second)));}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00199}00199\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_window___m_l_a6f25dcf86b8c3fe4c1c5b3c7ffa9ab92}{table\_test}}-\/>setItem(row,\ 2,\ \textcolor{keyword}{new}\ QTableWidgetItem(QString::number(-\/1)));}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00200}00200\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00201}00201\ \}}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00202}00202\ }
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00206}\mbox{\hyperlink{class_window___m_l_ae063b6ac1f57e17afbcf57ddcc7a09ca}{00206}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_window___m_l_ae063b6ac1f57e17afbcf57ddcc7a09ca}{Window\_ML::on\_button\_train\_clicked}}()\{}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00207}00207\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_window___m_l_addb3e6f65981ef3a419033b918b1c151}{samples}}.empty()\ ||\ \mbox{\hyperlink{class_window___m_l_addb3e6f65981ef3a419033b918b1c151}{samples}}[0].empty())\{}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00208}00208\ \ \ \ \ \ \ \ \ QMessageBox::critical(\textcolor{keyword}{this},\ \textcolor{stringliteral}{"{}错误"{}},\ \textcolor{stringliteral}{"{}样本为空"{}});}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00209}00209\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00210}00210\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00211}00211\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ size\_features\ =\ \mbox{\hyperlink{class_window___m_l_addb3e6f65981ef3a419033b918b1c151}{samples}}[0].size();}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00212}00212\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ size\_samples\ =\ \mbox{\hyperlink{class_window___m_l_addb3e6f65981ef3a419033b918b1c151}{samples}}.size();}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00213}00213\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ size\_train\_samples\ =\ \mbox{\hyperlink{class_window___m_l_a8359c5d92b4f050dc6ab4fe5f8fab4df}{idx\_train}}.size();}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00214}00214\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ size\_test\_samples\ =\ \mbox{\hyperlink{class_window___m_l_a8f58a40c7e7eb967bb9559539f0ffb5e}{idx\_test}}.size();}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00215}00215\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ size\_diagnosis\ =\ \mbox{\hyperlink{class_window___m_l_aeb7363b0f66173c9294954784c7b30b6}{diagnosis}}.size();}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00216}00216\ \ \ \ \ \textcolor{keywordflow}{if}\ (size\_diagnosis\ !=\ size\_samples\ ||\ \mbox{\hyperlink{class_window___m_l_a8f58a40c7e7eb967bb9559539f0ffb5e}{idx\_test}}.size()\ ==\ 0\ ||\ \mbox{\hyperlink{class_window___m_l_a8359c5d92b4f050dc6ab4fe5f8fab4df}{idx\_train}}.size()\ ==\ 0)\{}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00217}00217\ \ \ \ \ \ \ \ \ QMessageBox::critical(\textcolor{keyword}{this},\ \textcolor{stringliteral}{"{}错误"{}},\ \textcolor{stringliteral}{"{}数据集和标签数量不一致"{}});}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00218}00218\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00219}00219\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00220}00220\ }
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00221}00221\ \ \ \ \ \textcolor{comment}{//\ 将数据集和标签转换为xgboost的数据结构}}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00222}00222\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ label\_train[size\_train\_samples];}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00223}00223\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ size\_train\_samples;\ i\ ++)\{}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00224}00224\ \ \ \ \ \ \ \ \ label\_train[i]\ =\ \mbox{\hyperlink{class_window___m_l_aeb7363b0f66173c9294954784c7b30b6}{diagnosis}}[\mbox{\hyperlink{class_window___m_l_a8359c5d92b4f050dc6ab4fe5f8fab4df}{idx\_train}}[i]];}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00225}00225\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00226}00226\ \ \ \ \ \textcolor{keywordtype}{float}\ train[size\_train\_samples][size\_features];}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00227}00227\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ size\_train\_samples;\ i\ ++)\{}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00228}00228\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ size\_features;\ j\ ++)\{}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00229}00229\ \ \ \ \ \ \ \ \ \ \ \ \ train[i][j]\ =\ \mbox{\hyperlink{class_window___m_l_addb3e6f65981ef3a419033b918b1c151}{samples}}[\mbox{\hyperlink{class_window___m_l_a8359c5d92b4f050dc6ab4fe5f8fab4df}{idx\_train}}[i]][j];}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00230}00230\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00231}00231\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00232}00232\ }
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00233}00233\ \ \ \ \ DMatrixHandle\ dtrain;}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00234}00234\ }
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00235}00235\ \ \ \ \ XGDMatrixCreateFromMat((\textcolor{keywordtype}{float}\ *)\ train,\ size\_train\_samples,\ size\_features,\ -\/1,\ \&dtrain);}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00236}00236\ }
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00237}00237\ \ \ \ \ XGDMatrixSetUIntInfo(dtrain,\ \textcolor{stringliteral}{"{}label"{}},\ label\_train,\ size\_train\_samples);\ \textcolor{comment}{//\ set\ label\ parameter}}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00238}00238\ }
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00239}00239\ \ \ \ \ \textcolor{comment}{//\ Create\ booster}}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00240}00240\ \ \ \ \ BoosterHandle\ booster;}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00241}00241\ \ \ \ \ XGBoosterCreate(\&dtrain,\ 1,\ \&booster);}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00242}00242\ }
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00243}00243\ \ \ \ \ \textcolor{comment}{//\ 设置booster特征名称}}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00244}00244\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *fnames[size\_features];}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00245}00245\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ size\_features;\ i\ ++)\{}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00246}00246\ \ \ \ \ \ \ \ \ fnames[i]\ =\ \mbox{\hyperlink{class_window___m_l_a4e02c0c2338bcf68749819626c0e7fb6}{feature\_names}}[i].c\_str();}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00247}00247\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00248}00248\ \ \ \ \ XGBoosterSetStrFeatureInfo(booster,\ \textcolor{stringliteral}{"{}feature\_name"{}},\ fnames,\ size\_features);}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00249}00249\ }
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00250}00250\ \ \ \ \ \textcolor{comment}{//\ 检查参数}}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00251}00251\ \ \ \ \ \textcolor{keywordtype}{bool}\ is\_valid\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00252}00252\ \ \ \ \ \textcolor{keywordtype}{int}\ max\_depth\ =\ \mbox{\hyperlink{class_window___m_l_af88ec413767807f3e02981feee8a2b7e}{edit\_max\_depth}}-\/>text().toInt(\&is\_valid);}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00253}00253\ \ \ \ \ \textcolor{keywordflow}{if}\ (!is\_valid)\{}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00254}00254\ \ \ \ \ \ \ \ \ QMessageBox::critical(\textcolor{keyword}{this},\ \textcolor{stringliteral}{"{}错误"{}},\ \textcolor{stringliteral}{"{}最大深度不是整数"{}});}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00255}00255\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00256}00256\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00257}00257\ \ \ \ \ std::string\ str\_max\_depth\ =\ std::to\_string(max\_depth);}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00258}00258\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *c\_str\_max\_depth\ =\ str\_max\_depth.c\_str();}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00259}00259\ \ \ \ \ \textcolor{keywordtype}{int}\ iter\ =\ \mbox{\hyperlink{class_window___m_l_ac163c26fc181f6e028b3b23bde6e15d1}{edit\_iter}}-\/>text().toInt(\&is\_valid);}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00260}00260\ \ \ \ \ \textcolor{keywordflow}{if}\ (!is\_valid)\{}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00261}00261\ \ \ \ \ \ \ \ \ QMessageBox::critical(\textcolor{keyword}{this},\ \textcolor{stringliteral}{"{}错误"{}},\ \textcolor{stringliteral}{"{}迭代次数不是整数"{}});}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00262}00262\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00263}00263\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00264}00264\ }
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00265}00265\ \ \ \ \ \textcolor{comment}{//\ Set\ parameters}}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00266}00266\ \ \ \ \ XGBoosterSetParam(booster,\ \textcolor{stringliteral}{"{}objective"{}},\ \textcolor{stringliteral}{"{}reg:squarederror"{}});}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00267}00267\ \ \ \ \ XGBoosterSetParam(booster,\ \textcolor{stringliteral}{"{}max\_depth"{}},\ c\_str\_max\_depth);}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00268}00268\ \ \ \ \ XGBoosterSetParam(booster,\ \textcolor{stringliteral}{"{}eta"{}},\ \textcolor{stringliteral}{"{}0.1"{}});}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00269}00269\ }
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00270}00270\ \ \ \ \ \textcolor{comment}{//\ Train\ for\ 10\ iterations}}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00271}00271\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ round\ =\ 0;\ round\ <\ iter;\ round++)\ \{}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00272}00272\ \ \ \ \ \ \ \ \ XGBoosterUpdateOneIter(booster,\ round,\ dtrain);}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00273}00273\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00274}00274\ }
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00275}00275\ \ \ \ \ \textcolor{comment}{//\ 获取特征贡献度}}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00276}00276\ \ \ \ \ \textcolor{keywordtype}{char}\ \textcolor{keyword}{const}\ config[]\ =\ }
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00277}00277\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}\{\(\backslash\)"{}importance\_type\(\backslash\)"{}:\ \(\backslash\)"{}weight\(\backslash\)"{}\}"{}};}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00278}00278\ \ \ \ \ bst\_ulong\ out\_n\_features;}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00279}00279\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}**\ out\_features\ =\ \textcolor{keyword}{new}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*[size\_features];}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00280}00280\ \ \ \ \ bst\_ulong\ out\_dim;}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00281}00281\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ max\_n\_features\ =\ 100;}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00282}00282\ \ \ \ \ bst\_ulong\ \textcolor{keyword}{const}*\ out\_shape\ =\ \textcolor{keyword}{new}\ bst\_ulong[max\_n\_features];}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00283}00283\ \ \ \ \ \textcolor{keywordtype}{float}\ \textcolor{keyword}{const}*\ out\_scores\ =\ \textcolor{keyword}{new}\ \textcolor{keywordtype}{float}[size\_features];}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00284}00284\ \ \ \ \ XGBoosterFeatureScore(}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00285}00285\ \ \ \ \ \ \ \ \ booster,\ config,}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00286}00286\ \ \ \ \ \ \ \ \ \&out\_n\_features,\ \&out\_features,}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00287}00287\ \ \ \ \ \ \ \ \ \&out\_dim,\ \&out\_shape,}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00288}00288\ \ \ \ \ \ \ \ \ \&out\_scores);}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00289}00289\ }
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00290}00290\ \ \ \ \ \textcolor{comment}{//\ 排序后存储特征贡献度}}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00291}00291\ \ \ \ \ \mbox{\hyperlink{class_window___m_l_a947b8bbd40412265beef1becfcf12622}{feature\_importance}}.clear();}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00292}00292\ \ \ \ \ qDebug()\ <<\ size\_features;}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00293}00293\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ out\_n\_features;\ i\ ++)\{}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00294}00294\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_window___m_l_a947b8bbd40412265beef1becfcf12622}{feature\_importance}}.push\_back(std::make\_pair(std::string(out\_features[i]),\ out\_scores[i]));}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00295}00295\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00296}00296\ \ \ \ \ std::sort(\mbox{\hyperlink{class_window___m_l_a947b8bbd40412265beef1becfcf12622}{feature\_importance}}.begin(),\ \mbox{\hyperlink{class_window___m_l_a947b8bbd40412265beef1becfcf12622}{feature\_importance}}.end(),\ [](\textcolor{keyword}{const}\ std::pair<std::string,\ float>\ \&a,\ \textcolor{keyword}{const}\ std::pair<std::string,\ float>\ \&b)\{}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00297}00297\ \ \ \ \ \ \ \ \ return\ a.second\ <\ b.second;}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00298}00298\ \ \ \ \ \});}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00299}00299\ }
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00300}00300\ \ \ \ \ \textcolor{comment}{//\ 预测测试集}}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00301}00301\ }
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00302}00302\ \ \ \ \ \textcolor{comment}{//\ 转换C数据结构}}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00303}00303\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ label\_test[size\_test\_samples];}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00304}00304\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ size\_test\_samples;\ i\ ++)\{}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00305}00305\ \ \ \ \ \ \ \ \ label\_test[i]\ =\ \mbox{\hyperlink{class_window___m_l_aeb7363b0f66173c9294954784c7b30b6}{diagnosis}}[\mbox{\hyperlink{class_window___m_l_a8f58a40c7e7eb967bb9559539f0ffb5e}{idx\_test}}[i]];}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00306}00306\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00307}00307\ \ \ \ \ \textcolor{keywordtype}{float}\ test[size\_test\_samples][size\_features];}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00308}00308\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ size\_test\_samples;\ i\ ++)\{}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00309}00309\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ size\_features;\ j\ ++)\{}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00310}00310\ \ \ \ \ \ \ \ \ \ \ \ \ test[i][j]\ =\ \mbox{\hyperlink{class_window___m_l_addb3e6f65981ef3a419033b918b1c151}{samples}}[\mbox{\hyperlink{class_window___m_l_a8f58a40c7e7eb967bb9559539f0ffb5e}{idx\_test}}[i]][j];}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00311}00311\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00312}00312\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00313}00313\ \ \ \ \ DMatrixHandle\ dtest;}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00314}00314\ \ \ \ \ XGDMatrixCreateFromMat((\textcolor{keywordtype}{float}\ *)\ test,\ size\_test\_samples,\ size\_features,\ -\/1,\ \&dtest);}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00315}00315\ \ \ \ \ XGDMatrixSetUIntInfo(dtest,\ \textcolor{stringliteral}{"{}label"{}},\ label\_test,\ size\_test\_samples);}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00316}00316\ }
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00317}00317\ \ \ \ \ bst\_ulong\ out\_len;}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00318}00318\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}*\ out\_result;}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00319}00319\ \ \ \ \ XGBoosterPredict(booster,\ dtest,\ 0,\ 2,\ 0,\ \&out\_len,\ \&out\_result);}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00320}00320\ }
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00321}00321\ \ \ \ \ \textcolor{comment}{//\ 将预测结果写入表格}}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00322}00322\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ row\ =\ 0;\ row\ <\ out\_len;\ ++row)}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00323}00323\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00324}00324\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{class_window___m_l_a6f25dcf86b8c3fe4c1c5b3c7ffa9ab92}{table\_test}}-\/>item(row,\ 2))\{}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00325}00325\ \ \ \ \ \ \ \ \ \ \ \ \ QMessageBox::critical(\textcolor{keyword}{this},\ \textcolor{stringliteral}{"{}错误"{}},\ \textcolor{stringliteral}{"{}测试集表格中有空值"{}});}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00326}00326\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00327}00327\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00328}00328\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (out\_result[row]\ <\ 0.5)\{}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00329}00329\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_window___m_l_a6f25dcf86b8c3fe4c1c5b3c7ffa9ab92}{table\_test}}-\/>item(row,\ 2)-\/>setText(\textcolor{stringliteral}{"{}0"{}});}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00330}00330\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00331}00331\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00332}00332\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_window___m_l_a6f25dcf86b8c3fe4c1c5b3c7ffa9ab92}{table\_test}}-\/>item(row,\ 2)-\/>setText(\textcolor{stringliteral}{"{}1"{}});}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00333}00333\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00334}00334\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00335}00335\ }
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00336}00336\ \ \ \ \ \textcolor{comment}{//\ 统计混淆矩阵}}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00337}00337\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ row\ =\ 0;\ row\ <\ \mbox{\hyperlink{class_window___m_l_a6f25dcf86b8c3fe4c1c5b3c7ffa9ab92}{table\_test}}-\/>rowCount();\ row\ ++)\{}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00338}00338\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{class_window___m_l_a6f25dcf86b8c3fe4c1c5b3c7ffa9ab92}{table\_test}}-\/>item(row,\ 1)\ ||\ !\mbox{\hyperlink{class_window___m_l_a6f25dcf86b8c3fe4c1c5b3c7ffa9ab92}{table\_test}}-\/>item(row,\ 2))\{}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00339}00339\ \ \ \ \ \ \ \ \ \ \ \ \ QMessageBox::critical(\textcolor{keyword}{this},\ \textcolor{stringliteral}{"{}错误"{}},\ \textcolor{stringliteral}{"{}测试集表格中有空值"{}});}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00340}00340\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00341}00341\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00342}00342\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_window___m_l_a6f25dcf86b8c3fe4c1c5b3c7ffa9ab92}{table\_test}}-\/>item(row,\ 1)-\/>text()\ ==\ \textcolor{stringliteral}{"{}0"{}})\{}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00343}00343\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_window___m_l_a6f25dcf86b8c3fe4c1c5b3c7ffa9ab92}{table\_test}}-\/>item(row,\ 2)-\/>text()\ ==\ \textcolor{stringliteral}{"{}0"{}})\{}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00344}00344\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_window___m_l_ac24869fc1f705a018cc18e1d8f3f130f}{cnt\_true\_negative}}\ ++;}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00345}00345\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00346}00346\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00347}00347\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_window___m_l_ad0e892b62bfc22cfcfad5335c870ead0}{cnt\_false\_positive}}\ ++;}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00348}00348\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00349}00349\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00350}00350\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00351}00351\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_window___m_l_a6f25dcf86b8c3fe4c1c5b3c7ffa9ab92}{table\_test}}-\/>item(row,\ 2)-\/>text()\ ==\ \textcolor{stringliteral}{"{}0"{}})\{}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00352}00352\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_window___m_l_a6fce1762f9fbdca7bba514e1610ffecd}{cnt\_false\_negative}}\ ++;}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00353}00353\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00354}00354\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00355}00355\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_window___m_l_ae19ed4e3b34e4eec241595d5572bcbdd}{cnt\_true\_positive}}\ ++;}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00356}00356\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00357}00357\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00358}00358\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00359}00359\ }
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00360}00360\ \ \ \ \ \textcolor{comment}{//\ 计算F1-\/score}}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00361}00361\ \ \ \ \ \textcolor{keywordtype}{float}\ precision\ =\ \mbox{\hyperlink{class_window___m_l_ae19ed4e3b34e4eec241595d5572bcbdd}{cnt\_true\_positive}}\ /\ (\mbox{\hyperlink{class_window___m_l_ae19ed4e3b34e4eec241595d5572bcbdd}{cnt\_true\_positive}}\ +\ \mbox{\hyperlink{class_window___m_l_ad0e892b62bfc22cfcfad5335c870ead0}{cnt\_false\_positive}});}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00362}00362\ \ \ \ \ \textcolor{keywordtype}{float}\ recall\ =\ \mbox{\hyperlink{class_window___m_l_ae19ed4e3b34e4eec241595d5572bcbdd}{cnt\_true\_positive}}\ /\ (\mbox{\hyperlink{class_window___m_l_ae19ed4e3b34e4eec241595d5572bcbdd}{cnt\_true\_positive}}\ +\ \mbox{\hyperlink{class_window___m_l_a6fce1762f9fbdca7bba514e1610ffecd}{cnt\_false\_negative}});}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00363}00363\ \ \ \ \ \textcolor{keywordtype}{float}\ f1\_score\ =\ 2\ *\ (precision\ *\ recall)\ /\ (precision\ +\ recall);}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00364}00364\ \ \ \ \ \mbox{\hyperlink{class_window___m_l_a0a3f97daccbb8d3c5283c9305f486159}{edit\_f1score}}-\/>setText(QString::number(f1\_score));}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00365}00365\ }
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00366}00366\ \ \ \ \ \textcolor{comment}{//\ 计算AUC}}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00367}00367\ \ \ \ \ \textcolor{comment}{//\ 计算ROC曲线的数据点}}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00368}00368\ \ \ \ \ std::vector<float>\ true\_positive\_rates;}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00369}00369\ \ \ \ \ std::vector<float>\ false\_positive\_rates;}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00370}00370\ }
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00371}00371\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{float}\ threshold\ =\ 0.0;\ threshold\ <=\ 1.0;\ threshold\ +=\ 0.01)\ \{}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00372}00372\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ true\_positives\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00373}00373\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ false\_positives\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00374}00374\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ false\_negatives\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00375}00375\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ true\_negatives\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00376}00376\ }
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00377}00377\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (bst\_ulong\ i\ =\ 0;\ i\ <\ out\_len;\ i++)\ \{}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00378}00378\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ predicted\_value\ =\ out\_result[i];}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00379}00379\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ true\_label\ =\ label\_test[i];}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00380}00380\ }
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00381}00381\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (predicted\_value\ >=\ threshold\ \&\&\ true\_label\ ==\ 1)\ \{}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00382}00382\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ true\_positives++;}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00383}00383\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (predicted\_value\ >=\ threshold\ \&\&\ true\_label\ ==\ 0)\ \{}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00384}00384\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ false\_positives++;}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00385}00385\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (predicted\_value\ <\ threshold\ \&\&\ true\_label\ ==\ 1)\ \{}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00386}00386\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ false\_negatives++;}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00387}00387\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (predicted\_value\ <\ threshold\ \&\&\ true\_label\ ==\ 0)\ \{}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00388}00388\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ true\_negatives++;}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00389}00389\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00390}00390\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00391}00391\ }
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00392}00392\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 预测阳性在所有阳性中所占的比例}}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00393}00393\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ true\_positive\_rate\ =\ true\_positives\ /\ (true\_positives\ +\ false\_negatives);}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00394}00394\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 预测阳性在所有阴性中所占的比例}}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00395}00395\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ false\_positive\_rate\ =\ false\_positives\ /\ (false\_positives\ +\ true\_negatives);}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00396}00396\ }
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00397}00397\ \ \ \ \ \ \ \ \ true\_positive\_rates.push\_back(true\_positive\_rate);}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00398}00398\ \ \ \ \ \ \ \ \ false\_positive\_rates.push\_back(false\_positive\_rate);}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00399}00399\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00400}00400\ }
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00401}00401\ \ \ \ \ \textcolor{comment}{//\ 计算AUC，即ROC曲线下的面积}}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00402}00402\ \ \ \ \ \textcolor{keywordtype}{float}\ auc\ =\ 0.0;}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00403}00403\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 1;\ i\ <\ true\_positive\_rates.size();\ i++)\ \{}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00404}00404\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ delta\_fpr\ =\ false\_positive\_rates[i\ -\/\ 1]\ -\/\ false\_positive\_rates[i];}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00405}00405\ \ \ \ \ \ \ \ \ auc\ +=\ true\_positive\_rates[i\ -\/\ 1]\ *\ delta\_fpr;}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00406}00406\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00407}00407\ }
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00408}00408\ \ \ \ \ \mbox{\hyperlink{class_window___m_l_ae97b148b807da2a5e729795f779dc8b9}{edit\_auc}}-\/>setText(QString::number(auc));}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00409}00409\ }
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00410}00410\ \ \ \ \ \textcolor{comment}{//\ 释放内存}}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00411}00411\ \ \ \ \ XGBoosterFree(booster);}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00412}00412\ \ \ \ \ XGDMatrixFree(dtrain);}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00413}00413\ \ \ \ \ XGDMatrixFree(dtest);}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00414}00414\ \ \ \ \ \textcolor{comment}{//\ delete[]\ out\_features;}}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00415}00415\ \ \ \ \ \textcolor{comment}{//\ delete[]\ out\_shape;}}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00416}00416\ \ \ \ \ \textcolor{comment}{//\ delete[]\ out\_scores;}}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00417}00417\ \}}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00418}00418\ }
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00422}\mbox{\hyperlink{class_window___m_l_a6bb1d443c4e165a44a5ad004df7606a0}{00422}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_window___m_l_a6bb1d443c4e165a44a5ad004df7606a0}{Window\_ML::on\_button\_test\_result\_clicked}}()\{}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00423}00423\ \ \ \ \ \textcolor{comment}{//\ 绘制混淆矩阵}}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00424}00424\ \ \ \ \ \textcolor{keyword}{auto}\ window\_confusion\ =\ \textcolor{keyword}{new}\ QMainWindow;}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00425}00425\ \ \ \ \ window\_confusion-\/>setAttribute(Qt::WA\_DeleteOnClose);}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00426}00426\ \ \ \ \ window\_confusion-\/>setWindowTitle(\textcolor{stringliteral}{"{}混淆矩阵"{}});}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00427}00427\ \ \ \ \ window\_confusion-\/>setMinimumSize(400,\ 400);}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00428}00428\ }
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00429}00429\ \ \ \ \ \textcolor{keyword}{auto}\ table\_confusion\ =\ \textcolor{keyword}{new}\ QTableWidget(window\_confusion);}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00430}00430\ \ \ \ \ window\_confusion-\/>setCentralWidget(table\_confusion);}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00431}00431\ }
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00432}00432\ \ \ \ \ table\_confusion-\/>setRowCount(2);}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00433}00433\ \ \ \ \ table\_confusion-\/>setColumnCount(2);}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00434}00434\ }
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00435}00435\ \ \ \ \ table\_confusion-\/>setHorizontalHeaderLabels(QStringList()\ <<\ \textcolor{stringliteral}{"{}实际良性"{}}\ <<\ \textcolor{stringliteral}{"{}实际恶性"{}});}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00436}00436\ \ \ \ \ table\_confusion-\/>setVerticalHeaderLabels(QStringList()\ <<\ \textcolor{stringliteral}{"{}预测良性"{}}\ <<\ \textcolor{stringliteral}{"{}预测恶性"{}});}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00437}00437\ }
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00438}00438\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ item\_size\ =\ 100;\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00439}00439\ \ \ \ \ table\_confusion-\/>setRowHeight(0,\ item\_size);}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00440}00440\ \ \ \ \ table\_confusion-\/>setRowHeight(1,\ item\_size);}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00441}00441\ \ \ \ \ table\_confusion-\/>setColumnWidth(0,\ item\_size);}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00442}00442\ \ \ \ \ table\_confusion-\/>setColumnWidth(1,\ item\_size);}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00443}00443\ \ \ \ \ table\_confusion-\/>setItem(0,\ 0,\ \textcolor{keyword}{new}\ QTableWidgetItem(QString::number(\mbox{\hyperlink{class_window___m_l_ac24869fc1f705a018cc18e1d8f3f130f}{cnt\_true\_negative}})));}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00444}00444\ \ \ \ \ table\_confusion-\/>setItem(0,\ 1,\ \textcolor{keyword}{new}\ QTableWidgetItem(QString::number(\mbox{\hyperlink{class_window___m_l_ad0e892b62bfc22cfcfad5335c870ead0}{cnt\_false\_positive}})));}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00445}00445\ \ \ \ \ table\_confusion-\/>setItem(1,\ 0,\ \textcolor{keyword}{new}\ QTableWidgetItem(QString::number(\mbox{\hyperlink{class_window___m_l_a6fce1762f9fbdca7bba514e1610ffecd}{cnt\_false\_negative}})));}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00446}00446\ \ \ \ \ table\_confusion-\/>setItem(1,\ 1,\ \textcolor{keyword}{new}\ QTableWidgetItem(QString::number(\mbox{\hyperlink{class_window___m_l_ae19ed4e3b34e4eec241595d5572bcbdd}{cnt\_true\_positive}})));}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00447}00447\ }
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00448}00448\ \ \ \ \ window\_confusion-\/>show();}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00449}00449\ \}}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00450}00450\ }
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00454}\mbox{\hyperlink{class_window___m_l_ab69911dc8106588eff2c952c81f2fced}{00454}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_window___m_l_ab69911dc8106588eff2c952c81f2fced}{Window\_ML::on\_button\_feature\_clicked}}()\{\ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00455}00455\ \ \ \ \ \textcolor{keyword}{auto}\ window\ =\ \textcolor{keyword}{new}\ QMainWindow;}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00456}00456\ \ \ \ \ window-\/>setAttribute(Qt::WA\_DeleteOnClose);}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00457}00457\ \ \ \ \ window-\/>setWindowTitle(\textcolor{stringliteral}{"{}特征贡献度"{}});}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00458}00458\ }
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00459}00459\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_window___m_l_a947b8bbd40412265beef1becfcf12622}{feature\_importance}}.empty())\{}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00460}00460\ \ \ \ \ \ \ \ \ QMessageBox::critical(\textcolor{keyword}{this},\ \textcolor{stringliteral}{"{}错误"{}},\ \textcolor{stringliteral}{"{}无特征贡献度"{}});}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00461}00461\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00462}00462\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00463}00463\ }
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00464}00464\ \ \ \ \ \textcolor{keyword}{auto}\ chart\ =\ \textcolor{keyword}{new}\ QChart;}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00465}00465\ \ \ \ \ \textcolor{keyword}{auto}\ chartView\ =\ \textcolor{keyword}{new}\ QChartView;}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00466}00466\ \ \ \ \ chartView-\/>setChart(chart);}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00467}00467\ \ \ \ \ window-\/>setCentralWidget(chartView);}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00468}00468\ }
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00469}00469\ \ \ \ \ \textcolor{keyword}{auto}\ series\ =\ \textcolor{keyword}{new}\ QHorizontalBarSeries;}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00470}00470\ \ \ \ \ chart-\/>addSeries(series);}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00471}00471\ }
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00472}00472\ \ \ \ \ \textcolor{keyword}{auto}\ barSet\ =\ \textcolor{keyword}{new}\ QBarSet(\textcolor{stringliteral}{"{}贡献度"{}},\ \textcolor{keyword}{this});}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00473}00473\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \&feature\ :\ \mbox{\hyperlink{class_window___m_l_a947b8bbd40412265beef1becfcf12622}{feature\_importance}})\{}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00474}00474\ \ \ \ \ \ \ \ \ *barSet\ <<\ feature.second;}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00475}00475\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00476}00476\ \ \ \ \ series-\/>append(barSet);}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00477}00477\ }
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00478}00478\ \ \ \ \ \textcolor{keyword}{auto}\ axis\_feature\ =\ \textcolor{keyword}{new}\ QBarCategoryAxis(\textcolor{keyword}{this});}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00479}00479\ \ \ \ \ axis\_feature-\/>setTitleText(\textcolor{stringliteral}{"{}特征"{}});}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00480}00480\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \&feature\ :\ \mbox{\hyperlink{class_window___m_l_a947b8bbd40412265beef1becfcf12622}{feature\_importance}})\{}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00481}00481\ \ \ \ \ \ \ \ \ axis\_feature-\/>append(QString::fromStdString(feature.first));}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00482}00482\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00483}00483\ \ \ \ \ chart-\/>addAxis(axis\_feature,\ Qt::AlignLeft);}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00484}00484\ \ \ \ \ series-\/>attachAxis(axis\_feature);}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00485}00485\ }
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00486}00486\ \ \ \ \ \textcolor{keyword}{auto}\ axis\_value\ =\ \textcolor{keyword}{new}\ QValueAxis(\textcolor{keyword}{this});}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00487}00487\ \ \ \ \ axis\_value-\/>setTitleText(\textcolor{stringliteral}{"{}贡献度"{}});}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00488}00488\ \ \ \ \ \textcolor{comment}{//\ 设置范围}}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00489}00489\ \ \ \ \ \textcolor{keywordtype}{float}\ max\_value\ =\ \mbox{\hyperlink{class_window___m_l_a947b8bbd40412265beef1becfcf12622}{feature\_importance}}.back().second;}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00490}00490\ \ \ \ \ axis\_value-\/>setRange(0,\ max\_value\ *\ 1.25);}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00491}00491\ \ \ \ \ chart-\/>addAxis(axis\_value,\ Qt::AlignBottom);}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00492}00492\ \ \ \ \ series-\/>attachAxis(axis\_value);}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00493}00493\ }
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00494}00494\ \ \ \ \ window-\/>show();}
+\DoxyCodeLine{\Hypertarget{window__ml_8cpp_source_l00495}00495\ \}}
+
+\end{DoxyCode}

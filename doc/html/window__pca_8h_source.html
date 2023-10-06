@@ -1,0 +1,246 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>医疗数据分析平台: D:/tzh21/Projects/2023summer/plantform_xgboost/src/window_pca.h 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">医疗数据分析平台
+   </div>
+   <div id="projectbrief">大作业</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function() { init_codefold(0); });
+/* @license-end */
+</script>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle"><div class="title">window_pca.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="window__pca_8h.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef WINDOW_PCA_H</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define WINDOW_PCA_H</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;<a class="code" href="widget_8h.html">widget.h</a>&quot;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;QBoxLayout&gt;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;QMainWindow&gt;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;QChart&gt;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &lt;QChartView&gt;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &lt;QLabel&gt;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &lt;QPushButton&gt;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &lt;QDialog&gt;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &lt;QMessageBox&gt;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &lt;Q3DScatter&gt;</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &lt;QLineEdit&gt;</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &lt;QVector3D&gt;</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#include &lt;QPointF&gt;</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
+<div class="foldopen" id="foldopen00019" data-start="{" data-end="};">
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="class_window___p_c_a2_d.html">   19</a></span><span class="keyword">class </span><a class="code hl_class" href="class_window___p_c_a2_d.html">Window_PCA2D</a> : <span class="keyword">public</span> QWidget</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>{</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    Q_OBJECT</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <span class="keyword">explicit</span> <a class="code hl_class" href="class_window___p_c_a2_d.html">Window_PCA2D</a>(</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>        <span class="keyword">const</span> std::vector&lt;std::vector&lt;float&gt;&gt; &amp;variants,</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>        <span class="keyword">const</span> std::vector&lt;int&gt; &amp;labels,</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>        <span class="keyword">const</span> <span class="keywordtype">size_t</span> cnt_groups,</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>        QWidget *parent = <span class="keyword">nullptr</span>);</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>signals:</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="class_window___p_c_a2_d.html#a4f42996bfdf9dd27852f950a19f2c2d6">   33</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="class_window___p_c_a2_d.html#a4f42996bfdf9dd27852f950a19f2c2d6">dim_reduced</a> = 2;</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="class_window___p_c_a2_d.html#a8ab19b95f435e2a776bf245b1537a165">   35</a></span>    QLineEdit *<a class="code hl_variable" href="class_window___p_c_a2_d.html#a8ab19b95f435e2a776bf245b1537a165">edit_group</a>;</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="class_window___p_c_a2_d.html#a3bc8770d4b1d7f75c1504d44730ac507">   36</a></span>    QLineEdit *<a class="code hl_variable" href="class_window___p_c_a2_d.html#a3bc8770d4b1d7f75c1504d44730ac507">edit_col</a>;</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="class_window___p_c_a2_d.html#a574f906bf7817b3969b3893d47e20eec">   37</a></span>    QLineEdit *<a class="code hl_variable" href="class_window___p_c_a2_d.html#a574f906bf7817b3969b3893d47e20eec">edit_1st</a>;</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="class_window___p_c_a2_d.html#a6540aa598ddc60b183cb43e2d0720431">   38</a></span>    QLineEdit *<a class="code hl_variable" href="class_window___p_c_a2_d.html#a6540aa598ddc60b183cb43e2d0720431">edit_2nd</a>;</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="class_window___p_c_a2_d.html#a0553313baa2034241acd5f4ed77c32c9">   40</a></span>    std::map&lt;std::string, int&gt; <a class="code hl_variable" href="class_window___p_c_a2_d.html#a0553313baa2034241acd5f4ed77c32c9">map_xy_col</a>;</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    <span class="comment">// std::map&lt;QPointF, int&gt; map_point_col;</span></div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    <span class="comment">// std::map&lt;const QPointF*, int&gt; map_point_col;</span></div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    <span class="comment">// std::map&lt;const QPointF&amp;, int&gt; map_point_col;</span></div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_window___p_c_a2_d.html#a5fcd5958db4983ef81313a4a34dafdc4">on_group_hovered</a>(<span class="keywordtype">int</span> index);</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_window___p_c_a2_d.html#a6ed803d8652e15f5e3b109882b3245bb">onPointHovered</a>(<span class="keyword">const</span> QPointF &amp;point, <span class="keywordtype">bool</span> state);</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>};</div>
+</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
+<div class="foldopen" id="foldopen00049" data-start="{" data-end="};">
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno"><a class="line" href="class_window___p_c_a.html">   49</a></span><span class="keyword">class </span><a class="code hl_class" href="class_window___p_c_a.html">Window_PCA</a> : <span class="keyword">public</span> QMainWindow{</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    Q_OBJECT</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    <a class="code hl_class" href="class_window___p_c_a.html">Window_PCA</a>(</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>        <a class="code hl_class" href="class_widget.html">Widget</a> *_table_widget,</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>        std::vector&lt;std::vector&lt;float&gt;&gt; &amp;&amp;_variants,</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>        std::vector&lt;int&gt; &amp;&amp;_diagnosis,</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>        QWidget *parent = <span class="keyword">nullptr</span>);</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno"><a class="line" href="class_window___p_c_a.html#ae294314475d573f2197e219e9f4b81ea">   58</a></span>    std::vector&lt;std::vector&lt;QVector3D&gt;&gt; <a class="code hl_variable" href="class_window___p_c_a.html#ae294314475d573f2197e219e9f4b81ea">bm_groups</a>;</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno"><a class="line" href="class_window___p_c_a.html#a125434d6f3399af6f214798a008de72b">   59</a></span>    std::vector&lt;std::vector&lt;QVector3D&gt;&gt; <a class="code hl_variable" href="class_window___p_c_a.html#a125434d6f3399af6f214798a008de72b">cluster_groups</a>;</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    <span class="comment">// void onPointHovered(int index);</span></div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    <span class="comment">// void on_group_hovered(int index);</span></div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span> </div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno"><a class="line" href="class_window___p_c_a.html#a8ae6567e83ea568f21730a4a07af943f">   65</a></span>    <a class="code hl_class" href="class_widget.html">Widget</a> *<a class="code hl_variable" href="class_window___p_c_a.html#a8ae6567e83ea568f21730a4a07af943f">table_widget</a>;</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span> </div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno"><a class="line" href="class_window___p_c_a.html#ad63cdc5e12188b55608eb9f8360edd25">   67</a></span>    <a class="code hl_enumeration" href="widget_8h.html#a356625608f963163dfb34e48917f5958">Cluster_method</a> <a class="code hl_variable" href="class_window___p_c_a.html#ad63cdc5e12188b55608eb9f8360edd25">cluster_method</a> = <a class="code hl_enumvalue" href="widget_8h.html#a356625608f963163dfb34e48917f5958ac3667c322252cb4024831eb39e924670">Cluster_method::kmeans</a>;</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span> </div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno"><a class="line" href="class_window___p_c_a.html#a7b7fc738c9214fccb48504899c387de0">   69</a></span>    <span class="keyword">const</span> std::vector&lt;std::vector&lt;float&gt;&gt; <a class="code hl_variable" href="class_window___p_c_a.html#a7b7fc738c9214fccb48504899c387de0">variants</a>;</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno"><a class="line" href="class_window___p_c_a.html#a0ada9397ea525820f9cde305c973b6df">   70</a></span>    <span class="keyword">const</span> std::vector&lt;int&gt; <a class="code hl_variable" href="class_window___p_c_a.html#a0ada9397ea525820f9cde305c973b6df">diagnosis</a>;</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span> </div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno"><a class="line" href="class_window___p_c_a.html#a5761f8d1f46651796f87a3794b8c6832">   72</a></span>    QPushButton *<a class="code hl_variable" href="class_window___p_c_a.html#a5761f8d1f46651796f87a3794b8c6832">button_2d</a>;</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno"><a class="line" href="class_window___p_c_a.html#a65c472d96b14d6261b3bdc2229625e62">   73</a></span>    QPushButton *<a class="code hl_variable" href="class_window___p_c_a.html#a65c472d96b14d6261b3bdc2229625e62">button_3d</a>;</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span> </div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno"><a class="line" href="class_window___p_c_a.html#a2df4a0cab8b0173d40a83cdc49fc38ed">   75</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="class_window___p_c_a.html#a2df4a0cab8b0173d40a83cdc49fc38ed">selected_group</a> = 0;</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span> </div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_window___p_c_a.html#a8378c33d4b544b1fd7776b6c2078eab8">on_radio_kmeans_toggled</a>(<span class="keywordtype">bool</span> checked);</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_window___p_c_a.html#a287e39106953da4019c679bca1bd2f07">on_radio_dbscan_toggled</a>(<span class="keywordtype">bool</span> checked);</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span> </div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_window___p_c_a.html#a6a60f62932757004bed7b1963e7a7f8d">on_button_2dcluster_clicked</a>();</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_window___p_c_a.html#a64536050ac56ffeea812c9f851cdc3fc">on_button_3dcluster_clicked</a>();</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span> </div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_window___p_c_a.html#a55bf1b40451ca5c474d34947d8da2f37">on_button_2d_clicked</a>();</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_window___p_c_a.html#a7647ddc5858c6f850e133c1272ee5f13">on_button_3d_clicked</a>();</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>};</div>
+</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span> </div>
+<div class="foldopen" id="foldopen00087" data-start="{" data-end="};">
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno"><a class="line" href="class_window___p_c_a3_d.html">   87</a></span><span class="keyword">class </span><a class="code hl_class" href="class_window___p_c_a3_d.html">Window_PCA3D</a> : <span class="keyword">public</span> Q3DScatter{</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    Q_OBJECT</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    <span class="keyword">explicit</span> <a class="code hl_class" href="class_window___p_c_a3_d.html">Window_PCA3D</a>(</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>        std::vector&lt;QLineEdit*&gt; &amp;edits,</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>        <span class="keyword">const</span> std::vector&lt;std::vector&lt;float&gt;&gt; &amp;variants,</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>        <span class="keyword">const</span> std::vector&lt;int&gt; &amp;labels,</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>        <span class="keyword">const</span> <span class="keywordtype">size_t</span> cnt_groups);</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span> </div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno"><a class="line" href="class_window___p_c_a3_d.html#a4c19b57b7542e4ce122a8592f962b035">   97</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="class_window___p_c_a3_d.html#a4c19b57b7542e4ce122a8592f962b035">selected_group</a> = 0;</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno"><a class="line" href="class_window___p_c_a3_d.html#a75c522ea498c4c0bb9e751b79546618e">   98</a></span>    QLineEdit *<a class="code hl_variable" href="class_window___p_c_a3_d.html#a75c522ea498c4c0bb9e751b79546618e">edit_group</a>;</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno"><a class="line" href="class_window___p_c_a3_d.html#a81e445d9b0b32ae9d27e280ef001baad">   99</a></span>    QLineEdit *<a class="code hl_variable" href="class_window___p_c_a3_d.html#a81e445d9b0b32ae9d27e280ef001baad">edit_col</a>;</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno"><a class="line" href="class_window___p_c_a3_d.html#ae97cf7cbd629d1ae108183756add34d1">  100</a></span>    QLineEdit *<a class="code hl_variable" href="class_window___p_c_a3_d.html#ae97cf7cbd629d1ae108183756add34d1">edit_1st</a>;</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno"><a class="line" href="class_window___p_c_a3_d.html#a9ed53fba86c7a529f48f3a0ee45d19f1">  101</a></span>    QLineEdit *<a class="code hl_variable" href="class_window___p_c_a3_d.html#a9ed53fba86c7a529f48f3a0ee45d19f1">edit_2nd</a>;</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno"><a class="line" href="class_window___p_c_a3_d.html#adb79bc6351c6ceff406a205418247fe2">  102</a></span>    QLineEdit *<a class="code hl_variable" href="class_window___p_c_a3_d.html#adb79bc6351c6ceff406a205418247fe2">edit_3rd</a>;</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span> </div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno"><a class="line" href="class_window___p_c_a3_d.html#a1d3bc97bf098ad054292f11f1e8f0cb9">  104</a></span>    std::map&lt;std::string, int&gt; <a class="code hl_variable" href="class_window___p_c_a3_d.html#a1d3bc97bf098ad054292f11f1e8f0cb9">map_xyz_col</a>;</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span> </div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_window___p_c_a3_d.html#a1be2046cfb8d46be43c41a6b9840e493">on_group_selected</a>(<span class="keywordtype">int</span> index);</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_window___p_c_a3_d.html#a3df366a78ea8acd16e0ae7612a4b7129">on_item_selected</a>(<span class="keywordtype">int</span> index);</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>};</div>
+</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span> </div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span><span class="preprocessor">#endif </span><span class="comment">// WINDOW_PCA_H</span></div>
+<div class="ttc" id="aclass_widget_html"><div class="ttname"><a href="class_widget.html">Widget</a></div><div class="ttdef"><b>Definition</b> <a href="widget_8h_source.html#l00019">widget.h:20</a></div></div>
+<div class="ttc" id="aclass_window___p_c_a2_d_html"><div class="ttname"><a href="class_window___p_c_a2_d.html">Window_PCA2D</a></div><div class="ttdef"><b>Definition</b> <a href="window__pca_8h_source.html#l00019">window_pca.h:20</a></div></div>
+<div class="ttc" id="aclass_window___p_c_a2_d_html_a0553313baa2034241acd5f4ed77c32c9"><div class="ttname"><a href="class_window___p_c_a2_d.html#a0553313baa2034241acd5f4ed77c32c9">Window_PCA2D::map_xy_col</a></div><div class="ttdeci">std::map&lt; std::string, int &gt; map_xy_col</div><div class="ttdef"><b>Definition</b> <a href="window__pca_8h_source.html#l00040">window_pca.h:40</a></div></div>
+<div class="ttc" id="aclass_window___p_c_a2_d_html_a3bc8770d4b1d7f75c1504d44730ac507"><div class="ttname"><a href="class_window___p_c_a2_d.html#a3bc8770d4b1d7f75c1504d44730ac507">Window_PCA2D::edit_col</a></div><div class="ttdeci">QLineEdit * edit_col</div><div class="ttdef"><b>Definition</b> <a href="window__pca_8h_source.html#l00036">window_pca.h:36</a></div></div>
+<div class="ttc" id="aclass_window___p_c_a2_d_html_a4f42996bfdf9dd27852f950a19f2c2d6"><div class="ttname"><a href="class_window___p_c_a2_d.html#a4f42996bfdf9dd27852f950a19f2c2d6">Window_PCA2D::dim_reduced</a></div><div class="ttdeci">int dim_reduced</div><div class="ttdef"><b>Definition</b> <a href="window__pca_8h_source.html#l00033">window_pca.h:33</a></div></div>
+<div class="ttc" id="aclass_window___p_c_a2_d_html_a574f906bf7817b3969b3893d47e20eec"><div class="ttname"><a href="class_window___p_c_a2_d.html#a574f906bf7817b3969b3893d47e20eec">Window_PCA2D::edit_1st</a></div><div class="ttdeci">QLineEdit * edit_1st</div><div class="ttdef"><b>Definition</b> <a href="window__pca_8h_source.html#l00037">window_pca.h:37</a></div></div>
+<div class="ttc" id="aclass_window___p_c_a2_d_html_a5fcd5958db4983ef81313a4a34dafdc4"><div class="ttname"><a href="class_window___p_c_a2_d.html#a5fcd5958db4983ef81313a4a34dafdc4">Window_PCA2D::on_group_hovered</a></div><div class="ttdeci">void on_group_hovered(int index)</div><div class="ttdoc">2D图中在点上悬停时，显示组别。</div><div class="ttdef"><b>Definition</b> <a href="window__pca_8cpp_source.html#l00541">window_pca.cpp:541</a></div></div>
+<div class="ttc" id="aclass_window___p_c_a2_d_html_a6540aa598ddc60b183cb43e2d0720431"><div class="ttname"><a href="class_window___p_c_a2_d.html#a6540aa598ddc60b183cb43e2d0720431">Window_PCA2D::edit_2nd</a></div><div class="ttdeci">QLineEdit * edit_2nd</div><div class="ttdef"><b>Definition</b> <a href="window__pca_8h_source.html#l00038">window_pca.h:38</a></div></div>
+<div class="ttc" id="aclass_window___p_c_a2_d_html_a6ed803d8652e15f5e3b109882b3245bb"><div class="ttname"><a href="class_window___p_c_a2_d.html#a6ed803d8652e15f5e3b109882b3245bb">Window_PCA2D::onPointHovered</a></div><div class="ttdeci">void onPointHovered(const QPointF &amp;point, bool state)</div><div class="ttdoc">2D图中在点上悬停时，显示列序号和坐标。</div><div class="ttdef"><b>Definition</b> <a href="window__pca_8cpp_source.html#l00551">window_pca.cpp:551</a></div></div>
+<div class="ttc" id="aclass_window___p_c_a2_d_html_a8ab19b95f435e2a776bf245b1537a165"><div class="ttname"><a href="class_window___p_c_a2_d.html#a8ab19b95f435e2a776bf245b1537a165">Window_PCA2D::edit_group</a></div><div class="ttdeci">QLineEdit * edit_group</div><div class="ttdef"><b>Definition</b> <a href="window__pca_8h_source.html#l00035">window_pca.h:35</a></div></div>
+<div class="ttc" id="aclass_window___p_c_a3_d_html"><div class="ttname"><a href="class_window___p_c_a3_d.html">Window_PCA3D</a></div><div class="ttdef"><b>Definition</b> <a href="window__pca_8h_source.html#l00087">window_pca.h:87</a></div></div>
+<div class="ttc" id="aclass_window___p_c_a3_d_html_a1be2046cfb8d46be43c41a6b9840e493"><div class="ttname"><a href="class_window___p_c_a3_d.html#a1be2046cfb8d46be43c41a6b9840e493">Window_PCA3D::on_group_selected</a></div><div class="ttdeci">void on_group_selected(int index)</div><div class="ttdoc">3D图中点击点时，显示组别。</div><div class="ttdef"><b>Definition</b> <a href="window__pca_8cpp_source.html#l00565">window_pca.cpp:565</a></div></div>
+<div class="ttc" id="aclass_window___p_c_a3_d_html_a1d3bc97bf098ad054292f11f1e8f0cb9"><div class="ttname"><a href="class_window___p_c_a3_d.html#a1d3bc97bf098ad054292f11f1e8f0cb9">Window_PCA3D::map_xyz_col</a></div><div class="ttdeci">std::map&lt; std::string, int &gt; map_xyz_col</div><div class="ttdef"><b>Definition</b> <a href="window__pca_8h_source.html#l00104">window_pca.h:104</a></div></div>
+<div class="ttc" id="aclass_window___p_c_a3_d_html_a3df366a78ea8acd16e0ae7612a4b7129"><div class="ttname"><a href="class_window___p_c_a3_d.html#a3df366a78ea8acd16e0ae7612a4b7129">Window_PCA3D::on_item_selected</a></div><div class="ttdeci">void on_item_selected(int index)</div><div class="ttdoc">3D图中点击点时，显示列序号和坐标。</div><div class="ttdef"><b>Definition</b> <a href="window__pca_8cpp_source.html#l00578">window_pca.cpp:578</a></div></div>
+<div class="ttc" id="aclass_window___p_c_a3_d_html_a4c19b57b7542e4ce122a8592f962b035"><div class="ttname"><a href="class_window___p_c_a3_d.html#a4c19b57b7542e4ce122a8592f962b035">Window_PCA3D::selected_group</a></div><div class="ttdeci">int selected_group</div><div class="ttdef"><b>Definition</b> <a href="window__pca_8h_source.html#l00097">window_pca.h:97</a></div></div>
+<div class="ttc" id="aclass_window___p_c_a3_d_html_a75c522ea498c4c0bb9e751b79546618e"><div class="ttname"><a href="class_window___p_c_a3_d.html#a75c522ea498c4c0bb9e751b79546618e">Window_PCA3D::edit_group</a></div><div class="ttdeci">QLineEdit * edit_group</div><div class="ttdef"><b>Definition</b> <a href="window__pca_8h_source.html#l00098">window_pca.h:98</a></div></div>
+<div class="ttc" id="aclass_window___p_c_a3_d_html_a81e445d9b0b32ae9d27e280ef001baad"><div class="ttname"><a href="class_window___p_c_a3_d.html#a81e445d9b0b32ae9d27e280ef001baad">Window_PCA3D::edit_col</a></div><div class="ttdeci">QLineEdit * edit_col</div><div class="ttdef"><b>Definition</b> <a href="window__pca_8h_source.html#l00099">window_pca.h:99</a></div></div>
+<div class="ttc" id="aclass_window___p_c_a3_d_html_a9ed53fba86c7a529f48f3a0ee45d19f1"><div class="ttname"><a href="class_window___p_c_a3_d.html#a9ed53fba86c7a529f48f3a0ee45d19f1">Window_PCA3D::edit_2nd</a></div><div class="ttdeci">QLineEdit * edit_2nd</div><div class="ttdef"><b>Definition</b> <a href="window__pca_8h_source.html#l00101">window_pca.h:101</a></div></div>
+<div class="ttc" id="aclass_window___p_c_a3_d_html_adb79bc6351c6ceff406a205418247fe2"><div class="ttname"><a href="class_window___p_c_a3_d.html#adb79bc6351c6ceff406a205418247fe2">Window_PCA3D::edit_3rd</a></div><div class="ttdeci">QLineEdit * edit_3rd</div><div class="ttdef"><b>Definition</b> <a href="window__pca_8h_source.html#l00102">window_pca.h:102</a></div></div>
+<div class="ttc" id="aclass_window___p_c_a3_d_html_ae97cf7cbd629d1ae108183756add34d1"><div class="ttname"><a href="class_window___p_c_a3_d.html#ae97cf7cbd629d1ae108183756add34d1">Window_PCA3D::edit_1st</a></div><div class="ttdeci">QLineEdit * edit_1st</div><div class="ttdef"><b>Definition</b> <a href="window__pca_8h_source.html#l00100">window_pca.h:100</a></div></div>
+<div class="ttc" id="aclass_window___p_c_a_html"><div class="ttname"><a href="class_window___p_c_a.html">Window_PCA</a></div><div class="ttdef"><b>Definition</b> <a href="window__pca_8h_source.html#l00049">window_pca.h:49</a></div></div>
+<div class="ttc" id="aclass_window___p_c_a_html_a0ada9397ea525820f9cde305c973b6df"><div class="ttname"><a href="class_window___p_c_a.html#a0ada9397ea525820f9cde305c973b6df">Window_PCA::diagnosis</a></div><div class="ttdeci">const std::vector&lt; int &gt; diagnosis</div><div class="ttdef"><b>Definition</b> <a href="window__pca_8h_source.html#l00070">window_pca.h:70</a></div></div>
+<div class="ttc" id="aclass_window___p_c_a_html_a125434d6f3399af6f214798a008de72b"><div class="ttname"><a href="class_window___p_c_a.html#a125434d6f3399af6f214798a008de72b">Window_PCA::cluster_groups</a></div><div class="ttdeci">std::vector&lt; std::vector&lt; QVector3D &gt; &gt; cluster_groups</div><div class="ttdef"><b>Definition</b> <a href="window__pca_8h_source.html#l00059">window_pca.h:59</a></div></div>
+<div class="ttc" id="aclass_window___p_c_a_html_a287e39106953da4019c679bca1bd2f07"><div class="ttname"><a href="class_window___p_c_a.html#a287e39106953da4019c679bca1bd2f07">Window_PCA::on_radio_dbscan_toggled</a></div><div class="ttdeci">void on_radio_dbscan_toggled(bool checked)</div><div class="ttdoc">显示dbscan聚类算法的分组。</div><div class="ttdef"><b>Definition</b> <a href="window__pca_8cpp_source.html#l00342">window_pca.cpp:342</a></div></div>
+<div class="ttc" id="aclass_window___p_c_a_html_a2df4a0cab8b0173d40a83cdc49fc38ed"><div class="ttname"><a href="class_window___p_c_a.html#a2df4a0cab8b0173d40a83cdc49fc38ed">Window_PCA::selected_group</a></div><div class="ttdeci">int selected_group</div><div class="ttdef"><b>Definition</b> <a href="window__pca_8h_source.html#l00075">window_pca.h:75</a></div></div>
+<div class="ttc" id="aclass_window___p_c_a_html_a55bf1b40451ca5c474d34947d8da2f37"><div class="ttname"><a href="class_window___p_c_a.html#a55bf1b40451ca5c474d34947d8da2f37">Window_PCA::on_button_2d_clicked</a></div><div class="ttdeci">void on_button_2d_clicked()</div><div class="ttdoc">2D降维按钮的槽函数。仅标记BM。</div><div class="ttdef"><b>Definition</b> <a href="window__pca_8cpp_source.html#l00315">window_pca.cpp:315</a></div></div>
+<div class="ttc" id="aclass_window___p_c_a_html_a5761f8d1f46651796f87a3794b8c6832"><div class="ttname"><a href="class_window___p_c_a.html#a5761f8d1f46651796f87a3794b8c6832">Window_PCA::button_2d</a></div><div class="ttdeci">QPushButton * button_2d</div><div class="ttdef"><b>Definition</b> <a href="window__pca_8h_source.html#l00072">window_pca.h:72</a></div></div>
+<div class="ttc" id="aclass_window___p_c_a_html_a64536050ac56ffeea812c9f851cdc3fc"><div class="ttname"><a href="class_window___p_c_a.html#a64536050ac56ffeea812c9f851cdc3fc">Window_PCA::on_button_3dcluster_clicked</a></div><div class="ttdeci">void on_button_3dcluster_clicked()</div><div class="ttdoc">3D降维按钮的槽函数。包含聚类。</div><div class="ttdef"><b>Definition</b> <a href="window__pca_8cpp_source.html#l00459">window_pca.cpp:459</a></div></div>
+<div class="ttc" id="aclass_window___p_c_a_html_a65c472d96b14d6261b3bdc2229625e62"><div class="ttname"><a href="class_window___p_c_a.html#a65c472d96b14d6261b3bdc2229625e62">Window_PCA::button_3d</a></div><div class="ttdeci">QPushButton * button_3d</div><div class="ttdef"><b>Definition</b> <a href="window__pca_8h_source.html#l00073">window_pca.h:73</a></div></div>
+<div class="ttc" id="aclass_window___p_c_a_html_a6a60f62932757004bed7b1963e7a7f8d"><div class="ttname"><a href="class_window___p_c_a.html#a6a60f62932757004bed7b1963e7a7f8d">Window_PCA::on_button_2dcluster_clicked</a></div><div class="ttdeci">void on_button_2dcluster_clicked()</div><div class="ttdoc">2D降维按钮的槽函数。包含聚类。</div><div class="ttdef"><b>Definition</b> <a href="window__pca_8cpp_source.html#l00421">window_pca.cpp:421</a></div></div>
+<div class="ttc" id="aclass_window___p_c_a_html_a7647ddc5858c6f850e133c1272ee5f13"><div class="ttname"><a href="class_window___p_c_a.html#a7647ddc5858c6f850e133c1272ee5f13">Window_PCA::on_button_3d_clicked</a></div><div class="ttdeci">void on_button_3d_clicked()</div><div class="ttdoc">3D降维按钮的槽函数。仅标记BM。</div><div class="ttdef"><b>Definition</b> <a href="window__pca_8cpp_source.html#l00352">window_pca.cpp:352</a></div></div>
+<div class="ttc" id="aclass_window___p_c_a_html_a7b7fc738c9214fccb48504899c387de0"><div class="ttname"><a href="class_window___p_c_a.html#a7b7fc738c9214fccb48504899c387de0">Window_PCA::variants</a></div><div class="ttdeci">const std::vector&lt; std::vector&lt; float &gt; &gt; variants</div><div class="ttdef"><b>Definition</b> <a href="window__pca_8h_source.html#l00069">window_pca.h:69</a></div></div>
+<div class="ttc" id="aclass_window___p_c_a_html_a8378c33d4b544b1fd7776b6c2078eab8"><div class="ttname"><a href="class_window___p_c_a.html#a8378c33d4b544b1fd7776b6c2078eab8">Window_PCA::on_radio_kmeans_toggled</a></div><div class="ttdeci">void on_radio_kmeans_toggled(bool checked)</div><div class="ttdoc">显示K-means聚类算法的分组。</div><div class="ttdef"><b>Definition</b> <a href="window__pca_8cpp_source.html#l00331">window_pca.cpp:331</a></div></div>
+<div class="ttc" id="aclass_window___p_c_a_html_a8ae6567e83ea568f21730a4a07af943f"><div class="ttname"><a href="class_window___p_c_a.html#a8ae6567e83ea568f21730a4a07af943f">Window_PCA::table_widget</a></div><div class="ttdeci">Widget * table_widget</div><div class="ttdef"><b>Definition</b> <a href="window__pca_8h_source.html#l00065">window_pca.h:65</a></div></div>
+<div class="ttc" id="aclass_window___p_c_a_html_ad63cdc5e12188b55608eb9f8360edd25"><div class="ttname"><a href="class_window___p_c_a.html#ad63cdc5e12188b55608eb9f8360edd25">Window_PCA::cluster_method</a></div><div class="ttdeci">Cluster_method cluster_method</div><div class="ttdef"><b>Definition</b> <a href="window__pca_8h_source.html#l00067">window_pca.h:67</a></div></div>
+<div class="ttc" id="aclass_window___p_c_a_html_ae294314475d573f2197e219e9f4b81ea"><div class="ttname"><a href="class_window___p_c_a.html#ae294314475d573f2197e219e9f4b81ea">Window_PCA::bm_groups</a></div><div class="ttdeci">std::vector&lt; std::vector&lt; QVector3D &gt; &gt; bm_groups</div><div class="ttdef"><b>Definition</b> <a href="window__pca_8h_source.html#l00058">window_pca.h:58</a></div></div>
+<div class="ttc" id="awidget_8h_html"><div class="ttname"><a href="widget_8h.html">widget.h</a></div></div>
+<div class="ttc" id="awidget_8h_html_a356625608f963163dfb34e48917f5958"><div class="ttname"><a href="widget_8h.html#a356625608f963163dfb34e48917f5958">Cluster_method</a></div><div class="ttdeci">Cluster_method</div><div class="ttdef"><b>Definition</b> <a href="widget_8h_source.html#l00014">widget.h:14</a></div></div>
+<div class="ttc" id="awidget_8h_html_a356625608f963163dfb34e48917f5958ac3667c322252cb4024831eb39e924670"><div class="ttname"><a href="widget_8h.html#a356625608f963163dfb34e48917f5958ac3667c322252cb4024831eb39e924670">Cluster_method::kmeans</a></div><div class="ttdeci">@ kmeans</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+</small></address>
+</body>
+</html>

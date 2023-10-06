@@ -1,0 +1,172 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>医疗数据分析平台: D:/tzh21/Projects/2023summer/plantform_xgboost/src/widget.cpp 文件参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">医疗数据分析平台
+   </div>
+   <div id="projectbrief">大作业</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#var-members">变量</a>  </div>
+  <div class="headertitle"><div class="title">widget.cpp 文件参考</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &quot;<a class="el" href="widget_8h_source.html">widget.h</a>&quot;</code><br />
+<code>#include &quot;ui_widget.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="window__barchart_8h_source.html">window_barchart.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="window__scatter_8h_source.html">window_scatter.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="window__covariance_8h_source.html">window_covariance.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="window__pca_8h_source.html">window_pca.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="window__cluster_8h_source.html">window_cluster.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="window__ml_8h_source.html">window_ml.h</a>&quot;</code><br />
+<code>#include &quot;include/needed_algo/kmeans.hpp&quot;</code><br />
+<code>#include &quot;include/needed_algo/dbscan.hpp&quot;</code><br />
+<code>#include &lt;QFile&gt;</code><br />
+<code>#include &lt;QTextStream&gt;</code><br />
+<code>#include &lt;QDebug&gt;</code><br />
+<code>#include &lt;Eigen/Dense&gt;</code><br />
+<code>#include &lt;QDialog&gt;</code><br />
+<code>#include &lt;QLabel&gt;</code><br />
+<code>#include &lt;QLineEdit&gt;</code><br />
+<code>#include &lt;QVBoxLayout&gt;</code><br />
+<code>#include &lt;QMessageBox&gt;</code><br />
+<code>#include &lt;QFileDialog&gt;</code><br />
+<code>#include &lt;QTableWidget&gt;</code><br />
+<code>#include &lt;QTableView&gt;</code><br />
+<code>#include &lt;QRandomGenerator&gt;</code><br />
+</div>
+<p><a href="widget_8cpp_source.html">浏览源代码.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
+变量</h2></td></tr>
+<tr class="memitem:aa9a60c1da1bc8d3c2589348f28f3766f" id="r_aa9a60c1da1bc8d3c2589348f28f3766f"><td class="memItemLeft" align="right" valign="top">std::vector&lt; QColor &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="widget_8cpp.html#aa9a60c1da1bc8d3c2589348f28f3766f">colors_set</a></td></tr>
+<tr class="separator:aa9a60c1da1bc8d3c2589348f28f3766f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a686fada52491ce19683e69d526306078" id="r_a686fada52491ce19683e69d526306078"><td class="memItemLeft" align="right" valign="top">std::map&lt; <a class="el" href="widget_8h.html#a356625608f963163dfb34e48917f5958">Cluster_method</a>, QString &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="widget_8cpp.html#a686fada52491ce19683e69d526306078">map_method_string</a></td></tr>
+<tr class="separator:a686fada52491ce19683e69d526306078"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">变量说明</h2>
+<a id="aa9a60c1da1bc8d3c2589348f28f3766f" name="aa9a60c1da1bc8d3c2589348f28f3766f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa9a60c1da1bc8d3c2589348f28f3766f">&#9670;&#160;</a></span>colors_set</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;QColor&gt; colors_set</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>初始值:</b><div class="fragment"><div class="line">{</div>
+<div class="line">   QColor(255, 0, 0),     </div>
+<div class="line">   QColor(0, 255, 0),     </div>
+<div class="line">   QColor(0, 0, 255),     </div>
+<div class="line">   QColor(255, 255, 0),   </div>
+<div class="line">   QColor(255, 0, 255),   </div>
+<div class="line">   QColor(0, 255, 255),   </div>
+<div class="line">   QColor(128, 0, 0),     </div>
+<div class="line">   QColor(0, 128, 0),     </div>
+<div class="line">   QColor(0, 0, 128),     </div>
+<div class="line">   QColor(128, 128, 0)</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p class="definition">在文件 <a class="el" href="widget_8cpp_source.html">widget.cpp</a> 第 <a class="el" href="widget_8cpp_source.html#l00028">28</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a686fada52491ce19683e69d526306078" name="a686fada52491ce19683e69d526306078"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a686fada52491ce19683e69d526306078">&#9670;&#160;</a></span>map_method_string</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::map&lt;<a class="el" href="widget_8h.html#a356625608f963163dfb34e48917f5958">Cluster_method</a>, QString&gt; map_method_string</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>初始值:</b><div class="fragment"><div class="line">{</div>
+<div class="line">    {<a class="code hl_enumvalue" href="widget_8h.html#a356625608f963163dfb34e48917f5958ac3667c322252cb4024831eb39e924670">Cluster_method::kmeans</a>, <span class="stringliteral">&quot;K-means_cluster&quot;</span>},</div>
+<div class="line">    {<a class="code hl_enumvalue" href="widget_8h.html#a356625608f963163dfb34e48917f5958abf0ef28c5df781bd2124fae79d8fa3e1">Cluster_method::dbscan</a>, <span class="stringliteral">&quot;dbscan_cluster&quot;</span>}</div>
+<div class="line">}</div>
+<div class="ttc" id="awidget_8h_html_a356625608f963163dfb34e48917f5958abf0ef28c5df781bd2124fae79d8fa3e1"><div class="ttname"><a href="widget_8h.html#a356625608f963163dfb34e48917f5958abf0ef28c5df781bd2124fae79d8fa3e1">Cluster_method::dbscan</a></div><div class="ttdeci">@ dbscan</div></div>
+<div class="ttc" id="awidget_8h_html_a356625608f963163dfb34e48917f5958ac3667c322252cb4024831eb39e924670"><div class="ttname"><a href="widget_8h.html#a356625608f963163dfb34e48917f5958ac3667c322252cb4024831eb39e924670">Cluster_method::kmeans</a></div><div class="ttdeci">@ kmeans</div></div>
+</div><!-- fragment -->
+<p class="definition">在文件 <a class="el" href="widget_8cpp_source.html">widget.cpp</a> 第 <a class="el" href="widget_8cpp_source.html#l00041">41</a> 行定义.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+</small></address>
+</body>
+</html>

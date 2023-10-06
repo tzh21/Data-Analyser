@@ -1,0 +1,126 @@
+\doxysection{window\+\_\+cluster.\+cpp}
+\hypertarget{window__cluster_8cpp_source}{}\label{window__cluster_8cpp_source}\index{D:/tzh21/Projects/2023summer/plantform\_xgboost/src/window\_cluster.cpp@{D:/tzh21/Projects/2023summer/plantform\_xgboost/src/window\_cluster.cpp}}
+\mbox{\hyperlink{window__cluster_8cpp}{浏览该文件的文档.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{window__cluster_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{window__cluster_8h}{window\_cluster.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{window__cluster_8cpp_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{window__cluster_8cpp_source_l00003}00003\ \textcolor{preprocessor}{\#include\ <QBoxLayout>}}
+\DoxyCodeLine{\Hypertarget{window__cluster_8cpp_source_l00004}00004\ \textcolor{preprocessor}{\#include\ <QPushButton>}}
+\DoxyCodeLine{\Hypertarget{window__cluster_8cpp_source_l00005}00005\ \textcolor{preprocessor}{\#include\ <QLineEdit>}}
+\DoxyCodeLine{\Hypertarget{window__cluster_8cpp_source_l00006}00006\ \textcolor{preprocessor}{\#include\ <QGroupBox>}}
+\DoxyCodeLine{\Hypertarget{window__cluster_8cpp_source_l00007}00007\ \textcolor{preprocessor}{\#include\ <QFormLayout>}}
+\DoxyCodeLine{\Hypertarget{window__cluster_8cpp_source_l00008}00008\ \textcolor{preprocessor}{\#include\ <QLabel>}}
+\DoxyCodeLine{\Hypertarget{window__cluster_8cpp_source_l00009}00009\ \textcolor{preprocessor}{\#include\ <QValidator>}}
+\DoxyCodeLine{\Hypertarget{window__cluster_8cpp_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{window__cluster_8cpp_source_l00017}\mbox{\hyperlink{class_window___cluster_aec694eda0eb28db0ddf64afdf42f30b0}{00017}}\ \mbox{\hyperlink{class_window___cluster_aec694eda0eb28db0ddf64afdf42f30b0}{Window\_Cluster::Window\_Cluster}}(\mbox{\hyperlink{class_widget}{Widget}}\ *\_table\_widget,\ QWidget\ *parent):}
+\DoxyCodeLine{\Hypertarget{window__cluster_8cpp_source_l00018}00018\ \ \ \ \ QMainWindow\{parent\},\ table\_widget(\_table\_widget)}
+\DoxyCodeLine{\Hypertarget{window__cluster_8cpp_source_l00019}00019\ \{}
+\DoxyCodeLine{\Hypertarget{window__cluster_8cpp_source_l00020}00020\ \ \ \ \ setAttribute(Qt::WA\_DeleteOnClose);}
+\DoxyCodeLine{\Hypertarget{window__cluster_8cpp_source_l00021}00021\ \ \ \ \ setMinimumWidth(200);}
+\DoxyCodeLine{\Hypertarget{window__cluster_8cpp_source_l00022}00022\ }
+\DoxyCodeLine{\Hypertarget{window__cluster_8cpp_source_l00023}00023\ \ \ \ \ \textcolor{keyword}{auto}\ central\ =\ \textcolor{keyword}{new}\ QWidget(\textcolor{keyword}{this});}
+\DoxyCodeLine{\Hypertarget{window__cluster_8cpp_source_l00024}00024\ \ \ \ \ setCentralWidget(central);}
+\DoxyCodeLine{\Hypertarget{window__cluster_8cpp_source_l00025}00025\ \ \ \ \ \textcolor{keyword}{auto}\ layout\_main\ =\ \textcolor{keyword}{new}\ QVBoxLayout(central);}
+\DoxyCodeLine{\Hypertarget{window__cluster_8cpp_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{window__cluster_8cpp_source_l00027}00027\ \ \ \ \ \textcolor{keyword}{auto}\ box\_kmeans\ =\ \textcolor{keyword}{new}\ QGroupBox(\textcolor{stringliteral}{"{}K-\/means\ method"{}});}
+\DoxyCodeLine{\Hypertarget{window__cluster_8cpp_source_l00028}00028\ \ \ \ \ layout\_main-\/>addWidget(box\_kmeans);}
+\DoxyCodeLine{\Hypertarget{window__cluster_8cpp_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{window__cluster_8cpp_source_l00030}00030\ \ \ \ \ \textcolor{keyword}{auto}\ layout\_kmeans\_button\ =\ \textcolor{keyword}{new}\ QVBoxLayout;}
+\DoxyCodeLine{\Hypertarget{window__cluster_8cpp_source_l00031}00031\ \ \ \ \ box\_kmeans-\/>setLayout(layout\_kmeans\_button);}
+\DoxyCodeLine{\Hypertarget{window__cluster_8cpp_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{window__cluster_8cpp_source_l00033}00033\ \ \ \ \ \textcolor{keyword}{auto}\ layout\_kmeans\ =\ \textcolor{keyword}{new}\ QFormLayout;}
+\DoxyCodeLine{\Hypertarget{window__cluster_8cpp_source_l00034}00034\ \ \ \ \ layout\_kmeans\_button-\/>addLayout(layout\_kmeans);}
+\DoxyCodeLine{\Hypertarget{window__cluster_8cpp_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{window__cluster_8cpp_source_l00036}00036\ \ \ \ \ \textcolor{keyword}{auto}\ label\_kmeans\_k\ =\ \textcolor{keyword}{new}\ QLabel(\textcolor{stringliteral}{"{}K"{}});}
+\DoxyCodeLine{\Hypertarget{window__cluster_8cpp_source_l00037}00037\ \ \ \ \ \textcolor{keyword}{auto}\ edit\_kmeans\_k\ =\ \textcolor{keyword}{new}\ QLineEdit;}
+\DoxyCodeLine{\Hypertarget{window__cluster_8cpp_source_l00038}00038\ \ \ \ \ layout\_kmeans-\/>addRow(label\_kmeans\_k,\ edit\_kmeans\_k);}
+\DoxyCodeLine{\Hypertarget{window__cluster_8cpp_source_l00039}00039\ \ \ \ \ \textcolor{keyword}{auto}\ valid\_k\ =\ \textcolor{keyword}{new}\ QIntValidator(1,\ INT\_MAX,\ \textcolor{keyword}{this});}
+\DoxyCodeLine{\Hypertarget{window__cluster_8cpp_source_l00040}00040\ \ \ \ \ edit\_kmeans\_k-\/>setValidator(valid\_k);}
+\DoxyCodeLine{\Hypertarget{window__cluster_8cpp_source_l00041}00041\ \ \ \ \ edit\_kmeans\_k-\/>setText(\textcolor{stringliteral}{"{}4"{}});}
+\DoxyCodeLine{\Hypertarget{window__cluster_8cpp_source_l00042}00042\ \ \ \ \ connect(edit\_kmeans\_k,\ \&QLineEdit::textEdited,\ \textcolor{keyword}{this},\ \&\mbox{\hyperlink{class_window___cluster_a4fd653590b3951ec763e77feb4ac547f}{Window\_Cluster::on\_kmeans\_k\_edited}});}
+\DoxyCodeLine{\Hypertarget{window__cluster_8cpp_source_l00043}00043\ }
+\DoxyCodeLine{\Hypertarget{window__cluster_8cpp_source_l00044}00044\ \ \ \ \ \textcolor{keyword}{auto}\ label\_kmeans\_iter\ =\ \textcolor{keyword}{new}\ QLabel(\textcolor{stringliteral}{"{}Iter"{}});}
+\DoxyCodeLine{\Hypertarget{window__cluster_8cpp_source_l00045}00045\ \ \ \ \ \textcolor{keyword}{auto}\ edit\_kmeans\_iter\ =\ \textcolor{keyword}{new}\ QLineEdit;}
+\DoxyCodeLine{\Hypertarget{window__cluster_8cpp_source_l00046}00046\ \ \ \ \ layout\_kmeans-\/>addRow(label\_kmeans\_iter,\ edit\_kmeans\_iter);}
+\DoxyCodeLine{\Hypertarget{window__cluster_8cpp_source_l00047}00047\ \ \ \ \ \textcolor{keyword}{auto}\ valid\_iter\ =\ \textcolor{keyword}{new}\ QIntValidator(1,\ INT\_MAX,\ \textcolor{keyword}{this});}
+\DoxyCodeLine{\Hypertarget{window__cluster_8cpp_source_l00048}00048\ \ \ \ \ edit\_kmeans\_iter-\/>setValidator(valid\_iter);}
+\DoxyCodeLine{\Hypertarget{window__cluster_8cpp_source_l00049}00049\ \ \ \ \ edit\_kmeans\_iter-\/>setText(\textcolor{stringliteral}{"{}100"{}});}
+\DoxyCodeLine{\Hypertarget{window__cluster_8cpp_source_l00050}00050\ \ \ \ \ connect(edit\_kmeans\_iter,\ \&QLineEdit::textEdited,\ \textcolor{keyword}{this},\ \&\mbox{\hyperlink{class_window___cluster_a963a57559305a4ff6a16bfa9ae9e82f0}{Window\_Cluster::on\_kmeans\_iter\_edited}});}
+\DoxyCodeLine{\Hypertarget{window__cluster_8cpp_source_l00051}00051\ }
+\DoxyCodeLine{\Hypertarget{window__cluster_8cpp_source_l00052}00052\ \ \ \ \ \textcolor{keyword}{auto}\ button\_kmeans\ =\ \textcolor{keyword}{new}\ QPushButton(\textcolor{stringliteral}{"{}start\ K-\/means"{}});}
+\DoxyCodeLine{\Hypertarget{window__cluster_8cpp_source_l00053}00053\ \ \ \ \ layout\_kmeans\_button-\/>addWidget(button\_kmeans);}
+\DoxyCodeLine{\Hypertarget{window__cluster_8cpp_source_l00054}00054\ }
+\DoxyCodeLine{\Hypertarget{window__cluster_8cpp_source_l00055}00055\ \ \ \ \ \textcolor{keyword}{auto}\ box\_dbscan\ =\ \textcolor{keyword}{new}\ QGroupBox(\textcolor{stringliteral}{"{}dbscan\ method"{}});}
+\DoxyCodeLine{\Hypertarget{window__cluster_8cpp_source_l00056}00056\ \ \ \ \ layout\_main-\/>addWidget(box\_dbscan);}
+\DoxyCodeLine{\Hypertarget{window__cluster_8cpp_source_l00057}00057\ }
+\DoxyCodeLine{\Hypertarget{window__cluster_8cpp_source_l00058}00058\ \ \ \ \ \textcolor{keyword}{auto}\ layout\_dbscan\_main\ =\ \textcolor{keyword}{new}\ QVBoxLayout;}
+\DoxyCodeLine{\Hypertarget{window__cluster_8cpp_source_l00059}00059\ \ \ \ \ box\_dbscan-\/>setLayout(layout\_dbscan\_main);}
+\DoxyCodeLine{\Hypertarget{window__cluster_8cpp_source_l00060}00060\ }
+\DoxyCodeLine{\Hypertarget{window__cluster_8cpp_source_l00061}00061\ \ \ \ \ \textcolor{keyword}{auto}\ layout\_dbscan\ =\ \textcolor{keyword}{new}\ QFormLayout;}
+\DoxyCodeLine{\Hypertarget{window__cluster_8cpp_source_l00062}00062\ \ \ \ \ layout\_dbscan\_main-\/>addLayout(layout\_dbscan);}
+\DoxyCodeLine{\Hypertarget{window__cluster_8cpp_source_l00063}00063\ }
+\DoxyCodeLine{\Hypertarget{window__cluster_8cpp_source_l00064}00064\ \ \ \ \ \textcolor{keyword}{auto}\ label\_dbscan\_epsilon\ =\ \textcolor{keyword}{new}\ QLabel(\textcolor{stringliteral}{"{}Epsilon"{}});}
+\DoxyCodeLine{\Hypertarget{window__cluster_8cpp_source_l00065}00065\ \ \ \ \ \textcolor{keyword}{auto}\ edit\_dbscan\_epsilon\ =\ \textcolor{keyword}{new}\ QLineEdit;}
+\DoxyCodeLine{\Hypertarget{window__cluster_8cpp_source_l00066}00066\ \ \ \ \ layout\_dbscan-\/>addRow(label\_dbscan\_epsilon,\ edit\_dbscan\_epsilon);}
+\DoxyCodeLine{\Hypertarget{window__cluster_8cpp_source_l00067}00067\ \ \ \ \ edit\_dbscan\_epsilon-\/>setText(\textcolor{stringliteral}{"{}20"{}});}
+\DoxyCodeLine{\Hypertarget{window__cluster_8cpp_source_l00068}00068\ \ \ \ \ \textcolor{keyword}{auto}\ valid\_epsilon\ =\ \textcolor{keyword}{new}\ QDoubleValidator(0.0,\ 1e6,\ 3,\ \textcolor{keyword}{this});}
+\DoxyCodeLine{\Hypertarget{window__cluster_8cpp_source_l00069}00069\ \ \ \ \ edit\_dbscan\_epsilon-\/>setValidator(valid\_epsilon);}
+\DoxyCodeLine{\Hypertarget{window__cluster_8cpp_source_l00070}00070\ \ \ \ \ connect(edit\_dbscan\_epsilon,\ \&QLineEdit::textEdited,\ \textcolor{keyword}{this},\ \&\mbox{\hyperlink{class_window___cluster_aa7d143a6ef680326b8a83a144c17ac2e}{Window\_Cluster::on\_epsilon\_edited}});}
+\DoxyCodeLine{\Hypertarget{window__cluster_8cpp_source_l00071}00071\ }
+\DoxyCodeLine{\Hypertarget{window__cluster_8cpp_source_l00072}00072\ \ \ \ \ \textcolor{keyword}{auto}\ label\_dbscan\_minpts\ =\ \textcolor{keyword}{new}\ QLabel(\textcolor{stringliteral}{"{}Min\ Points"{}});}
+\DoxyCodeLine{\Hypertarget{window__cluster_8cpp_source_l00073}00073\ \ \ \ \ \textcolor{keyword}{auto}\ edit\_dbscan\_minpts\ =\ \textcolor{keyword}{new}\ QLineEdit;}
+\DoxyCodeLine{\Hypertarget{window__cluster_8cpp_source_l00074}00074\ \ \ \ \ layout\_dbscan-\/>addRow(label\_dbscan\_minpts,\ edit\_dbscan\_minpts);}
+\DoxyCodeLine{\Hypertarget{window__cluster_8cpp_source_l00075}00075\ \ \ \ \ edit\_dbscan\_minpts-\/>setText(\textcolor{stringliteral}{"{}3"{}});}
+\DoxyCodeLine{\Hypertarget{window__cluster_8cpp_source_l00076}00076\ \ \ \ \ \textcolor{keyword}{auto}\ valid\_minpts\ =\ \textcolor{keyword}{new}\ QIntValidator(1,\ INT\_MAX,\ \textcolor{keyword}{this});}
+\DoxyCodeLine{\Hypertarget{window__cluster_8cpp_source_l00077}00077\ \ \ \ \ edit\_dbscan\_minpts-\/>setValidator(valid\_minpts);}
+\DoxyCodeLine{\Hypertarget{window__cluster_8cpp_source_l00078}00078\ \ \ \ \ connect(edit\_dbscan\_minpts,\ \&QLineEdit::textEdited,\ \textcolor{keyword}{this},\ \&\mbox{\hyperlink{class_window___cluster_ab271f4b6188115403cc48749183ace93}{Window\_Cluster::on\_minPts\_edited}});}
+\DoxyCodeLine{\Hypertarget{window__cluster_8cpp_source_l00079}00079\ }
+\DoxyCodeLine{\Hypertarget{window__cluster_8cpp_source_l00080}00080\ \ \ \ \ \textcolor{keyword}{auto}\ button\_dbscan\ =\ \textcolor{keyword}{new}\ QPushButton(\textcolor{stringliteral}{"{}start\ dbscan"{}});}
+\DoxyCodeLine{\Hypertarget{window__cluster_8cpp_source_l00081}00081\ \ \ \ \ layout\_dbscan\_main-\/>addWidget(button\_dbscan);}
+\DoxyCodeLine{\Hypertarget{window__cluster_8cpp_source_l00082}00082\ }
+\DoxyCodeLine{\Hypertarget{window__cluster_8cpp_source_l00083}00083\ \ \ \ \ connect(button\_kmeans,\ \&QPushButton::clicked,\ \mbox{\hyperlink{class_window___cluster_ab88fd6372a0b7e6c6f8f591125938511}{table\_widget}},\ \&\mbox{\hyperlink{class_widget_abf7082b40cf5b1f99633f58967c6e5b9}{Widget::on\_cluster\_kmeans\_clicked}});}
+\DoxyCodeLine{\Hypertarget{window__cluster_8cpp_source_l00084}00084\ \ \ \ \ connect(button\_dbscan,\ \&QPushButton::clicked,\ \mbox{\hyperlink{class_window___cluster_ab88fd6372a0b7e6c6f8f591125938511}{table\_widget}},\ \&\mbox{\hyperlink{class_widget_aee13ceb4f5b6cadd201eeeb1f0a65fec}{Widget::on\_cluster\_dbscan\_clicked}});}
+\DoxyCodeLine{\Hypertarget{window__cluster_8cpp_source_l00085}00085\ \}}
+\DoxyCodeLine{\Hypertarget{window__cluster_8cpp_source_l00086}00086\ }
+\DoxyCodeLine{\Hypertarget{window__cluster_8cpp_source_l00093}\mbox{\hyperlink{class_window___coloring_aa4a85cddf22cc57e6df22d24fc9b8519}{00093}}\ \mbox{\hyperlink{class_window___coloring_aa4a85cddf22cc57e6df22d24fc9b8519}{Window\_Coloring::Window\_Coloring}}(\mbox{\hyperlink{class_widget}{Widget}}\ *table\_widget,\ QWidget\ *parent):}
+\DoxyCodeLine{\Hypertarget{window__cluster_8cpp_source_l00094}00094\ \ \ \ \ QMainWindow(parent)\{}
+\DoxyCodeLine{\Hypertarget{window__cluster_8cpp_source_l00095}00095\ }
+\DoxyCodeLine{\Hypertarget{window__cluster_8cpp_source_l00096}00096\ \ \ \ \ setAttribute(Qt::WA\_DeleteOnClose);}
+\DoxyCodeLine{\Hypertarget{window__cluster_8cpp_source_l00097}00097\ }
+\DoxyCodeLine{\Hypertarget{window__cluster_8cpp_source_l00098}00098\ \ \ \ \ setMinimumWidth(200);}
+\DoxyCodeLine{\Hypertarget{window__cluster_8cpp_source_l00099}00099\ }
+\DoxyCodeLine{\Hypertarget{window__cluster_8cpp_source_l00100}00100\ \ \ \ \ \textcolor{keyword}{auto}\ central\ =\ \textcolor{keyword}{new}\ QWidget(\textcolor{keyword}{this});}
+\DoxyCodeLine{\Hypertarget{window__cluster_8cpp_source_l00101}00101\ \ \ \ \ setCentralWidget(central);}
+\DoxyCodeLine{\Hypertarget{window__cluster_8cpp_source_l00102}00102\ }
+\DoxyCodeLine{\Hypertarget{window__cluster_8cpp_source_l00103}00103\ \ \ \ \ \textcolor{keyword}{auto}\ layout\_main\ =\ \textcolor{keyword}{new}\ QVBoxLayout(central);}
+\DoxyCodeLine{\Hypertarget{window__cluster_8cpp_source_l00104}00104\ }
+\DoxyCodeLine{\Hypertarget{window__cluster_8cpp_source_l00105}00105\ \ \ \ \ \textcolor{keyword}{auto}\ button\_decoloring\ =\ \textcolor{keyword}{new}\ QPushButton(\textcolor{stringliteral}{"{}Decoloring"{}});}
+\DoxyCodeLine{\Hypertarget{window__cluster_8cpp_source_l00106}00106\ \ \ \ \ layout\_main-\/>addWidget(button\_decoloring);}
+\DoxyCodeLine{\Hypertarget{window__cluster_8cpp_source_l00107}00107\ \ \ \ \ connect(button\_decoloring,\ \&QPushButton::clicked,\ table\_widget,\ \&\mbox{\hyperlink{class_widget_a0e0ecaeeb61136b7822776e0640fe946}{Widget::on\_decoloring\_clicked}});}
+\DoxyCodeLine{\Hypertarget{window__cluster_8cpp_source_l00108}00108\ }
+\DoxyCodeLine{\Hypertarget{window__cluster_8cpp_source_l00109}00109\ \ \ \ \ \textcolor{keyword}{auto}\ button\_kmeans\ =\ \textcolor{keyword}{new}\ QPushButton(\textcolor{stringliteral}{"{}K-\/means\ coloring"{}});}
+\DoxyCodeLine{\Hypertarget{window__cluster_8cpp_source_l00110}00110\ \ \ \ \ layout\_main-\/>addWidget(button\_kmeans);}
+\DoxyCodeLine{\Hypertarget{window__cluster_8cpp_source_l00111}00111\ \ \ \ \ connect(button\_kmeans,\ \&QPushButton::clicked,\ table\_widget,\ \&\mbox{\hyperlink{class_widget_aaad1609dbf1cfeb2e672c99dffc63eae}{Widget::on\_coloring\_kmeans\_clicked}});}
+\DoxyCodeLine{\Hypertarget{window__cluster_8cpp_source_l00112}00112\ }
+\DoxyCodeLine{\Hypertarget{window__cluster_8cpp_source_l00113}00113\ \ \ \ \ \textcolor{keyword}{auto}\ button\_dbscan\ =\ \textcolor{keyword}{new}\ QPushButton(\textcolor{stringliteral}{"{}dbscan\ coloring"{}});}
+\DoxyCodeLine{\Hypertarget{window__cluster_8cpp_source_l00114}00114\ \ \ \ \ layout\_main-\/>addWidget(button\_dbscan);}
+\DoxyCodeLine{\Hypertarget{window__cluster_8cpp_source_l00115}00115\ \ \ \ \ connect(button\_dbscan,\ \&QPushButton::clicked,\ table\_widget,\ \&\mbox{\hyperlink{class_widget_a4561b893d56cfd4afaab4e64739f36e3}{Widget::on\_coloring\_dbscan\_clicked}});}
+\DoxyCodeLine{\Hypertarget{window__cluster_8cpp_source_l00116}00116\ \}}
+\DoxyCodeLine{\Hypertarget{window__cluster_8cpp_source_l00117}00117\ }
+\DoxyCodeLine{\Hypertarget{window__cluster_8cpp_source_l00118}\mbox{\hyperlink{class_window___cluster_a4fd653590b3951ec763e77feb4ac547f}{00118}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_window___cluster_a4fd653590b3951ec763e77feb4ac547f}{Window\_Cluster::on\_kmeans\_k\_edited}}(\textcolor{keyword}{const}\ QString\ \&text)\{}
+\DoxyCodeLine{\Hypertarget{window__cluster_8cpp_source_l00119}00119\ \ \ \ \ \mbox{\hyperlink{class_window___cluster_ab88fd6372a0b7e6c6f8f591125938511}{table\_widget}}-\/>\mbox{\hyperlink{class_widget_a2ebd1f9f315552296c44b63914af2009}{map\_cluster\_groups}}[\mbox{\hyperlink{widget_8h_a356625608f963163dfb34e48917f5958ac3667c322252cb4024831eb39e924670}{Cluster\_method::kmeans}}]\ =\ text.toInt();}
+\DoxyCodeLine{\Hypertarget{window__cluster_8cpp_source_l00120}00120\ \}}
+\DoxyCodeLine{\Hypertarget{window__cluster_8cpp_source_l00121}00121\ }
+\DoxyCodeLine{\Hypertarget{window__cluster_8cpp_source_l00122}\mbox{\hyperlink{class_window___cluster_a963a57559305a4ff6a16bfa9ae9e82f0}{00122}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_window___cluster_a963a57559305a4ff6a16bfa9ae9e82f0}{Window\_Cluster::on\_kmeans\_iter\_edited}}(\textcolor{keyword}{const}\ QString\ \&text)\{}
+\DoxyCodeLine{\Hypertarget{window__cluster_8cpp_source_l00123}00123\ \ \ \ \ \mbox{\hyperlink{class_window___cluster_ab88fd6372a0b7e6c6f8f591125938511}{table\_widget}}-\/>\mbox{\hyperlink{class_widget_afddf6566c63e5f0ed03c09c8264ba9a3}{kmeans\_maxiter}}\ =\ text.toInt();}
+\DoxyCodeLine{\Hypertarget{window__cluster_8cpp_source_l00124}00124\ \}}
+\DoxyCodeLine{\Hypertarget{window__cluster_8cpp_source_l00125}00125\ }
+\DoxyCodeLine{\Hypertarget{window__cluster_8cpp_source_l00126}\mbox{\hyperlink{class_window___cluster_aa7d143a6ef680326b8a83a144c17ac2e}{00126}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_window___cluster_aa7d143a6ef680326b8a83a144c17ac2e}{Window\_Cluster::on\_epsilon\_edited}}(\textcolor{keyword}{const}\ QString\ \&text)\{}
+\DoxyCodeLine{\Hypertarget{window__cluster_8cpp_source_l00127}00127\ \ \ \ \ \mbox{\hyperlink{class_window___cluster_ab88fd6372a0b7e6c6f8f591125938511}{table\_widget}}-\/>\mbox{\hyperlink{class_widget_a77dccd10043bc122ceca8a30af6cb0dc}{dbscan\_epsilon}}\ =\ text.toFloat();}
+\DoxyCodeLine{\Hypertarget{window__cluster_8cpp_source_l00128}00128\ \}}
+\DoxyCodeLine{\Hypertarget{window__cluster_8cpp_source_l00129}00129\ }
+\DoxyCodeLine{\Hypertarget{window__cluster_8cpp_source_l00130}\mbox{\hyperlink{class_window___cluster_ab271f4b6188115403cc48749183ace93}{00130}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_window___cluster_ab271f4b6188115403cc48749183ace93}{Window\_Cluster::on\_minPts\_edited}}(\textcolor{keyword}{const}\ QString\ \&text)\{}
+\DoxyCodeLine{\Hypertarget{window__cluster_8cpp_source_l00131}00131\ \ \ \ \ \mbox{\hyperlink{class_window___cluster_ab88fd6372a0b7e6c6f8f591125938511}{table\_widget}}-\/>\mbox{\hyperlink{class_widget_a468bae8249dcd4b034fe1a02110bf608}{dbscan\_minPts}}\ =\ text.toInt();}
+\DoxyCodeLine{\Hypertarget{window__cluster_8cpp_source_l00132}00132\ \}}
+
+\end{DoxyCode}

@@ -1,0 +1,265 @@
+\doxysection{Window\+\_\+\+Scatter类 参考}
+\hypertarget{class_window___scatter}{}\label{class_window___scatter}\index{Window\_Scatter@{Window\_Scatter}}
+
+
+{\ttfamily \#include $<$window\+\_\+scatter.\+h$>$}
+
+
+
+继承自 QMain\+Window .
+
+\doxysubsubsection*{Public 成员函数}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_window___scatter_a41821828161454ddc401baf7d010f87a}{Window\+\_\+\+Scatter}} (const std\+::vector$<$ float $>$ \&\mbox{\hyperlink{class_window___scatter_af064a573b085c61ac55f1c4f90e368f6}{vecX}}, const std\+::vector$<$ float $>$ \&\mbox{\hyperlink{class_window___scatter_a8229b0349545c16c9a8ca016decbc370}{vecY}}, const QString \&headerX, const QString \&headerY, QWidget \texorpdfstring{$\ast$}{*}parent=nullptr)
+\begin{DoxyCompactList}\small\item\em Construct a new \doxylink{class_window___scatter_a41821828161454ddc401baf7d010f87a}{Window\+\_\+\+Scatter\+::\+Window\+\_\+\+Scatter} object \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private 成员函数}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_window___scatter_a9f91d8f5004ee25346eeb50f900f8fbf}{on\+\_\+button\+\_\+degree\+\_\+clicked}} ()
+\begin{DoxyCompactList}\small\item\em 显示拟合曲线。 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_window___scatter_ac5afd6ee79310fa9d2e3b901ff7d4040}{on\+Point\+Hovered}} (const QPointF \&point, bool state)
+\begin{DoxyCompactList}\small\item\em 鼠标悬停在点上方时显示坐标值。 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private 属性}
+\begin{DoxyCompactItemize}
+\item 
+const std\+::vector$<$ float $>$ \mbox{\hyperlink{class_window___scatter_af064a573b085c61ac55f1c4f90e368f6}{vecX}}
+\item 
+const std\+::vector$<$ float $>$ \mbox{\hyperlink{class_window___scatter_a8229b0349545c16c9a8ca016decbc370}{vecY}}
+\item 
+const size\+\_\+t \mbox{\hyperlink{class_window___scatter_ae046ded593515a50d5d271596a848bbf}{cnt\+\_\+input}} = 10
+\item 
+std\+::vector$<$ float $>$ \mbox{\hyperlink{class_window___scatter_a8c40d4339ef5e0600ce4b2a75cb0bac2}{input}}
+\item 
+int \mbox{\hyperlink{class_window___scatter_abcf11965c8d92ec7d01fde1115c585ef}{in\+Degree}} = 3
+\item 
+QChart \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_window___scatter_a2662d35b4e0731535462bfdafeda0cc0}{chart}} \{new QChart\}
+\item 
+QChart\+View \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_window___scatter_acef4f9c78084f35ddd8db38d47557146}{chart\+View}} \{new QChart\+View(\mbox{\hyperlink{class_window___scatter_a2662d35b4e0731535462bfdafeda0cc0}{chart}})\}
+\item 
+QLine\+Edit \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_window___scatter_a7dae9c2713f3ab558a68fa96bfc78b9b}{edit\+\_\+degree}} = nullptr
+\item 
+QLine\+Edit \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_window___scatter_a9d0fa7899370197a8a5b530c5c6d67b9}{edit\+\_\+p}} = nullptr
+\item 
+QLine\+Edit \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_window___scatter_a4e8898e937c7c82f4a45e67a313835e3}{edit\+\_\+r}} = nullptr
+\item 
+QLine\+Edit \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_window___scatter_a6c4d602bba48786611b6342beab10c9b}{edit\+\_\+x}} = nullptr
+\item 
+QLine\+Edit \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_window___scatter_a517b1977ef53a232446825bde32188d6}{edit\+\_\+y}} = nullptr
+\item 
+QSpline\+Series \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_window___scatter_a8e7538de57c3818ded92dd7ca28f8160}{line\+Series}} = nullptr
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{详细描述}
+
+
+在文件 \mbox{\hyperlink{window__scatter_8h_source}{window\+\_\+scatter.\+h}} 第 \mbox{\hyperlink{window__scatter_8h_source_l00010}{10}} 行定义.
+
+
+
+\doxysubsection{构造及析构函数说明}
+\Hypertarget{class_window___scatter_a41821828161454ddc401baf7d010f87a}\label{class_window___scatter_a41821828161454ddc401baf7d010f87a} 
+\index{Window\_Scatter@{Window\_Scatter}!Window\_Scatter@{Window\_Scatter}}
+\index{Window\_Scatter@{Window\_Scatter}!Window\_Scatter@{Window\_Scatter}}
+\doxysubsubsection{\texorpdfstring{Window\_Scatter()}{Window\_Scatter()}}
+{\footnotesize\ttfamily Window\+\_\+\+Scatter\+::\+Window\+\_\+\+Scatter (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ float $>$ \&}]{\+\_\+vecX,  }\item[{const std\+::vector$<$ float $>$ \&}]{\+\_\+vecY,  }\item[{const QString \&}]{headerX,  }\item[{const QString \&}]{headerY,  }\item[{QWidget \texorpdfstring{$\ast$}{*}}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Construct a new \doxylink{class_window___scatter_a41821828161454ddc401baf7d010f87a}{Window\+\_\+\+Scatter\+::\+Window\+\_\+\+Scatter} object 
+
+
+\begin{DoxyParams}{参数}
+{\em \+\_\+vecX} & x轴数据。 \\
+\hline
+{\em \+\_\+vecY} & y轴数据。 \\
+\hline
+{\em headerX} & x轴名称。 \\
+\hline
+{\em headerY} & y轴名称。 \\
+\hline
+{\em parent} & \\
+\hline
+\end{DoxyParams}
+
+
+在文件 \mbox{\hyperlink{window__scatter_8cpp_source}{window\+\_\+scatter.\+cpp}} 第 \mbox{\hyperlink{window__scatter_8cpp_source_l00027}{27}} 行定义.
+
+
+
+\doxysubsection{成员函数说明}
+\Hypertarget{class_window___scatter_a9f91d8f5004ee25346eeb50f900f8fbf}\label{class_window___scatter_a9f91d8f5004ee25346eeb50f900f8fbf} 
+\index{Window\_Scatter@{Window\_Scatter}!on\_button\_degree\_clicked@{on\_button\_degree\_clicked}}
+\index{on\_button\_degree\_clicked@{on\_button\_degree\_clicked}!Window\_Scatter@{Window\_Scatter}}
+\doxysubsubsection{\texorpdfstring{on\_button\_degree\_clicked()}{on\_button\_degree\_clicked()}}
+{\footnotesize\ttfamily void Window\+\_\+\+Scatter\+::on\+\_\+button\+\_\+degree\+\_\+clicked (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+显示拟合曲线。 
+
+
+
+在文件 \mbox{\hyperlink{window__scatter_8cpp_source}{window\+\_\+scatter.\+cpp}} 第 \mbox{\hyperlink{window__scatter_8cpp_source_l00151}{151}} 行定义.
+
+\Hypertarget{class_window___scatter_ac5afd6ee79310fa9d2e3b901ff7d4040}\label{class_window___scatter_ac5afd6ee79310fa9d2e3b901ff7d4040} 
+\index{Window\_Scatter@{Window\_Scatter}!onPointHovered@{onPointHovered}}
+\index{onPointHovered@{onPointHovered}!Window\_Scatter@{Window\_Scatter}}
+\doxysubsubsection{\texorpdfstring{onPointHovered()}{onPointHovered()}}
+{\footnotesize\ttfamily void Window\+\_\+\+Scatter\+::on\+Point\+Hovered (\begin{DoxyParamCaption}\item[{const QPointF \&}]{point,  }\item[{bool}]{state }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+鼠标悬停在点上方时显示坐标值。 
+
+
+\begin{DoxyParams}{参数}
+{\em point} & 鼠标悬停的点。 \\
+\hline
+{\em state} & 鼠标悬停状态。 \\
+\hline
+\end{DoxyParams}
+
+
+在文件 \mbox{\hyperlink{window__scatter_8cpp_source}{window\+\_\+scatter.\+cpp}} 第 \mbox{\hyperlink{window__scatter_8cpp_source_l00186}{186}} 行定义.
+
+
+
+\doxysubsection{类成员变量说明}
+\Hypertarget{class_window___scatter_a2662d35b4e0731535462bfdafeda0cc0}\label{class_window___scatter_a2662d35b4e0731535462bfdafeda0cc0} 
+\index{Window\_Scatter@{Window\_Scatter}!chart@{chart}}
+\index{chart@{chart}!Window\_Scatter@{Window\_Scatter}}
+\doxysubsubsection{\texorpdfstring{chart}{chart}}
+{\footnotesize\ttfamily QChart\texorpdfstring{$\ast$}{*} Window\+\_\+\+Scatter\+::chart \{new QChart\}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+在文件 \mbox{\hyperlink{window__scatter_8h_source}{window\+\_\+scatter.\+h}} 第 \mbox{\hyperlink{window__scatter_8h_source_l00029}{29}} 行定义.
+
+\Hypertarget{class_window___scatter_acef4f9c78084f35ddd8db38d47557146}\label{class_window___scatter_acef4f9c78084f35ddd8db38d47557146} 
+\index{Window\_Scatter@{Window\_Scatter}!chartView@{chartView}}
+\index{chartView@{chartView}!Window\_Scatter@{Window\_Scatter}}
+\doxysubsubsection{\texorpdfstring{chartView}{chartView}}
+{\footnotesize\ttfamily QChart\+View\texorpdfstring{$\ast$}{*} Window\+\_\+\+Scatter\+::chart\+View \{new QChart\+View(\mbox{\hyperlink{class_window___scatter_a2662d35b4e0731535462bfdafeda0cc0}{chart}})\}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+在文件 \mbox{\hyperlink{window__scatter_8h_source}{window\+\_\+scatter.\+h}} 第 \mbox{\hyperlink{window__scatter_8h_source_l00030}{30}} 行定义.
+
+\Hypertarget{class_window___scatter_ae046ded593515a50d5d271596a848bbf}\label{class_window___scatter_ae046ded593515a50d5d271596a848bbf} 
+\index{Window\_Scatter@{Window\_Scatter}!cnt\_input@{cnt\_input}}
+\index{cnt\_input@{cnt\_input}!Window\_Scatter@{Window\_Scatter}}
+\doxysubsubsection{\texorpdfstring{cnt\_input}{cnt\_input}}
+{\footnotesize\ttfamily const size\+\_\+t Window\+\_\+\+Scatter\+::cnt\+\_\+input = 10\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+在文件 \mbox{\hyperlink{window__scatter_8h_source}{window\+\_\+scatter.\+h}} 第 \mbox{\hyperlink{window__scatter_8h_source_l00024}{24}} 行定义.
+
+\Hypertarget{class_window___scatter_a7dae9c2713f3ab558a68fa96bfc78b9b}\label{class_window___scatter_a7dae9c2713f3ab558a68fa96bfc78b9b} 
+\index{Window\_Scatter@{Window\_Scatter}!edit\_degree@{edit\_degree}}
+\index{edit\_degree@{edit\_degree}!Window\_Scatter@{Window\_Scatter}}
+\doxysubsubsection{\texorpdfstring{edit\_degree}{edit\_degree}}
+{\footnotesize\ttfamily QLine\+Edit\texorpdfstring{$\ast$}{*} Window\+\_\+\+Scatter\+::edit\+\_\+degree = nullptr\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+在文件 \mbox{\hyperlink{window__scatter_8h_source}{window\+\_\+scatter.\+h}} 第 \mbox{\hyperlink{window__scatter_8h_source_l00032}{32}} 行定义.
+
+\Hypertarget{class_window___scatter_a9d0fa7899370197a8a5b530c5c6d67b9}\label{class_window___scatter_a9d0fa7899370197a8a5b530c5c6d67b9} 
+\index{Window\_Scatter@{Window\_Scatter}!edit\_p@{edit\_p}}
+\index{edit\_p@{edit\_p}!Window\_Scatter@{Window\_Scatter}}
+\doxysubsubsection{\texorpdfstring{edit\_p}{edit\_p}}
+{\footnotesize\ttfamily QLine\+Edit\texorpdfstring{$\ast$}{*} Window\+\_\+\+Scatter\+::edit\+\_\+p = nullptr\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+在文件 \mbox{\hyperlink{window__scatter_8h_source}{window\+\_\+scatter.\+h}} 第 \mbox{\hyperlink{window__scatter_8h_source_l00033}{33}} 行定义.
+
+\Hypertarget{class_window___scatter_a4e8898e937c7c82f4a45e67a313835e3}\label{class_window___scatter_a4e8898e937c7c82f4a45e67a313835e3} 
+\index{Window\_Scatter@{Window\_Scatter}!edit\_r@{edit\_r}}
+\index{edit\_r@{edit\_r}!Window\_Scatter@{Window\_Scatter}}
+\doxysubsubsection{\texorpdfstring{edit\_r}{edit\_r}}
+{\footnotesize\ttfamily QLine\+Edit\texorpdfstring{$\ast$}{*} Window\+\_\+\+Scatter\+::edit\+\_\+r = nullptr\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+在文件 \mbox{\hyperlink{window__scatter_8h_source}{window\+\_\+scatter.\+h}} 第 \mbox{\hyperlink{window__scatter_8h_source_l00034}{34}} 行定义.
+
+\Hypertarget{class_window___scatter_a6c4d602bba48786611b6342beab10c9b}\label{class_window___scatter_a6c4d602bba48786611b6342beab10c9b} 
+\index{Window\_Scatter@{Window\_Scatter}!edit\_x@{edit\_x}}
+\index{edit\_x@{edit\_x}!Window\_Scatter@{Window\_Scatter}}
+\doxysubsubsection{\texorpdfstring{edit\_x}{edit\_x}}
+{\footnotesize\ttfamily QLine\+Edit\texorpdfstring{$\ast$}{*} Window\+\_\+\+Scatter\+::edit\+\_\+x = nullptr\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+在文件 \mbox{\hyperlink{window__scatter_8h_source}{window\+\_\+scatter.\+h}} 第 \mbox{\hyperlink{window__scatter_8h_source_l00035}{35}} 行定义.
+
+\Hypertarget{class_window___scatter_a517b1977ef53a232446825bde32188d6}\label{class_window___scatter_a517b1977ef53a232446825bde32188d6} 
+\index{Window\_Scatter@{Window\_Scatter}!edit\_y@{edit\_y}}
+\index{edit\_y@{edit\_y}!Window\_Scatter@{Window\_Scatter}}
+\doxysubsubsection{\texorpdfstring{edit\_y}{edit\_y}}
+{\footnotesize\ttfamily QLine\+Edit\texorpdfstring{$\ast$}{*} Window\+\_\+\+Scatter\+::edit\+\_\+y = nullptr\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+在文件 \mbox{\hyperlink{window__scatter_8h_source}{window\+\_\+scatter.\+h}} 第 \mbox{\hyperlink{window__scatter_8h_source_l00036}{36}} 行定义.
+
+\Hypertarget{class_window___scatter_abcf11965c8d92ec7d01fde1115c585ef}\label{class_window___scatter_abcf11965c8d92ec7d01fde1115c585ef} 
+\index{Window\_Scatter@{Window\_Scatter}!inDegree@{inDegree}}
+\index{inDegree@{inDegree}!Window\_Scatter@{Window\_Scatter}}
+\doxysubsubsection{\texorpdfstring{inDegree}{inDegree}}
+{\footnotesize\ttfamily int Window\+\_\+\+Scatter\+::in\+Degree = 3\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+在文件 \mbox{\hyperlink{window__scatter_8h_source}{window\+\_\+scatter.\+h}} 第 \mbox{\hyperlink{window__scatter_8h_source_l00027}{27}} 行定义.
+
+\Hypertarget{class_window___scatter_a8c40d4339ef5e0600ce4b2a75cb0bac2}\label{class_window___scatter_a8c40d4339ef5e0600ce4b2a75cb0bac2} 
+\index{Window\_Scatter@{Window\_Scatter}!input@{input}}
+\index{input@{input}!Window\_Scatter@{Window\_Scatter}}
+\doxysubsubsection{\texorpdfstring{input}{input}}
+{\footnotesize\ttfamily std\+::vector$<$float$>$ Window\+\_\+\+Scatter\+::input\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+在文件 \mbox{\hyperlink{window__scatter_8h_source}{window\+\_\+scatter.\+h}} 第 \mbox{\hyperlink{window__scatter_8h_source_l00025}{25}} 行定义.
+
+\Hypertarget{class_window___scatter_a8e7538de57c3818ded92dd7ca28f8160}\label{class_window___scatter_a8e7538de57c3818ded92dd7ca28f8160} 
+\index{Window\_Scatter@{Window\_Scatter}!lineSeries@{lineSeries}}
+\index{lineSeries@{lineSeries}!Window\_Scatter@{Window\_Scatter}}
+\doxysubsubsection{\texorpdfstring{lineSeries}{lineSeries}}
+{\footnotesize\ttfamily QSpline\+Series\texorpdfstring{$\ast$}{*} Window\+\_\+\+Scatter\+::line\+Series = nullptr\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+在文件 \mbox{\hyperlink{window__scatter_8h_source}{window\+\_\+scatter.\+h}} 第 \mbox{\hyperlink{window__scatter_8h_source_l00038}{38}} 行定义.
+
+\Hypertarget{class_window___scatter_af064a573b085c61ac55f1c4f90e368f6}\label{class_window___scatter_af064a573b085c61ac55f1c4f90e368f6} 
+\index{Window\_Scatter@{Window\_Scatter}!vecX@{vecX}}
+\index{vecX@{vecX}!Window\_Scatter@{Window\_Scatter}}
+\doxysubsubsection{\texorpdfstring{vecX}{vecX}}
+{\footnotesize\ttfamily const std\+::vector$<$float$>$ Window\+\_\+\+Scatter\+::vecX\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+在文件 \mbox{\hyperlink{window__scatter_8h_source}{window\+\_\+scatter.\+h}} 第 \mbox{\hyperlink{window__scatter_8h_source_l00022}{22}} 行定义.
+
+\Hypertarget{class_window___scatter_a8229b0349545c16c9a8ca016decbc370}\label{class_window___scatter_a8229b0349545c16c9a8ca016decbc370} 
+\index{Window\_Scatter@{Window\_Scatter}!vecY@{vecY}}
+\index{vecY@{vecY}!Window\_Scatter@{Window\_Scatter}}
+\doxysubsubsection{\texorpdfstring{vecY}{vecY}}
+{\footnotesize\ttfamily const std\+::vector$<$float$>$ Window\+\_\+\+Scatter\+::vecY\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+在文件 \mbox{\hyperlink{window__scatter_8h_source}{window\+\_\+scatter.\+h}} 第 \mbox{\hyperlink{window__scatter_8h_source_l00023}{23}} 行定义.
+
+
+
+该类的文档由以下文件生成\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/tzh21/\+Projects/2023summer/plantform\+\_\+xgboost/src/\mbox{\hyperlink{window__scatter_8h}{window\+\_\+scatter.\+h}}\item 
+D\+:/tzh21/\+Projects/2023summer/plantform\+\_\+xgboost/src/\mbox{\hyperlink{window__scatter_8cpp}{window\+\_\+scatter.\+cpp}}\end{DoxyCompactItemize}

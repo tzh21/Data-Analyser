@@ -1,0 +1,57 @@
+\doxysection{window\+\_\+ml.\+h}
+\hypertarget{window__ml_8h_source}{}\label{window__ml_8h_source}\index{D:/tzh21/Projects/2023summer/plantform\_xgboost/src/window\_ml.h@{D:/tzh21/Projects/2023summer/plantform\_xgboost/src/window\_ml.h}}
+\mbox{\hyperlink{window__ml_8h}{浏览该文件的文档.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{window__ml_8h_source_l00001}00001\ \textcolor{preprocessor}{\#ifndef\ WINDOW\_ML\_H}}
+\DoxyCodeLine{\Hypertarget{window__ml_8h_source_l00002}00002\ \textcolor{preprocessor}{\#define\ WINDOW\_ML\_H}}
+\DoxyCodeLine{\Hypertarget{window__ml_8h_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{window__ml_8h_source_l00004}00004\ \textcolor{preprocessor}{\#include\ <QMainWindow>}}
+\DoxyCodeLine{\Hypertarget{window__ml_8h_source_l00005}00005\ \textcolor{preprocessor}{\#include\ <QComboBox>}}
+\DoxyCodeLine{\Hypertarget{window__ml_8h_source_l00006}00006\ \textcolor{preprocessor}{\#include\ <QTableWidget>}}
+\DoxyCodeLine{\Hypertarget{window__ml_8h_source_l00007}00007\ \textcolor{preprocessor}{\#include\ <QLineEdit>}}
+\DoxyCodeLine{\Hypertarget{window__ml_8h_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{window__ml_8h_source_l00009}\mbox{\hyperlink{class_window___m_l}{00009}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_window___m_l}{Window\_ML}}\ :\ \textcolor{keyword}{public}\ QMainWindow}
+\DoxyCodeLine{\Hypertarget{window__ml_8h_source_l00010}00010\ \{}
+\DoxyCodeLine{\Hypertarget{window__ml_8h_source_l00011}00011\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{\Hypertarget{window__ml_8h_source_l00012}00012\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{window__ml_8h_source_l00013}00013\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_window___m_l}{Window\_ML}}(}
+\DoxyCodeLine{\Hypertarget{window__ml_8h_source_l00014}00014\ \ \ \ \ \ \ \ \ std::vector<int>\ \&\&\_diagnosis,}
+\DoxyCodeLine{\Hypertarget{window__ml_8h_source_l00015}00015\ \ \ \ \ \ \ \ \ std::vector<std::string>\ \&\&\_feature\_names,}
+\DoxyCodeLine{\Hypertarget{window__ml_8h_source_l00016}00016\ \ \ \ \ \ \ \ \ std::vector<std::vector<float>>\ \&\&\_samples,}
+\DoxyCodeLine{\Hypertarget{window__ml_8h_source_l00017}00017\ \ \ \ \ \ \ \ \ QWidget\ *parent\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{\Hypertarget{window__ml_8h_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{window__ml_8h_source_l00019}00019\ signals:}
+\DoxyCodeLine{\Hypertarget{window__ml_8h_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{window__ml_8h_source_l00021}00021\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{window__ml_8h_source_l00022}\mbox{\hyperlink{class_window___m_l_aeb7363b0f66173c9294954784c7b30b6}{00022}}\ \ \ \ \ \textcolor{keyword}{const}\ std::vector<int>\ \mbox{\hyperlink{class_window___m_l_aeb7363b0f66173c9294954784c7b30b6}{diagnosis}};}
+\DoxyCodeLine{\Hypertarget{window__ml_8h_source_l00023}\mbox{\hyperlink{class_window___m_l_a4e02c0c2338bcf68749819626c0e7fb6}{00023}}\ \ \ \ \ \textcolor{keyword}{const}\ std::vector<std::string>\ \mbox{\hyperlink{class_window___m_l_a4e02c0c2338bcf68749819626c0e7fb6}{feature\_names}};}
+\DoxyCodeLine{\Hypertarget{window__ml_8h_source_l00024}\mbox{\hyperlink{class_window___m_l_addb3e6f65981ef3a419033b918b1c151}{00024}}\ \ \ \ \ \textcolor{keyword}{const}\ std::vector<std::vector<float>>\ \mbox{\hyperlink{class_window___m_l_addb3e6f65981ef3a419033b918b1c151}{samples}};}
+\DoxyCodeLine{\Hypertarget{window__ml_8h_source_l00025}00025\ }
+\DoxyCodeLine{\Hypertarget{window__ml_8h_source_l00026}\mbox{\hyperlink{class_window___m_l_a8359c5d92b4f050dc6ab4fe5f8fab4df}{00026}}\ \ \ \ \ std::vector<int>\ \mbox{\hyperlink{class_window___m_l_a8359c5d92b4f050dc6ab4fe5f8fab4df}{idx\_train}};}
+\DoxyCodeLine{\Hypertarget{window__ml_8h_source_l00027}\mbox{\hyperlink{class_window___m_l_a8f58a40c7e7eb967bb9559539f0ffb5e}{00027}}\ \ \ \ \ std::vector<int>\ \mbox{\hyperlink{class_window___m_l_a8f58a40c7e7eb967bb9559539f0ffb5e}{idx\_test}};}
+\DoxyCodeLine{\Hypertarget{window__ml_8h_source_l00028}\mbox{\hyperlink{class_window___m_l_a947b8bbd40412265beef1becfcf12622}{00028}}\ \ \ \ \ std::vector<std::pair<std::string,\ float>>\ \mbox{\hyperlink{class_window___m_l_a947b8bbd40412265beef1becfcf12622}{feature\_importance}};}
+\DoxyCodeLine{\Hypertarget{window__ml_8h_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{window__ml_8h_source_l00030}\mbox{\hyperlink{class_window___m_l_ae19ed4e3b34e4eec241595d5572bcbdd}{00030}}\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_window___m_l_ae19ed4e3b34e4eec241595d5572bcbdd}{cnt\_true\_positive}}\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{window__ml_8h_source_l00031}\mbox{\hyperlink{class_window___m_l_ac24869fc1f705a018cc18e1d8f3f130f}{00031}}\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_window___m_l_ac24869fc1f705a018cc18e1d8f3f130f}{cnt\_true\_negative}}\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{window__ml_8h_source_l00032}\mbox{\hyperlink{class_window___m_l_ad0e892b62bfc22cfcfad5335c870ead0}{00032}}\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_window___m_l_ad0e892b62bfc22cfcfad5335c870ead0}{cnt\_false\_positive}}\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{window__ml_8h_source_l00033}\mbox{\hyperlink{class_window___m_l_a6fce1762f9fbdca7bba514e1610ffecd}{00033}}\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_window___m_l_a6fce1762f9fbdca7bba514e1610ffecd}{cnt\_false\_negative}}\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{window__ml_8h_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{window__ml_8h_source_l00035}\mbox{\hyperlink{class_window___m_l_a2f9e045c953ed92f9c57dcda8594bba9}{00035}}\ \ \ \ \ QComboBox\ *\mbox{\hyperlink{class_window___m_l_a2f9e045c953ed92f9c57dcda8594bba9}{comb\_ratio}};}
+\DoxyCodeLine{\Hypertarget{window__ml_8h_source_l00036}00036\ }
+\DoxyCodeLine{\Hypertarget{window__ml_8h_source_l00037}\mbox{\hyperlink{class_window___m_l_af88ec413767807f3e02981feee8a2b7e}{00037}}\ \ \ \ \ QLineEdit\ *\mbox{\hyperlink{class_window___m_l_af88ec413767807f3e02981feee8a2b7e}{edit\_max\_depth}};}
+\DoxyCodeLine{\Hypertarget{window__ml_8h_source_l00038}\mbox{\hyperlink{class_window___m_l_ac163c26fc181f6e028b3b23bde6e15d1}{00038}}\ \ \ \ \ QLineEdit\ *\mbox{\hyperlink{class_window___m_l_ac163c26fc181f6e028b3b23bde6e15d1}{edit\_iter}};}
+\DoxyCodeLine{\Hypertarget{window__ml_8h_source_l00039}\mbox{\hyperlink{class_window___m_l_a0a3f97daccbb8d3c5283c9305f486159}{00039}}\ \ \ \ \ QLineEdit\ *\mbox{\hyperlink{class_window___m_l_a0a3f97daccbb8d3c5283c9305f486159}{edit\_f1score}};}
+\DoxyCodeLine{\Hypertarget{window__ml_8h_source_l00040}\mbox{\hyperlink{class_window___m_l_ae97b148b807da2a5e729795f779dc8b9}{00040}}\ \ \ \ \ QLineEdit\ *\mbox{\hyperlink{class_window___m_l_ae97b148b807da2a5e729795f779dc8b9}{edit\_auc}};}
+\DoxyCodeLine{\Hypertarget{window__ml_8h_source_l00041}00041\ }
+\DoxyCodeLine{\Hypertarget{window__ml_8h_source_l00042}\mbox{\hyperlink{class_window___m_l_a5b34ec9fe96b8ec0246f5885706ea524}{00042}}\ \ \ \ \ QTableWidget\ *\mbox{\hyperlink{class_window___m_l_a5b34ec9fe96b8ec0246f5885706ea524}{table\_train}};}
+\DoxyCodeLine{\Hypertarget{window__ml_8h_source_l00043}\mbox{\hyperlink{class_window___m_l_a6f25dcf86b8c3fe4c1c5b3c7ffa9ab92}{00043}}\ \ \ \ \ QTableWidget\ *\mbox{\hyperlink{class_window___m_l_a6f25dcf86b8c3fe4c1c5b3c7ffa9ab92}{table\_test}};}
+\DoxyCodeLine{\Hypertarget{window__ml_8h_source_l00044}00044\ }
+\DoxyCodeLine{\Hypertarget{window__ml_8h_source_l00045}00045\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_window___m_l_a78c9bec62b8a4ca30fcc92d9902d1be5}{on\_button\_ratio\_clicked}}();}
+\DoxyCodeLine{\Hypertarget{window__ml_8h_source_l00046}00046\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_window___m_l_ae063b6ac1f57e17afbcf57ddcc7a09ca}{on\_button\_train\_clicked}}();}
+\DoxyCodeLine{\Hypertarget{window__ml_8h_source_l00047}00047\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_window___m_l_a6bb1d443c4e165a44a5ad004df7606a0}{on\_button\_test\_result\_clicked}}();}
+\DoxyCodeLine{\Hypertarget{window__ml_8h_source_l00048}00048\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_window___m_l_ab69911dc8106588eff2c952c81f2fced}{on\_button\_feature\_clicked}}();}
+\DoxyCodeLine{\Hypertarget{window__ml_8h_source_l00049}00049\ \};}
+\DoxyCodeLine{\Hypertarget{window__ml_8h_source_l00050}00050\ }
+\DoxyCodeLine{\Hypertarget{window__ml_8h_source_l00051}00051\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ WINDOW\_ML\_H}}
+
+\end{DoxyCode}

@@ -1,0 +1,148 @@
+\doxysection{window\+\_\+covariance.\+cpp}
+\hypertarget{window__covariance_8cpp_source}{}\label{window__covariance_8cpp_source}\index{D:/tzh21/Projects/2023summer/plantform\_xgboost/src/window\_covariance.cpp@{D:/tzh21/Projects/2023summer/plantform\_xgboost/src/window\_covariance.cpp}}
+\mbox{\hyperlink{window__covariance_8cpp}{浏览该文件的文档.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{window__covariance_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{window__covariance_8h}{window\_covariance.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{window__covariance_8cpp_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{window__covariance_8cpp_source_l00003}00003\ \textcolor{preprocessor}{\#include\ <include/needed\_algo/covariance.hpp>}}
+\DoxyCodeLine{\Hypertarget{window__covariance_8cpp_source_l00004}00004\ \textcolor{preprocessor}{\#include\ <QBoxLayout>}}
+\DoxyCodeLine{\Hypertarget{window__covariance_8cpp_source_l00005}00005\ \textcolor{preprocessor}{\#include\ <QRadioButton>}}
+\DoxyCodeLine{\Hypertarget{window__covariance_8cpp_source_l00006}00006\ \textcolor{preprocessor}{\#include\ <QButtonGroup>}}
+\DoxyCodeLine{\Hypertarget{window__covariance_8cpp_source_l00007}00007\ \textcolor{preprocessor}{\#include\ <QGradientStops>}}
+\DoxyCodeLine{\Hypertarget{window__covariance_8cpp_source_l00008}00008\ \textcolor{preprocessor}{\#include\ <QLabel>}}
+\DoxyCodeLine{\Hypertarget{window__covariance_8cpp_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{window__covariance_8cpp_source_l00017}\mbox{\hyperlink{class_window___covariance_a97d7fb95a5738215a2ce23566cc43aaf}{00017}}\ \mbox{\hyperlink{class_window___covariance_a97d7fb95a5738215a2ce23566cc43aaf}{Window\_Covariance::Window\_Covariance}}(}
+\DoxyCodeLine{\Hypertarget{window__covariance_8cpp_source_l00018}00018\ \ \ \ \ \textcolor{keyword}{const}\ std::vector<std::vector<float>>\ \&variants,}
+\DoxyCodeLine{\Hypertarget{window__covariance_8cpp_source_l00019}00019\ \ \ \ \ \textcolor{keyword}{const}\ QStringList\ \&headers,}
+\DoxyCodeLine{\Hypertarget{window__covariance_8cpp_source_l00020}00020\ \ \ \ \ QWidget\ *parent):}
+\DoxyCodeLine{\Hypertarget{window__covariance_8cpp_source_l00021}00021\ \ \ \ \ QMainWindow(parent)}
+\DoxyCodeLine{\Hypertarget{window__covariance_8cpp_source_l00022}00022\ \{}
+\DoxyCodeLine{\Hypertarget{window__covariance_8cpp_source_l00023}00023\ \ \ \ \ setAttribute(Qt::WA\_DeleteOnClose);}
+\DoxyCodeLine{\Hypertarget{window__covariance_8cpp_source_l00024}00024\ \textcolor{comment}{//\ \ \ \ 布局}}
+\DoxyCodeLine{\Hypertarget{window__covariance_8cpp_source_l00025}00025\ }
+\DoxyCodeLine{\Hypertarget{window__covariance_8cpp_source_l00026}00026\ \textcolor{comment}{//\ \ \ \ resize(800,\ 800);}}
+\DoxyCodeLine{\Hypertarget{window__covariance_8cpp_source_l00027}00027\ \textcolor{comment}{//\ \ \ \ setMinimumSize(800,\ 600);}}
+\DoxyCodeLine{\Hypertarget{window__covariance_8cpp_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{window__covariance_8cpp_source_l00029}00029\ \ \ \ \ \textcolor{keyword}{auto}\ central\ =\ \textcolor{keyword}{new}\ QWidget(\textcolor{keyword}{this});}
+\DoxyCodeLine{\Hypertarget{window__covariance_8cpp_source_l00030}00030\ \ \ \ \ setCentralWidget(central);}
+\DoxyCodeLine{\Hypertarget{window__covariance_8cpp_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{window__covariance_8cpp_source_l00032}00032\ \ \ \ \ \textcolor{keyword}{auto}\ layout\_main\ =\ \textcolor{keyword}{new}\ QVBoxLayout(central);}
+\DoxyCodeLine{\Hypertarget{window__covariance_8cpp_source_l00033}00033\ \ \ \ \ central-\/>setLayout(layout\_main);}
+\DoxyCodeLine{\Hypertarget{window__covariance_8cpp_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{window__covariance_8cpp_source_l00035}00035\ \ \ \ \ \textcolor{keyword}{auto}\ group\ =\ \textcolor{keyword}{new}\ QButtonGroup(central);}
+\DoxyCodeLine{\Hypertarget{window__covariance_8cpp_source_l00036}00036\ \ \ \ \ \textcolor{keyword}{auto}\ layout\_radios\ =\ \textcolor{keyword}{new}\ QHBoxLayout();}
+\DoxyCodeLine{\Hypertarget{window__covariance_8cpp_source_l00037}00037\ \ \ \ \ layout\_main-\/>addLayout(layout\_radios);}
+\DoxyCodeLine{\Hypertarget{window__covariance_8cpp_source_l00038}00038\ }
+\DoxyCodeLine{\Hypertarget{window__covariance_8cpp_source_l00039}00039\ \ \ \ \ \textcolor{keyword}{auto}\ radio\_cov\ =\ \textcolor{keyword}{new}\ QRadioButton(\textcolor{stringliteral}{"{}Covariance"{}},\ central);}
+\DoxyCodeLine{\Hypertarget{window__covariance_8cpp_source_l00040}00040\ \ \ \ \ layout\_radios-\/>addWidget(radio\_cov);}
+\DoxyCodeLine{\Hypertarget{window__covariance_8cpp_source_l00041}00041\ \ \ \ \ group-\/>addButton(radio\_cov);}
+\DoxyCodeLine{\Hypertarget{window__covariance_8cpp_source_l00042}00042\ \ \ \ \ \textcolor{keyword}{auto}\ radio\_corr\ =\ \textcolor{keyword}{new}\ QRadioButton(\textcolor{stringliteral}{"{}Correlation"{}},\ central);}
+\DoxyCodeLine{\Hypertarget{window__covariance_8cpp_source_l00043}00043\ \ \ \ \ layout\_radios-\/>addWidget(radio\_corr);}
+\DoxyCodeLine{\Hypertarget{window__covariance_8cpp_source_l00044}00044\ \ \ \ \ group-\/>addButton(radio\_corr);}
+\DoxyCodeLine{\Hypertarget{window__covariance_8cpp_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{window__covariance_8cpp_source_l00046}00046\ \ \ \ \ \mbox{\hyperlink{class_window___covariance_a52963861340777b1de36da7ea87c84ef}{table}}\ =\ \textcolor{keyword}{new}\ QTableWidget(central);}
+\DoxyCodeLine{\Hypertarget{window__covariance_8cpp_source_l00047}00047\ \ \ \ \ layout\_main-\/>addWidget(\mbox{\hyperlink{class_window___covariance_a52963861340777b1de36da7ea87c84ef}{table}});}
+\DoxyCodeLine{\Hypertarget{window__covariance_8cpp_source_l00048}00048\ \ \ \ \ \mbox{\hyperlink{class_window___covariance_a52963861340777b1de36da7ea87c84ef}{table}}-\/>setMinimumSize(800,\ 600);}
+\DoxyCodeLine{\Hypertarget{window__covariance_8cpp_source_l00049}00049\ }
+\DoxyCodeLine{\Hypertarget{window__covariance_8cpp_source_l00050}00050\ \ \ \ \ \textcolor{keyword}{auto}\ colorBar\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_window___covariance_af0a93f385875a01ed7db0e41f2904f5c}{ColorBarWidget}}(central);}
+\DoxyCodeLine{\Hypertarget{window__covariance_8cpp_source_l00051}00051\ \ \ \ \ layout\_main-\/>addWidget(colorBar);}
+\DoxyCodeLine{\Hypertarget{window__covariance_8cpp_source_l00052}00052\ }
+\DoxyCodeLine{\Hypertarget{window__covariance_8cpp_source_l00053}00053\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixXf\ eigen\_cov\ =\ getCovariance(variants);}
+\DoxyCodeLine{\Hypertarget{window__covariance_8cpp_source_l00054}00054\ }
+\DoxyCodeLine{\Hypertarget{window__covariance_8cpp_source_l00055}00055\ \ \ \ \ \mbox{\hyperlink{class_window___covariance_a6773c464b5d037033ff416f83bd388f8}{matrixSize}}\ =\ eigen\_cov.rows();}
+\DoxyCodeLine{\Hypertarget{window__covariance_8cpp_source_l00056}00056\ }
+\DoxyCodeLine{\Hypertarget{window__covariance_8cpp_source_l00057}00057\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{class_window___covariance_a6773c464b5d037033ff416f83bd388f8}{matrixSize}};\ ++i)\ \{}
+\DoxyCodeLine{\Hypertarget{window__covariance_8cpp_source_l00058}00058\ \ \ \ \ \ \ \ \ std::vector<float>\ row;}
+\DoxyCodeLine{\Hypertarget{window__covariance_8cpp_source_l00059}00059\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ j\ =\ 0;\ j\ <\ \mbox{\hyperlink{class_window___covariance_a6773c464b5d037033ff416f83bd388f8}{matrixSize}};\ ++j)\ \{}
+\DoxyCodeLine{\Hypertarget{window__covariance_8cpp_source_l00060}00060\ \ \ \ \ \ \ \ \ \ \ \ \ row.push\_back(eigen\_cov(i,\ j));}
+\DoxyCodeLine{\Hypertarget{window__covariance_8cpp_source_l00061}00061\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{window__covariance_8cpp_source_l00062}00062\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_window___covariance_a327d993388304e0e6089a74bcabfc072}{cov}}.push\_back(row);}
+\DoxyCodeLine{\Hypertarget{window__covariance_8cpp_source_l00063}00063\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{window__covariance_8cpp_source_l00064}00064\ }
+\DoxyCodeLine{\Hypertarget{window__covariance_8cpp_source_l00065}00065\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{class_window___covariance_a6773c464b5d037033ff416f83bd388f8}{matrixSize}};\ i\ ++)\ \{}
+\DoxyCodeLine{\Hypertarget{window__covariance_8cpp_source_l00066}00066\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_window___covariance_ac850b3cae5235431de403dc40bbf2a36}{var}}.push\_back(\mbox{\hyperlink{class_window___covariance_a327d993388304e0e6089a74bcabfc072}{cov}}[i][i]);}
+\DoxyCodeLine{\Hypertarget{window__covariance_8cpp_source_l00067}00067\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{window__covariance_8cpp_source_l00068}00068\ }
+\DoxyCodeLine{\Hypertarget{window__covariance_8cpp_source_l00069}00069\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixXf\ eigen\_corr\ =\ getPearsonCorr(eigen\_cov,\ \mbox{\hyperlink{class_window___covariance_ac850b3cae5235431de403dc40bbf2a36}{var}});}
+\DoxyCodeLine{\Hypertarget{window__covariance_8cpp_source_l00070}00070\ }
+\DoxyCodeLine{\Hypertarget{window__covariance_8cpp_source_l00071}00071\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{class_window___covariance_a6773c464b5d037033ff416f83bd388f8}{matrixSize}};\ ++i)\ \{}
+\DoxyCodeLine{\Hypertarget{window__covariance_8cpp_source_l00072}00072\ \ \ \ \ \ \ \ \ std::vector<float>\ row;}
+\DoxyCodeLine{\Hypertarget{window__covariance_8cpp_source_l00073}00073\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ j\ =\ 0;\ j\ <\ \mbox{\hyperlink{class_window___covariance_a6773c464b5d037033ff416f83bd388f8}{matrixSize}};\ ++j)\ \{}
+\DoxyCodeLine{\Hypertarget{window__covariance_8cpp_source_l00074}00074\ \ \ \ \ \ \ \ \ \ \ \ \ row.push\_back(eigen\_corr(i,\ j));}
+\DoxyCodeLine{\Hypertarget{window__covariance_8cpp_source_l00075}00075\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{window__covariance_8cpp_source_l00076}00076\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_window___covariance_a8cf9a975b4d95275ec1ccbc436151a82}{corr}}.push\_back(row);}
+\DoxyCodeLine{\Hypertarget{window__covariance_8cpp_source_l00077}00077\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{window__covariance_8cpp_source_l00078}00078\ }
+\DoxyCodeLine{\Hypertarget{window__covariance_8cpp_source_l00079}00079\ \ \ \ \ \textcolor{comment}{//\ 设置表格的行数和列数}}
+\DoxyCodeLine{\Hypertarget{window__covariance_8cpp_source_l00080}00080\ \ \ \ \ \mbox{\hyperlink{class_window___covariance_a52963861340777b1de36da7ea87c84ef}{table}}-\/>setRowCount(\mbox{\hyperlink{class_window___covariance_a6773c464b5d037033ff416f83bd388f8}{matrixSize}});}
+\DoxyCodeLine{\Hypertarget{window__covariance_8cpp_source_l00081}00081\ \ \ \ \ \mbox{\hyperlink{class_window___covariance_a52963861340777b1de36da7ea87c84ef}{table}}-\/>setColumnCount(\mbox{\hyperlink{class_window___covariance_a6773c464b5d037033ff416f83bd388f8}{matrixSize}});}
+\DoxyCodeLine{\Hypertarget{window__covariance_8cpp_source_l00082}00082\ }
+\DoxyCodeLine{\Hypertarget{window__covariance_8cpp_source_l00083}00083\ \ \ \ \ \mbox{\hyperlink{class_window___covariance_a52963861340777b1de36da7ea87c84ef}{table}}-\/>setHorizontalHeaderLabels(headers);}
+\DoxyCodeLine{\Hypertarget{window__covariance_8cpp_source_l00084}00084\ \ \ \ \ \mbox{\hyperlink{class_window___covariance_a52963861340777b1de36da7ea87c84ef}{table}}-\/>setVerticalHeaderLabels(headers);}
+\DoxyCodeLine{\Hypertarget{window__covariance_8cpp_source_l00085}00085\ }
+\DoxyCodeLine{\Hypertarget{window__covariance_8cpp_source_l00086}00086\ \ \ \ \ \textcolor{comment}{//\ 设置单元格的大小，使其成为正方形}}
+\DoxyCodeLine{\Hypertarget{window__covariance_8cpp_source_l00087}00087\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{class_window___covariance_a6773c464b5d037033ff416f83bd388f8}{matrixSize}};\ ++i)\ \{}
+\DoxyCodeLine{\Hypertarget{window__covariance_8cpp_source_l00088}00088\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_window___covariance_a52963861340777b1de36da7ea87c84ef}{table}}-\/>setRowHeight(i,\ \mbox{\hyperlink{class_window___covariance_a94af2f362273fe2e4d73f4d1db986c68}{cellSize}});\ \textcolor{comment}{//\ 设置行高}}
+\DoxyCodeLine{\Hypertarget{window__covariance_8cpp_source_l00089}00089\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_window___covariance_a52963861340777b1de36da7ea87c84ef}{table}}-\/>setColumnWidth(i,\ \mbox{\hyperlink{class_window___covariance_a94af2f362273fe2e4d73f4d1db986c68}{cellSize}});\ \textcolor{comment}{//\ 设置列宽}}
+\DoxyCodeLine{\Hypertarget{window__covariance_8cpp_source_l00090}00090\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{window__covariance_8cpp_source_l00091}00091\ }
+\DoxyCodeLine{\Hypertarget{window__covariance_8cpp_source_l00092}00092\ \ \ \ \ connect(radio\_cov,\ \&QRadioButton::toggled,}
+\DoxyCodeLine{\Hypertarget{window__covariance_8cpp_source_l00093}00093\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{this},\ \&\mbox{\hyperlink{class_window___covariance_a17ecb556e1d4afb4981b243a59b26fa3}{Window\_Covariance::on\_cov\_toggled}});}
+\DoxyCodeLine{\Hypertarget{window__covariance_8cpp_source_l00094}00094\ }
+\DoxyCodeLine{\Hypertarget{window__covariance_8cpp_source_l00095}00095\ \ \ \ \ connect(radio\_corr,\ \&QRadioButton::toggled,}
+\DoxyCodeLine{\Hypertarget{window__covariance_8cpp_source_l00096}00096\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{this},\ \&\mbox{\hyperlink{class_window___covariance_a85b62377b8f32e2a3e289d0db693f2e0}{Window\_Covariance::on\_corr\_toggled}});}
+\DoxyCodeLine{\Hypertarget{window__covariance_8cpp_source_l00097}00097\ }
+\DoxyCodeLine{\Hypertarget{window__covariance_8cpp_source_l00098}00098\ \ \ \ \ \textcolor{comment}{//\ 遍历协方差矩阵并添加数据到单元格}}
+\DoxyCodeLine{\Hypertarget{window__covariance_8cpp_source_l00099}00099\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ row\ =\ 0;\ row\ <\ \mbox{\hyperlink{class_window___covariance_a6773c464b5d037033ff416f83bd388f8}{matrixSize}};\ ++row)\ \{}
+\DoxyCodeLine{\Hypertarget{window__covariance_8cpp_source_l00100}00100\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ col\ =\ 0;\ col\ <\ \mbox{\hyperlink{class_window___covariance_a6773c464b5d037033ff416f83bd388f8}{matrixSize}};\ ++col)\ \{}
+\DoxyCodeLine{\Hypertarget{window__covariance_8cpp_source_l00101}00101\ \ \ \ \ \ \ \ \ \ \ \ \ QTableWidgetItem\ *item\ =\ \textcolor{keyword}{new}\ QTableWidgetItem(\textcolor{stringliteral}{"{}N/A"{}});}
+\DoxyCodeLine{\Hypertarget{window__covariance_8cpp_source_l00102}00102\ }
+\DoxyCodeLine{\Hypertarget{window__covariance_8cpp_source_l00103}00103\ \ \ \ \ \ \ \ \ \ \ \ \ item-\/>setTextAlignment(Qt::AlignCenter);}
+\DoxyCodeLine{\Hypertarget{window__covariance_8cpp_source_l00104}00104\ }
+\DoxyCodeLine{\Hypertarget{window__covariance_8cpp_source_l00105}00105\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ correlation\ =\ \mbox{\hyperlink{class_window___covariance_a8cf9a975b4d95275ec1ccbc436151a82}{corr}}[row][col];}
+\DoxyCodeLine{\Hypertarget{window__covariance_8cpp_source_l00106}00106\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 将相关系数映射到0-\/1的范围}}
+\DoxyCodeLine{\Hypertarget{window__covariance_8cpp_source_l00107}00107\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ normalizedCorrelation\ =\ (correlation\ +\ 1.0)\ /\ 2.0;}
+\DoxyCodeLine{\Hypertarget{window__covariance_8cpp_source_l00108}00108\ \ \ \ \ \ \ \ \ \ \ \ \ QColor\ color\ =\ \mbox{\hyperlink{class_window___covariance_a18d1557de9505501f49e3d6ffa1db4cc}{mapValueToColor}}(normalizedCorrelation);}
+\DoxyCodeLine{\Hypertarget{window__covariance_8cpp_source_l00109}00109\ \ \ \ \ \ \ \ \ \ \ \ \ QBrush\ brush(color);}
+\DoxyCodeLine{\Hypertarget{window__covariance_8cpp_source_l00110}00110\ \ \ \ \ \ \ \ \ \ \ \ \ item-\/>setBackground(brush);}
+\DoxyCodeLine{\Hypertarget{window__covariance_8cpp_source_l00111}00111\ }
+\DoxyCodeLine{\Hypertarget{window__covariance_8cpp_source_l00112}00112\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_window___covariance_a52963861340777b1de36da7ea87c84ef}{table}}-\/>setItem(row,\ col,\ item);}
+\DoxyCodeLine{\Hypertarget{window__covariance_8cpp_source_l00113}00113\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{window__covariance_8cpp_source_l00114}00114\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{window__covariance_8cpp_source_l00115}00115\ }
+\DoxyCodeLine{\Hypertarget{window__covariance_8cpp_source_l00116}00116\ \ \ \ \ radio\_corr-\/>toggle();}
+\DoxyCodeLine{\Hypertarget{window__covariance_8cpp_source_l00117}00117\ \}}
+\DoxyCodeLine{\Hypertarget{window__covariance_8cpp_source_l00118}00118\ }
+\DoxyCodeLine{\Hypertarget{window__covariance_8cpp_source_l00125}\mbox{\hyperlink{class_window___covariance_a18d1557de9505501f49e3d6ffa1db4cc}{00125}}\ QColor\ \mbox{\hyperlink{class_window___covariance_a18d1557de9505501f49e3d6ffa1db4cc}{Window\_Covariance::mapValueToColor}}(\textcolor{keywordtype}{double}\ value)\ \{}
+\DoxyCodeLine{\Hypertarget{window__covariance_8cpp_source_l00126}00126\ \ \ \ \ \textcolor{comment}{//\ \ \ \ 从255\ 255\ 255\ 到\ 110\ 12\ 24}}
+\DoxyCodeLine{\Hypertarget{window__covariance_8cpp_source_l00127}00127\ \ \ \ \ \textcolor{keywordtype}{int}\ red\ =\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(255.0\ -\/\ value\ *\ 145.0);\ \textcolor{comment}{//\ 从0到255}}
+\DoxyCodeLine{\Hypertarget{window__covariance_8cpp_source_l00128}00128\ \ \ \ \ \textcolor{keywordtype}{int}\ green\ =\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(255.0\ -\/\ value\ *\ 243);}
+\DoxyCodeLine{\Hypertarget{window__covariance_8cpp_source_l00129}00129\ \ \ \ \ \textcolor{keywordtype}{int}\ blue\ =\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(255.0\ -\/\ value\ *\ 231);}
+\DoxyCodeLine{\Hypertarget{window__covariance_8cpp_source_l00130}00130\ }
+\DoxyCodeLine{\Hypertarget{window__covariance_8cpp_source_l00131}00131\ \ \ \ \ \textcolor{comment}{//\ 创建并返回对应的颜色}}
+\DoxyCodeLine{\Hypertarget{window__covariance_8cpp_source_l00132}00132\ \ \ \ \ \textcolor{keywordflow}{return}\ QColor(red,\ green,\ blue);}
+\DoxyCodeLine{\Hypertarget{window__covariance_8cpp_source_l00133}00133\ \}}
+\DoxyCodeLine{\Hypertarget{window__covariance_8cpp_source_l00134}00134\ }
+\DoxyCodeLine{\Hypertarget{window__covariance_8cpp_source_l00140}\mbox{\hyperlink{class_window___covariance_a17ecb556e1d4afb4981b243a59b26fa3}{00140}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_window___covariance_a17ecb556e1d4afb4981b243a59b26fa3}{Window\_Covariance::on\_cov\_toggled}}(\textcolor{keywordtype}{bool}\ checked)\{}
+\DoxyCodeLine{\Hypertarget{window__covariance_8cpp_source_l00141}00141\ \ \ \ \ \textcolor{keywordflow}{if}\ (checked\ ==\ \textcolor{keyword}{true})\{}
+\DoxyCodeLine{\Hypertarget{window__covariance_8cpp_source_l00142}00142\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 遍历协方差矩阵并添加数据到单元格}}
+\DoxyCodeLine{\Hypertarget{window__covariance_8cpp_source_l00143}00143\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ row\ =\ 0;\ row\ <\ \mbox{\hyperlink{class_window___covariance_a6773c464b5d037033ff416f83bd388f8}{matrixSize}};\ ++row)\ \{}
+\DoxyCodeLine{\Hypertarget{window__covariance_8cpp_source_l00144}00144\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ col\ =\ 0;\ col\ <\ \mbox{\hyperlink{class_window___covariance_a6773c464b5d037033ff416f83bd388f8}{matrixSize}};\ ++col)\ \{}
+\DoxyCodeLine{\Hypertarget{window__covariance_8cpp_source_l00145}00145\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_window___covariance_a52963861340777b1de36da7ea87c84ef}{table}}-\/>item(row,\ col)-\/>setText(QString::number(\mbox{\hyperlink{class_window___covariance_a327d993388304e0e6089a74bcabfc072}{cov}}[row][col]));}
+\DoxyCodeLine{\Hypertarget{window__covariance_8cpp_source_l00146}00146\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{window__covariance_8cpp_source_l00147}00147\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{window__covariance_8cpp_source_l00148}00148\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{window__covariance_8cpp_source_l00149}00149\ \}}
+\DoxyCodeLine{\Hypertarget{window__covariance_8cpp_source_l00150}00150\ }
+\DoxyCodeLine{\Hypertarget{window__covariance_8cpp_source_l00156}\mbox{\hyperlink{class_window___covariance_a85b62377b8f32e2a3e289d0db693f2e0}{00156}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_window___covariance_a85b62377b8f32e2a3e289d0db693f2e0}{Window\_Covariance::on\_corr\_toggled}}(\textcolor{keywordtype}{bool}\ checked)\{}
+\DoxyCodeLine{\Hypertarget{window__covariance_8cpp_source_l00157}00157\ \ \ \ \ \textcolor{keywordflow}{if}\ (checked\ ==\ \textcolor{keyword}{true})\{}
+\DoxyCodeLine{\Hypertarget{window__covariance_8cpp_source_l00158}00158\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 遍历协方差矩阵并添加数据到单元格}}
+\DoxyCodeLine{\Hypertarget{window__covariance_8cpp_source_l00159}00159\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ row\ =\ 0;\ row\ <\ \mbox{\hyperlink{class_window___covariance_a6773c464b5d037033ff416f83bd388f8}{matrixSize}};\ ++row)\ \{}
+\DoxyCodeLine{\Hypertarget{window__covariance_8cpp_source_l00160}00160\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ col\ =\ 0;\ col\ <\ \mbox{\hyperlink{class_window___covariance_a6773c464b5d037033ff416f83bd388f8}{matrixSize}};\ ++col)\ \{}
+\DoxyCodeLine{\Hypertarget{window__covariance_8cpp_source_l00161}00161\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_window___covariance_a52963861340777b1de36da7ea87c84ef}{table}}-\/>item(row,\ col)-\/>setText(QString::number(\mbox{\hyperlink{class_window___covariance_a8cf9a975b4d95275ec1ccbc436151a82}{corr}}[row][col]));}
+\DoxyCodeLine{\Hypertarget{window__covariance_8cpp_source_l00162}00162\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{window__covariance_8cpp_source_l00163}00163\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{window__covariance_8cpp_source_l00164}00164\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{window__covariance_8cpp_source_l00165}00165\ \}}
+
+\end{DoxyCode}

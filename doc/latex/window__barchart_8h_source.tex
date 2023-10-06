@@ -1,0 +1,41 @@
+\doxysection{window\+\_\+barchart.\+h}
+\hypertarget{window__barchart_8h_source}{}\label{window__barchart_8h_source}\index{D:/tzh21/Projects/2023summer/plantform\_xgboost/src/window\_barchart.h@{D:/tzh21/Projects/2023summer/plantform\_xgboost/src/window\_barchart.h}}
+\mbox{\hyperlink{window__barchart_8h}{浏览该文件的文档.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{window__barchart_8h_source_l00001}00001\ \textcolor{preprocessor}{\#ifndef\ WINDOW\_BARCHART\_H}}
+\DoxyCodeLine{\Hypertarget{window__barchart_8h_source_l00002}00002\ \textcolor{preprocessor}{\#define\ WINDOW\_BARCHART\_H}}
+\DoxyCodeLine{\Hypertarget{window__barchart_8h_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{window__barchart_8h_source_l00004}00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{widget_8h}{widget.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{window__barchart_8h_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{window__barchart_8h_source_l00006}00006\ \textcolor{preprocessor}{\#include\ <QMainWindow>}}
+\DoxyCodeLine{\Hypertarget{window__barchart_8h_source_l00007}00007\ \textcolor{preprocessor}{\#include\ <QChartView>}}
+\DoxyCodeLine{\Hypertarget{window__barchart_8h_source_l00008}00008\ \textcolor{preprocessor}{\#include\ <QBarSeries>}}
+\DoxyCodeLine{\Hypertarget{window__barchart_8h_source_l00009}00009\ \textcolor{preprocessor}{\#include\ <QLineSeries>}}
+\DoxyCodeLine{\Hypertarget{window__barchart_8h_source_l00010}00010\ \textcolor{preprocessor}{\#include\ <QSplineSeries>}}
+\DoxyCodeLine{\Hypertarget{window__barchart_8h_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{window__barchart_8h_source_l00012}\mbox{\hyperlink{class_window___barchart}{00012}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_window___barchart}{Window\_Barchart}}\ :\ \textcolor{keyword}{public}\ QMainWindow}
+\DoxyCodeLine{\Hypertarget{window__barchart_8h_source_l00013}00013\ \{}
+\DoxyCodeLine{\Hypertarget{window__barchart_8h_source_l00014}00014\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{\Hypertarget{window__barchart_8h_source_l00015}00015\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{window__barchart_8h_source_l00016}00016\ \textcolor{comment}{//\ \ \ \ explicit\ Window\_Barchart(Widget\ *parent\ =\ nullptr);}}
+\DoxyCodeLine{\Hypertarget{window__barchart_8h_source_l00017}00017\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_window___barchart}{Window\_Barchart}}(\textcolor{keywordtype}{bool}\ is\_discrete,\ \textcolor{keyword}{const}\ QList<float>\ \&data,\ \mbox{\hyperlink{class_widget}{Widget}}\ *parent\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{\Hypertarget{window__barchart_8h_source_l00018}00018\ \textcolor{comment}{//\ \ \ \ explicit\ Window\_Barchart(QWidget\ *parent\ =\ nullptr);}}
+\DoxyCodeLine{\Hypertarget{window__barchart_8h_source_l00019}00019\ }
+\DoxyCodeLine{\Hypertarget{window__barchart_8h_source_l00020}00020\ signals:}
+\DoxyCodeLine{\Hypertarget{window__barchart_8h_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{window__barchart_8h_source_l00022}00022\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{window__barchart_8h_source_l00023}\mbox{\hyperlink{class_window___barchart_aaafa66cb7296d73d52b0d00d4d7293bb}{00023}}\ \ \ \ \ QChart\ *\mbox{\hyperlink{class_window___barchart_aaafa66cb7296d73d52b0d00d4d7293bb}{chart}}\{\textcolor{keyword}{new}\ QChart\};}
+\DoxyCodeLine{\Hypertarget{window__barchart_8h_source_l00024}\mbox{\hyperlink{class_window___barchart_a290195599df6a7402e39dafdc092bb08}{00024}}\ \ \ \ \ QChartView\ *\mbox{\hyperlink{class_window___barchart_a290195599df6a7402e39dafdc092bb08}{chartView}}\{\textcolor{keyword}{new}\ QChartView(\mbox{\hyperlink{class_window___barchart_aaafa66cb7296d73d52b0d00d4d7293bb}{chart}})\};}
+\DoxyCodeLine{\Hypertarget{window__barchart_8h_source_l00025}00025\ }
+\DoxyCodeLine{\Hypertarget{window__barchart_8h_source_l00026}\mbox{\hyperlink{class_window___barchart_af8b80c887c3493518424a069ca522b62}{00026}}\ \ \ \ \ QBarSeries\ *\mbox{\hyperlink{class_window___barchart_af8b80c887c3493518424a069ca522b62}{barSeries}}\{\textcolor{keyword}{new}\ QBarSeries()\};}
+\DoxyCodeLine{\Hypertarget{window__barchart_8h_source_l00027}00027\ \textcolor{comment}{//\ \ \ \ QLineSeries\ *lineSeries\{new\ QLineSeries()\};}}
+\DoxyCodeLine{\Hypertarget{window__barchart_8h_source_l00028}\mbox{\hyperlink{class_window___barchart_a140a45b48ca88b137703fc2a55745d81}{00028}}\ \ \ \ \ QSplineSeries\ *\mbox{\hyperlink{class_window___barchart_a140a45b48ca88b137703fc2a55745d81}{lineSeries}}\{\textcolor{keyword}{new}\ QSplineSeries()\};}
+\DoxyCodeLine{\Hypertarget{window__barchart_8h_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{window__barchart_8h_source_l00030}00030\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_window___barchart_a8fe21640f82e8eab5ee96d41b32cb47a}{on\_check\_bar}}(\textcolor{keywordtype}{int}\ state);}
+\DoxyCodeLine{\Hypertarget{window__barchart_8h_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{window__barchart_8h_source_l00032}00032\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_window___barchart_a8050a5737ef4f54e83acd1666b45a0b3}{on\_check\_line}}(\textcolor{keywordtype}{int}\ state);}
+\DoxyCodeLine{\Hypertarget{window__barchart_8h_source_l00033}00033\ \};}
+\DoxyCodeLine{\Hypertarget{window__barchart_8h_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{window__barchart_8h_source_l00035}00035\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ WINDOW\_BARCHART\_H}}
+
+\end{DoxyCode}

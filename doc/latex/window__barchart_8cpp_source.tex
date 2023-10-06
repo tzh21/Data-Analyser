@@ -1,0 +1,187 @@
+\doxysection{window\+\_\+barchart.\+cpp}
+\hypertarget{window__barchart_8cpp_source}{}\label{window__barchart_8cpp_source}\index{D:/tzh21/Projects/2023summer/plantform\_xgboost/src/window\_barchart.cpp@{D:/tzh21/Projects/2023summer/plantform\_xgboost/src/window\_barchart.cpp}}
+\mbox{\hyperlink{window__barchart_8cpp}{浏览该文件的文档.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{window__barchart_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{window__barchart_8h}{window\_barchart.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{window__barchart_8cpp_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{window__barchart_8cpp_source_l00003}00003\ \textcolor{preprocessor}{\#include\ <QBoxLayout>}}
+\DoxyCodeLine{\Hypertarget{window__barchart_8cpp_source_l00004}00004\ \textcolor{preprocessor}{\#include\ <QCheckBox>}}
+\DoxyCodeLine{\Hypertarget{window__barchart_8cpp_source_l00005}00005\ \textcolor{preprocessor}{\#include\ <QBarSet>}}
+\DoxyCodeLine{\Hypertarget{window__barchart_8cpp_source_l00006}00006\ \textcolor{preprocessor}{\#include\ <QValueAxis>}}
+\DoxyCodeLine{\Hypertarget{window__barchart_8cpp_source_l00007}00007\ \textcolor{preprocessor}{\#include\ <QBarCategoryAxis>}}
+\DoxyCodeLine{\Hypertarget{window__barchart_8cpp_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{window__barchart_8cpp_source_l00016}\mbox{\hyperlink{class_window___barchart_a0242dc7db78ffd5d566e5f1a4b7b7300}{00016}}\ \mbox{\hyperlink{class_window___barchart_a0242dc7db78ffd5d566e5f1a4b7b7300}{Window\_Barchart::Window\_Barchart}}(\textcolor{keywordtype}{bool}\ is\_discrete,\ \textcolor{keyword}{const}\ QList<float>\ \&columnData,\ \mbox{\hyperlink{class_widget}{Widget}}\ *parent)}
+\DoxyCodeLine{\Hypertarget{window__barchart_8cpp_source_l00017}00017\ \ \ \ \ :\ QMainWindow(parent)}
+\DoxyCodeLine{\Hypertarget{window__barchart_8cpp_source_l00018}00018\ \{}
+\DoxyCodeLine{\Hypertarget{window__barchart_8cpp_source_l00019}00019\ \ \ \ \ setAttribute(Qt::WA\_DeleteOnClose);}
+\DoxyCodeLine{\Hypertarget{window__barchart_8cpp_source_l00020}00020\ \textcolor{comment}{//\ \ \ \ 布局}}
+\DoxyCodeLine{\Hypertarget{window__barchart_8cpp_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{window__barchart_8cpp_source_l00022}00022\ \textcolor{comment}{//\ \ \ \ resize(800,\ 600);}}
+\DoxyCodeLine{\Hypertarget{window__barchart_8cpp_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{window__barchart_8cpp_source_l00024}00024\ \ \ \ \ \textcolor{keyword}{auto}\ central\ =\ \textcolor{keyword}{new}\ QWidget();}
+\DoxyCodeLine{\Hypertarget{window__barchart_8cpp_source_l00025}00025\ \ \ \ \ setCentralWidget(central);}
+\DoxyCodeLine{\Hypertarget{window__barchart_8cpp_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{window__barchart_8cpp_source_l00027}00027\ \ \ \ \ \textcolor{keyword}{auto}\ layout\_main\ =\ \textcolor{keyword}{new}\ QVBoxLayout(central);}
+\DoxyCodeLine{\Hypertarget{window__barchart_8cpp_source_l00028}00028\ \ \ \ \ central-\/>setLayout(layout\_main);}
+\DoxyCodeLine{\Hypertarget{window__barchart_8cpp_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{window__barchart_8cpp_source_l00030}00030\ \ \ \ \ \textcolor{keyword}{auto}\ layout\_checkbox\ =\ \textcolor{keyword}{new}\ QHBoxLayout();}
+\DoxyCodeLine{\Hypertarget{window__barchart_8cpp_source_l00031}00031\ \ \ \ \ layout\_main-\/>addLayout(layout\_checkbox);}
+\DoxyCodeLine{\Hypertarget{window__barchart_8cpp_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{window__barchart_8cpp_source_l00033}00033\ \ \ \ \ \textcolor{keyword}{auto}\ check\_barchart\ =\ \textcolor{keyword}{new}\ QCheckBox(\textcolor{stringliteral}{"{}直方图"{}},\ \textcolor{keyword}{this});}
+\DoxyCodeLine{\Hypertarget{window__barchart_8cpp_source_l00034}00034\ \ \ \ \ \textcolor{keyword}{auto}\ check\_linechart\ =\ \textcolor{keyword}{new}\ QCheckBox(\textcolor{stringliteral}{"{}折线图"{}},\ \textcolor{keyword}{this});}
+\DoxyCodeLine{\Hypertarget{window__barchart_8cpp_source_l00035}00035\ \ \ \ \ layout\_checkbox-\/>addWidget(check\_barchart);}
+\DoxyCodeLine{\Hypertarget{window__barchart_8cpp_source_l00036}00036\ \ \ \ \ layout\_checkbox-\/>addWidget(check\_linechart);}
+\DoxyCodeLine{\Hypertarget{window__barchart_8cpp_source_l00037}00037\ }
+\DoxyCodeLine{\Hypertarget{window__barchart_8cpp_source_l00038}00038\ \ \ \ \ connect(check\_barchart,\ \&QCheckBox::stateChanged,}
+\DoxyCodeLine{\Hypertarget{window__barchart_8cpp_source_l00039}00039\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{this},\ \&\mbox{\hyperlink{class_window___barchart_a8fe21640f82e8eab5ee96d41b32cb47a}{Window\_Barchart::on\_check\_bar}});}
+\DoxyCodeLine{\Hypertarget{window__barchart_8cpp_source_l00040}00040\ \ \ \ \ connect(check\_linechart,\ \&QCheckBox::stateChanged,}
+\DoxyCodeLine{\Hypertarget{window__barchart_8cpp_source_l00041}00041\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{this},\ \&\mbox{\hyperlink{class_window___barchart_a8050a5737ef4f54e83acd1666b45a0b3}{Window\_Barchart::on\_check\_line}});}
+\DoxyCodeLine{\Hypertarget{window__barchart_8cpp_source_l00042}00042\ }
+\DoxyCodeLine{\Hypertarget{window__barchart_8cpp_source_l00043}00043\ \textcolor{comment}{//\ \ \ \ 绘图}}
+\DoxyCodeLine{\Hypertarget{window__barchart_8cpp_source_l00044}00044\ }
+\DoxyCodeLine{\Hypertarget{window__barchart_8cpp_source_l00045}00045\ \textcolor{comment}{//\ \ \ \ 绘制频次直方图}}
+\DoxyCodeLine{\Hypertarget{window__barchart_8cpp_source_l00046}00046\ }
+\DoxyCodeLine{\Hypertarget{window__barchart_8cpp_source_l00047}00047\ \ \ \ \ layout\_main-\/>addWidget(\mbox{\hyperlink{class_window___barchart_a290195599df6a7402e39dafdc092bb08}{chartView}});}
+\DoxyCodeLine{\Hypertarget{window__barchart_8cpp_source_l00048}00048\ \ \ \ \ \mbox{\hyperlink{class_window___barchart_a290195599df6a7402e39dafdc092bb08}{chartView}}-\/>setMinimumSize(1200,\ 600);}
+\DoxyCodeLine{\Hypertarget{window__barchart_8cpp_source_l00049}00049\ }
+\DoxyCodeLine{\Hypertarget{window__barchart_8cpp_source_l00050}00050\ \textcolor{comment}{//\ \ \ \ 将数据等距分成8组}}
+\DoxyCodeLine{\Hypertarget{window__barchart_8cpp_source_l00051}00051\ \textcolor{comment}{//\ \ \ \ 区分离散}}
+\DoxyCodeLine{\Hypertarget{window__barchart_8cpp_source_l00052}00052\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ cnt\_set\ =\ is\_discrete\ ?\ 2\ :\ 8;}
+\DoxyCodeLine{\Hypertarget{window__barchart_8cpp_source_l00053}00053\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ minValue\ =\ is\_discrete\ ?\ 0\ :\ *std::min\_element(columnData.begin(),\ columnData.end());}
+\DoxyCodeLine{\Hypertarget{window__barchart_8cpp_source_l00054}00054\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ maxValue\ =\ is\_discrete\ ?\ 1\ :\ *std::max\_element(columnData.begin(),\ columnData.end());}
+\DoxyCodeLine{\Hypertarget{window__barchart_8cpp_source_l00055}00055\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ binWidth\ =\ (maxValue\ -\/\ minValue)\ /\ cnt\_set;}
+\DoxyCodeLine{\Hypertarget{window__barchart_8cpp_source_l00056}00056\ }
+\DoxyCodeLine{\Hypertarget{window__barchart_8cpp_source_l00057}00057\ \textcolor{comment}{//\ \ \ \ 统计每个组的频次}}
+\DoxyCodeLine{\Hypertarget{window__barchart_8cpp_source_l00058}00058\ \ \ \ \ QVector<int>\ frequencies(cnt\_set,\ 0);}
+\DoxyCodeLine{\Hypertarget{window__barchart_8cpp_source_l00059}00059\ \ \ \ \ \textcolor{keywordflow}{if}\ (is\_discrete)\ \{}
+\DoxyCodeLine{\Hypertarget{window__barchart_8cpp_source_l00060}00060\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{float}\ value\ :\ columnData)\ \{}
+\DoxyCodeLine{\Hypertarget{window__barchart_8cpp_source_l00061}00061\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ ivalue\ =\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(value);}
+\DoxyCodeLine{\Hypertarget{window__barchart_8cpp_source_l00062}00062\ \ \ \ \ \ \ \ \ \ \ \ \ frequencies[ivalue]++;}
+\DoxyCodeLine{\Hypertarget{window__barchart_8cpp_source_l00063}00063\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{window__barchart_8cpp_source_l00064}00064\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{window__barchart_8cpp_source_l00065}00065\ \ \ \ \ \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{\Hypertarget{window__barchart_8cpp_source_l00066}00066\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{float}\ value\ :\ columnData)\ \{}
+\DoxyCodeLine{\Hypertarget{window__barchart_8cpp_source_l00067}00067\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ bin\ =\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}((value\ -\/\ minValue)\ /\ binWidth);}
+\DoxyCodeLine{\Hypertarget{window__barchart_8cpp_source_l00068}00068\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (bin\ >=\ 0\ \&\&\ bin\ <\ frequencies.size())\ \{}
+\DoxyCodeLine{\Hypertarget{window__barchart_8cpp_source_l00069}00069\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ frequencies[bin]++;}
+\DoxyCodeLine{\Hypertarget{window__barchart_8cpp_source_l00070}00070\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{window__barchart_8cpp_source_l00071}00071\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{window__barchart_8cpp_source_l00072}00072\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{window__barchart_8cpp_source_l00073}00073\ }
+\DoxyCodeLine{\Hypertarget{window__barchart_8cpp_source_l00074}00074\ }
+\DoxyCodeLine{\Hypertarget{window__barchart_8cpp_source_l00075}00075\ \textcolor{comment}{//\ \ \ \ 直方图添加到图中}}
+\DoxyCodeLine{\Hypertarget{window__barchart_8cpp_source_l00076}00076\ \ \ \ \ \mbox{\hyperlink{class_window___barchart_aaafa66cb7296d73d52b0d00d4d7293bb}{chart}}-\/>addSeries(\mbox{\hyperlink{class_window___barchart_af8b80c887c3493518424a069ca522b62}{barSeries}});}
+\DoxyCodeLine{\Hypertarget{window__barchart_8cpp_source_l00077}00077\ \ \ \ \ \textcolor{keyword}{auto}\ barSet\ =\ \textcolor{keyword}{new}\ QBarSet(\textcolor{stringliteral}{"{}Bar"{}},\ \textcolor{keyword}{this});}
+\DoxyCodeLine{\Hypertarget{window__barchart_8cpp_source_l00078}00078\ }
+\DoxyCodeLine{\Hypertarget{window__barchart_8cpp_source_l00079}00079\ \textcolor{comment}{//\ \ \ \ 将频次添加到直方图中}}
+\DoxyCodeLine{\Hypertarget{window__barchart_8cpp_source_l00080}00080\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ frequencies.size();\ ++i)\ \{}
+\DoxyCodeLine{\Hypertarget{window__barchart_8cpp_source_l00081}00081\ \ \ \ \ \ \ \ \ *barSet\ <<\ frequencies[i];}
+\DoxyCodeLine{\Hypertarget{window__barchart_8cpp_source_l00082}00082\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{window__barchart_8cpp_source_l00083}00083\ \ \ \ \ \mbox{\hyperlink{class_window___barchart_af8b80c887c3493518424a069ca522b62}{barSeries}}-\/>append(barSet);}
+\DoxyCodeLine{\Hypertarget{window__barchart_8cpp_source_l00084}00084\ }
+\DoxyCodeLine{\Hypertarget{window__barchart_8cpp_source_l00085}00085\ \textcolor{comment}{//\ \ \ \ 创建横轴}}
+\DoxyCodeLine{\Hypertarget{window__barchart_8cpp_source_l00086}00086\ \textcolor{comment}{//\ \ \ \ 区分离散}}
+\DoxyCodeLine{\Hypertarget{window__barchart_8cpp_source_l00087}00087\ \ \ \ \ \textcolor{keyword}{auto}\ axisX\ =\ \textcolor{keyword}{new}\ QBarCategoryAxis(\textcolor{keyword}{this});}
+\DoxyCodeLine{\Hypertarget{window__barchart_8cpp_source_l00088}00088\ \ \ \ \ axisX-\/>setTitleText(\textcolor{stringliteral}{"{}Range"{}});}
+\DoxyCodeLine{\Hypertarget{window__barchart_8cpp_source_l00089}00089\ \ \ \ \ \textcolor{keywordflow}{if}\ (is\_discrete)\{}
+\DoxyCodeLine{\Hypertarget{window__barchart_8cpp_source_l00090}00090\ \ \ \ \ \ \ \ \ axisX-\/>append(\textcolor{stringliteral}{"{}Benign"{}});}
+\DoxyCodeLine{\Hypertarget{window__barchart_8cpp_source_l00091}00091\ \ \ \ \ \ \ \ \ axisX-\/>append(\textcolor{stringliteral}{"{}Malignant"{}});}
+\DoxyCodeLine{\Hypertarget{window__barchart_8cpp_source_l00092}00092\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{window__barchart_8cpp_source_l00093}00093\ \ \ \ \ \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{\Hypertarget{window__barchart_8cpp_source_l00094}00094\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ frequencies.size();\ ++i)\ \{}
+\DoxyCodeLine{\Hypertarget{window__barchart_8cpp_source_l00095}00095\ \ \ \ \ \ \ \ \ \ \ \ \ axisX-\/>append(}
+\DoxyCodeLine{\Hypertarget{window__barchart_8cpp_source_l00096}00096\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ QString::asprintf(\textcolor{stringliteral}{"{}\%.*g"{}},\ 4,\ i\ *\ binWidth\ +\ minValue)\ +}
+\DoxyCodeLine{\Hypertarget{window__barchart_8cpp_source_l00097}00097\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}-\/"{}}\ +}
+\DoxyCodeLine{\Hypertarget{window__barchart_8cpp_source_l00098}00098\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ QString::asprintf(\textcolor{stringliteral}{"{}\%.*g"{}},\ 4,\ (i\ +\ 1)\ *\ binWidth\ +\ minValue)}
+\DoxyCodeLine{\Hypertarget{window__barchart_8cpp_source_l00099}00099\ \ \ \ \ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{\Hypertarget{window__barchart_8cpp_source_l00100}00100\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{window__barchart_8cpp_source_l00101}00101\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{window__barchart_8cpp_source_l00102}00102\ \ \ \ \ \mbox{\hyperlink{class_window___barchart_aaafa66cb7296d73d52b0d00d4d7293bb}{chart}}-\/>addAxis(axisX,\ Qt::AlignBottom);}
+\DoxyCodeLine{\Hypertarget{window__barchart_8cpp_source_l00103}00103\ \ \ \ \ \mbox{\hyperlink{class_window___barchart_af8b80c887c3493518424a069ca522b62}{barSeries}}-\/>attachAxis(axisX);}
+\DoxyCodeLine{\Hypertarget{window__barchart_8cpp_source_l00104}00104\ }
+\DoxyCodeLine{\Hypertarget{window__barchart_8cpp_source_l00105}00105\ \textcolor{comment}{//\ \ \ \ 创建纵轴}}
+\DoxyCodeLine{\Hypertarget{window__barchart_8cpp_source_l00106}00106\ \textcolor{comment}{//\ \ \ \ 区分离散}}
+\DoxyCodeLine{\Hypertarget{window__barchart_8cpp_source_l00107}00107\ \ \ \ \ \textcolor{keyword}{auto}\ axisY\ =\ \textcolor{keyword}{new}\ QValueAxis(\textcolor{keyword}{this});}
+\DoxyCodeLine{\Hypertarget{window__barchart_8cpp_source_l00108}00108\ \ \ \ \ axisY-\/>setTitleText(\textcolor{stringliteral}{"{}Frequency"{}});}
+\DoxyCodeLine{\Hypertarget{window__barchart_8cpp_source_l00109}00109\ \ \ \ \ axisY-\/>setRange(0,\ columnData.size());}
+\DoxyCodeLine{\Hypertarget{window__barchart_8cpp_source_l00110}00110\ \ \ \ \ \mbox{\hyperlink{class_window___barchart_aaafa66cb7296d73d52b0d00d4d7293bb}{chart}}-\/>addAxis(axisY,\ Qt::AlignLeft);}
+\DoxyCodeLine{\Hypertarget{window__barchart_8cpp_source_l00111}00111\ \ \ \ \ \mbox{\hyperlink{class_window___barchart_af8b80c887c3493518424a069ca522b62}{barSeries}}-\/>attachAxis(axisY);}
+\DoxyCodeLine{\Hypertarget{window__barchart_8cpp_source_l00112}00112\ }
+\DoxyCodeLine{\Hypertarget{window__barchart_8cpp_source_l00113}00113\ \textcolor{comment}{//\ \ \ \ 绘制折线图}}
+\DoxyCodeLine{\Hypertarget{window__barchart_8cpp_source_l00114}00114\ }
+\DoxyCodeLine{\Hypertarget{window__barchart_8cpp_source_l00115}00115\ \textcolor{comment}{//\ \ \ \ 添加折线图}}
+\DoxyCodeLine{\Hypertarget{window__barchart_8cpp_source_l00116}00116\ \ \ \ \ \mbox{\hyperlink{class_window___barchart_a140a45b48ca88b137703fc2a55745d81}{lineSeries}}-\/>setName(\textcolor{stringliteral}{"{}Line"{}});}
+\DoxyCodeLine{\Hypertarget{window__barchart_8cpp_source_l00117}00117\ \ \ \ \ \mbox{\hyperlink{class_window___barchart_aaafa66cb7296d73d52b0d00d4d7293bb}{chart}}-\/>addSeries(\mbox{\hyperlink{class_window___barchart_a140a45b48ca88b137703fc2a55745d81}{lineSeries}});}
+\DoxyCodeLine{\Hypertarget{window__barchart_8cpp_source_l00118}00118\ }
+\DoxyCodeLine{\Hypertarget{window__barchart_8cpp_source_l00119}00119\ \textcolor{comment}{//\ \ \ \ 添加数据点，连接直方图的顶部}}
+\DoxyCodeLine{\Hypertarget{window__barchart_8cpp_source_l00120}00120\ \textcolor{comment}{//\ \ \ \ 区分离散}}
+\DoxyCodeLine{\Hypertarget{window__barchart_8cpp_source_l00121}00121\ }
+\DoxyCodeLine{\Hypertarget{window__barchart_8cpp_source_l00122}00122\ \textcolor{comment}{//\ \ \ \ 计算正态分布参数}}
+\DoxyCodeLine{\Hypertarget{window__barchart_8cpp_source_l00123}00123\ }
+\DoxyCodeLine{\Hypertarget{window__barchart_8cpp_source_l00124}00124\ \textcolor{comment}{//\ \ \ \ 样本均值}}
+\DoxyCodeLine{\Hypertarget{window__barchart_8cpp_source_l00125}00125\ \ \ \ \ \textcolor{keywordtype}{float}\ mean\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{window__barchart_8cpp_source_l00126}00126\ \ \ \ \ \textcolor{keywordtype}{float}\ sum\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{window__barchart_8cpp_source_l00127}00127\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ i\ :\ columnData)\{}
+\DoxyCodeLine{\Hypertarget{window__barchart_8cpp_source_l00128}00128\ \ \ \ \ \ \ \ \ sum\ +=\ i;}
+\DoxyCodeLine{\Hypertarget{window__barchart_8cpp_source_l00129}00129\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{window__barchart_8cpp_source_l00130}00130\ \ \ \ \ mean\ =\ sum\ /\ columnData.size();}
+\DoxyCodeLine{\Hypertarget{window__barchart_8cpp_source_l00131}00131\ }
+\DoxyCodeLine{\Hypertarget{window__barchart_8cpp_source_l00132}00132\ \textcolor{comment}{//\ \ \ \ 样本方差}}
+\DoxyCodeLine{\Hypertarget{window__barchart_8cpp_source_l00133}00133\ \ \ \ \ \textcolor{keywordtype}{float}\ stddev\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{window__barchart_8cpp_source_l00134}00134\ \ \ \ \ \textcolor{keywordtype}{float}\ sum\_squared\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{window__barchart_8cpp_source_l00135}00135\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ i\ :\ columnData)\{}
+\DoxyCodeLine{\Hypertarget{window__barchart_8cpp_source_l00136}00136\ \ \ \ \ \ \ \ \ sum\_squared\ +=\ pow(i\ -\/\ mean,\ 2);}
+\DoxyCodeLine{\Hypertarget{window__barchart_8cpp_source_l00137}00137\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{window__barchart_8cpp_source_l00138}00138\ \ \ \ \ stddev\ =\ sqrt(sum\_squared\ /\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(columnData.size()));}
+\DoxyCodeLine{\Hypertarget{window__barchart_8cpp_source_l00139}00139\ }
+\DoxyCodeLine{\Hypertarget{window__barchart_8cpp_source_l00140}00140\ \textcolor{comment}{//\ \ \ \ 在最小到最大的范围内，等距离取6个点曲线，并添加到lineSeries上面}}
+\DoxyCodeLine{\Hypertarget{window__barchart_8cpp_source_l00141}00141\ \ \ \ \ \textcolor{keyword}{auto}\ pdf\_normal\ =\ [mean,\ stddev](\textcolor{keywordtype}{float}\ x)-\/>\textcolor{keywordtype}{float}\{}
+\DoxyCodeLine{\Hypertarget{window__barchart_8cpp_source_l00142}00142\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 1.0\ /\ (stddev\ *\ sqrt(2\ *\ 3.1415))\ *\ exp(-\/1\ /\ (2\ *\ pow(stddev,\ 2))\ *\ pow(x\ -\/\ mean,\ 2));}
+\DoxyCodeLine{\Hypertarget{window__barchart_8cpp_source_l00143}00143\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{window__barchart_8cpp_source_l00144}00144\ \ \ \ \ \textcolor{keywordflow}{if}\ (!is\_discrete)\{}
+\DoxyCodeLine{\Hypertarget{window__barchart_8cpp_source_l00145}00145\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ 9;\ i\ ++)\{}
+\DoxyCodeLine{\Hypertarget{window__barchart_8cpp_source_l00146}00146\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ x\ =\ minValue\ +\ i\ *\ binWidth;}
+\DoxyCodeLine{\Hypertarget{window__barchart_8cpp_source_l00147}00147\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ y\ =\ pdf\_normal(x);}
+\DoxyCodeLine{\Hypertarget{window__barchart_8cpp_source_l00148}00148\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_window___barchart_a140a45b48ca88b137703fc2a55745d81}{lineSeries}}-\/>append(x,\ y);}
+\DoxyCodeLine{\Hypertarget{window__barchart_8cpp_source_l00149}00149\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{window__barchart_8cpp_source_l00150}00150\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{window__barchart_8cpp_source_l00151}00151\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ max\_density\ =\ pdf\_normal(mean);}
+\DoxyCodeLine{\Hypertarget{window__barchart_8cpp_source_l00152}00152\ }
+\DoxyCodeLine{\Hypertarget{window__barchart_8cpp_source_l00153}00153\ \textcolor{comment}{//\ \ \ \ 将分布曲线与坐标轴关联}}
+\DoxyCodeLine{\Hypertarget{window__barchart_8cpp_source_l00154}00154\ \textcolor{comment}{//\ \ \ \ 横轴范围：最小到最大值}}
+\DoxyCodeLine{\Hypertarget{window__barchart_8cpp_source_l00155}00155\ \textcolor{comment}{//\ \ \ \ 纵轴范围：均值处分布取最大值，最小值为0}}
+\DoxyCodeLine{\Hypertarget{window__barchart_8cpp_source_l00156}00156\ \ \ \ \ \textcolor{keyword}{auto}\ axisX\_dist\ =\ \textcolor{keyword}{new}\ QValueAxis(\textcolor{keyword}{this});}
+\DoxyCodeLine{\Hypertarget{window__barchart_8cpp_source_l00157}00157\ \ \ \ \ axisX\_dist-\/>setTitleText(\textcolor{stringliteral}{"{}value"{}});}
+\DoxyCodeLine{\Hypertarget{window__barchart_8cpp_source_l00158}00158\ \ \ \ \ axisX\_dist-\/>setRange(minValue,\ maxValue);}
+\DoxyCodeLine{\Hypertarget{window__barchart_8cpp_source_l00159}00159\ \ \ \ \ \mbox{\hyperlink{class_window___barchart_aaafa66cb7296d73d52b0d00d4d7293bb}{chart}}-\/>addAxis(axisX\_dist,\ Qt::AlignTop);}
+\DoxyCodeLine{\Hypertarget{window__barchart_8cpp_source_l00160}00160\ \ \ \ \ \textcolor{keyword}{auto}\ axisY\_dist\ =\ \textcolor{keyword}{new}\ QValueAxis(\textcolor{keyword}{this});}
+\DoxyCodeLine{\Hypertarget{window__barchart_8cpp_source_l00161}00161\ \ \ \ \ axisY\_dist-\/>setTitleText(\textcolor{stringliteral}{"{}Density"{}});}
+\DoxyCodeLine{\Hypertarget{window__barchart_8cpp_source_l00162}00162\ \ \ \ \ axisY\_dist-\/>setRange(0,\ 1.25\ *\ max\_density);}
+\DoxyCodeLine{\Hypertarget{window__barchart_8cpp_source_l00163}00163\ \ \ \ \ \mbox{\hyperlink{class_window___barchart_aaafa66cb7296d73d52b0d00d4d7293bb}{chart}}-\/>addAxis(axisY\_dist,\ Qt::AlignRight);}
+\DoxyCodeLine{\Hypertarget{window__barchart_8cpp_source_l00164}00164\ \ \ \ \ \mbox{\hyperlink{class_window___barchart_a140a45b48ca88b137703fc2a55745d81}{lineSeries}}-\/>attachAxis(axisX\_dist);}
+\DoxyCodeLine{\Hypertarget{window__barchart_8cpp_source_l00165}00165\ \ \ \ \ \mbox{\hyperlink{class_window___barchart_a140a45b48ca88b137703fc2a55745d81}{lineSeries}}-\/>attachAxis(axisY\_dist);}
+\DoxyCodeLine{\Hypertarget{window__barchart_8cpp_source_l00166}00166\ }
+\DoxyCodeLine{\Hypertarget{window__barchart_8cpp_source_l00167}00167\ \textcolor{comment}{//\ \ \ \ \ \ 勾选设置可见}}
+\DoxyCodeLine{\Hypertarget{window__barchart_8cpp_source_l00168}00168\ \ \ \ \ check\_barchart-\/>setChecked(\textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{window__barchart_8cpp_source_l00169}00169\ \ \ \ \ check\_linechart-\/>setChecked(\textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{window__barchart_8cpp_source_l00170}00170\ \}}
+\DoxyCodeLine{\Hypertarget{window__barchart_8cpp_source_l00171}00171\ }
+\DoxyCodeLine{\Hypertarget{window__barchart_8cpp_source_l00177}\mbox{\hyperlink{class_window___barchart_a8fe21640f82e8eab5ee96d41b32cb47a}{00177}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_window___barchart_a8fe21640f82e8eab5ee96d41b32cb47a}{Window\_Barchart::on\_check\_bar}}(\textcolor{keywordtype}{int}\ state)\{}
+\DoxyCodeLine{\Hypertarget{window__barchart_8cpp_source_l00178}00178\ \ \ \ \ \textcolor{keywordflow}{if}\ (state\ ==\ Qt::Checked)\{}
+\DoxyCodeLine{\Hypertarget{window__barchart_8cpp_source_l00179}00179\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_window___barchart_af8b80c887c3493518424a069ca522b62}{barSeries}}-\/>setVisible(\textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{window__barchart_8cpp_source_l00180}00180\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{window__barchart_8cpp_source_l00181}00181\ \ \ \ \ \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{\Hypertarget{window__barchart_8cpp_source_l00182}00182\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_window___barchart_af8b80c887c3493518424a069ca522b62}{barSeries}}-\/>setVisible(\textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{window__barchart_8cpp_source_l00183}00183\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{window__barchart_8cpp_source_l00184}00184\ \}}
+\DoxyCodeLine{\Hypertarget{window__barchart_8cpp_source_l00185}00185\ }
+\DoxyCodeLine{\Hypertarget{window__barchart_8cpp_source_l00191}\mbox{\hyperlink{class_window___barchart_a8050a5737ef4f54e83acd1666b45a0b3}{00191}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_window___barchart_a8050a5737ef4f54e83acd1666b45a0b3}{Window\_Barchart::on\_check\_line}}(\textcolor{keywordtype}{int}\ state)\{}
+\DoxyCodeLine{\Hypertarget{window__barchart_8cpp_source_l00192}00192\ \ \ \ \ \textcolor{keywordflow}{if}\ (state\ ==\ Qt::Checked)\{}
+\DoxyCodeLine{\Hypertarget{window__barchart_8cpp_source_l00193}00193\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_window___barchart_a140a45b48ca88b137703fc2a55745d81}{lineSeries}}-\/>setVisible(\textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{window__barchart_8cpp_source_l00194}00194\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{window__barchart_8cpp_source_l00195}00195\ \ \ \ \ \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{\Hypertarget{window__barchart_8cpp_source_l00196}00196\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_window___barchart_a140a45b48ca88b137703fc2a55745d81}{lineSeries}}-\/>setVisible(\textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{window__barchart_8cpp_source_l00197}00197\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{window__barchart_8cpp_source_l00198}00198\ \}}
+
+\end{DoxyCode}

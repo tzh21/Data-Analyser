@@ -1,0 +1,336 @@
+\doxysection{Window\+\_\+\+ML类 参考}
+\hypertarget{class_window___m_l}{}\label{class_window___m_l}\index{Window\_ML@{Window\_ML}}
+
+
+{\ttfamily \#include $<$window\+\_\+ml.\+h$>$}
+
+
+
+继承自 QMain\+Window .
+
+\doxysubsubsection*{Public 成员函数}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_window___m_l_aa289d98fca93f0c86ab257e1970576a4}{Window\+\_\+\+ML}} (std\+::vector$<$ int $>$ \&\&\+\_\+diagnosis, std\+::vector$<$ std\+::string $>$ \&\&\+\_\+feature\+\_\+names, std\+::vector$<$ std\+::vector$<$ float $>$ $>$ \&\&\+\_\+samples, QWidget \texorpdfstring{$\ast$}{*}parent=nullptr)
+\begin{DoxyCompactList}\small\item\em Construct a new \doxylink{class_window___m_l_aa289d98fca93f0c86ab257e1970576a4}{Window\+\_\+\+ML\+::\+Window\+\_\+\+ML} object \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private 成员函数}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_window___m_l_a78c9bec62b8a4ca30fcc92d9902d1be5}{on\+\_\+button\+\_\+ratio\+\_\+clicked}} ()
+\begin{DoxyCompactList}\small\item\em 划分训练集和测试集的按钮的槽函数。根据比例划分训练集和测试集，并绘制表格。 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_window___m_l_ae063b6ac1f57e17afbcf57ddcc7a09ca}{on\+\_\+button\+\_\+train\+\_\+clicked}} ()
+\begin{DoxyCompactList}\small\item\em 训练按钮的槽函数。根据训练集进行训练，并预测已划分的数据集。 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_window___m_l_a6bb1d443c4e165a44a5ad004df7606a0}{on\+\_\+button\+\_\+test\+\_\+result\+\_\+clicked}} ()
+\begin{DoxyCompactList}\small\item\em 测试结果按钮的槽函数。绘制测试结果的混淆矩阵。 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_window___m_l_ab69911dc8106588eff2c952c81f2fced}{on\+\_\+button\+\_\+feature\+\_\+clicked}} ()
+\begin{DoxyCompactList}\small\item\em 特征贡献度按钮的槽函数。绘制特征贡献度的条形图。 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private 属性}
+\begin{DoxyCompactItemize}
+\item 
+const std\+::vector$<$ int $>$ \mbox{\hyperlink{class_window___m_l_aeb7363b0f66173c9294954784c7b30b6}{diagnosis}}
+\item 
+const std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{class_window___m_l_a4e02c0c2338bcf68749819626c0e7fb6}{feature\+\_\+names}}
+\item 
+const std\+::vector$<$ std\+::vector$<$ float $>$ $>$ \mbox{\hyperlink{class_window___m_l_addb3e6f65981ef3a419033b918b1c151}{samples}}
+\item 
+std\+::vector$<$ int $>$ \mbox{\hyperlink{class_window___m_l_a8359c5d92b4f050dc6ab4fe5f8fab4df}{idx\+\_\+train}}
+\item 
+std\+::vector$<$ int $>$ \mbox{\hyperlink{class_window___m_l_a8f58a40c7e7eb967bb9559539f0ffb5e}{idx\+\_\+test}}
+\item 
+std\+::vector$<$ std\+::pair$<$ std\+::string, float $>$ $>$ \mbox{\hyperlink{class_window___m_l_a947b8bbd40412265beef1becfcf12622}{feature\+\_\+importance}}
+\item 
+float \mbox{\hyperlink{class_window___m_l_ae19ed4e3b34e4eec241595d5572bcbdd}{cnt\+\_\+true\+\_\+positive}} = 0
+\item 
+float \mbox{\hyperlink{class_window___m_l_ac24869fc1f705a018cc18e1d8f3f130f}{cnt\+\_\+true\+\_\+negative}} = 0
+\item 
+float \mbox{\hyperlink{class_window___m_l_ad0e892b62bfc22cfcfad5335c870ead0}{cnt\+\_\+false\+\_\+positive}} = 0
+\item 
+float \mbox{\hyperlink{class_window___m_l_a6fce1762f9fbdca7bba514e1610ffecd}{cnt\+\_\+false\+\_\+negative}} = 0
+\item 
+QCombo\+Box \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_window___m_l_a2f9e045c953ed92f9c57dcda8594bba9}{comb\+\_\+ratio}}
+\item 
+QLine\+Edit \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_window___m_l_af88ec413767807f3e02981feee8a2b7e}{edit\+\_\+max\+\_\+depth}}
+\item 
+QLine\+Edit \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_window___m_l_ac163c26fc181f6e028b3b23bde6e15d1}{edit\+\_\+iter}}
+\item 
+QLine\+Edit \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_window___m_l_a0a3f97daccbb8d3c5283c9305f486159}{edit\+\_\+f1score}}
+\item 
+QLine\+Edit \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_window___m_l_ae97b148b807da2a5e729795f779dc8b9}{edit\+\_\+auc}}
+\item 
+QTable\+Widget \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_window___m_l_a5b34ec9fe96b8ec0246f5885706ea524}{table\+\_\+train}}
+\item 
+QTable\+Widget \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_window___m_l_a6f25dcf86b8c3fe4c1c5b3c7ffa9ab92}{table\+\_\+test}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{详细描述}
+
+
+在文件 \mbox{\hyperlink{window__ml_8h_source}{window\+\_\+ml.\+h}} 第 \mbox{\hyperlink{window__ml_8h_source_l00009}{9}} 行定义.
+
+
+
+\doxysubsection{构造及析构函数说明}
+\Hypertarget{class_window___m_l_aa289d98fca93f0c86ab257e1970576a4}\label{class_window___m_l_aa289d98fca93f0c86ab257e1970576a4} 
+\index{Window\_ML@{Window\_ML}!Window\_ML@{Window\_ML}}
+\index{Window\_ML@{Window\_ML}!Window\_ML@{Window\_ML}}
+\doxysubsubsection{\texorpdfstring{Window\_ML()}{Window\_ML()}}
+{\footnotesize\ttfamily Window\+\_\+\+ML\+::\+Window\+\_\+\+ML (\begin{DoxyParamCaption}\item[{std\+::vector$<$ int $>$ \&\&}]{\+\_\+diagnosis,  }\item[{std\+::vector$<$ std\+::string $>$ \&\&}]{\+\_\+feature\+\_\+names,  }\item[{std\+::vector$<$ std\+::vector$<$ float $>$ $>$ \&\&}]{\+\_\+samples,  }\item[{QWidget \texorpdfstring{$\ast$}{*}}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Construct a new \doxylink{class_window___m_l_aa289d98fca93f0c86ab257e1970576a4}{Window\+\_\+\+ML\+::\+Window\+\_\+\+ML} object 
+
+
+\begin{DoxyParams}{参数}
+{\em \+\_\+diagnosis} & 样本的症状列表。0为良性，1为恶性。用于训练标签。 \\
+\hline
+{\em \+\_\+feature\+\_\+names} & 样本的特征名称列表。 \\
+\hline
+{\em \+\_\+samples} & 样本的特征值列表。 \\
+\hline
+{\em parent} & \\
+\hline
+\end{DoxyParams}
+
+
+在文件 \mbox{\hyperlink{window__ml_8cpp_source}{window\+\_\+ml.\+cpp}} 第 \mbox{\hyperlink{window__ml_8cpp_source_l00035}{35}} 行定义.
+
+
+
+\doxysubsection{成员函数说明}
+\Hypertarget{class_window___m_l_ab69911dc8106588eff2c952c81f2fced}\label{class_window___m_l_ab69911dc8106588eff2c952c81f2fced} 
+\index{Window\_ML@{Window\_ML}!on\_button\_feature\_clicked@{on\_button\_feature\_clicked}}
+\index{on\_button\_feature\_clicked@{on\_button\_feature\_clicked}!Window\_ML@{Window\_ML}}
+\doxysubsubsection{\texorpdfstring{on\_button\_feature\_clicked()}{on\_button\_feature\_clicked()}}
+{\footnotesize\ttfamily void Window\+\_\+\+ML\+::on\+\_\+button\+\_\+feature\+\_\+clicked (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+特征贡献度按钮的槽函数。绘制特征贡献度的条形图。 
+
+
+
+在文件 \mbox{\hyperlink{window__ml_8cpp_source}{window\+\_\+ml.\+cpp}} 第 \mbox{\hyperlink{window__ml_8cpp_source_l00454}{454}} 行定义.
+
+\Hypertarget{class_window___m_l_a78c9bec62b8a4ca30fcc92d9902d1be5}\label{class_window___m_l_a78c9bec62b8a4ca30fcc92d9902d1be5} 
+\index{Window\_ML@{Window\_ML}!on\_button\_ratio\_clicked@{on\_button\_ratio\_clicked}}
+\index{on\_button\_ratio\_clicked@{on\_button\_ratio\_clicked}!Window\_ML@{Window\_ML}}
+\doxysubsubsection{\texorpdfstring{on\_button\_ratio\_clicked()}{on\_button\_ratio\_clicked()}}
+{\footnotesize\ttfamily void Window\+\_\+\+ML\+::on\+\_\+button\+\_\+ratio\+\_\+clicked (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+划分训练集和测试集的按钮的槽函数。根据比例划分训练集和测试集，并绘制表格。 
+
+
+
+在文件 \mbox{\hyperlink{window__ml_8cpp_source}{window\+\_\+ml.\+cpp}} 第 \mbox{\hyperlink{window__ml_8cpp_source_l00148}{148}} 行定义.
+
+\Hypertarget{class_window___m_l_a6bb1d443c4e165a44a5ad004df7606a0}\label{class_window___m_l_a6bb1d443c4e165a44a5ad004df7606a0} 
+\index{Window\_ML@{Window\_ML}!on\_button\_test\_result\_clicked@{on\_button\_test\_result\_clicked}}
+\index{on\_button\_test\_result\_clicked@{on\_button\_test\_result\_clicked}!Window\_ML@{Window\_ML}}
+\doxysubsubsection{\texorpdfstring{on\_button\_test\_result\_clicked()}{on\_button\_test\_result\_clicked()}}
+{\footnotesize\ttfamily void Window\+\_\+\+ML\+::on\+\_\+button\+\_\+test\+\_\+result\+\_\+clicked (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+测试结果按钮的槽函数。绘制测试结果的混淆矩阵。 
+
+
+
+在文件 \mbox{\hyperlink{window__ml_8cpp_source}{window\+\_\+ml.\+cpp}} 第 \mbox{\hyperlink{window__ml_8cpp_source_l00422}{422}} 行定义.
+
+\Hypertarget{class_window___m_l_ae063b6ac1f57e17afbcf57ddcc7a09ca}\label{class_window___m_l_ae063b6ac1f57e17afbcf57ddcc7a09ca} 
+\index{Window\_ML@{Window\_ML}!on\_button\_train\_clicked@{on\_button\_train\_clicked}}
+\index{on\_button\_train\_clicked@{on\_button\_train\_clicked}!Window\_ML@{Window\_ML}}
+\doxysubsubsection{\texorpdfstring{on\_button\_train\_clicked()}{on\_button\_train\_clicked()}}
+{\footnotesize\ttfamily void Window\+\_\+\+ML\+::on\+\_\+button\+\_\+train\+\_\+clicked (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+训练按钮的槽函数。根据训练集进行训练，并预测已划分的数据集。 
+
+
+
+在文件 \mbox{\hyperlink{window__ml_8cpp_source}{window\+\_\+ml.\+cpp}} 第 \mbox{\hyperlink{window__ml_8cpp_source_l00206}{206}} 行定义.
+
+
+
+\doxysubsection{类成员变量说明}
+\Hypertarget{class_window___m_l_a6fce1762f9fbdca7bba514e1610ffecd}\label{class_window___m_l_a6fce1762f9fbdca7bba514e1610ffecd} 
+\index{Window\_ML@{Window\_ML}!cnt\_false\_negative@{cnt\_false\_negative}}
+\index{cnt\_false\_negative@{cnt\_false\_negative}!Window\_ML@{Window\_ML}}
+\doxysubsubsection{\texorpdfstring{cnt\_false\_negative}{cnt\_false\_negative}}
+{\footnotesize\ttfamily float Window\+\_\+\+ML\+::cnt\+\_\+false\+\_\+negative = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+在文件 \mbox{\hyperlink{window__ml_8h_source}{window\+\_\+ml.\+h}} 第 \mbox{\hyperlink{window__ml_8h_source_l00033}{33}} 行定义.
+
+\Hypertarget{class_window___m_l_ad0e892b62bfc22cfcfad5335c870ead0}\label{class_window___m_l_ad0e892b62bfc22cfcfad5335c870ead0} 
+\index{Window\_ML@{Window\_ML}!cnt\_false\_positive@{cnt\_false\_positive}}
+\index{cnt\_false\_positive@{cnt\_false\_positive}!Window\_ML@{Window\_ML}}
+\doxysubsubsection{\texorpdfstring{cnt\_false\_positive}{cnt\_false\_positive}}
+{\footnotesize\ttfamily float Window\+\_\+\+ML\+::cnt\+\_\+false\+\_\+positive = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+在文件 \mbox{\hyperlink{window__ml_8h_source}{window\+\_\+ml.\+h}} 第 \mbox{\hyperlink{window__ml_8h_source_l00032}{32}} 行定义.
+
+\Hypertarget{class_window___m_l_ac24869fc1f705a018cc18e1d8f3f130f}\label{class_window___m_l_ac24869fc1f705a018cc18e1d8f3f130f} 
+\index{Window\_ML@{Window\_ML}!cnt\_true\_negative@{cnt\_true\_negative}}
+\index{cnt\_true\_negative@{cnt\_true\_negative}!Window\_ML@{Window\_ML}}
+\doxysubsubsection{\texorpdfstring{cnt\_true\_negative}{cnt\_true\_negative}}
+{\footnotesize\ttfamily float Window\+\_\+\+ML\+::cnt\+\_\+true\+\_\+negative = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+在文件 \mbox{\hyperlink{window__ml_8h_source}{window\+\_\+ml.\+h}} 第 \mbox{\hyperlink{window__ml_8h_source_l00031}{31}} 行定义.
+
+\Hypertarget{class_window___m_l_ae19ed4e3b34e4eec241595d5572bcbdd}\label{class_window___m_l_ae19ed4e3b34e4eec241595d5572bcbdd} 
+\index{Window\_ML@{Window\_ML}!cnt\_true\_positive@{cnt\_true\_positive}}
+\index{cnt\_true\_positive@{cnt\_true\_positive}!Window\_ML@{Window\_ML}}
+\doxysubsubsection{\texorpdfstring{cnt\_true\_positive}{cnt\_true\_positive}}
+{\footnotesize\ttfamily float Window\+\_\+\+ML\+::cnt\+\_\+true\+\_\+positive = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+在文件 \mbox{\hyperlink{window__ml_8h_source}{window\+\_\+ml.\+h}} 第 \mbox{\hyperlink{window__ml_8h_source_l00030}{30}} 行定义.
+
+\Hypertarget{class_window___m_l_a2f9e045c953ed92f9c57dcda8594bba9}\label{class_window___m_l_a2f9e045c953ed92f9c57dcda8594bba9} 
+\index{Window\_ML@{Window\_ML}!comb\_ratio@{comb\_ratio}}
+\index{comb\_ratio@{comb\_ratio}!Window\_ML@{Window\_ML}}
+\doxysubsubsection{\texorpdfstring{comb\_ratio}{comb\_ratio}}
+{\footnotesize\ttfamily QCombo\+Box\texorpdfstring{$\ast$}{*} Window\+\_\+\+ML\+::comb\+\_\+ratio\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+在文件 \mbox{\hyperlink{window__ml_8h_source}{window\+\_\+ml.\+h}} 第 \mbox{\hyperlink{window__ml_8h_source_l00035}{35}} 行定义.
+
+\Hypertarget{class_window___m_l_aeb7363b0f66173c9294954784c7b30b6}\label{class_window___m_l_aeb7363b0f66173c9294954784c7b30b6} 
+\index{Window\_ML@{Window\_ML}!diagnosis@{diagnosis}}
+\index{diagnosis@{diagnosis}!Window\_ML@{Window\_ML}}
+\doxysubsubsection{\texorpdfstring{diagnosis}{diagnosis}}
+{\footnotesize\ttfamily const std\+::vector$<$int$>$ Window\+\_\+\+ML\+::diagnosis\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+在文件 \mbox{\hyperlink{window__ml_8h_source}{window\+\_\+ml.\+h}} 第 \mbox{\hyperlink{window__ml_8h_source_l00022}{22}} 行定义.
+
+\Hypertarget{class_window___m_l_ae97b148b807da2a5e729795f779dc8b9}\label{class_window___m_l_ae97b148b807da2a5e729795f779dc8b9} 
+\index{Window\_ML@{Window\_ML}!edit\_auc@{edit\_auc}}
+\index{edit\_auc@{edit\_auc}!Window\_ML@{Window\_ML}}
+\doxysubsubsection{\texorpdfstring{edit\_auc}{edit\_auc}}
+{\footnotesize\ttfamily QLine\+Edit\texorpdfstring{$\ast$}{*} Window\+\_\+\+ML\+::edit\+\_\+auc\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+在文件 \mbox{\hyperlink{window__ml_8h_source}{window\+\_\+ml.\+h}} 第 \mbox{\hyperlink{window__ml_8h_source_l00040}{40}} 行定义.
+
+\Hypertarget{class_window___m_l_a0a3f97daccbb8d3c5283c9305f486159}\label{class_window___m_l_a0a3f97daccbb8d3c5283c9305f486159} 
+\index{Window\_ML@{Window\_ML}!edit\_f1score@{edit\_f1score}}
+\index{edit\_f1score@{edit\_f1score}!Window\_ML@{Window\_ML}}
+\doxysubsubsection{\texorpdfstring{edit\_f1score}{edit\_f1score}}
+{\footnotesize\ttfamily QLine\+Edit\texorpdfstring{$\ast$}{*} Window\+\_\+\+ML\+::edit\+\_\+f1score\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+在文件 \mbox{\hyperlink{window__ml_8h_source}{window\+\_\+ml.\+h}} 第 \mbox{\hyperlink{window__ml_8h_source_l00039}{39}} 行定义.
+
+\Hypertarget{class_window___m_l_ac163c26fc181f6e028b3b23bde6e15d1}\label{class_window___m_l_ac163c26fc181f6e028b3b23bde6e15d1} 
+\index{Window\_ML@{Window\_ML}!edit\_iter@{edit\_iter}}
+\index{edit\_iter@{edit\_iter}!Window\_ML@{Window\_ML}}
+\doxysubsubsection{\texorpdfstring{edit\_iter}{edit\_iter}}
+{\footnotesize\ttfamily QLine\+Edit\texorpdfstring{$\ast$}{*} Window\+\_\+\+ML\+::edit\+\_\+iter\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+在文件 \mbox{\hyperlink{window__ml_8h_source}{window\+\_\+ml.\+h}} 第 \mbox{\hyperlink{window__ml_8h_source_l00038}{38}} 行定义.
+
+\Hypertarget{class_window___m_l_af88ec413767807f3e02981feee8a2b7e}\label{class_window___m_l_af88ec413767807f3e02981feee8a2b7e} 
+\index{Window\_ML@{Window\_ML}!edit\_max\_depth@{edit\_max\_depth}}
+\index{edit\_max\_depth@{edit\_max\_depth}!Window\_ML@{Window\_ML}}
+\doxysubsubsection{\texorpdfstring{edit\_max\_depth}{edit\_max\_depth}}
+{\footnotesize\ttfamily QLine\+Edit\texorpdfstring{$\ast$}{*} Window\+\_\+\+ML\+::edit\+\_\+max\+\_\+depth\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+在文件 \mbox{\hyperlink{window__ml_8h_source}{window\+\_\+ml.\+h}} 第 \mbox{\hyperlink{window__ml_8h_source_l00037}{37}} 行定义.
+
+\Hypertarget{class_window___m_l_a947b8bbd40412265beef1becfcf12622}\label{class_window___m_l_a947b8bbd40412265beef1becfcf12622} 
+\index{Window\_ML@{Window\_ML}!feature\_importance@{feature\_importance}}
+\index{feature\_importance@{feature\_importance}!Window\_ML@{Window\_ML}}
+\doxysubsubsection{\texorpdfstring{feature\_importance}{feature\_importance}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::pair$<$std\+::string, float$>$ $>$ Window\+\_\+\+ML\+::feature\+\_\+importance\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+在文件 \mbox{\hyperlink{window__ml_8h_source}{window\+\_\+ml.\+h}} 第 \mbox{\hyperlink{window__ml_8h_source_l00028}{28}} 行定义.
+
+\Hypertarget{class_window___m_l_a4e02c0c2338bcf68749819626c0e7fb6}\label{class_window___m_l_a4e02c0c2338bcf68749819626c0e7fb6} 
+\index{Window\_ML@{Window\_ML}!feature\_names@{feature\_names}}
+\index{feature\_names@{feature\_names}!Window\_ML@{Window\_ML}}
+\doxysubsubsection{\texorpdfstring{feature\_names}{feature\_names}}
+{\footnotesize\ttfamily const std\+::vector$<$std\+::string$>$ Window\+\_\+\+ML\+::feature\+\_\+names\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+在文件 \mbox{\hyperlink{window__ml_8h_source}{window\+\_\+ml.\+h}} 第 \mbox{\hyperlink{window__ml_8h_source_l00023}{23}} 行定义.
+
+\Hypertarget{class_window___m_l_a8f58a40c7e7eb967bb9559539f0ffb5e}\label{class_window___m_l_a8f58a40c7e7eb967bb9559539f0ffb5e} 
+\index{Window\_ML@{Window\_ML}!idx\_test@{idx\_test}}
+\index{idx\_test@{idx\_test}!Window\_ML@{Window\_ML}}
+\doxysubsubsection{\texorpdfstring{idx\_test}{idx\_test}}
+{\footnotesize\ttfamily std\+::vector$<$int$>$ Window\+\_\+\+ML\+::idx\+\_\+test\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+在文件 \mbox{\hyperlink{window__ml_8h_source}{window\+\_\+ml.\+h}} 第 \mbox{\hyperlink{window__ml_8h_source_l00027}{27}} 行定义.
+
+\Hypertarget{class_window___m_l_a8359c5d92b4f050dc6ab4fe5f8fab4df}\label{class_window___m_l_a8359c5d92b4f050dc6ab4fe5f8fab4df} 
+\index{Window\_ML@{Window\_ML}!idx\_train@{idx\_train}}
+\index{idx\_train@{idx\_train}!Window\_ML@{Window\_ML}}
+\doxysubsubsection{\texorpdfstring{idx\_train}{idx\_train}}
+{\footnotesize\ttfamily std\+::vector$<$int$>$ Window\+\_\+\+ML\+::idx\+\_\+train\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+在文件 \mbox{\hyperlink{window__ml_8h_source}{window\+\_\+ml.\+h}} 第 \mbox{\hyperlink{window__ml_8h_source_l00026}{26}} 行定义.
+
+\Hypertarget{class_window___m_l_addb3e6f65981ef3a419033b918b1c151}\label{class_window___m_l_addb3e6f65981ef3a419033b918b1c151} 
+\index{Window\_ML@{Window\_ML}!samples@{samples}}
+\index{samples@{samples}!Window\_ML@{Window\_ML}}
+\doxysubsubsection{\texorpdfstring{samples}{samples}}
+{\footnotesize\ttfamily const std\+::vector$<$std\+::vector$<$float$>$ $>$ Window\+\_\+\+ML\+::samples\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+在文件 \mbox{\hyperlink{window__ml_8h_source}{window\+\_\+ml.\+h}} 第 \mbox{\hyperlink{window__ml_8h_source_l00024}{24}} 行定义.
+
+\Hypertarget{class_window___m_l_a6f25dcf86b8c3fe4c1c5b3c7ffa9ab92}\label{class_window___m_l_a6f25dcf86b8c3fe4c1c5b3c7ffa9ab92} 
+\index{Window\_ML@{Window\_ML}!table\_test@{table\_test}}
+\index{table\_test@{table\_test}!Window\_ML@{Window\_ML}}
+\doxysubsubsection{\texorpdfstring{table\_test}{table\_test}}
+{\footnotesize\ttfamily QTable\+Widget\texorpdfstring{$\ast$}{*} Window\+\_\+\+ML\+::table\+\_\+test\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+在文件 \mbox{\hyperlink{window__ml_8h_source}{window\+\_\+ml.\+h}} 第 \mbox{\hyperlink{window__ml_8h_source_l00043}{43}} 行定义.
+
+\Hypertarget{class_window___m_l_a5b34ec9fe96b8ec0246f5885706ea524}\label{class_window___m_l_a5b34ec9fe96b8ec0246f5885706ea524} 
+\index{Window\_ML@{Window\_ML}!table\_train@{table\_train}}
+\index{table\_train@{table\_train}!Window\_ML@{Window\_ML}}
+\doxysubsubsection{\texorpdfstring{table\_train}{table\_train}}
+{\footnotesize\ttfamily QTable\+Widget\texorpdfstring{$\ast$}{*} Window\+\_\+\+ML\+::table\+\_\+train\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+在文件 \mbox{\hyperlink{window__ml_8h_source}{window\+\_\+ml.\+h}} 第 \mbox{\hyperlink{window__ml_8h_source_l00042}{42}} 行定义.
+
+
+
+该类的文档由以下文件生成\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/tzh21/\+Projects/2023summer/plantform\+\_\+xgboost/src/\mbox{\hyperlink{window__ml_8h}{window\+\_\+ml.\+h}}\item 
+D\+:/tzh21/\+Projects/2023summer/plantform\+\_\+xgboost/src/\mbox{\hyperlink{window__ml_8cpp}{window\+\_\+ml.\+cpp}}\end{DoxyCompactItemize}

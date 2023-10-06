@@ -1,0 +1,106 @@
+\doxysection{widget.\+h}
+\hypertarget{widget_8h_source}{}\label{widget_8h_source}\index{D:/tzh21/Projects/2023summer/plantform\_xgboost/src/widget.h@{D:/tzh21/Projects/2023summer/plantform\_xgboost/src/widget.h}}
+\mbox{\hyperlink{widget_8h}{浏览该文件的文档.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{widget_8h_source_l00001}00001\ \textcolor{preprocessor}{\#ifndef\ WIDGET\_H}}
+\DoxyCodeLine{\Hypertarget{widget_8h_source_l00002}00002\ \textcolor{preprocessor}{\#define\ WIDGET\_H}}
+\DoxyCodeLine{\Hypertarget{widget_8h_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{widget_8h_source_l00004}00004\ \textcolor{preprocessor}{\#include\ <QWidget>}}
+\DoxyCodeLine{\Hypertarget{widget_8h_source_l00005}00005\ \textcolor{preprocessor}{\#include\ <QStandardItem>}}
+\DoxyCodeLine{\Hypertarget{widget_8h_source_l00006}00006\ \textcolor{preprocessor}{\#include\ <QTableView>}}
+\DoxyCodeLine{\Hypertarget{widget_8h_source_l00007}00007\ \textcolor{preprocessor}{\#include\ <QMainWindow>}}
+\DoxyCodeLine{\Hypertarget{widget_8h_source_l00008}00008\ \textcolor{preprocessor}{\#include\ <QtCharts/QChart>}}
+\DoxyCodeLine{\Hypertarget{widget_8h_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{widget_8h_source_l00010}00010\ QT\_BEGIN\_NAMESPACE}
+\DoxyCodeLine{\Hypertarget{widget_8h_source_l00011}00011\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_ui}{Ui}}\ \{\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_widget}{Widget}};\ \}}
+\DoxyCodeLine{\Hypertarget{widget_8h_source_l00012}00012\ QT\_END\_NAMESPACE}
+\DoxyCodeLine{\Hypertarget{widget_8h_source_l00013}00013\ }
+\DoxyCodeLine{\Hypertarget{widget_8h_source_l00014}\mbox{\hyperlink{widget_8h_a356625608f963163dfb34e48917f5958}{00014}}\ \textcolor{keyword}{enum\ class}\ \mbox{\hyperlink{widget_8h_a356625608f963163dfb34e48917f5958}{Cluster\_method}}\{}
+\DoxyCodeLine{\Hypertarget{widget_8h_source_l00015}00015\ \ \ \ \ \mbox{\hyperlink{widget_8h_a356625608f963163dfb34e48917f5958ac3667c322252cb4024831eb39e924670}{kmeans}},}
+\DoxyCodeLine{\Hypertarget{widget_8h_source_l00016}00016\ \ \ \ \ \mbox{\hyperlink{widget_8h_a356625608f963163dfb34e48917f5958abf0ef28c5df781bd2124fae79d8fa3e1}{dbscan}}}
+\DoxyCodeLine{\Hypertarget{widget_8h_source_l00017}00017\ \};}
+\DoxyCodeLine{\Hypertarget{widget_8h_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{widget_8h_source_l00019}\mbox{\hyperlink{class_widget}{00019}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_widget}{Widget}}\ :\ \textcolor{keyword}{public}\ QWidget}
+\DoxyCodeLine{\Hypertarget{widget_8h_source_l00020}00020\ \{}
+\DoxyCodeLine{\Hypertarget{widget_8h_source_l00021}00021\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{\Hypertarget{widget_8h_source_l00022}00022\ }
+\DoxyCodeLine{\Hypertarget{widget_8h_source_l00023}00023\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{widget_8h_source_l00024}00024\ \ \ \ \ \mbox{\hyperlink{class_widget}{Widget}}(QWidget\ *parent\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{\Hypertarget{widget_8h_source_l00025}00025\ \ \ \ \ \mbox{\hyperlink{class_widget_aa24f66bcbaaec6d458b0980e8c8eae65}{\string~Widget}}();}
+\DoxyCodeLine{\Hypertarget{widget_8h_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{widget_8h_source_l00027}00027\ \ \ \ \ \textcolor{comment}{//\ 聚类方法到设定的聚类数的映射}}
+\DoxyCodeLine{\Hypertarget{widget_8h_source_l00028}\mbox{\hyperlink{class_widget_a2ebd1f9f315552296c44b63914af2009}{00028}}\ \ \ \ \ std::map<Cluster\_method,\ int>\ \mbox{\hyperlink{class_widget_a2ebd1f9f315552296c44b63914af2009}{map\_cluster\_groups}}\{\{\mbox{\hyperlink{widget_8h_a356625608f963163dfb34e48917f5958ac3667c322252cb4024831eb39e924670}{Cluster\_method::kmeans}},\ 4\},}
+\DoxyCodeLine{\Hypertarget{widget_8h_source_l00029}00029\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\mbox{\hyperlink{widget_8h_a356625608f963163dfb34e48917f5958abf0ef28c5df781bd2124fae79d8fa3e1}{Cluster\_method::dbscan}},\ 8\}\};}
+\DoxyCodeLine{\Hypertarget{widget_8h_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{widget_8h_source_l00031}00031\ \ \ \ \ \textcolor{comment}{//\ 聚类方法到设定的聚类颜色的映射}}
+\DoxyCodeLine{\Hypertarget{widget_8h_source_l00032}\mbox{\hyperlink{class_widget_a429075e5b4a5f6de7015e59f1ff39490}{00032}}\ \ \ \ \ std::map<Cluster\_method,\ int>\ \mbox{\hyperlink{class_widget_a429075e5b4a5f6de7015e59f1ff39490}{map\_cluster\_col}}\{\{\mbox{\hyperlink{widget_8h_a356625608f963163dfb34e48917f5958ac3667c322252cb4024831eb39e924670}{Cluster\_method::kmeans}},\ 10\},}
+\DoxyCodeLine{\Hypertarget{widget_8h_source_l00033}00033\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\mbox{\hyperlink{widget_8h_a356625608f963163dfb34e48917f5958abf0ef28c5df781bd2124fae79d8fa3e1}{Cluster\_method::dbscan}},\ 11\}\};}
+\DoxyCodeLine{\Hypertarget{widget_8h_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{widget_8h_source_l00035}00035\ \ \ \ \ \textcolor{comment}{//\ K-\/means聚类的最大迭代次数}}
+\DoxyCodeLine{\Hypertarget{widget_8h_source_l00036}\mbox{\hyperlink{class_widget_afddf6566c63e5f0ed03c09c8264ba9a3}{00036}}\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_widget_afddf6566c63e5f0ed03c09c8264ba9a3}{kmeans\_maxiter}}\ =\ 100;}
+\DoxyCodeLine{\Hypertarget{widget_8h_source_l00037}00037\ \ \ \ \ \textcolor{comment}{//\ dbscan聚类的参数}}
+\DoxyCodeLine{\Hypertarget{widget_8h_source_l00038}\mbox{\hyperlink{class_widget_a77dccd10043bc122ceca8a30af6cb0dc}{00038}}\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_widget_a77dccd10043bc122ceca8a30af6cb0dc}{dbscan\_epsilon}}\ =\ 15;}
+\DoxyCodeLine{\Hypertarget{widget_8h_source_l00039}\mbox{\hyperlink{class_widget_a468bae8249dcd4b034fe1a02110bf608}{00039}}\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_widget_a468bae8249dcd4b034fe1a02110bf608}{dbscan\_minPts}}\ =\ 3;}
+\DoxyCodeLine{\Hypertarget{widget_8h_source_l00040}00040\ }
+\DoxyCodeLine{\Hypertarget{widget_8h_source_l00041}00041\ \ \ \ \ std::vector<int>\ \mbox{\hyperlink{class_widget_a35db1b06bb59082b1712189a97544e8d}{get\_labels\_of}}(\mbox{\hyperlink{widget_8h_a356625608f963163dfb34e48917f5958}{Cluster\_method}}\ method\ =\ \mbox{\hyperlink{widget_8h_a356625608f963163dfb34e48917f5958ac3667c322252cb4024831eb39e924670}{Cluster\_method::kmeans}});}
+\DoxyCodeLine{\Hypertarget{widget_8h_source_l00042}00042\ }
+\DoxyCodeLine{\Hypertarget{widget_8h_source_l00043}00043\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_widget_a0e0ecaeeb61136b7822776e0640fe946}{on\_decoloring\_clicked}}();}
+\DoxyCodeLine{\Hypertarget{widget_8h_source_l00044}00044\ }
+\DoxyCodeLine{\Hypertarget{widget_8h_source_l00045}00045\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_widget_abf7082b40cf5b1f99633f58967c6e5b9}{on\_cluster\_kmeans\_clicked}}();}
+\DoxyCodeLine{\Hypertarget{widget_8h_source_l00046}00046\ }
+\DoxyCodeLine{\Hypertarget{widget_8h_source_l00047}00047\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_widget_aaad1609dbf1cfeb2e672c99dffc63eae}{on\_coloring\_kmeans\_clicked}}();}
+\DoxyCodeLine{\Hypertarget{widget_8h_source_l00048}00048\ }
+\DoxyCodeLine{\Hypertarget{widget_8h_source_l00049}00049\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_widget_aee13ceb4f5b6cadd201eeeb1f0a65fec}{on\_cluster\_dbscan\_clicked}}();}
+\DoxyCodeLine{\Hypertarget{widget_8h_source_l00050}00050\ }
+\DoxyCodeLine{\Hypertarget{widget_8h_source_l00051}00051\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_widget_a4561b893d56cfd4afaab4e64739f36e3}{on\_coloring\_dbscan\_clicked}}();}
+\DoxyCodeLine{\Hypertarget{widget_8h_source_l00052}00052\ }
+\DoxyCodeLine{\Hypertarget{widget_8h_source_l00053}00053\ \textcolor{keyword}{private}\ slots:}
+\DoxyCodeLine{\Hypertarget{widget_8h_source_l00054}00054\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_widget_a2c531f78d201811f34766945dfda2f86}{on\_button\_variance\_clicked}}();}
+\DoxyCodeLine{\Hypertarget{widget_8h_source_l00055}00055\ }
+\DoxyCodeLine{\Hypertarget{widget_8h_source_l00056}00056\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_widget_ad5788360f0920e8885ff2eed4af39348}{on\_button\_barchart\_clicked}}();}
+\DoxyCodeLine{\Hypertarget{widget_8h_source_l00057}00057\ }
+\DoxyCodeLine{\Hypertarget{widget_8h_source_l00058}00058\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_widget_a050a9ecf00142eba547da98587bc144b}{on\_button\_scatter\_clicked}}();}
+\DoxyCodeLine{\Hypertarget{widget_8h_source_l00059}00059\ }
+\DoxyCodeLine{\Hypertarget{widget_8h_source_l00060}00060\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_widget_a7192e77f90918530f3c50f2eae7b925d}{on\_button\_open\_clicked}}();}
+\DoxyCodeLine{\Hypertarget{widget_8h_source_l00061}00061\ }
+\DoxyCodeLine{\Hypertarget{widget_8h_source_l00062}00062\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_widget_a80a6e1d3a07304c9bfa9fc1cc60fcc7b}{on\_button\_covariance\_clicked}}();}
+\DoxyCodeLine{\Hypertarget{widget_8h_source_l00063}00063\ }
+\DoxyCodeLine{\Hypertarget{widget_8h_source_l00064}00064\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_widget_afbd56ee92fa599d19ff6da0ceebdd8a5}{on\_button\_pca\_clicked}}();}
+\DoxyCodeLine{\Hypertarget{widget_8h_source_l00065}00065\ }
+\DoxyCodeLine{\Hypertarget{widget_8h_source_l00066}00066\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_widget_a679c430dfa837f1257dfb0606c3c9e3d}{on\_button\_cluster\_clicked}}();}
+\DoxyCodeLine{\Hypertarget{widget_8h_source_l00067}00067\ }
+\DoxyCodeLine{\Hypertarget{widget_8h_source_l00068}00068\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_widget_a3ea881e6748857ff7334948124559056}{on\_button\_coloring\_clicked}}();}
+\DoxyCodeLine{\Hypertarget{widget_8h_source_l00069}00069\ }
+\DoxyCodeLine{\Hypertarget{widget_8h_source_l00070}00070\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_widget_aec936a4af2ba680b68fc0277eb96a1ab}{on\_button\_ml\_clicked}}();}
+\DoxyCodeLine{\Hypertarget{widget_8h_source_l00071}00071\ }
+\DoxyCodeLine{\Hypertarget{widget_8h_source_l00072}00072\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{widget_8h_source_l00073}00073\ \ \ \ \ \textcolor{comment}{//\ 诊断结果所在列}}
+\DoxyCodeLine{\Hypertarget{widget_8h_source_l00074}\mbox{\hyperlink{class_widget_a118b08ddf72fdf070f6857b139a112c7}{00074}}\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_widget_a118b08ddf72fdf070f6857b139a112c7}{col\_diagnosis\_at}}\ =\ 1;}
+\DoxyCodeLine{\Hypertarget{widget_8h_source_l00075}00075\ }
+\DoxyCodeLine{\Hypertarget{widget_8h_source_l00076}\mbox{\hyperlink{class_widget_a19c48cc897c43aa2e995fce9f7fb2418}{00076}}\ \ \ \ \ Ui::Widget\ *\mbox{\hyperlink{class_widget_a19c48cc897c43aa2e995fce9f7fb2418}{ui}};}
+\DoxyCodeLine{\Hypertarget{widget_8h_source_l00077}00077\ }
+\DoxyCodeLine{\Hypertarget{widget_8h_source_l00078}00078\ \ \ \ \ \textcolor{comment}{//\ 数据表的路径}}
+\DoxyCodeLine{\Hypertarget{widget_8h_source_l00079}\mbox{\hyperlink{class_widget_a1448ad241c2be52415644d585feffcd5}{00079}}\ \ \ \ \ QString\ \mbox{\hyperlink{class_widget_a1448ad241c2be52415644d585feffcd5}{path\_table}}\ =\ \textcolor{stringliteral}{"{}:/resource/breast-\/cancer.csv"{}};}
+\DoxyCodeLine{\Hypertarget{widget_8h_source_l00080}00080\ }
+\DoxyCodeLine{\Hypertarget{widget_8h_source_l00081}00081\ \ \ \ \ \textcolor{comment}{//\ 数据表模型}}
+\DoxyCodeLine{\Hypertarget{widget_8h_source_l00082}\mbox{\hyperlink{class_widget_a4a69d6402e3c67623d1d081fcea2db20}{00082}}\ \ \ \ \ QStandardItemModel\ *\mbox{\hyperlink{class_widget_a4a69d6402e3c67623d1d081fcea2db20}{model}}\{\textcolor{keyword}{new}\ QStandardItemModel(\textcolor{keyword}{this})\};}
+\DoxyCodeLine{\Hypertarget{widget_8h_source_l00083}00083\ }
+\DoxyCodeLine{\Hypertarget{widget_8h_source_l00084}00084\ \textcolor{comment}{//\ \ \ \ tableView\ set\ in\ ui\ file}}
+\DoxyCodeLine{\Hypertarget{widget_8h_source_l00085}00085\ \textcolor{comment}{//\ \ \ \ QTableView\ *view\{new\ QTableView(this)\};}}
+\DoxyCodeLine{\Hypertarget{widget_8h_source_l00086}00086\ }
+\DoxyCodeLine{\Hypertarget{widget_8h_source_l00087}00087\ \ \ \ \ \textcolor{comment}{//\ 数据表图表}}
+\DoxyCodeLine{\Hypertarget{widget_8h_source_l00088}\mbox{\hyperlink{class_widget_ab87650695264788abcb78f5bdf060c32}{00088}}\ \ \ \ \ QChart*\ \mbox{\hyperlink{class_widget_ab87650695264788abcb78f5bdf060c32}{chart}}\{\textcolor{keyword}{new}\ QChart\};}
+\DoxyCodeLine{\Hypertarget{widget_8h_source_l00089}00089\ }
+\DoxyCodeLine{\Hypertarget{widget_8h_source_l00090}00090\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_widget_af36723a57336dfa23465f25dfdf3746a}{open\_table}}();}
+\DoxyCodeLine{\Hypertarget{widget_8h_source_l00091}00091\ }
+\DoxyCodeLine{\Hypertarget{widget_8h_source_l00092}00092\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_widget_a12ef4995ed462832aea1172399c135ec}{delete\_obj}}(QObject\ *obj);}
+\DoxyCodeLine{\Hypertarget{widget_8h_source_l00093}00093\ }
+\DoxyCodeLine{\Hypertarget{widget_8h_source_l00094}00094\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_widget_a0f9dfce23985306dfa248ace3b936688}{add\_cluster}}(\mbox{\hyperlink{widget_8h_a356625608f963163dfb34e48917f5958}{Cluster\_method}}\ method,\ std::vector<int>\ labels);}
+\DoxyCodeLine{\Hypertarget{widget_8h_source_l00095}00095\ }
+\DoxyCodeLine{\Hypertarget{widget_8h_source_l00096}00096\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_widget_adccd7176b1162abe0100288be829c83e}{coloring\_method}}(\mbox{\hyperlink{widget_8h_a356625608f963163dfb34e48917f5958}{Cluster\_method}}\ method);}
+\DoxyCodeLine{\Hypertarget{widget_8h_source_l00097}00097\ }
+\DoxyCodeLine{\Hypertarget{widget_8h_source_l00098}00098\ \ \ \ \ std::vector<std::vector<float>>\ \mbox{\hyperlink{class_widget_a06f7809a8562ed150864974714221016}{samples\_selected}}(\textcolor{keywordtype}{size\_t}\ least\_cols\ =\ 1);}
+\DoxyCodeLine{\Hypertarget{widget_8h_source_l00099}00099\ \};}
+\DoxyCodeLine{\Hypertarget{widget_8h_source_l00100}00100\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ WIDGET\_H}}
+
+\end{DoxyCode}

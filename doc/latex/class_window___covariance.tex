@@ -1,0 +1,225 @@
+\doxysection{Window\+\_\+\+Covariance类 参考}
+\hypertarget{class_window___covariance}{}\label{class_window___covariance}\index{Window\_Covariance@{Window\_Covariance}}
+
+
+{\ttfamily \#include $<$window\+\_\+covariance.\+h$>$}
+
+
+
+继承自 QMain\+Window .
+
+\doxysubsubsection*{Public 成员函数}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_window___covariance_a97d7fb95a5738215a2ce23566cc43aaf}{Window\+\_\+\+Covariance}} (const std\+::vector$<$ std\+::vector$<$ float $>$ $>$ \&variants, const QString\+List \&headers, QWidget \texorpdfstring{$\ast$}{*}parent=nullptr)
+\begin{DoxyCompactList}\small\item\em Construct a new \doxylink{class_window___covariance_a97d7fb95a5738215a2ce23566cc43aaf}{Window\+\_\+\+Covariance\+::\+Window\+\_\+\+Covariance} object \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private 成员函数}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_window___covariance_a17ecb556e1d4afb4981b243a59b26fa3}{on\+\_\+cov\+\_\+toggled}} (bool checked)
+\begin{DoxyCompactList}\small\item\em 显示协方差矩阵。 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_window___covariance_a85b62377b8f32e2a3e289d0db693f2e0}{on\+\_\+corr\+\_\+toggled}} (bool checked)
+\begin{DoxyCompactList}\small\item\em 显示相关系数矩阵。 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{静态 Private 成员函数}
+\begin{DoxyCompactItemize}
+\item 
+static QColor \mbox{\hyperlink{class_window___covariance_a18d1557de9505501f49e3d6ffa1db4cc}{map\+Value\+To\+Color}} (double value)
+\begin{DoxyCompactList}\small\item\em 将值映射到颜色。 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private 属性}
+\begin{DoxyCompactItemize}
+\item 
+const int \mbox{\hyperlink{class_window___covariance_a94af2f362273fe2e4d73f4d1db986c68}{cell\+Size}} = 100
+\item 
+size\+\_\+t \mbox{\hyperlink{class_window___covariance_a6773c464b5d037033ff416f83bd388f8}{matrix\+Size}} = 0
+\item 
+QTable\+Widget \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_window___covariance_a52963861340777b1de36da7ea87c84ef}{table}} = nullptr
+\item 
+std\+::vector$<$ std\+::vector$<$ float $>$ $>$ \mbox{\hyperlink{class_window___covariance_a327d993388304e0e6089a74bcabfc072}{cov}}
+\item 
+std\+::vector$<$ std\+::vector$<$ float $>$ $>$ \mbox{\hyperlink{class_window___covariance_a8cf9a975b4d95275ec1ccbc436151a82}{corr}}
+\item 
+std\+::vector$<$ float $>$ \mbox{\hyperlink{class_window___covariance_ac850b3cae5235431de403dc40bbf2a36}{var}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{友元}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_window___covariance_af0a93f385875a01ed7db0e41f2904f5c}{Color\+Bar\+Widget}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{详细描述}
+
+
+在文件 \mbox{\hyperlink{window__covariance_8h_source}{window\+\_\+covariance.\+h}} 第 \mbox{\hyperlink{window__covariance_8h_source_l00008}{8}} 行定义.
+
+
+
+\doxysubsection{构造及析构函数说明}
+\Hypertarget{class_window___covariance_a97d7fb95a5738215a2ce23566cc43aaf}\label{class_window___covariance_a97d7fb95a5738215a2ce23566cc43aaf} 
+\index{Window\_Covariance@{Window\_Covariance}!Window\_Covariance@{Window\_Covariance}}
+\index{Window\_Covariance@{Window\_Covariance}!Window\_Covariance@{Window\_Covariance}}
+\doxysubsubsection{\texorpdfstring{Window\_Covariance()}{Window\_Covariance()}}
+{\footnotesize\ttfamily Window\+\_\+\+Covariance\+::\+Window\+\_\+\+Covariance (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::vector$<$ float $>$ $>$ \&}]{variants,  }\item[{const QString\+List \&}]{headers,  }\item[{QWidget \texorpdfstring{$\ast$}{*}}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Construct a new \doxylink{class_window___covariance_a97d7fb95a5738215a2ce23566cc43aaf}{Window\+\_\+\+Covariance\+::\+Window\+\_\+\+Covariance} object 
+
+
+\begin{DoxyParams}{参数}
+{\em variants} & 变量的数据。 \\
+\hline
+{\em headers} & 变量的名称。 \\
+\hline
+{\em parent} & \\
+\hline
+\end{DoxyParams}
+
+
+在文件 \mbox{\hyperlink{window__covariance_8cpp_source}{window\+\_\+covariance.\+cpp}} 第 \mbox{\hyperlink{window__covariance_8cpp_source_l00017}{17}} 行定义.
+
+
+
+\doxysubsection{成员函数说明}
+\Hypertarget{class_window___covariance_a18d1557de9505501f49e3d6ffa1db4cc}\label{class_window___covariance_a18d1557de9505501f49e3d6ffa1db4cc} 
+\index{Window\_Covariance@{Window\_Covariance}!mapValueToColor@{mapValueToColor}}
+\index{mapValueToColor@{mapValueToColor}!Window\_Covariance@{Window\_Covariance}}
+\doxysubsubsection{\texorpdfstring{mapValueToColor()}{mapValueToColor()}}
+{\footnotesize\ttfamily QColor Window\+\_\+\+Covariance\+::map\+Value\+To\+Color (\begin{DoxyParamCaption}\item[{double}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+将值映射到颜色。 
+
+
+\begin{DoxyParams}{参数}
+{\em value} & 需要映射的值。 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{返回}
+QColor 映射后的颜色。 
+\end{DoxyReturn}
+
+
+在文件 \mbox{\hyperlink{window__covariance_8cpp_source}{window\+\_\+covariance.\+cpp}} 第 \mbox{\hyperlink{window__covariance_8cpp_source_l00125}{125}} 行定义.
+
+\Hypertarget{class_window___covariance_a85b62377b8f32e2a3e289d0db693f2e0}\label{class_window___covariance_a85b62377b8f32e2a3e289d0db693f2e0} 
+\index{Window\_Covariance@{Window\_Covariance}!on\_corr\_toggled@{on\_corr\_toggled}}
+\index{on\_corr\_toggled@{on\_corr\_toggled}!Window\_Covariance@{Window\_Covariance}}
+\doxysubsubsection{\texorpdfstring{on\_corr\_toggled()}{on\_corr\_toggled()}}
+{\footnotesize\ttfamily void Window\+\_\+\+Covariance\+::on\+\_\+corr\+\_\+toggled (\begin{DoxyParamCaption}\item[{bool}]{checked }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+显示相关系数矩阵。 
+
+
+\begin{DoxyParams}{参数}
+{\em checked} & \\
+\hline
+\end{DoxyParams}
+
+
+在文件 \mbox{\hyperlink{window__covariance_8cpp_source}{window\+\_\+covariance.\+cpp}} 第 \mbox{\hyperlink{window__covariance_8cpp_source_l00156}{156}} 行定义.
+
+\Hypertarget{class_window___covariance_a17ecb556e1d4afb4981b243a59b26fa3}\label{class_window___covariance_a17ecb556e1d4afb4981b243a59b26fa3} 
+\index{Window\_Covariance@{Window\_Covariance}!on\_cov\_toggled@{on\_cov\_toggled}}
+\index{on\_cov\_toggled@{on\_cov\_toggled}!Window\_Covariance@{Window\_Covariance}}
+\doxysubsubsection{\texorpdfstring{on\_cov\_toggled()}{on\_cov\_toggled()}}
+{\footnotesize\ttfamily void Window\+\_\+\+Covariance\+::on\+\_\+cov\+\_\+toggled (\begin{DoxyParamCaption}\item[{bool}]{checked }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+显示协方差矩阵。 
+
+
+\begin{DoxyParams}{参数}
+{\em checked} & \\
+\hline
+\end{DoxyParams}
+
+
+在文件 \mbox{\hyperlink{window__covariance_8cpp_source}{window\+\_\+covariance.\+cpp}} 第 \mbox{\hyperlink{window__covariance_8cpp_source_l00140}{140}} 行定义.
+
+
+
+\doxysubsection{友元及相关函数文档}
+\Hypertarget{class_window___covariance_af0a93f385875a01ed7db0e41f2904f5c}\label{class_window___covariance_af0a93f385875a01ed7db0e41f2904f5c} 
+\index{Window\_Covariance@{Window\_Covariance}!ColorBarWidget@{ColorBarWidget}}
+\index{ColorBarWidget@{ColorBarWidget}!Window\_Covariance@{Window\_Covariance}}
+\doxysubsubsection{\texorpdfstring{ColorBarWidget}{ColorBarWidget}}
+{\footnotesize\ttfamily friend class \mbox{\hyperlink{class_color_bar_widget}{Color\+Bar\+Widget}}\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+在文件 \mbox{\hyperlink{window__covariance_8h_source}{window\+\_\+covariance.\+h}} 第 \mbox{\hyperlink{window__covariance_8h_source_l00020}{20}} 行定义.
+
+
+
+\doxysubsection{类成员变量说明}
+\Hypertarget{class_window___covariance_a94af2f362273fe2e4d73f4d1db986c68}\label{class_window___covariance_a94af2f362273fe2e4d73f4d1db986c68} 
+\index{Window\_Covariance@{Window\_Covariance}!cellSize@{cellSize}}
+\index{cellSize@{cellSize}!Window\_Covariance@{Window\_Covariance}}
+\doxysubsubsection{\texorpdfstring{cellSize}{cellSize}}
+{\footnotesize\ttfamily const int Window\+\_\+\+Covariance\+::cell\+Size = 100\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+在文件 \mbox{\hyperlink{window__covariance_8h_source}{window\+\_\+covariance.\+h}} 第 \mbox{\hyperlink{window__covariance_8h_source_l00022}{22}} 行定义.
+
+\Hypertarget{class_window___covariance_a8cf9a975b4d95275ec1ccbc436151a82}\label{class_window___covariance_a8cf9a975b4d95275ec1ccbc436151a82} 
+\index{Window\_Covariance@{Window\_Covariance}!corr@{corr}}
+\index{corr@{corr}!Window\_Covariance@{Window\_Covariance}}
+\doxysubsubsection{\texorpdfstring{corr}{corr}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::vector$<$float$>$ $>$ Window\+\_\+\+Covariance\+::corr\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+在文件 \mbox{\hyperlink{window__covariance_8h_source}{window\+\_\+covariance.\+h}} 第 \mbox{\hyperlink{window__covariance_8h_source_l00029}{29}} 行定义.
+
+\Hypertarget{class_window___covariance_a327d993388304e0e6089a74bcabfc072}\label{class_window___covariance_a327d993388304e0e6089a74bcabfc072} 
+\index{Window\_Covariance@{Window\_Covariance}!cov@{cov}}
+\index{cov@{cov}!Window\_Covariance@{Window\_Covariance}}
+\doxysubsubsection{\texorpdfstring{cov}{cov}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::vector$<$float$>$ $>$ Window\+\_\+\+Covariance\+::cov\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+在文件 \mbox{\hyperlink{window__covariance_8h_source}{window\+\_\+covariance.\+h}} 第 \mbox{\hyperlink{window__covariance_8h_source_l00028}{28}} 行定义.
+
+\Hypertarget{class_window___covariance_a6773c464b5d037033ff416f83bd388f8}\label{class_window___covariance_a6773c464b5d037033ff416f83bd388f8} 
+\index{Window\_Covariance@{Window\_Covariance}!matrixSize@{matrixSize}}
+\index{matrixSize@{matrixSize}!Window\_Covariance@{Window\_Covariance}}
+\doxysubsubsection{\texorpdfstring{matrixSize}{matrixSize}}
+{\footnotesize\ttfamily size\+\_\+t Window\+\_\+\+Covariance\+::matrix\+Size = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+在文件 \mbox{\hyperlink{window__covariance_8h_source}{window\+\_\+covariance.\+h}} 第 \mbox{\hyperlink{window__covariance_8h_source_l00024}{24}} 行定义.
+
+\Hypertarget{class_window___covariance_a52963861340777b1de36da7ea87c84ef}\label{class_window___covariance_a52963861340777b1de36da7ea87c84ef} 
+\index{Window\_Covariance@{Window\_Covariance}!table@{table}}
+\index{table@{table}!Window\_Covariance@{Window\_Covariance}}
+\doxysubsubsection{\texorpdfstring{table}{table}}
+{\footnotesize\ttfamily QTable\+Widget\texorpdfstring{$\ast$}{*} Window\+\_\+\+Covariance\+::table = nullptr\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+在文件 \mbox{\hyperlink{window__covariance_8h_source}{window\+\_\+covariance.\+h}} 第 \mbox{\hyperlink{window__covariance_8h_source_l00026}{26}} 行定义.
+
+\Hypertarget{class_window___covariance_ac850b3cae5235431de403dc40bbf2a36}\label{class_window___covariance_ac850b3cae5235431de403dc40bbf2a36} 
+\index{Window\_Covariance@{Window\_Covariance}!var@{var}}
+\index{var@{var}!Window\_Covariance@{Window\_Covariance}}
+\doxysubsubsection{\texorpdfstring{var}{var}}
+{\footnotesize\ttfamily std\+::vector$<$float$>$ Window\+\_\+\+Covariance\+::var\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+在文件 \mbox{\hyperlink{window__covariance_8h_source}{window\+\_\+covariance.\+h}} 第 \mbox{\hyperlink{window__covariance_8h_source_l00030}{30}} 行定义.
+
+
+
+该类的文档由以下文件生成\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/tzh21/\+Projects/2023summer/plantform\+\_\+xgboost/src/\mbox{\hyperlink{window__covariance_8h}{window\+\_\+covariance.\+h}}\item 
+D\+:/tzh21/\+Projects/2023summer/plantform\+\_\+xgboost/src/\mbox{\hyperlink{window__covariance_8cpp}{window\+\_\+covariance.\+cpp}}\end{DoxyCompactItemize}

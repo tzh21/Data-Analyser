@@ -1,0 +1,50 @@
+\doxysection{window\+\_\+scatter.\+h}
+\hypertarget{window__scatter_8h_source}{}\label{window__scatter_8h_source}\index{D:/tzh21/Projects/2023summer/plantform\_xgboost/src/window\_scatter.h@{D:/tzh21/Projects/2023summer/plantform\_xgboost/src/window\_scatter.h}}
+\mbox{\hyperlink{window__scatter_8h}{浏览该文件的文档.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{window__scatter_8h_source_l00001}00001\ \textcolor{preprocessor}{\#ifndef\ WINDOW\_SCATTER\_H}}
+\DoxyCodeLine{\Hypertarget{window__scatter_8h_source_l00002}00002\ \textcolor{preprocessor}{\#define\ WINDOW\_SCATTER\_H}}
+\DoxyCodeLine{\Hypertarget{window__scatter_8h_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{window__scatter_8h_source_l00004}00004\ \textcolor{preprocessor}{\#include\ <QMainWindow>}}
+\DoxyCodeLine{\Hypertarget{window__scatter_8h_source_l00005}00005\ \textcolor{preprocessor}{\#include\ <QChart>}}
+\DoxyCodeLine{\Hypertarget{window__scatter_8h_source_l00006}00006\ \textcolor{preprocessor}{\#include\ <QChartView>}}
+\DoxyCodeLine{\Hypertarget{window__scatter_8h_source_l00007}00007\ \textcolor{preprocessor}{\#include\ <QLineEdit>}}
+\DoxyCodeLine{\Hypertarget{window__scatter_8h_source_l00008}00008\ \textcolor{preprocessor}{\#include\ <QSplineSeries>}}
+\DoxyCodeLine{\Hypertarget{window__scatter_8h_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{window__scatter_8h_source_l00010}\mbox{\hyperlink{class_window___scatter}{00010}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_window___scatter}{Window\_Scatter}}\ :\ \textcolor{keyword}{public}\ QMainWindow}
+\DoxyCodeLine{\Hypertarget{window__scatter_8h_source_l00011}00011\ \{}
+\DoxyCodeLine{\Hypertarget{window__scatter_8h_source_l00012}00012\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{\Hypertarget{window__scatter_8h_source_l00013}00013\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{window__scatter_8h_source_l00014}00014\ \textcolor{comment}{//\ \ \ \ Window\_Scatter()\ =\ default;}}
+\DoxyCodeLine{\Hypertarget{window__scatter_8h_source_l00015}00015\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_window___scatter}{Window\_Scatter}}(\textcolor{keyword}{const}\ std::vector<float>\&\ \mbox{\hyperlink{class_window___scatter_af064a573b085c61ac55f1c4f90e368f6}{vecX}},\ \textcolor{keyword}{const}\ std::vector<float>\&\ \mbox{\hyperlink{class_window___scatter_a8229b0349545c16c9a8ca016decbc370}{vecY}},}
+\DoxyCodeLine{\Hypertarget{window__scatter_8h_source_l00016}00016\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ QString\ \&headerX,\ \textcolor{keyword}{const}\ QString\ \&headerY,}
+\DoxyCodeLine{\Hypertarget{window__scatter_8h_source_l00017}00017\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ QWidget\ *parent\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{\Hypertarget{window__scatter_8h_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{window__scatter_8h_source_l00019}00019\ signals:}
+\DoxyCodeLine{\Hypertarget{window__scatter_8h_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{window__scatter_8h_source_l00021}00021\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{window__scatter_8h_source_l00022}\mbox{\hyperlink{class_window___scatter_af064a573b085c61ac55f1c4f90e368f6}{00022}}\ \ \ \ \ \textcolor{keyword}{const}\ std::vector<float>\ \mbox{\hyperlink{class_window___scatter_af064a573b085c61ac55f1c4f90e368f6}{vecX}};}
+\DoxyCodeLine{\Hypertarget{window__scatter_8h_source_l00023}\mbox{\hyperlink{class_window___scatter_a8229b0349545c16c9a8ca016decbc370}{00023}}\ \ \ \ \ \textcolor{keyword}{const}\ std::vector<float>\ \mbox{\hyperlink{class_window___scatter_a8229b0349545c16c9a8ca016decbc370}{vecY}};}
+\DoxyCodeLine{\Hypertarget{window__scatter_8h_source_l00024}\mbox{\hyperlink{class_window___scatter_ae046ded593515a50d5d271596a848bbf}{00024}}\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{class_window___scatter_ae046ded593515a50d5d271596a848bbf}{cnt\_input}}\ =\ 10;}
+\DoxyCodeLine{\Hypertarget{window__scatter_8h_source_l00025}\mbox{\hyperlink{class_window___scatter_a8c40d4339ef5e0600ce4b2a75cb0bac2}{00025}}\ \ \ \ \ std::vector<float>\ \mbox{\hyperlink{class_window___scatter_a8c40d4339ef5e0600ce4b2a75cb0bac2}{input}};}
+\DoxyCodeLine{\Hypertarget{window__scatter_8h_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{window__scatter_8h_source_l00027}\mbox{\hyperlink{class_window___scatter_abcf11965c8d92ec7d01fde1115c585ef}{00027}}\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_window___scatter_abcf11965c8d92ec7d01fde1115c585ef}{inDegree}}\ =\ 3;}
+\DoxyCodeLine{\Hypertarget{window__scatter_8h_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{window__scatter_8h_source_l00029}\mbox{\hyperlink{class_window___scatter_a2662d35b4e0731535462bfdafeda0cc0}{00029}}\ \ \ \ \ QChart\ *\mbox{\hyperlink{class_window___scatter_a2662d35b4e0731535462bfdafeda0cc0}{chart}}\{\textcolor{keyword}{new}\ QChart\};}
+\DoxyCodeLine{\Hypertarget{window__scatter_8h_source_l00030}\mbox{\hyperlink{class_window___scatter_acef4f9c78084f35ddd8db38d47557146}{00030}}\ \ \ \ \ QChartView\ *\mbox{\hyperlink{class_window___scatter_acef4f9c78084f35ddd8db38d47557146}{chartView}}\{\textcolor{keyword}{new}\ QChartView(\mbox{\hyperlink{class_window___scatter_a2662d35b4e0731535462bfdafeda0cc0}{chart}})\};}
+\DoxyCodeLine{\Hypertarget{window__scatter_8h_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{window__scatter_8h_source_l00032}\mbox{\hyperlink{class_window___scatter_a7dae9c2713f3ab558a68fa96bfc78b9b}{00032}}\ \ \ \ \ QLineEdit\ *\mbox{\hyperlink{class_window___scatter_a7dae9c2713f3ab558a68fa96bfc78b9b}{edit\_degree}}\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{window__scatter_8h_source_l00033}\mbox{\hyperlink{class_window___scatter_a9d0fa7899370197a8a5b530c5c6d67b9}{00033}}\ \ \ \ \ QLineEdit\ *\mbox{\hyperlink{class_window___scatter_a9d0fa7899370197a8a5b530c5c6d67b9}{edit\_p}}\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{window__scatter_8h_source_l00034}\mbox{\hyperlink{class_window___scatter_a4e8898e937c7c82f4a45e67a313835e3}{00034}}\ \ \ \ \ QLineEdit\ *\mbox{\hyperlink{class_window___scatter_a4e8898e937c7c82f4a45e67a313835e3}{edit\_r}}\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{window__scatter_8h_source_l00035}\mbox{\hyperlink{class_window___scatter_a6c4d602bba48786611b6342beab10c9b}{00035}}\ \ \ \ \ QLineEdit\ *\mbox{\hyperlink{class_window___scatter_a6c4d602bba48786611b6342beab10c9b}{edit\_x}}\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{window__scatter_8h_source_l00036}\mbox{\hyperlink{class_window___scatter_a517b1977ef53a232446825bde32188d6}{00036}}\ \ \ \ \ QLineEdit\ *\mbox{\hyperlink{class_window___scatter_a517b1977ef53a232446825bde32188d6}{edit\_y}}\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{window__scatter_8h_source_l00037}00037\ }
+\DoxyCodeLine{\Hypertarget{window__scatter_8h_source_l00038}\mbox{\hyperlink{class_window___scatter_a8e7538de57c3818ded92dd7ca28f8160}{00038}}\ \ \ \ \ QSplineSeries\ *\mbox{\hyperlink{class_window___scatter_a8e7538de57c3818ded92dd7ca28f8160}{lineSeries}}\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{window__scatter_8h_source_l00039}00039\ }
+\DoxyCodeLine{\Hypertarget{window__scatter_8h_source_l00040}00040\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_window___scatter_a9f91d8f5004ee25346eeb50f900f8fbf}{on\_button\_degree\_clicked}}();}
+\DoxyCodeLine{\Hypertarget{window__scatter_8h_source_l00041}00041\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_window___scatter_ac5afd6ee79310fa9d2e3b901ff7d4040}{onPointHovered}}(\textcolor{keyword}{const}\ QPointF\ \&point,\ \textcolor{keywordtype}{bool}\ state);}
+\DoxyCodeLine{\Hypertarget{window__scatter_8h_source_l00042}00042\ \};}
+\DoxyCodeLine{\Hypertarget{window__scatter_8h_source_l00043}00043\ }
+\DoxyCodeLine{\Hypertarget{window__scatter_8h_source_l00044}00044\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ WINDOW\_SCATTER\_H}}
+
+\end{DoxyCode}
